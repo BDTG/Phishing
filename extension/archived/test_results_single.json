@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-04-08T19:29:04.138969",
+  "true_positives": 19,
+  "true_negatives": 25,
+  "false_positives": 0,
+  "false_negatives": 0,
+  "accuracy": 100.0,
+  "false_negative_urls": [],
+  "false_positive_urls": []
+}

@@ -1,0 +1,110 @@
+// ============================================================
+// manifest.json — Cấu hình Chrome Extension (Manifest V3)
+// ============================================================
+// File này định nghĩa tất cả thông tin về extension:
+//   - Tên, phiên bản, mô tả
+//   - Quyền truy cập (permissions)
+//   - Scripts chạy background (service worker)
+//   - Scripts inject vào trang web (content scripts)
+//   - Tài nguyên web-accessible
+// ============================================================
+{
+  // Manifest V3: Phiên bản mới nhất của Chrome Extension API
+  // V3 yêu cầu service worker thay vì background page
+  "manifest_version": 3,
+
+  // Tên extension hiển thị trên Chrome Web Store và toolbar
+  "name": "Phishing URL Detector",
+
+  // Phiên bản extension (theo semver: major.minor.patch)
+  "version": "1.0",
+
+  // Mô tả ngắn hiển thị khi hover vào icon extension
+  "description": "Phát hiện URL lừa đảo bằng XGBoost ML — Đồ Án Cơ Sở",
+
+  // ──────────────────────────────────────────────────────────
+  // PERMISSIONS — Quyền truy cập của extension
+  // ──────────────────────────────────────────────────────────
+  "permissions": [
+    // activeTab: Truy cập tab đang active (để lấy URL)
+    "activeTab",
+    // scripting: Inject content scripts vào trang web
+    "scripting",
+    // tabs: Quản lý tabs (lắng nghe sự kiện tab updated, activated)
+    "tabs"
+  ],
+
+  // ──────────────────────────────────────────────────────────
+  // HOST PERMISSIONS — URL nào extension có thể truy cập
+  // ──────────────────────────────────────────────────────────
+  // <all_urls> = extension có thể hoạt động trên mọi website
+  // Bao gồm cả http:// và https://
+  "host_permissions": [
+    "<all_urls>"
+  ],
+
+  // ──────────────────────────────────────────────────────────
+  // BACKGROUND — Service Worker (Manifest V3)
+  // ──────────────────────────────────────────────────────────
+  // Service worker chạy ngầm, lắng nghe sự kiện browser
+  // Không có UI, chỉ xử lý logic background
+  "background": {
+    // File service worker
+    "service_worker": "background.js"
+  },
+
+  // ──────────────────────────────────────────────────────────
+  // ACTION — Icon trên toolbar + popup
+  // ──────────────────────────────────────────────────────────
+  "action": {
+    // File HTML hiển thị khi click vào icon
+    "default_popup": "popup.html",
+    // Text hiển thị khi hover vào icon
+    "default_title": "Phishing Detector"
+  },
+
+  // ──────────────────────────────────────────────────────────
+  // CONTENT SCRIPTS — Scripts inject vào trang web
+  // ──────────────────────────────────────────────────────────
+  "content_scripts": [
+    {
+      // Inject vào tất cả URL http và https
+      "matches": ["http://*/*", "https://*/*"],
+
+      // Danh sách scripts inject theo thứ tự
+      // Scripts chạy tuần tự, script trước phải load xong mới đến script sau
+      "js": [
+        // 1. Feature extractor — trích xuất 38 đặc trưng từ URL
+        "feature_extractor.js",
+        // 2. XGBoost predictor — dự đoán phishing probability
+        "xgboost_predictor.js",
+        // 3. Content analyzer — phân tích DOM (forms, iframes...)
+        "content_analyzer.js",
+        // 4. Content script chính — hiển thị banner cảnh báo
+        "content.js"
+      ],
+
+      // Thời điểm inject scripts:
+      // "document_idle" = sau khi DOM load xong (tương đương window.onload)
+      // Các option khác: "document_start" (ngay khi bắt đầu), "document_end" (DOM ready)
+      "run_at": "document_idle"
+    }
+  ],
+
+  // ──────────────────────────────────────────────────────────
+  // WEB ACCESSIBLE RESOURCES — Tài nguyên có thể truy cập từ web
+  // ──────────────────────────────────────────────────────────
+  // Cho phép trang web truy cập các file trong extension
+  // Cần thiết để content scripts load model JSON
+  "web_accessible_resources": [
+    {
+      // Danh sách tài nguyên
+      "resources": [
+        "models/*",  // Thư mục chứa model JSON
+        "data/*"     // Thư mục chứa dữ liệu (Tranco, dangerous URLs)
+      ],
+      // URL nào được phép truy cập tài nguyên
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

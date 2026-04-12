@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     options.html — Trang cài đặt extension
+     ============================================================
+     File này hiển thị giao diện cài đặt khi user vào
+     chrome://extensions/ → Phishing Detector → Details → Extension options
+     ============================================================ -->
+<html lang="vi">
+<head>
+  <!-- Meta charset: Hỗ trợ tiếng Việt -->
+  <meta charset="utf-8">
+  <!-- Title: Hiển thị trên tab -->
+  <title>Phishing Detector — Cài đặt</title>
+  <style>
+    /* Reset CSS */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Body: Font, màu nền, padding */
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Tiêu đề chính */
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    /* Mỗi section cài đặt */
+    .section {
+      background: #fff;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    /* Tiêu đề section */
+    .section h2 {
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: #444;
+    }
+
+    /* Mỗi option */
+    .option {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .option:last-child {
+      border-bottom: none;
+    }
+
+    /* Label của option */
+    .option label {
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* Toggle switch */
+    .toggle {
+      position: relative;
+      width: 48px;
+      height: 24px;
+    }
+
+    .toggle input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .toggle .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: #ccc;
+      border-radius: 24px;
+      transition: 0.3s;
+    }
+
+    .toggle .slider:before {
+      content: "";
+      position: absolute;
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background: white;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+
+    .toggle input:checked + .slider {
+      background: #4CAF50;
+    }
+
+    .toggle input:checked + .slider:before {
+      transform: translateX(24px);
+    }
+
+    /* Nút lưu */
+    .save-btn {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 16px;
+    }
+
+    .save-btn:hover {
+      background: #45a049;
+    }
+
+    /* Thông báo đã lưu */
+    .saved-msg {
+      color: #4CAF50;
+      margin-left: 12px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Tiêu đề trang -->
+  <h1>🔍 Phishing Detector — Cài đặt</h1>
+
+  <!-- Section: Cảnh báo -->
+  <div class="section">
+    <h2>⚠️ Cảnh báo</h2>
+    <!-- Option: Hiện banner cảnh báo -->
+    <div class="option">
+      <label for="show-banner">Hiện banner cảnh báo trên trang web</label>
+      <label class="toggle">
+        <input type="checkbox" id="show-banner" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+    <!-- Option: Tự động chặn trang nguy hiểm -->
+    <div class="option">
+      <label for="auto-block">Tự động chặn trang nguy hiểm (Block tier)</label>
+      <label class="toggle">
+        <input type="checkbox" id="auto-block">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Section: Icon -->
+  <div class="section">
+    <h2>🎨 Icon</h2>
+    <!-- Option: Đổi icon theo trạng thái -->
+    <div class="option">
+      <label for="dynamic-icon">Đổi icon theo trạng thái an toàn</label>
+      <label class="toggle">
+        <input type="checkbox" id="dynamic-icon" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Section: Domain Age -->
+  <div class="section">
+    <h2>📅 Tuổi Domain</h2>
+    <!-- Option: Kiểm tra tuổi domain -->
+    <div class="option">
+      <label for="check-domain-age">Kiểm tra tuổi domain qua RDAP</label>
+      <label class="toggle">
+        <input type="checkbox" id="check-domain-age" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Nút lưu cài đặt -->
+  <button class="save-btn" id="save-btn">💾 Lưu cài đặt</button>
+  <span class="saved-msg" id="saved-msg">✓ Đã lưu!</span>
+
+  <!-- Script xử lý logic -->
+  <script src="options.js"></script>
+</body>
+</html>

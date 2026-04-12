@@ -1,0 +1,219 @@
+﻿Rank,#,Đề tài,Điểm,Tier,Tech Stack chính,Thời gian thực (tuần),Độ khó,Demo ấn tượng,Mới mẻ 2026,Tiềm năng thực tiễn
+1,201,**Symbolic Malware Epidemic Simulator** (Mô phỏng lây lan mã độc symbolic),95,S,"Wolfram Language, Python (wolframclient), NetworkX, SIR/SEIR symbolic, Jupyter",10,Cao,Rất cao,Cực cao,Cao
+2,202,**Hybrid AI-Symbolic Cryptanalysis Assistant** (Trợ lý phân tích mã hóa hybrid),94,S,"Wolfram Alpha API, Python, SymPy, SageMath, OpenAI API, Transformer",10,Cao,Rất cao,Cực cao,Cao
+3,151,AI Agent Swarm for Security Testing,93,S,"Python, AutoGen, CrewAI, Metasploit",10,Cao,Rất cao,Cực cao,Cực cao
+4,203,**Symbolic Attack Path Optimizer** (Tối ưu đường tấn công symbolic graph),93,S,"Wolfram Language, Python, Neo4j, GraphTheory, LLM reasoning, BloodHound",10,Cao,Cao,Cực cao,Cao
+5,3,LLM / Agentic AI Security Gateway,91,S,"Python, FastAPI, LangChain, BERT",10,Cao,Rất cao,Cực cao,Cao
+6,204,**Ransomware Spread Predictor (Symbolic Probability)** (Dự đoán lây lan ransomware symbolic),91,S,"Wolfram Language, Python, Markov Chain symbolic, Bayesian networks, Monte Carlo",10,Cao,Cao,Cực cao,Cao
+7,201,AI Agent Identity & Access Management (AI-IAM),91,S,"Python/FastAPI, OPA, JWT, LangChain",10,Cao,Cao,Cực cao,Cực cao
+8,205,**Educational Cryptographic Toolkit (RSA/ECC vs Post-Quantum)** (Công cụ mật mã giáo dục symbolic),90,S,"Wolfram Language, Python, SymPy, lattice crypto, Shor's algorithm sim",9-10,Cao,Cao,Cực cao,Trung bình
+9,155,Real-time Deepfake Video Call Defense,89,S,"Python, WebRTC, FaceForensics++, ONNX",10,Cao,Rất cao,Cao,Cao
+10,152,Browser Isolation Security Gateway,88,S,"Docker, WebRTC, NoVNC, Puppeteer",10,Trung bình-Cao,Cao,Cao,Cao
+11,156,Autonomous SOC Response Bot,87,S,"Python, LangChain, SOAR API, TheHive",10,Cao,Cao,Cực cao,Cực cao
+12,206,**Side-Channel Analysis with Arbitrary Precision** (Phân tích side-channel symbolic precision),87,S,"Wolfram Language, Python, MPFR, power analysis, timing attack symbolic",10,Cao,Cao,Cực cao,Trung bình
+13,51,AI Red Team Operator,86,S,"Python, LangChain, Metasploit API",10,Cao,Cao,Cao,Cao
+14,5,Ransomware Behavior Detection,86,S,"Python, Windows API, Scikit-learn, YARA",10,Trung bình,Rất cao,Trung bình,Cực cao
+15,207,**Symbolic Vulnerability Scoring (CVSS 4.0 + Wolfram)** (Tính điểm lỗ hổng symbolic),86,S,"Wolfram Language, Python, CVSS 4.0 spec, decision tree symbolic, risk calculus",9-10,Trung bình,Trung bình,Cao,Cao
+16,202,Shadow AI Discovery & Governance Tool,85,S,"eBPF/mitmproxy, ML classifier, Python",10,Trung bình-Cao,Cao,Cực cao,Cao
+17,54,Deepfake Video Call Detection,85,S,"Python, OpenCV, FaceForensics++",10,Trung bình,Rất cao,Cao,Cao
+18,208,**Graph Neural Network + Symbolic Centrality for Malware Propagation** (GNN kết hợp symbolic centrality),85,S,"Python, PyTorch Geometric, Wolfram Language, NetworkX, graph centrality symbolic",10,Cao,Cao,Cực cao,Cao
+19,102,Browser Fingerprint Spoofing,84,A,"JavaScript, Canvas API, WebGL, AudioContext",8-9,Trung bình,Cao,Cao,Trung bình
+20,2,Smart Contract Vulnerability Scanner,84,A,"Python, Slither, Mythril, GPT-4",10,Cao,Cao,Cao,Cao
+21,209,**Symbolic Protocol Verification (TLS 1.3/QUIC state machine)** (Kiểm chứng giao thức symbolic),84,A,"Wolfram Language, TLA+, Python, state machine symbolic, protocol analysis",10,Cao,Trung bình,Cực cao,Trung bình
+22,106,DoH Traffic Analyzer,83,A,"Python, Scapy, entropy analysis",9-10,Trung bình-Cao,Trung bình,Cao,Cao
+23,203,Autonomous AI Red Teaming Goal-Oriented,83,A,"AutoGen/CrewAI, Metasploit, Pwntools",10,Cao,Cao,Cực cao,Cao
+24,210,**AI + Symbolic Entropy Analysis for Password Strength** (Phân tích entropy mật khẩu symbolic),83,A,"Wolfram Language, Python, information theory symbolic, zxcvbn, Markov models",8-9,Trung bình,Trung bình,Cao,Cao
+25,4,Cloud Misconfig Auto-Remediator,82,A,"Python, Boto3, Terraform, OPA",9-10,Trung bình,Cao,Trung bình,Cực cao
+26,206,API Security for AI Governance,82,A,"Python, OWASP API, Checkov, ML anomaly",9-10,Trung bình,Trung bình,Cực cao,Cao
+27,211,**Symbolic Blockchain Consensus Analysis** (Phân tích đồng thuận blockchain symbolic),82,A,"Wolfram Language, Python, TLA+, BFT symbolic, consensus verification",10,Cao,Trung bình,Cao,Trung bình
+28,56,Kubernetes Admission Controller,81,A,"Go, Kubernetes API, OPA/Gatekeeper",10,Cao,Cao,Trung bình,Cao
+29,204,Secure Multi-Agent Orchestration Sandbox,81,A,"Rust/Wasmtime, Docker, seccomp/eBPF",10,Cao,Trung bình,Cực cao,Trung bình
+30,212,**Hybrid LLM + Wolfram for Exploit Code Generation** (Sinh mã exploit hybrid symbolic),81,A,"Wolfram Alpha API, Python, GPT-4, symbolic execution, angr, Z3",10,Cao,Cao,Cực cao,Cao
+31,9,Secure Code Review Assistant,80,A,"TypeScript, VS Code API, CodeBERT, Python",9-10,Trung bình,Cao,Cao,Cao
+32,207,Polymorphic Malware Detection with AI,80,A,"Python, Scikit-learn, YARA, LSTM",10,Cao,Cao,Cao,Cao
+33,213,**Symbolic Network Topology Vulnerability Analysis** (Phân tích lỗ hổng topology symbolic),80,A,"Wolfram Language, Python, NetworkX, graph cut, min-cut max-flow symbolic",9-10,Trung bình,Trung bình,Cao,Cao
+34,103,Smart Home IoT Intrusion Detection,79,A,"Python, Scapy, MQTT, Home Assistant",9-10,Trung bình,Cao,Trung bình,Cao
+35,170,Post-Quantum TLS 1.3 Implementation,79,A,"OpenSSL 3.2, oqs-provider, nginx",10,Cao,Trung bình,Cao,Trung bình
+36,214,**Symbolic Game Theory for Cyber Defense** (Lý thuyết trò chơi symbolic cho phòng thủ),79,A,"Wolfram Language, Python, Nash equilibrium symbolic, attacker-defender model",9-10,Cao,Trung bình,Cao,Trung bình
+37,57,Password Breach Prediction,78,A,"Python, HaveIBeenPwned API, Markov Chain",8-9,Trung bình,Trung bình,Trung bình,Cao
+38,67,AI-Powered SOC Alert Triage,78,A,"Python, Scikit-learn, TheHive API, NLP",9-10,Trung bình,Trung bình,Cao,Cao
+39,55,Smart Contract Fuzzing with AI,78,A,"Python, Echidna, GPT-4, Slither",10,Cao,Cao,Cao,Trung bình
+40,215,**Symbolic Time Series Analysis for APT Detection** (Phân tích chuỗi thời gian symbolic cho APT),78,A,"Wolfram Language, Python, anomaly detection symbolic, Fourier, wavelet",9-10,Trung bình,Trung bình,Cao,Cao
+41,1,AI-Powered Phishing Simulation,77,A,"Python, FastAPI, React, GPT API",9-10,Trung bình,Cao,Trung bình,Cao
+42,119,Auto PoC Generator from CVE,77,A,"Python, GPT-4, Metasploit, Docker",10,Cao,Cao,Cao,Cao
+43,216,**Symbolic Formal Verification of Smart Contracts** (Kiểm chứng hợp đồng symbolic),77,A,"Wolfram Language, Python, TLA+, Coq, formal methods symbolic",10,Cao,Trung bình,Cao,Trung bình
+44,6,API Security Testing Automation,77,A,"Python, FastAPI, OWASP API Security",9-10,Trung bình,Trung bình,Trung bình,Cao
+45,7,Insider Threat Detection (UEBA),76,A,"Python, Pandas, Isolation Forest, Streamlit",9-10,Trung bình,Trung bình,Trung bình,Cao
+46,8,Zero-Trust Network Access Gateway,76,A,"Python, WireGuard, JWT, GeoIP",9-10,Trung bình-Cao,Cao,Trung bình,Cao
+47,217,**Symbolic Differential Privacy Calculator** (Tính toán differential privacy symbolic),76,A,"Wolfram Language, Python, epsilon-delta symbolic, privacy budget calculus",9-10,Trung bình,Trung bình,Cao,Cao
+48,10,Deception Tech: Honeypot-as-a-Service,76,A,"Python, Docker, Cowrie, ELK Stack",9-10,Trung bình,Cao,Trung bình,Trung bình
+49,11,DevSecOps Pipeline with Security Gates,76,A,"GitHub Actions, Trivy, Semgrep, SonarQube",9-10,Trung bình,Cao,Trung bình,Cao
+50,218,**Symbolic Quantum Circuit Analysis for Crypto** (Phân tích mạch lượng tử symbolic),76,A,"Wolfram Language, Python, Qiskit, quantum gate symbolic, Shor sim",10,Cao,Trung bình,Cực cao,Trung bình
+51,12,Mobile App Vulnerability Scanner,75,A,"Python, MobSF, Androguard, Frida",9-10,Trung bình,Trung bình,Trung bình,Cao
+52,13,SIEM Log Correlation Engine (Mini),75,A,"Python, SQLite, Sigma rules, Streamlit",9-10,Trung bình,Trung bình,Trung bình,Trung bình
+53,14,Passwordless Authentication (WebAuthn),75,A,"Node.js/Go, WebAuthn API, Redis",9-10,Trung bình,Cao,Trung bình,Cao
+54,15,Secure File Sharing (Client-side Encryption),75,A,"React, WebCrypto API, Node.js",9-10,Trung bình,Trung bình,Trung bình,Trung bình
+55,16,IoT Device Fingerprinting,74,A,"Python, Scapy, Random Forest, MQTT",9-10,Trung bình,Trung bình,Trung bình,Trung bình
+56,17,Supply Chain: SBOM & Vuln Tracker,74,A,"Python, Syft, Grype, CycloneDX",9-10,Trung bình,Trung bình,Cao,Cao
+57,18,Phishing URL Detection (Browser Extension),74,A,"JavaScript, Chrome Extension, TensorFlow\.js",8-9,Trung bình,Trung bình,Trung bình,Trung bình
+58,19,Container Escape Detection (eBPF),74,A,"Go, eBPF, Falco, Docker",10,Cao,Cao,Trung bình,Cao
+59,20,Automated Pentest Report Generator,74,A,"Python, Nmap, Nikto, OpenAI API",9-10,Trung bình,Trung bình,Trung bình,Trung bình
+60,101,AI-Powered Social Engineering Defense,74,A,"Python, Twilio, Whisper ASR, BERT",9-10,Trung bình,Cao,Cao,Cao
+61,104,Automated CVSS v4.0 Calculator,74,A,"Python, CVSS v4, Streamlit, OpenAI",8-9,Thấp-Trung bình,Trung bình,Cao,Trung bình
+62,105,Secure Code Commit Hook with AI,74,A,"Python, GitPython, Tree-sitter, CodeLlama",8-9,Trung bình,Trung bình,Cao,Cao
+63,107,Rogue Access Point Hunter,74,A,"Python, Scapy, Aircrack-ng, GPS",9-10,Trung bình,Cao,Trung bình,Trung bình
+64,108,Container Image Layer Scanner,74,A,"Python, Dive, Trivy, containerd",9-10,Trung bình,Trung bình,Trung bình,Cao
+65,109,AI-Driven Threat Intelligence Aggregator,74,A,"Python, MISP, OpenCTI, LSTM, GraphQL",10,Cao,Trung bình,Cao,Cao
+66,110,Secure Remote Desktop (Zero Trust),74,A,"Go, WebRTC, WireGuard, biometrics",9-10,Cao,Cao,Trung bình,Trung bình
+67,111,Web3 Wallet Security Analyzer,73,A,"JavaScript, Web3.js, Etherscan API, React",9-10,Trung bình,Trung bình,Trung bình,Trung bình
+68,112,Security Policy as Code Validator,73,A,"Python, Checkov, OPA, Rego",9-10,Trung bình,Trung bình,Cao,Cao
+69,113,Voice Biometric Anti-Spoofing,73,A,"Python, ASVspoof, RawNet2, LFCC",10,Cao,Cao,Trung bình,Trung bình
+70,114,Secure CI/CD Artifact Signing,73,A,"Python, Sigstore, Rekor, Kubernetes",9-10,Trung bình,Trung bình,Cao,Cao
+71,115,API Rate Limiting with Behavioral Fingerprint,73,A,"Python, Redis, Flask, device fingerprint",8-9,Trung bình,Trung bình,Trung bình,Trung bình
+72,21,Network Traffic Analysis with Deep Learning,69,B,"Python, TensorFlow, CICIDS2017",10,Cao,Trung bình,Trung bình,Trung bình
+73,22,Blockchain-based Identity Management (DID),68,B,"Solidity, IPFS, Web3.py, React",10,Cao,Trung bình,Trung bình,Trung bình
+74,23,Secure Messaging (Signal-like),68,B,"React Native, Signal Protocol, Node.js",10,Trung bình,Trung bình,Trung bình,Trung bình
+75,24,Malware Analysis Sandbox (Automated),68,B,"Python, Cuckoo Sandbox, YARA, Volatility",10,Cao,Cao,Trung bình,Trung bình
+76,25,Wireless Security Audit Tool,67,B,"Python, Scapy, Aircrack-ng, BLE",9-10,Trung bình,Trung bình,Trung bình,Trung bình
+77,26,Data Loss Prevention (DLP) Lite,67,B,"Python, Regex/NER, File system hooks",9-10,Trung bình,Trung bình,Thấp,Cao
+78,27,Security Awareness Game Platform,67,B,"React, Node.js, Phaser/Unity Web",9-10,Trung bình,Trung bình,Trung bình,Trung bình
+79,28,Vulnerability Management Dashboard,67,B,"Python, DefectDojo API, Trello/Jira API",9-10,Trung bình,Trung bình,Thấp,Trung bình
+80,29,Email Security Gateway (Self-hosted),66,B,"Python, Postfix, ClamAV, SpamAssassin",10,Cao,Trung bình,Thấp,Trung bình
+81,30,Secure Browser (Chromium fork),66,B,"C++, Electron, Puppeteer",10,Cao,Trung bình,Trung bình,Trung bình
+82,31,RFID/NFC Cloning Detection,66,B,"Arduino/Raspberry Pi, PN532, Python",9-10,Trung bình,Cao,Trung bình,Trung bình
+83,32,Cloud-Native Application Protection (CNAPP) Lite,66,B,"Python, Trivy, Checkov, Falco",10,Cao,Trung bình,Cao,Cao
+84,33,Adversarial Attack against ML Models,66,B,"Python, Foolbox, ART, TensorFlow",9-10,Cao,Trung bình,Cao,Trung bình
+85,34,Secure Backup with Ransomware Protection,66,B,"Python, Rclone, AWS S3 Glacier",9-10,Trung bình,Cao,Trung bình,Cao
+86,35,Voice Biometric Authentication,65,B,"Python, SpeechBrain, Librosa, Flask",9-10,Trung bình,Trung bình,Trung bình,Trung bình
+87,61,Subdomain Takeover Hunter,65,B,"Python, Sublist3r, DNSChecker, GitHub API",8-9,Trung bình,Trung bình,Trung bình,Trung bình
+88,62,Docker Escape Prevention System,65,B,"Go, eBPF, seccomp, Falco",10,Cao,Cao,Trung bình,Cao
+89,63,Git Secret Scanner with History,65,B,"Python, TruffleHog, GitLeaks, React",8-9,Trung bình,Trung bình,Trung bình,Cao
+90,64,SSL/TLS Configuration Grader,65,B,"Python, SSLyze, testssl.sh, ReportLab",8-9,Trung bình,Trung bình,Thấp,Trung bình
+91,65,NFC Payment Skimmer Detection,65,B,"Android, NFC Reader Mode, Signal processing",9-10,Trung bình,Cao,Trung bình,Trung bình
+92,66,WebAssembly Security Sandbox,65,B,"Rust, Wasmtime, WASI, capability system",10,Cao,Trung bình,Cao,Trung bình
+93,68,Secure Enclave Remote Attestation,64,B,"C, Intel SGX, AMD SEV, OpenEnclave",10,Cao,Trung bình,Cao,Trung bình
+94,69,GraphQL Injection Scanner,64,B,"Python, Graphene, InQL, custom fuzzer",9-10,Trung bình,Trung bình,Trung bình,Trung bình
+95,70,Supply Chain Poisoning Detection,64,B,"Python, Bandersnatch, YARA, behavior analysis",9-10,Trung bình,Trung bình,Cao,Cao
+96,71,Kubernetes Network Policy Visualizer,64,B,"Go, Cilium, D3.js, eBPF",9-10,Trung bình,Cao,Trung bình,Trung bình
+97,72,Bluetooth Low Energy Sniffer,64,B,"Python, Ubertooth, BLEUnlock, Wireshark",9-10,Trung bình,Trung bình,Trung bình,Trung bình
+98,73,Cloud Cost Anomaly = Security Incident,64,B,"Python, AWS Cost Explorer, Prophet, Slack",9-10,Trung bình,Trung bình,Trung bình,Cao
+99,74,Automated Exploit Generation (AEG),64,B,"Python, Angr, ROPgadget, pwntools",10,Cao,Cao,Cao,Trung bình
+100,75,Secure Time Synchronization,64,B,"Python, NTSec, PTP, Byzantine fault tolerance",9-10,Cao,Trung bình,Trung bình,Trung bình
+101,76,Memory Forensics Automated Analysis,64,B,"Python, Volatility3, YARA, CAPA",10,Cao,Trung bình,Trung bình,Trung bình
+102,77,Web Cache Deception Detector,64,B,"Python, Burp Extension, Cache-Control analyzer",9-10,Trung bình,Trung bình,Trung bình,Trung bình
+103,78,Drone Honeypot,64,B,"Python, ArduPilot SITL, MAVProxy, ELK",10,Cao,Cao,Cao,Trung bình
+104,79,Voice Command Injection Detection,64,B,"Python, Librosa, DeepSpeech, adversarial ML",9-10,Cao,Trung bình,Cao,Trung bình
+105,80,Serverless Security Scanner,64,B,"Python, Checkov, Serverless Framework, SAST",9-10,Trung bình,Trung bình,Trung bình,Cao
+106,81,Homomorphic Encryption Calculator,63,B,"Python, Microsoft SEAL, TenSEAL",10,Cao,Trung bình,Cao,Thấp
+107,83,5G Core Network Security Analysis,62,B,"Open5GS, srsRAN, Wireshark",10,Cao,Trung bình,Cao,Trung bình
+108,84,Autonomous Vehicle CAN Bus Security,62,B,"Arduino, CAN shield, Python, anomaly detection",10,Cao,Cao,Cao,Trung bình
+109,85,Smart Grid SCADA Security Monitor,62,B,"Python, OpenPLC, SCADABR, Modbus",10,Cao,Trung bình,Trung bình,Trung bình
+110,86,DNA Data Storage Security,61,B,"Python, DNA coding theory, error correction",10,Cao,Trung bình,Cao,Thấp
+111,87,Satellite Communication Security,61,B,"GNU Radio, gr-satellites, SDR",10,Cao,Trung bình,Cao,Thấp
+112,88,Hardware Trojan Detection,61,B,"FPGA, Power analysis, Side-channel",10,Cao,Trung bình,Cao,Thấp
+113,89,Neuromorphic Computing Security,61,B,"Intel Loihi, Lava framework, Python",10,Cao,Trung bình,Cực cao,Thấp
+114,90,Post-Quantum TLS Handshake,61,B,"OpenSSL 3.2, oqs-provider, nginx",10,Cao,Trung bình,Cao,Trung bình
+115,91,Confidential Computing VM,60,B,"AMD SEV-SNP, Intel TDX, KVM",10,Cao,Trung bình,Cao,Trung bình
+116,92,AI Model Watermarking,60,B,"Python, PyTorch, DeepSigns",9-10,Cao,Trung bình,Cao,Trung bình
+117,93,Federated Learning Security,60,B,"PySyft, Flower, Byzantine attacks",10,Cao,Trung bình,Cao,Trung bình
+118,94,Smart Contract Formal Verification,60,B,"Coq, Isabelle, Solidity",10,Cao,Trung bình,Cao,Trung bình
+119,95,Zero-Knowledge Proof Authentication,60,B,"ZoKrates, circom, snarkJS",10,Cao,Trung bình,Cao,Trung bình
+120,96,Secure Multi-Party Computation (SMPC),60,B,"MP-SPDZ, SCALE-MAMBA",10,Cao,Trung bình,Cao,Thấp
+121,97,Cyber Deception: Dynamic Honeynet,60,B,"Python, Mininet, SDN, OpenFlow",10,Cao,Cao,Cao,Trung bình
+122,98,Memory-Safe Language Migration Tool,60,B,"Rust, C2Rust, LLVM",10,Cao,Trung bình,Cao,Trung bình
+123,99,Firmware Analysis Platform,60,B,"Binwalk, Firmadyne, QEMU",10,Cao,Trung bình,Trung bình,Trung bình
+124,100,Cyber Insurance Risk Calculator,60,B,"Python, FAIR model, Monte Carlo",9-10,Trung bình,Trung bình,Trung bình,Trung bình
+125,116,Dark Web Monitor for Brand Protection,59,B,"Python, Tor requests, Scrapy, NLP",9-10,Trung bình,Trung bình,Trung bình,Cao
+126,117,Microservice Security Chaos Engineering,59,B,"Python, Chaos Mesh, Gremlin, Istio",10,Cao,Trung bình,Cao,Cao
+127,118,Secure Enclave for ML Model Protection,59,B,"Python, Intel SGX, Gramine, PyTorch",10,Cao,Trung bình,Cao,Trung bình
+128,120,WebSocket Security Testing Tool,59,B,"Python, websockets, AIOHTTP, custom fuzzer",9-10,Trung bình,Trung bình,Trung bình,Trung bình
+129,121,Cloud Storage DLP Scanner,59,B,"Python, AWS Macie, Presidio, Pandas",9-10,Trung bình,Trung bình,Trung bình,Cao
+130,122,Firmware Over-the-Air (FOTA) Security,59,B,"Python, MQTT, Ed25519, delta update",9-10,Trung bình,Trung bình,Trung bình,Trung bình
+131,123,Browser Storage Security Auditor,59,B,"JavaScript, Chrome Extension, CSP evaluator",8-9,Trung bình,Trung bình,Trung bình,Trung bình
+132,124,AI-Powered Root Cause Analysis,59,B,"Python, LangChain, ELK, causal inference",10,Cao,Trung bình,Cao,Cao
+133,125,Secure Time-Based One-Time Password (TOTP) Hardware,59,B,"C, ESP32, ATECC608A, Google Authenticator",9-10,Trung bình,Cao,Trung bình,Trung bình
+134,126,Graph-Based Attack Path Discovery,59,B,"Python, Neo4j, BloodHound, network scanner",9-10,Trung bình,Cao,Trung bình,Cao
+135,127,Automated Privacy Policy Analyzer,59,B,"Python, NLP, GDPR checklist, Streamlit",8-9,Trung bình,Trung bình,Trung bình,Trung bình
+136,128,Server-Side Request Forgery (SSRF) Prevention Gateway,59,B,"Python, asyncio, ipaddress, DNS rebinding protection",9-10,Trung bình,Trung bình,Trung bình,Trung bình
+137,129,Memory-Safe SSH Honeypot,59,B,"Rust, async-ssh, SQLite, ELK",9-10,Trung bình,Trung bình,Cao,Trung bình
+138,130,Automated Certificate Transparency Log Monitor,59,B,"Python, CertStream, CT logs, Slack webhook",8-9,Trung bình,Trung bình,Trung bình,Trung bình
+139,153,Homomorphic Encryption Search Engine,58,B,"Microsoft SEAL, Python, Flask, inverted index",10,Cao,Trung bình,Cao,Trung bình
+140,154,Secure Multi-Party Machine Learning,58,B,"PySyft, Flower, differential privacy, MPC",10,Cao,Trung bình,Cao,Trung bình
+141,157,Hardware-backed Password Manager,58,B,"Rust, Windows Hello, TouchID API, AES-GCM",9-10,Cao,Cao,Cao,Cao
+142,158,AI-Generated Phishing Awareness Training,58,B,"GPT-4, Python, SendGrid, analytics dashboard",9-10,Trung bình,Cao,Cao,Cao
+143,159,Secure Code Review-as-a-Service,58,B,"Python, Tree-sitter, CodeLlama, GitHub App",9-10,Trung bình,Trung bình,Cao,Cao
+144,160,Zero-Knowledge Proof Identity Verification,58,B,"ZoKrates, circom, snarkjs, IPFS",10,Cao,Trung bình,Cao,Trung bình
+145,161,Memory-safe C2 Framework,57,B,"Rust, Tokio, DNS tunneling, domain fronting",10,Cao,Cao,Cao,Trung bình
+146,162,Automated Cloud Pentest Platform,57,B,"Python, Pacu, ScoutSuite, Prowler",9-10,Trung bình,Trung bình,Trung bình,Cao
+147,163,Secure Enclave-based Keylogger Detector,57,B,"Intel SGX, Windows API hooking, Python",10,Cao,Cao,Cao,Trung bình
+148,164,AI-Powered Vulnerability Prioritization,57,B,"Python, EPSS, asset inventory, threat intel",9-10,Trung bình,Trung bình,Cao,Cao
+149,165,WebAssembly Security Sandbox for Plugins,57,B,"Rust, Wasmtime, WASI, capability system",10,Cao,Trung bình,Cao,Trung bình
+150,166,Blockchain-based Secure Audit Log,57,B,"Hyperledger Fabric, Ethereum, IPFS, Python",10,Trung bình,Trung bình,Trung bình,Trung bình
+151,167,Automated Mobile App Privacy Scanner,57,B,"Python, MobSF, Androguard, NLP",9-10,Trung bình,Trung bình,Cao,Cao
+152,168,Secure Remote Browser Automation,57,B,"Playwright, Docker, stealth plugin, proxy rotation",9-10,Trung bình,Trung bình,Trung bình,Trung bình
+153,169,AI-Driven Deception Technology,57,B,"Python, MITRE ATT\&CK, Caldera, LLM",10,Cao,Cao,Cao,Trung bình
+154,171,Secure Data Pipeline with Differential Privacy,57,B,"Python, Apache Spark, Google DP Library, Airflow",10,Cao,Trung bình,Cao,Trung bình
+155,172,Automated Infrastructure Drift Detection,57,B,"Terraform, CloudTrail, Python, Slack webhook",9-10,Trung bình,Trung bình,Trung bình,Cao
+156,173,Voice-based Continuous Authentication,57,B,"Python, SpeechBrain, FastAPI, WebSocket",9-10,Trung bình,Cao,Trung bình,Trung bình
+157,174,Secure Machine Learning Model Packaging,57,B,"Python, ONNX, TPM sealing, Docker",9-10,Trung bình,Trung bình,Cao,Trung bình
+158,175,Automated Secrets Rotation System,57,B,"Python, HashiCorp Vault, AWS Secrets Manager",9-10,Trung bình,Trung bình,Trung bình,Cao
+159,176,Browser-based Network Scanner,56,B,"JavaScript, WebRTC ICE, STUN/TURN, port scanning",8-9,Trung bình,Cao,Cao,Trung bình
+160,177,AI-Assisted Reverse Engineering,56,B,"Python, Ghidra API, GPT-4, Binary Ninja",10,Cao,Cao,Cao,Trung bình
+161,178,Secure Time Synchronization for IoT,56,B,"Python, PTP, Byzantine clock sync, ESP32",9-10,Cao,Trung bình,Trung bình,Trung bình
+162,179,Container Escape Detection via eBPF,56,B,"Go, eBPF, Cilium, Falco, tracepoint",10,Cao,Cao,Trung bình,Cao
+163,180,Automated Compliance Evidence Collector,56,B,"Python, AWS Config, Azure Policy, report generator",9-10,Trung bình,Trung bình,Trung bình,Cao
+164,181,Quantum Random Number Generator (QRNG) Service,55,B,"ID Quantique, Python, entropy pool",9-10,Cao,Trung bình,Cao,Thấp
+165,182,Secure Boot for RISC-V,55,B,"OpenSBI, U-Boot, OP-TEE, RISC-V QEMU",10,Cao,Trung bình,Cao,Trung bình
+166,183,Automated Firmware Diff Analysis,55,B,"Binwalk, Ghidra, Bindiff, Python",10,Cao,Trung bình,Trung bình,Trung bình
+167,184,Neuromorphic Intrusion Detection,55,B,"Intel Loihi, Lava framework, Python",10,Cao,Trung bình,Cực cao,Thấp
+168,185,Satellite Ground Station Security,55,B,"GNU Radio, gr-satellites, SDR",10,Cao,Trung bình,Cao,Thấp
+169,187,Secure Multi-Cloud Networking,54,B,"WireGuard, BGP, cloud routers",10,Cao,Trung bình,Trung bình,Cao
+170,188,AI Model Explainability for Security,54,B,"SHAP, LIME, Counterfactuals, Python",9-10,Cao,Trung bình,Cao,Trung bình
+171,189,Hardware Trojan Detection via Side-Channel,54,B,"ChipWhisperer, Python, machine learning",10,Cao,Trung bình,Cao,Thấp
+172,190,Post-Quantum Blockchain,54,B,"QRL, Python",10,Trung bình,Trung bình,Cao,Thấp
+173,191,Secure enclave for Password Cracking,53,B,"Intel SGX, Hashcat, enclave development",10,Cao,Trung bình,Cao,Thấp
+174,192,Automated Vulnerability Exploit Trading,53,B,"Smart contract, escrow, reputation system",9-10,Trung bình,Trung bình,Cao,Thấp
+175,193,Brain-Computer Interface Security,53,B,"OpenBCI, signal encryption, Python",10,Cao,Trung bình,Cực cao,Thấp
+176,194,Secure Swarm Robotics,53,B,"ROS2, DDS-Security, encryption",10,Cao,Trung bình,Cao,Trung bình
+177,195,Autonomous Cyber Defense System,53,B,"Reinforcement learning, network simulator",10,Cao,Cao,Cao,Trung bình
+178,196,Holographic Data Storage Security,52,B,"Academic research, prototype",10,Cao,Trung bình,Cực cao,Thấp
+179,197,Secure Multi-Party Genomic Analysis,52,B,"MPC, homomorphic encryption, bioinformatics",10,Cao,Trung bình,Cao,Thấp
+180,198,Satellite Quantum Key Distribution,52,B,"Free-space optics, quantum optics lab",10,Cao,Trung bình,Cực cao,Thấp
+181,199,Autonomous Security Drone Swarm,52,B,"PX4, computer vision, mesh networking",10,Cao,Cao,Cao,Thấp
+182,200,Digital Twin for Cyber-Physical Security,52,B,"Unity/Unreal, MATLAB, OPC-UA",10,Cao,Cao,Cao,Trung bình
+183,205,Quantum-Resistant Certificate Authority Monitor,51,B,"CertStream, Python, check Kyber/Dilithium",8-9,Trung bình,Trung bình,Cao,Trung bình
+184,36,Traditional SIEM (Splunk/ELK full),49,C,"Splunk, ELK Stack",10+,Cao,Trung bình,Thấp,Cao
+185,37,Basic Firewall/IDS (Snort/Suricata),48,C,"Snort, Suricata",8-9,Trung bình,Thấp,Thấp,Trung bình
+186,38,Keylogger/Rootkit (Educational),47,C,"C/C++, Windows API",8-9,Trung bình,Thấp,Thấp,Thấp
+187,39,Steganography Tool (Ẩn tin trong ảnh),46,C,"Python, PIL, OpenCV",7-8,Thấp,Thấp,Thấp,Thấp
+188,40,Classic Cryptography Implementation (AES/RSA),45,C,"Python, PyCryptodome",7-8,Thấp,Thấp,Thấp,Thấp
+189,41,Port Scanner (như Nmap),44,C,"Python, Scapy",6-7,Thấp,Thấp,Thấp,Thấp
+190,42,Simple WAF (Web Application Firewall),43,C,"Python, ModSecurity",7-8,Trung bình,Thấp,Thấp,Trung bình
+191,43,Hash Cracker (Brute force),42,C,"Python, Hashlib",6-7,Thấp,Thấp,Thấp,Thấp
+192,44,VPN Implementation,41,C,"WireGuard, OpenVPN",8-9,Trung bình,Thấp,Thấp,Trung bình
+193,45,Digital Forensics Full Suite,40,C,"Autopsy, Volatility",10+,Cao,Trung bình,Thấp,Trung bình
+194,46,Antivirus truyền thống (signature-based),39,C,"Python, YARA",7-8,Trung bình,Thấp,Thấp,Trung bình
+195,47,SQL Injection Scanner cơ bản,38,C,"Python, SQLMap",6-7,Thấp,Thấp,Thấp,Thấp
+196,48,XSS Scanner đơn thuần,37,C,"Python, BeautifulSoup",6-7,Thấp,Thấp,Thấp,Thấp
+197,49,Social Engineering Toolkit (SET) clone,36,C,"Python, SET",7-8,Trung bình,Thấp,Thấp,Thấp
+198,50,Basic Network Monitoring (SNMP),35,C,"Python, SNMP",6-7,Thấp,Thấp,Thấp,Thấp
+199,131,Quantum Random Number Generator (QRNG) Service,34,C,"ID Quantique, Python",9-10,Cao,Trung bình,Cao,Thấp
+200,132,Secure Multi-Cloud Key Management,33,C,"HashiCorp Vault, cloud KMS APIs",10,Cao,Trung bình,Trung bình,Cao
+201,133,Automated Malware Unpacking,32,C,"Python, Unicorn Engine",10,Cao,Trung bình,Trung bình,Trung bình
+202,134,Voice-Activated Backdoor Detection,31,C,"Firmware analysis, signal processing",9-10,Trung bình,Trung bình,Trung bình,Thấp
+203,135,Blockchain Oracle Security,30,C,"Chainlink, Town Crier, TLS-N",10,Cao,Trung bình,Trung bình,Trung bình
+204,136,Secure Boot for Custom Hardware,29,C,"U-Boot, OP-TEE, eMMC",10,Cao,Trung bình,Trung bình,Trung bình
+205,137,Automated Threat Hunting with Jupyter,28,C,"Python, Jupyter, KQL, Sigma",9-10,Trung bình,Trung bình,Trung bình,Cao
+206,138,Car Infotainment System Pentest,27,C,"Android Auto, CarPlay, CAN bus",10,Cao,Trung bình,Trung bình,Trung bình
+207,139,Secure AI Model Update (Federated),26,C,"Flower, PySyft, differential privacy",10,Cao,Trung bình,Cao,Trung bình
+208,140,Hardware Wallet Security Analysis,25,C,"Side-channel, fault injection",10,Cao,Trung bình,Trung bình,Thấp
+209,141,5G Network Slicing Security,24,C,"Open5GS, SDN, NFV",10,Cao,Trung bình,Cao,Trung bình
+210,142,Automated Compliance Checker (SOC2/ISO27001),23,C,"Python, ScoutSuite, Prowler, Rego",9-10,Trung bình,Trung bình,Trung bình,Cao
+211,143,Secure Video Conferencing (E2EE),22,C,"WebRTC, Insertable Streams, SFU",10,Cao,Trung bình,Trung bình,Trung bình
+212,144,Industrial Robot Security Monitor,21,C,"ROS, Modbus, EtherCAT",10,Cao,Trung bình,Trung bình,Trung bình
+213,145,Automated Phishing Domain Takedown,20,C,"Python, WHOIS, abuse APIs, Selenium",8-9,Trung bình,Trung bình,Trung bình,Trung bình
+214,146,Secure Data Destruction Verification,19,C,"Python, forensics tools, magnetic microscopy",9-10,Cao,Trung bình,Trung bình,Thấp
+215,147,AI Model Stealing Detection,18,C,"Python, watermarking, query monitoring",9-10,Cao,Trung bình,Cao,Trung bình
+216,148,Satellite IoT Security (LoRa/nb-IoT),17,C,"LoRaWAN, nb-IoT, satellite simulator",10,Cao,Trung bình,Cao,Thấp
+217,149,Automated Red Team Infrastructure,16,C,"Python, Terraform, Cobalt Strike, Cloudflare",10,Cao,Cao,Cao,Thấp
+218,150,Neuromorphic Security Chip Design,15,C,"FPGA, Spiking Neural Network",10,Cao,Trung bình,Cực cao,Thấp

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <!-- Meta charset: Hỗ trợ tiếng Việt và ký tự đặc biệt -->
+  <meta charset="utf-8">
+  <!-- Viewport: Responsive design cho popup -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Title: Hiển thị trên tab popup -->
+  <title>Phishing URL Detector</title>
+  <style>
+    /* Reset CSS: Loại bỏ margin/padding mặc định */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Body: Kích thước popup, font, màu nền */
+    body {
+      width: 320px;           /* Chiều rộng popup */
+      padding: 16px;          /* Padding xung quanh */
+      font-family: Arial, sans-serif; /* Font Arial */
+      font-size: 13px;        /* Cỡ chữ 13px */
+      background: #fafafa;    /* Màu nền xám nhạt */
+      color: #333;            /* Màu chữ xám đậm */
+    }
+
+    /* Header: Logo + tiêu đề */
+    .header {
+      display: flex;          /* Flexbox layout */
+      align-items: center;    /* Căn giữa theo chiều dọc */
+      gap: 8px;              /* Khoảng cách giữa các phần tử */
+      margin-bottom: 12px;    /* Khoảng cách dưới */
+      border-bottom: 1px solid #e0e0e0; /* Viền dưới */
+      padding-bottom: 10px;   /* Padding dưới */
+    }
+
+    /* Tiêu đề H3 trong header */
+    .header h3 {
+      font-size: 15px;        /* Cỡ chữ 15px */
+      font-weight: bold;      /* In đậm */
+    }
+
+    /* Hiển thị URL: Font nhỏ, màu xám, background nhạt */
+    #url-display {
+      font-size: 11px;        /* Cỡ chữ nhỏ */
+      color: #666;            /* Màu xám */
+      word-break: break-all;  /* Xuống dòng nếu URL dài */
+      background: #f0f0f0;    /* Background xám nhạt */
+      border-radius: 4px;     /* Bo góc 4px */
+      padding: 6px 8px;       /* Padding */
+      margin-bottom: 12px;    /* Khoảng cách dưới */
+      max-height: 52px;       /* Chiều cao tối đa */
+      overflow: hidden;       /* Ẩn phần tràn */
+    }
+
+    /* Kết quả: Padding, bo góc, căn giữa, in đậm */
+    #result {
+      padding: 14px;          /* Padding */
+      border-radius: 8px;     /* Bo góc 8px */
+      text-align: center;     /* Căn giữa text */
+      font-weight: bold;      /* In đậm */
+      font-size: 15px;        /* Cỡ chữ 15px */
+      letter-spacing: 0.3px;  /* Khoảng cách chữ */
+    }
+
+    /* Loading state: Xám nhạt */
+    #result.loading  { background: #f5f5f5; color: #888; }
+    /* Safe state: Xanh lá nhạt, text xanh đậm, viền xanh */
+    #result.safe     { background: #e8f5e9; color: #2e7d32; border: 1px solid #a5d6a7; }
+    /* Danger state: Đỏ nhạt, text đỏ đậm, viền đỏ */
+    #result.danger   { background: #ffebee; color: #c62828; border: 1px solid #ef9a9a; }
+    /* Error state: Vàng nhạt, text vàng đậm, viền vàng */
+    #result.error    { background: #fff8e1; color: #f57f17; border: 1px solid #ffe082; }
+
+    /* Wrapper thanh progress: Ẩn mặc định */
+    #prob-bar-wrap {
+      margin-top: 10px;       /* Khoảng cách trên */
+      display: none;          /* Ẩn mặc định */
+    }
+
+    /* Label thanh progress: Font nhỏ, màu xám */
+    #prob-bar-wrap label {
+      font-size: 11px;        /* Cỡ chữ nhỏ */
+      color: #666;            /* Màu xám */
+      display: block;         /* Block element */
+      margin-bottom: 4px;     /* Khoảng cách dưới */
+    }
+
+    /* Background thanh progress: Xám, bo góc */
+    #prob-bar-bg {
+      background: #e0e0e0;    /* Màu xám */
+      border-radius: 4px;     /* Bo góc */
+      height: 8px;            /* Chiều cao 8px */
+      overflow: hidden;       /* Ẩn phần tràn */
+    }
+
+    /* Thanh progress: Bo góc, transition mượt */
+    #prob-bar {
+      height: 8px;            /* Chiều cao 8px */
+      border-radius: 4px;     /* Bo góc */
+      transition: width 0.4s ease; /* Animation mượt 0.4s */
+    }
+
+    /* Footer: Font nhỏ, màu xám nhạt, căn giữa */
+    .footer {
+      margin-top: 12px;       /* Khoảng cách trên */
+      font-size: 10px;        /* Cỡ chữ nhỏ */
+      color: #bbb;            /* Màu xám nhạt */
+      text-align: center;     /* Căn giữa */
+    }
+  </style>
+</head>
+<body>
+  <!-- Header: Icon + tiêu đề -->
+  <div class="header">
+    <span style="font-size:20px">🔍</span>
+    <h3>Phishing URL Detector</h3>
+  </div>
+
+  <!-- Hiển thị URL đang phân tích -->
+  <div id="url-display">Đang lấy URL...</div>
+
+  <!-- Hiển thị kết quả (loading → safe/danger/error) -->
+  <div id="result" class="loading">Đang phân tích...</div>
+
+  <!-- Thanh progress bar hiển thị xác suất phishing -->
+  <div id="prob-bar-wrap">
+    <label id="prob-label">Xác suất phishing: 0%</label>
+    <div id="prob-bar-bg">
+      <div id="prob-bar" style="width:0%;background:#4caf50"></div>
+    </div>
+  </div>
+
+  <!-- Footer: Thông tin model -->
+  <div class="footer">Mô hình XGBoost · F1 = 98.95% · Offline</div>
+
+  <!-- Scripts: Thứ tự quan trọng! -->
+  <!-- 1. feature_extractor.js: Hàm extractFeatures() -->
+  <script src="feature_extractor.js"></script>
+  <!-- 2. xgboost_predictor.js: Hàm predictPhishing() -->
+  <script src="xgboost_predictor.js"></script>
+  <!-- 3. popup.js: Logic chính của popup -->
+  <script src="popup.js"></script>
+</body>
+</html>

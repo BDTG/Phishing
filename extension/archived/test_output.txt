@@ -1,0 +1,306 @@
+
+==============================================================================================================
+MASSIVE TEST — 239 URLs, 12 GROUPS
+==============================================================================================================
+
+--- Official domains ---
+  PASS  https://www.google.com/                                            safe      safe        1.0%  Official: google.com
+  PASS  https://google.com/                                                safe      safe        1.0%  Official no-www: google.com
+  PASS  https://www.facebook.com/                                          safe      safe        1.0%  Official: facebook.com
+  PASS  https://facebook.com/                                              safe      safe        1.0%  Official no-www: facebook.com
+  PASS  https://www.amazon.com/                                            safe      safe        1.0%  Official: amazon.com
+  PASS  https://amazon.com/                                                safe      safe        1.0%  Official no-www: amazon.com
+  PASS  https://www.microsoft.com/                                         safe      safe        1.0%  Official: microsoft.com
+  PASS  https://microsoft.com/                                             safe      safe        1.0%  Official no-www: microsoft.com
+  PASS  https://www.apple.com/                                             safe      safe        1.0%  Official: apple.com
+  PASS  https://apple.com/                                                 safe      safe        1.0%  Official no-www: apple.com
+  PASS  https://www.netflix.com/                                           safe      safe        1.0%  Official: netflix.com
+  PASS  https://netflix.com/                                               safe      safe        1.0%  Official no-www: netflix.com
+  PASS  https://www.youtube.com/                                           safe      safe        1.0%  Official: youtube.com
+  PASS  https://youtube.com/                                               safe      safe        1.0%  Official no-www: youtube.com
+  PASS  https://www.instagram.com/                                         safe      safe        1.0%  Official: instagram.com
+  PASS  https://instagram.com/                                             safe      safe        1.0%  Official no-www: instagram.com
+  PASS  https://www.twitter.com/                                           safe      safe        1.0%  Official: twitter.com
+  PASS  https://twitter.com/                                               safe      safe        1.0%  Official no-www: twitter.com
+  PASS  https://www.x.com/                                                 safe      safe        1.0%  Official: x.com
+  PASS  https://x.com/                                                     safe      safe        1.0%  Official no-www: x.com
+  PASS  https://www.linkedin.com/                                          safe      safe        1.0%  Official: linkedin.com
+  PASS  https://linkedin.com/                                              safe      safe        1.0%  Official no-www: linkedin.com
+  PASS  https://www.paypal.com/                                            safe      safe        1.0%  Official: paypal.com
+  PASS  https://paypal.com/                                                safe      safe        1.0%  Official no-www: paypal.com
+  PASS  https://www.github.com/                                            safe      safe        1.0%  Official: github.com
+  PASS  https://github.com/                                                safe      safe        1.0%  Official no-www: github.com
+  PASS  https://www.wikipedia.org/                                         safe      safe        1.0%  Official: wikipedia.org
+  PASS  https://wikipedia.org/                                             safe      safe        1.0%  Official no-www: wikipedia.org
+  PASS  https://www.yahoo.com/                                             safe      safe        1.0%  Official: yahoo.com
+  PASS  https://yahoo.com/                                                 safe      safe        1.0%  Official no-www: yahoo.com
+  PASS  https://www.bing.com/                                              safe      safe        1.0%  Official: bing.com
+  PASS  https://bing.com/                                                  safe      safe        1.0%  Official no-www: bing.com
+  PASS  https://www.reddit.com/                                            safe      safe        1.0%  Official: reddit.com
+  PASS  https://reddit.com/                                                safe      safe        1.0%  Official no-www: reddit.com
+  PASS  https://www.stackoverflow.com/                                     safe      safe        5.0%  Official: stackoverflow.com
+  PASS  https://stackoverflow.com/                                         safe      safe        5.0%  Official no-www: stackoverflow.com
+  PASS  https://www.medium.com/                                            safe      safe        5.0%  Official: medium.com
+  PASS  https://medium.com/                                                safe      safe        5.0%  Official no-www: medium.com
+  PASS  https://www.dropbox.com/                                           safe      safe        5.0%  Official: dropbox.com
+  PASS  https://dropbox.com/                                               safe      safe        5.0%  Official no-www: dropbox.com
+  PASS  https://www.slack.com/                                             safe      safe        5.0%  Official: slack.com
+  PASS  https://slack.com/                                                 safe      safe        5.0%  Official no-www: slack.com
+  PASS  https://www.zoom.us/                                               safe      safe        5.0%  Official: zoom.us
+  PASS  https://zoom.us/                                                   safe      safe        5.0%  Official no-www: zoom.us
+  PASS  https://www.twitch.tv/                                             safe      safe        5.0%  Official: twitch.tv
+  PASS  https://twitch.tv/                                                 safe      safe        5.0%  Official no-www: twitch.tv
+  PASS  https://www.spotify.com/                                           safe      safe        5.0%  Official: spotify.com
+  PASS  https://spotify.com/                                               safe      safe        5.0%  Official no-www: spotify.com
+  PASS  https://www.tiktok.com/                                            safe      safe        5.0%  Official: tiktok.com
+  PASS  https://tiktok.com/                                                safe      safe        5.0%  Official no-www: tiktok.com
+
+--- Official subdomains ---
+  FAIL  https://mail.google.com/                                           safe      block      85.0%  Google Mail
+  FAIL  https://drive.google.com/                                          safe      block      85.0%  Google Drive
+  FAIL  https://docs.google.com/                                           safe      block      85.0%  Google Docs
+  FAIL  https://gemini.google.com/                                         safe      block      85.0%  Gemini AI
+  PASS  https://chat.openai.com/                                           safe      safe        6.8%  ChatGPT
+  FAIL  https://portal.hutech.edu.vn/                                      safe      block      85.0%  HUTECH Portal
+  FAIL  https://tuyensinh.hutech.edu.vn/                                   safe      warning    82.1%  HUTECH Tuyển sinh
+  FAIL  https://e-graduate.hutech.edu.vn/                                  safe      block      87.5%  HUTECH E-grad
+  PASS  https://pages.github.com/                                          safe      safe       12.5%  GitHub Pages
+  FAIL  https://developer.apple.com/                                       safe      block      85.0%  Apple Dev
+  FAIL  https://support.microsoft.com/                                     safe      block      85.0%  MS Support
+  PASS  https://news.ycombinator.com/                                      safe      safe       56.6%  Hacker News
+  PASS  https://gist.github.com/                                           safe      safe        6.8%  GitHub Gist
+  PASS  https://api.github.com/                                            safe      safe        3.7%  GitHub API
+  FAIL  https://raw.githubusercontent.com/                                 safe      block      88.5%  GitHub Raw
+  FAIL  https://myaccount.google.com/                                      safe      block      85.0%  Google Account
+  FAIL  https://accounts.google.com/                                       safe      block      85.0%  Google Accounts
+  FAIL  https://play.google.com/                                           safe      block      85.0%  Google Play
+  FAIL  https://maps.google.com/                                           safe      block      85.0%  Google Maps
+  FAIL  https://translate.google.com/                                      safe      block      85.0%  Google Translate
+
+--- Safe platforms ---
+  PASS  https://user.github.io/                                            safe      safe        3.7%  Platform: user.github.io
+  PASS  https://myapp.vercel.app/                                          safe      safe       11.1%  Platform: myapp.vercel.app
+  PASS  https://mysite.netlify.app/                                        safe      safe       31.1%  Platform: mysite.netlify.app
+  PASS  https://app.pages.dev/                                             safe      safe        3.5%  Platform: app.pages.dev
+  PASS  https://hutech.edu.vn/                                             safe      safe        3.4%  HUTECH
+  PASS  https://www.hutech.edu.vn/                                         safe      safe        3.4%  HUTECH
+  FAIL  http://e-graduate.hutech.edu.vn/                                   safe      block      95.9%  HUTECH
+  FAIL  https://e-graduate.hutech.edu.vn/                                  safe      block      87.5%  HUTECH
+  PASS  https://hutech.edu.vn/tuyen-sinh                                   safe      safe        3.4%  HUTECH
+  PASS  https://hutech.edu.vn/dao-tao                                      safe      safe        3.4%  HUTECH
+  FAIL  https://portal.hutech.edu.vn/                                      safe      block      85.0%  HUTECH
+  FAIL  https://tuyensinh.hutech.edu.vn/                                   safe      warning    82.1%  HUTECH
+  PASS  https://hutech.edu.vn/sinh-vien                                    safe      safe        3.4%  HUTECH
+  PASS  https://hutech.edu.vn/tin-tuc                                      safe      safe        3.4%  HUTECH
+  PASS  https://fitgirl-repack.com                                         block     block      90.0%  Fitgirl fake
+
+--- HUTECH ---
+  PASS  https://fitgirlrepacks.org                                         block     block      90.0%  Fitgirl fake
+  PASS  https://fitgirl-repack.net                                         block     block      90.0%  Fitgirl fake
+  PASS  https://fitgirlrepackz.com                                         block     block      90.0%  Fitgirl fake
+  PASS  https://fitgirltorrent.com                                         block     block      85.0%  Fitgirl fake
+  PASS  https://fitgirl-repacks.xyz                                        block     block      95.0%  Fitgirl fake
+  PASS  https://fitgirl-repack.site                                        block     block      95.0%  Fitgirl fake
+  PASS  https://fitgirl-repacks.to                                         block     block      85.0%  Fitgirl fake
+  PASS  https://fitgirlrepacks.in                                          block     block      90.0%  Fitgirl fake
+  PASS  https://fitgirl-repacks.us                                         block     block      85.0%  Fitgirl fake
+  PASS  https://fitgirl-repacks.cc                                         block     block      95.0%  Fitgirl fake
+
+--- Fitgirl fakes ---
+  PASS  https://fitgirl-repacks.vip                                        block     block      95.0%  Fitgirl fake
+  PASS  https://fitgirl-repacks.pro                                        block     block      95.0%  Fitgirl fake
+  PASS  https://fitgirl-repacks.website                                    block     block      95.0%  Fitgirl fake
+  PASS  https://fitgirlrepack.games                                        block     block      95.0%  Fitgirl fake
+  PASS  https://fitgirl.cc                                                 block     block      95.0%  Fitgirl fake
+  PASS  https://fitgirlrepacksite.com                                      block     block      85.0%  Fitgirl fake
+  PASS  https://fitgirlpack.site                                           block     block      95.0%  Fitgirl fake
+  PASS  https://fitgirl-repacks.theproxy.vip                               block     block      95.0%  Fitgirl fake
+  PASS  https://ww9.fitgirl-repacks.xyz                                    block     block      95.0%  Fitgirl fake
+  PASS  https://fitgirl-repack.com/login                                   block     block      90.0%  Fitgirl fake
+  PASS  https://fitgirlrepacks.org/verify                                  block     block      90.0%  Fitgirl fake
+  PASS  https://fitgirl-repack.net/download                                block     block      90.0%  Fitgirl fake
+  PASS  https://fitgirl-repack.com/%6C%6F%67%69%6E                         block     block      90.0%  Fitgirl fake
+  PASS  https://fitgirl-repack.com/about/company/history/2023              block     block      90.0%  Fitgirl fake
+  PASS  https://paypa1.com/login                                           block     block      90.0%  Brand typo
+  PASS  https://paypai.com/verify                                          block     block      90.0%  Brand typo
+  PASS  https://goggle.com/search                                          block     block      90.0%  Brand typo
+  PASS  https://goog1e.com/login                                           block     block      90.0%  Brand typo
+  PASS  https://faceb00k.com/login                                         block     block      90.0%  Brand typo
+  PASS  https://faceboook.com/profile                                      block     block      90.0%  Brand typo
+  PASS  https://arnazon.com/account                                        block     block      90.0%  Brand typo
+  PASS  https://micros0ft.com/login                                        block     block      90.0%  Brand typo
+  PASS  https://app1e.com/apple-id                                         block     block      90.0%  Brand typo
+  PASS  https://netf1ix.com/billing                                        block     block      90.0%  Brand typo
+  PASS  https://instagrarn.com/login                                       block     block      90.0%  Brand typo
+
+--- Brand typosquatting ---
+  PASS  https://twltter.com/verify                                         block     block      90.0%  Brand typo
+  PASS  https://linkedln.com/profile                                       block     block      90.0%  Brand typo
+  PASS  https://vletcombank.com/login                                      block     block      90.0%  Brand typo
+  PASS  https://tech-combank.com/verify                                    block     block      90.0%  Brand typo
+  PASS  https://gogle.com                                                  block     block      90.0%  Brand typo
+  PASS  https://facebok.com                                                block     block      90.0%  Brand typo
+  PASS  https://amazom.com                                                 block     block      90.0%  Brand typo
+  PASS  https://microsft.com                                               block     block      90.0%  Brand typo
+  PASS  https://applle.com                                                 block     block      90.0%  Brand typo
+  PASS  https://payypal.com                                                block     block      90.0%  Brand typo
+  PASS  https://netfliix.com                                               block     block      90.0%  Brand typo
+  PASS  https://linkedinn.com                                              block     block      90.0%  Brand typo
+  PASS  https://twiiter.com                                                block     block      90.0%  Brand typo
+  PASS  https://instagrm.com                                               block     block      90.0%  Brand typo
+  PASS  https://gooogle.com                                                block     block      90.0%  Brand typo
+  PASS  https://amazzon.com                                                block     block      90.0%  Brand typo
+  PASS  https://microosft.com                                              block     block      90.0%  Brand typo
+  PASS  https://applle.com                                                 block     block      90.0%  Brand typo
+  PASS  https://paypaI.com/login                                           block     block      90.0%  Brand typo
+  PASS  http://paypal-verify-account.xyz/login                             block     block      97.0%  Phishing pattern
+  PASS  http://secure-banking-update.tk/verify                             block     block      97.0%  Phishing pattern
+  PASS  http://vietcombank-secure.xyz/login                                block     block      97.0%  Phishing pattern
+  PASS  http://momo-verify-account.tk/login                                block     block      97.0%  Phishing pattern
+  PASS  http://google-account-recovery.pw/verify                           block     block      97.0%  Phishing pattern
+  PASS  http://apple-id-locked.ml/update                                   block     block      97.0%  Phishing pattern
+  PASS  http://facebook-security-check.cf/login                            block     block      97.0%  Phishing pattern
+  PASS  http://netflix-payment-failed.xyz/update                           block     block      97.0%  Phishing pattern
+  PASS  http://microsoft-security-alert.gq/verify                          block     block      97.0%  Phishing pattern
+  PASS  http://amazon-account-suspended.cf/login                           block     block      97.0%  Phishing pattern
+  PASS  http://instagram-copyright-violation.tk/login                      block     block      97.0%  Phishing pattern
+
+--- Known phishing ---
+  PASS  http://twitter-verify-identity.cf/confirm                          block     block      97.0%  Phishing pattern
+  PASS  http://mbbank-security.cf/login                                    block     block      97.0%  Phishing pattern
+  PASS  http://bidv-account-update.gq/verify                               block     block      97.0%  Phishing pattern
+  PASS  http://agribank-security.ml/update                                 block     block      97.0%  Phishing pattern
+  PASS  http://zalopay-security.cf/update                                  block     block      97.0%  Phishing pattern
+  PASS  http://visa-secure-payment.xyz/verify                              block     block      97.0%  Phishing pattern
+  PASS  http://mastercard-alert.tk/confirm                                 block     block      97.0%  Phishing pattern
+  PASS  http://paypal-secure-login.tk/verify/account                       block     block      97.0%  Phishing pattern
+  PASS  http://google-docs-share.xyz/login                                 block     block      97.0%  Phishing pattern
+  PASS  http://microsoft-office-activate.tk/verify                         block     block      97.0%  Phishing pattern
+  PASS  http://apple-icloud-locked.ml/update                               block     block      97.0%  Phishing pattern
+  PASS  http://facebook-page-banned.tk/appeal                              block     block      95.0%  Phishing pattern
+  PASS  http://netflix-billing-issue.xyz/update                            block     block      97.0%  Phishing pattern
+  PASS  http://amazon-order-suspended.cf/verify                            block     block      97.0%  Phishing pattern
+  PASS  http://instagram-copyright.cf/strike                               block     block      95.0%  Phishing pattern
+  PASS  http://twitter-account-locked.tk/appeal                            block     block      97.0%  Phishing pattern
+  PASS  http://linkedin-restricted.tk/verify                               block     block      97.0%  Phishing pattern
+  PASS  http://fitgirl-verify-account.xyz/login                            block     block      97.0%  Phishing pattern
+  PASS  http://steam-free-games.tk/login                                   block     block      97.0%  Phishing pattern
+  PASS  http://192.168.1.1/login                                           safe      safe        1.0%  Private IP
+  PASS  http://10.0.0.1/admin                                              safe      safe        1.0%  Private IP 10.x
+  PASS  http://172.16.0.1/login                                            safe      safe        1.0%  Private IP 172.x
+  PASS  http://127.0.0.1/                                                  safe      safe        1.0%  Loopback
+  PASS  http://localhost/                                                  safe      safe        1.0%  Localhost
+  PASS  http://1.2.3.4/secure/account/verify                               warning   warning    55.0%  Public IP
+  FAIL  https://paypaл.com/login                                           block     warning    70.0%  Homograph Cyrillic
+  PASS  https://göögle.com/search                                          warning   warning    70.0%  Non-Latin
+  PASS  https://fitgirl-repack.com/%6C%6F%67%69%6E                         block     block      90.0%  URL encoded
+  PASS  https://fitgirl-repack.com/secure%2Faccount                        block     block      90.0%  URL encoded path
+  PASS  https://secure.paypal.com.fake-site.xyz/login                      block     block      97.0%  Fake subdomain
+
+--- Adversarial/Edge ---
+  PASS  https://login.google.com.phishing.tk/verify                        block     block      97.0%  Fake login sub
+  PASS  https://totally-legit-not-phishing.tk                              block     block      82.0%  Bare suspicious TLD
+  PASS  https://definitely-not-a-scam.ml                                   block     block      82.0%  Bare .ml
+  PASS  http://evil-site.xyz:8080/login                                    block     block      97.0%  Suspicious port
+  PASS  http://phishing.tk:4444/secure                                     block     block      97.0%  Suspicious port
+  PASS  https://xn--gogle-1ta.com/search                                   safe      safe        6.4%  Punycode
+  PASS  https://a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z.xyz/l  block     block      97.0%  Very long
+  PASS  https://ggl.com                                                    safe      safe        3.1%  Short domain
+  PASS  https://fb.com                                                     safe      safe        5.0%  FB short
+  PASS  https://google.com/search?q=test+query+hello+world                 safe      safe        1.0%  Safe long-path
+  PASS  https://google.com/maps/place/New+York+City/coordinates            safe      safe        1.0%  Safe long-path
+  PASS  https://github.com/torvalds/linux/commit/abc123def456              safe      safe        1.0%  Safe long-path
+  PASS  https://wikipedia.org/wiki/Phishing#Types_and_methods              safe      safe        1.0%  Safe long-path
+  PASS  https://reddit.com/r/programming/comments/xyz123/title_here        safe      safe        1.0%  Safe long-path
+  PASS  https://stackoverflow.com/questions/12345/how-to-fix-this-bug      safe      safe        5.0%  Safe long-path
+  PASS  https://youtube.com/watch?v=dQw4w9WgXcQ&list=PLxxx&index=1         safe      safe        1.0%  Safe long-path
+  PASS  https://facebook.com/settings?tab=security&ref=notif               safe      safe        1.0%  Safe long-path
+  PASS  https://amazon.com/dp/B08N5WRWNW/ref=sr_1_1?keywords=laptop        safe      safe        1.0%  Safe long-path
+  PASS  https://microsoft.com/en-us/windows/get-windows-11/download        safe      safe        1.0%  Safe long-path
+  PASS  https://apple.com/iphone/compare/?models=iphone-15-pro-max         safe      safe        1.0%  Safe long-path
+
+--- Safe long-path ---
+  PASS  https://netflix.com/title/80057281?trackId=xxx                     safe      safe        1.0%  Safe long-path
+  PASS  https://twitter.com/elonmusk/status/1234567890?s=20                safe      safe        1.0%  Safe long-path
+  PASS  https://linkedin.com/in/john-doe-123456789/detail/contact-info     safe      safe        1.0%  Safe long-path
+  PASS  https://hutech.edu.vn/tuyen-sinh/xet-tuyen-hoc-ba-nam-2026         safe      safe        3.4%  Safe long-path
+  PASS  https://tinyurl.com/abc123                                         safe      safe        5.0%  URL shortener
+  PASS  https://bit.ly/3abc123                                             safe      safe        5.0%  Bitly shortener
+  PASS  https://t.co/abc123                                                safe      safe        5.0%  Twitter shortener
+  PASS  https://ow.ly/abc123                                               safe      safe        5.0%  Owly shortener
+  PASS  https://rebrand.ly/my-link                                         safe      safe        5.0%  Rebrandly
+  PASS  https://short.link/abc                                             safe      safe        3.0%  Generic shortener
+  PASS  https://linktr.ee/username                                         safe      safe        5.0%  Linktree
+  PASS  https://carrd.co/#about                                            safe      safe        5.0%  Carrd
+  PASS  https://notion.site/page                                           safe      safe        5.0%  Notion
+  PASS  https://canva.com/design/abc123                                    safe      safe        5.0%  Canva
+  PASS  https://en.wikipedia.org/wiki/Phishing                             safe      safe       14.3%  Anti-phishing info pages
+
+--- Suspicious but safe ---
+  PASS  https://www.consumer.ftc.gov/articles/how-recognize-avoid-and-rep  safe      safe       10.6%  Anti-phishing info pages
+  PASS  https://www.kaspersky.com/resource-center/definitions/what-is-phi  safe      safe        5.0%  Anti-phishing info pages
+  PASS  https://blog.google/safety/protect-yourself-from-phishing/         safe      safe        5.0%  Anti-phishing info pages
+  FAIL  https://support.apple.com/en-us/HT204759                           safe      block      85.0%  Anti-phishing info pages
+  FAIL  https://help.netflix.com/en/node/47                                safe      block      85.0%  Anti-phishing info pages
+  PASS  https://www.paypal.com/us/security/fighting-phishing               safe      safe        1.0%  Anti-phishing info pages
+  PASS  https://www.amazon.com/gp/help/customer/display.html?nodeId=20190  safe      safe        1.0%  Anti-phishing info pages
+  PASS  https://www.facebook.com/help/219557904731889                      safe      safe        1.0%  Anti-phishing info pages
+  FAIL  https://security.microsoft.com/phishing                            safe      block      85.0%  Anti-phishing info pages
+  PASS  https://www.cnn.com/                                               safe      safe        5.0%  News: cnn.com
+
+--- Anti-phishing pages ---
+  PASS  https://www.bbc.com/                                               safe      safe        5.0%  News: bbc.com
+  PASS  https://www.reuters.com/                                           safe      safe        5.0%  News: reuters.com
+  PASS  https://www.nytimes.com/                                           safe      safe        5.0%  News: nytimes.com
+  PASS  https://www.washingtonpost.com/                                    safe      safe        5.0%  News: washingtonpost.com
+  PASS  https://www.theguardian.com/                                       safe      safe        5.0%  News: theguardian.com
+  PASS  https://www.forbes.com/                                            safe      safe        5.0%  News: forbes.com
+  PASS  https://www.bloomberg.com/                                         safe      safe        5.0%  News: bloomberg.com
+  PASS  https://www.cnbc.com/                                              safe      safe        5.0%  News: cnbc.com
+  PASS  https://www.wsj.com/                                               safe      safe        5.0%  News: wsj.com
+  PASS  https://www.nbcnews.com/                                           safe      safe        5.0%  News: nbcnews.com
+
+--- News sites ---
+  PASS  https://www.abcnews.go.com/                                        safe      safe        4.0%  News: abcnews.go.com
+  PASS  https://www.usatoday.com/                                          safe      safe        5.0%  News: usatoday.com
+  PASS  https://www.time.com/                                              safe      safe        5.0%  News: time.com
+  PASS  https://www.businessinsider.com/                                   safe      safe        5.0%  News: businessinsider.com
+
+==============================================================================================================
+GROUP SUMMARY:
+==============================================================================================================
+  ✅ Official domains                50/50 (100.0%)
+  ❌ Official subdomains             5/20 (25.0%)
+      → https://mail.google.com/  Expected:safe Got:block (85.0%) Brand impersonation "google"
+      → https://drive.google.com/  Expected:safe Got:block (85.0%) Brand impersonation "google"
+      → https://docs.google.com/  Expected:safe Got:block (85.0%) Brand impersonation "google"
+      → https://gemini.google.com/  Expected:safe Got:block (85.0%) Brand impersonation "google"
+      → https://portal.hutech.edu.vn/  Expected:safe Got:block (85.0%) Typosquatting "paypal" (d=3)
+  ❌ Safe platforms                  11/15 (73.3%)
+      → http://e-graduate.hutech.edu.vn/  Expected:safe Got:block (95.9%) ML high risk
+      → https://e-graduate.hutech.edu.vn/  Expected:safe Got:block (87.5%) ML high risk
+      → https://portal.hutech.edu.vn/  Expected:safe Got:block (85.0%) Typosquatting "paypal" (d=3)
+      → https://tuyensinh.hutech.edu.vn/  Expected:safe Got:warning (82.1%) ML suspicious
+  ✅ HUTECH                          10/10 (100.0%)
+  ✅ Fitgirl fakes                   25/25 (100.0%)
+  ✅ Brand typosquatting             30/30 (100.0%)
+  ❌ Known phishing                  29/30 (96.7%)
+      → https://paypaл.com/login  Expected:block Got:warning (70.0%) Non-Latin
+  ✅ Adversarial/Edge                20/20 (100.0%)
+  ✅ Safe long-path                  15/15 (100.0%)
+  ❌ Suspicious but safe             7/10 (70.0%)
+      → https://support.apple.com/en-us/HT204759  Expected:safe Got:block (85.0%) Brand impersonation "apple"
+      → https://help.netflix.com/en/node/47  Expected:safe Got:block (85.0%) Brand impersonation "netflix"
+      → https://security.microsoft.com/phishing  Expected:safe Got:block (85.0%) Brand impersonation "microsoft"
+  ✅ Anti-phishing pages             10/10 (100.0%)
+  ✅ News sites                      4/4 (100.0%)
+
+==============================================================================================================
+OVERALL: 216/239 (90.4%)
+==============================================================================================================
+
+⚠️  CẦN CẢI THIỆN — 90.4% accuracy
+   23 URLs bị sai
+
+==============================================================================================================
+
