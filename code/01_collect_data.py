@@ -166,17 +166,22 @@ def main():
 
     # Bước 3: Gộp 2 dataset lại
     print(f"\n[3/3] Gộp dataset...")
-    # Concat 2 DataFrames, xáo trộn ngẫu nhiên (random_state=42 để reproducibility)
+    # Concat 2 DataFrames
     combined = pd.concat([phish_df, legit_df], ignore_index=True)
+    
+    # [PHẦN 3]: Loại bỏ trùng lặp nếu có URL bị trùng giữa 2 nguồn hoặc trong cùng 1 nguồn
+    combined.drop_duplicates(subset=['url'], inplace=True)
+    
+    # Xáo trộn ngẫu nhiên (random_state=42 để reproducibility)
     combined = combined.sample(frac=1, random_state=42).reset_index(drop=True)
 
     # Lưu ra file CSV
     combined.to_csv(OUT_CSV, index=False, encoding='utf-8')
     print(f"\n✓ Đã lưu: {OUT_CSV}")
-    print(f"  Tổng: {len(combined):,} URLs")
+    print(f"  Tổng: {len(combined):,} URLs (sau khi lọc trùng)")
     print(f"  Phishing (1): {combined['label'].sum():,}")
     print(f"  Legit    (0): {(combined['label'] == 0).sum():,}")
-    print(f"\nBước tiếp theo: python -X utf8 02_feature_extraction.py")
+    print(f"\nBước tiếp theo: python -X utf8 02_feature_extraction_v3.py")
 
 
 # Chạy hàm main khi execute script trực tiếp

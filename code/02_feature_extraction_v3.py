@@ -12,6 +12,7 @@ import os          # Xử lý đường dẫn file/folder
 import re          # Regular expressions
 import math        # Hàm math.log2() cho entropy
 import urllib.parse # Parse URL
+import ipaddress   # Kiểm tra IP address (Private vs Public)
 from collections import Counter # Đếm tần suất ký tự
 
 import pandas as pd # Xử lý dataset
@@ -20,7 +21,7 @@ from tqdm import tqdm # Progress bar
 # Đường dẫn thư mục data và file input/output
 DATA_DIR  = os.path.join(os.path.dirname(__file__), 'data')
 IN_CSV    = os.path.join(DATA_DIR, 'combined_dataset_v2.csv')
-OUT_CSV   = os.path.join(DATA_DIR, 'features_v3.csv')
+OUT_CSV   = os.path.join(DATA_DIR, 'features_v4.csv')
 
 # ──────────────────────────────────────────────────────────────
 # Keywords (giữ nguyên từ v2)
@@ -143,7 +144,17 @@ def extract_features_v3(url: str) -> dict:
 
     feat['domain_length']   = len(pure_domain)
     feat['num_subdomains']  = max(len(parts) - 2, 0)
-    feat['has_ip_address']  = 1 if re.match(r'^\d{1,3}(\.\d{1,3}){3}$', pure_domain) else 0
+    
+    # Check IP address (Chỉ đánh dấu 1 cho Public IP, bỏ qua LAN/Localhost)
+    is_public_ip = 0
+    if re.match(r'^\d{1,3}(\.\d{1,3}){3}$', pure_domain):
+        try:
+            ip_obj = ipaddress.ip_address(pure_domain)
+            is_public_ip = 1 if not (ip_obj.is_private or ip_obj.is_loopback) else 0
+        except ValueError:
+            is_public_ip = 0
+    feat['has_ip_address']  = is_public_ip
+
     feat['has_at_symbol']   = 1 if '@' in url else 0
     feat['has_double_slash_redirect'] = 1 if '//' in path else 0
     feat['tld_suspicious']  = susp
@@ -280,7 +291,7 @@ def main():
         if f in feat_df.columns:
             print(f"  {f:35s}  mean={feat_df[f].mean():.4f}  sum={feat_df[f].sum():.0f}")
 
-    print(f"\nBước tiếp theo: Train Model v4 với features_v3.csv")
+    print(f"\nBước tiếp theo: Train Model v4 với features_v4.csv")
 
 
 if __name__ == '__main__':

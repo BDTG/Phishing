@@ -1,7 +1,7 @@
 // ============================================================
 // feature_extractor.js
-// Trích xuất 38 đặc trưng từ URL
-// Thứ tự 38 feature phải KHỚP CHÍNH XÁC với Python training
+// Trích xuất 39 đặc trưng từ URL
+// Thứ tự 39 feature phải KHỚP CHÍNH XÁC với Python training v4
 // ============================================================
 // 0:url_length          1:num_dots            2:num_hyphens
 // 3:num_underscores     4:num_slashes         5:num_special_chars
@@ -16,17 +16,18 @@
 // 30:brand_in_domain    31:is_official_domain 32:is_brand_impersonation
 // 33:min_levenshtein    34:is_typosquatting   35:brand_mismatch_score
 // 36:has_phishing_keywords_enhanced  37:combined_suspicious_score
+// 38:is_bare_domain
 // ============================================================
 
 /**
- * Trích xuất 38 đặc trưng từ URL
+ * Trích xuất 39 đặc trưng từ URL
  * @param {string} urlStr - URL cần trích xuất features
- * @returns {number[]} Array 38 số đặc trưng
+ * @returns {number[]} Array 39 số đặc trưng
  */
 function extractFeatures(urlStr) {
   // Parse URL, nếu lỗi trả về array toàn 0
   let u;
-  try { u = new URL(urlStr); } catch (e) { return new Array(38).fill(0); }
+  try { u = new URL(urlStr); } catch (e) { return new Array(39).fill(0); }
 
   // Normalize hostname: bỏ www. prefix
   const hostname = u.hostname.replace(/^www\./, '');
@@ -121,7 +122,17 @@ function extractFeatures(urlStr) {
     // 11: Số subdomains (parts - 2 vì có domain + TLD)
     Math.max(parts.length - 2, 0),
     // 12: Có phải IP address không? (IPv4)
-    /^\d{1,3}(\.\d{1,3}){3}$/.test(hostname) ? 1 : 0,
+    // Chỉ đánh dấu 1 cho Public IP, bỏ qua LAN/Localhost
+    (function(h) {
+      if (!/^\d{1,3}(\.\d{1,3}){3}$/.test(h)) return 0;
+      const p = h.split('.').map(Number);
+      if (p[0] === 10) return 0; // 10.0.0.0/8
+      if (p[0] === 172 && (p[1] >= 16 && p[1] <= 31)) return 0; // 172.16.0.0/12
+      if (p[0] === 192 && p[1] === 168) return 0; // 192.168.0.0/16
+      if (p[0] === 127) return 0; // 127.0.0.0/8
+      if (p[0] === 0) return 0; // 0.0.0.0/8
+      return 1;
+    })(hostname),
     // 13: Có ký tự @ trong URL không? (dùng để giấu URL thật)
     urlStr.includes('@') ? 1 : 0,
     // 14: Có double slash redirect không? (// sau domain)
@@ -251,13 +262,18 @@ function extractFeatures(urlStr) {
     hasPhishingKeywordsEnhanced, combinedSuspiciousScore,
   ];
 
-  // Gộp tất cả features thành array 38 phần tử
+  // 38: is_bare_domain — URL không có path, query, fragment?
+  // u.pathname trong JS mặc định là "/" nếu không có path
+  const isBareDomain = (path === '/' || path === '') && queryStr === '' && fragment === '' ? 1 : 0;
+
+  // Gộp tất cả features thành array 39 phần tử
   return [
     ...features0_9,
     ...features10_17,
     ...features18_24,
     ...features25_29,
     ...features30_37,
+    isBareDomain
   ];
 }
 

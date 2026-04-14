@@ -24,11 +24,11 @@ async function loadModel() {
   if (xgbModel) return;
 
   try {
-    // Thử load model v2 trước (38 features, trained trên augmented data)
-    const url = chrome.runtime.getURL('models/xgboost_model_v2.json');
+    // Load model v4 (39 features, xử lý URL full path + IP logic mới)
+    const url = chrome.runtime.getURL('models/xgboost_model_v4.json');
     const resp = await fetch(url);
     xgbModel = await resp.json();
-    xgbModel.version = 'v2';
+    xgbModel.version = 'v4';
   } catch (e) {
     // Fallback về model v1 (30 features, original)
     const url = chrome.runtime.getURL('models/xgboost_model_tuned.json');
