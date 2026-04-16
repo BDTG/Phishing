@@ -215,9 +215,10 @@ function extractFeatures(urlStr) {
     'vietcombank.com.vn','techcombank.com.vn','mbbank.com.vn',
     'bidv.com.vn','agribank.com.vn','momo.vn','zalopay.vn',
   ];
-  const isOfficialDomain = officialDomains.some(od =>
-    hostname === od.toLowerCase() || hostname === 'www.' + od.toLowerCase()
-  ) ? 1 : 0;
+  const isOfficialDomain = officialDomains.some(od => {
+    const lowOD = od.toLowerCase();
+    return hostname === lowOD || hostname.endsWith('.' + lowOD);
+  }) ? 1 : 0;
 
   // 32: is_brand_impersonation — có brand keyword nhưng không phải official?
   const isBrandImpersonation = (brandInDomain && !isOfficialDomain) ? 1 : 0;

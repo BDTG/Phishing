@@ -53,12 +53,13 @@ async function getDomainAge(domain) {
     'net': 'https://rdap.verisign.com/net/v1/domain/',
     'org': 'https://rdap.org/domain/',
     'info': 'https://rdap.afilias.net/rdap/info/domain/',
-    'xyz': 'https://rdap.gen.xyz/domain/',
+    'xyz': 'https://rdap.centralnic.com/xyz/domain/',
     'io': 'https://rdap.nic.io/domain/',
+    'eu': 'https://rdap.eu/domain/',
     'online': 'https://rdap.centralnic.com/online/domain/',
     'site': 'https://rdap.centralnic.com/site/domain/',
-    'vn': 'https://rdap.vnnic.vn/domain/',
-    'com.vn': 'https://rdap.vnnic.vn/domain/',
+    'vn': 'https://rdap.vnnic.vn/v1/domain/',
+    'com.vn': 'https://rdap.vnnic.vn/v1/domain/',
     // Fallback: rdap.org tự động redirect đến server đúng
     'default': 'https://rdap.org/domain/',
   };
@@ -69,27 +70,19 @@ async function getDomainAge(domain) {
   // Chọn RDAP server: ưu tiên theo TLD, fallback về default
   const rdapUrl = (rdapServers[tld] || rdapServers['default']) + baseDomain;
 
-  // ── BƯỚC 3: Fetch RDAP API ──
+  // ── BƯỚC 3: Fetch RDAP API qua Background Script (để tránh CORS) ──
   try {
-    // Timeout 5 giây để tránh treo extension
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 5000);
-
-    // Fetch RDAP API
-    const response = await fetch(rdapUrl, {
-      signal: controller.signal,
-      headers: { 'Accept': 'application/rdap+json, application/json' },
+    const response = await new Promise((resolve) => {
+      chrome.runtime.sendMessage({ type: 'fetchDomainAge', rdapUrl }, (res) => {
+        resolve(res || { success: false, error: 'Background disconnect' });
+      });
     });
 
-    clearTimeout(timeoutId);
-
-    // Kiểm tra HTTP status
-    if (!response.ok) {
-      return { ageDays: -1, createdDate: null, error: `HTTP ${response.status}` };
+    if (!response.success) {
+      return { ageDays: -1, createdDate: null, error: response.error };
     }
 
-    // Parse JSON response
-    const data = await response.json();
+    const data = response.data;
 
     // ── BƯỚC 4: Tìm event "registration" hoặc "creation" ──
     // RDAP response có dạng:

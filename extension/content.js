@@ -67,14 +67,20 @@
     // ──────────────────────────────────────────────────────────
     // FUSION — Kết hợp ML + Content
     // ──────────────────────────────────────────────────────────
-    // Lấy giá trị cao hơn (worst-case scenario)
-    const finalProb = Math.max(mlProb, contentResult.score);
-
-    // Xác định tier cuối cùng
-    // Content score cao có thể upgrade tier
+    // Lấy giá trị cao hơn giữa ML (đã bao gồm Domain Age logic) và Content
+    let finalProb = Math.max(mlProb, contentResult.score);
     let finalTier = tier;
-    if (contentResult.score >= 0.85) finalTier = 'block';
-    else if (contentResult.score >= 0.60 && finalTier === 'safe') finalTier = 'warning';
+    let finalReason = reason;
+
+    // Nếu Content Analysis phát hiện rủi ro cực cao → ép lên Block
+    if (contentResult.score >= 0.85 && finalTier !== 'block') {
+      finalTier = 'block';
+      finalReason = contentResult.warnings[0] || 'Phát hiện dấu hiệu lừa đảo trực tiếp trên trang';
+    } else if (contentResult.score >= 0.60 && finalTier === 'safe') {
+      // Nếu Content có rủi ro trung bình mà ML báo safe → nâng lên Warning
+      finalTier = 'warning';
+      finalReason = contentResult.warnings[0] || 'Phát hiện dấu hiệu bất thường từ nội dung trang';
+    }
 
     // Có nên hiển thị cảnh báo không?
     const shouldAlert = finalTier !== 'safe';
@@ -141,8 +147,8 @@
     // ──────────────────────────────────────────────────────────
     const allReasons = [];
 
-    // Lý do từ ML prediction
-    if (reason) allReasons.push(reason);
+    // Lý do từ ML prediction (sau khi đã qua bộ lọc Fusion)
+    if (finalReason) allReasons.push(finalReason);
 
     // Lý do từ Content Analysis
     if (contentResult.warnings.length > 0) {

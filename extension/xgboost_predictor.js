@@ -357,6 +357,8 @@ const SAFE_DOMAINS = new Set([
   'reddit.com','www.reddit.com',
   'claude.ai','chat.openai.com',
   'fitgirl-repacks.site','www.fitgirl-repacks.site',
+  'kwindu.eu', 'linux-gaming.kwindu.eu',
+  'rin.ru', 'cs.rin.ru',
   // Đại học HUTECH
   'hutech.edu.vn','www.hutech.edu.vn','e-graduate.hutech.edu.vn',
   'portal.hutech.edu.vn','tuyensinh.hutech.edu.vn',
@@ -369,10 +371,11 @@ const SAFE_DOMAINS = new Set([
  */
 function isSubdomainOfSafe(hostname) {
   const safeParents = [
+    'google.com', 'google.com.vn', 'facebook.com', 'microsoft.com', 'apple.com',
     'github.io', 'vercel.app', 'netlify.app', 'pages.dev', 'surge.sh',
   ];
   for (const parent of safeParents) {
-    if (hostname.endsWith('.' + parent)) return true;
+    if (hostname === parent || hostname.endsWith('.' + parent)) return true;
   }
   return false;
 }
@@ -393,6 +396,10 @@ function isSubdomainOfSafe(hostname) {
 const SUSP_TLDS_SET = new Set([
   '.xyz','.tk','.pw','.cc','.top','.club','.online',
   '.site','.icu','.gq','.ml','.cf','.ga',
+]);
+
+const REPUTABLE_TLDS = new Set([
+  '.gov', '.edu', '.vn', '.eu', '.org', '.mil', '.int', '.ru'
 ]);
 
 const PHISHING_KW_LIST = [
@@ -447,7 +454,11 @@ async function predictPhishing(urlStr) {
   }
 
   // ── LAYER 1: Whitelist cụ thể ──
-  if (SAFE_DOMAINS.has(hostname)) {
+  const isSafeDomain = Array.from(SAFE_DOMAINS).some(sd => 
+    hostname === sd || hostname.endsWith('.' + sd)
+  );
+
+  if (isSafeDomain) {
     return { probability: 0.01, tier: 'safe', reason: 'Domain an toàn (whitelist)', isPhishing: false };
   }
 
@@ -479,6 +490,7 @@ async function predictPhishing(urlStr) {
 
   // ── LAYER 3a: Suspicious TLD Rules ──
   const fullLower = decodedUrl.toLowerCase();
+  let tldPenalty = 0;
   if (SUSP_TLDS_SET.has(tld)) {
     const hasPhishKw = PHISHING_KW_LIST.some(kw => fullLower.includes(kw));
     if (hasPhishKw) {
@@ -487,7 +499,8 @@ async function predictPhishing(urlStr) {
     if (brandCheck.isImpersonation) {
       return { probability: 0.95, tier: 'block', reason: `Giả mạo thương hiệu + TLD đáng ngờ (${brandCheck.reason})`, isPhishing: true };
     }
-    return { probability: 0.82, tier: 'block', reason: 'TLD đáng ngờ (thường dùng cho phishing)', isPhishing: true };
+    // Không chặn ngay, chỉ đánh dấu để xử lý sau ML model
+    tldPenalty = 0.15; 
   }
 
   // ── LAYER 3b: Brand impersonation với TLD phổ thông ──
@@ -507,7 +520,26 @@ async function predictPhishing(urlStr) {
 
   let prob = sigmoid(margin);
 
-  // ── POST-PROCESS: Public IP heuristic ──
+  // ── POST-PROCESS: Intelligence Layers (IP & Domain Age) ──
+  
+  // 1. Kiểm tra tuổi domain để giảm nhẹ xác suất (Penalty Reduction)
+  let domainAgeInfo = null;
+  let hasReputationBonus = false;
+
+  if (typeof getDomainAge === 'function') {
+    domainAgeInfo = await getDomainAge(hostname);
+    if (domainAgeInfo && domainAgeInfo.ageDays > 365 && prob > 0.75) {
+      // Giảm 35% xác suất rủi ro cho domain > 1 năm
+      prob *= 0.65; 
+    } 
+    // Nếu gặp lỗi Timeout/Network nhưng TLD uy tín (.eu, .vn, .gov...)
+    else if (domainAgeInfo && domainAgeInfo.error && REPUTABLE_TLDS.has(tld) && prob > 0.75) {
+      // TLD uy tín xứng đáng được giảm mạnh hơn để tránh False Positive (Giảm 25%)
+      prob *= 0.75; 
+      hasReputationBonus = true;
+    }
+  }
+
   const isPublicIP = isIPAddress(hostname) && !isPrivateOrLocalIP(hostname);
   let reason, tier, isPhishing;
 
@@ -522,12 +554,28 @@ async function predictPhishing(urlStr) {
       tier = 'safe'; isPhishing = false; reason = 'ML model đánh giá an toàn';
     }
   } else {
+    // Logic xác định Tier dựa trên xác suất đã qua xử lý
     if (prob >= 0.85) {
-      tier = 'block'; isPhishing = true; reason = 'ML model (XGBoost) đánh giá rủi ro cao';
-    } else if (prob >= 0.78) {
-      tier = 'warning'; isPhishing = true; reason = 'ML model phát hiện dấu hiệu bất thường';
+      tier = 'block'; isPhishing = true; 
+      reason = 'ML model (XGBoost) đánh giá rủi ro cao';
+    } else if (prob >= 0.75) {
+      tier = 'warning'; isPhishing = true;
+      if (domainAgeInfo && domainAgeInfo.ageDays > 365) {
+        reason = `Cấu trúc lạ nhưng domain đã tồn tại ${domainAgeInfo.ageDays} ngày (Uy tín trung bình)`;
+      } else if (hasReputationBonus) {
+        reason = `ML model báo rủi ro, nhưng TLD (${tld}) có độ tin cậy cơ bản (đã hạ bậc)`;
+      } else {
+        reason = 'ML model phát hiện dấu hiệu bất thường';
+      }
     } else {
-      tier = 'safe'; isPhishing = false; reason = 'ML model đánh giá an toàn';
+      tier = 'safe'; isPhishing = false;
+      if (domainAgeInfo && domainAgeInfo.ageDays > 365 && margin > 1.0) {
+        reason = `An toàn: Domain lâu năm (${domainAgeInfo.ageDays} ngày) bù trừ cho các dấu hiệu nghi ngờ`;
+      } else if (hasReputationBonus) {
+        reason = `An toàn: TLD (${tld}) uy tín giúp giảm thiểu nghi ngờ từ mô hình AI`;
+      } else {
+        reason = 'ML model đánh giá an toàn';
+      }
     }
   }
 

@@ -53,21 +53,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ── Hiển thị trạng thái loading ──
-    if (resultEl) resultEl.textContent = '⏳ Đang phân tích…';
+    if (resultEl) resultEl.innerHTML = '<div class="icon">⏳</div><div>Đang phân tích…</div>';
 
     try {
       // ── Gọi predictPhishing() từ xgboost_predictor.js ──
-      // Hàm này được inject vào popup context qua manifest "web_accessible_resources"?
-      // Không — popup cần chạy script trong context của tab.
-      // Dùng chrome.scripting.executeScript để chạy và lấy kết quả về.
       const [{ result: mlResult }] = await chrome.scripting.executeScript({
         target: { tabId: tab.id },
         func: async (tabUrl) => {
-          // Đây chạy trong context của trang web (có quyền gọi predictPhishing)
-          // predictPhishing được inject bởi manifest content_scripts
           if (typeof predictPhishing === 'function') {
-            const r = await predictPhishing(tabUrl);
-            return r;
+            return await predictPhishing(tabUrl);
           }
           return null;
         },
@@ -78,46 +72,41 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!mlResult) {
         if (resultEl) {
           resultEl.className = 'error';
-          resultEl.textContent = '⚠️ Không thể phân tích trang này';
+          resultEl.innerHTML = '<div class="icon">⚠️</div><div>Không thể phân tích trang này</div>';
         }
         return;
       }
 
       // ── Unpack kết quả ──
-      // predictPhishing trả về: { probability, tier, reason, isPhishing }
-      const { probability: prob, tier, reason, isPhishing } = mlResult;
+      const { probability: prob, tier, reason } = mlResult;
       const pct = (prob * 100).toFixed(1);
 
       // ── Hiển thị probability bar ──
       if (barWrapEl) barWrapEl.style.display = 'block';
       if (barEl) {
         barEl.style.width = pct + '%';
-        // Màu bar theo tier:
-        //   block   → đỏ (#ef4444)
-        //   warning → cam (#f97316)
-        //   safe    → xanh (#22c55e)
         barEl.style.background = tier === 'block' ? '#ef4444'
-          : tier === 'warning' ? '#f97316' : '#22c55e';
+          : tier === 'warning' ? '#f59e0b' : '#22c55e';
       }
-      if (barLabelEl) barLabelEl.textContent = `Xác suất phishing: ${pct}%`;
+      if (barLabelEl) barLabelEl.textContent = `${pct}%`;
 
       // ── Hiển thị kết quả chính ──
       if (resultEl) {
         if (tier === 'block') {
           resultEl.className = 'danger';
-          resultEl.textContent = `🔴 NGUY HIỂM (${pct}%)`;
+          resultEl.innerHTML = `<div class="icon">🔴</div><div>NGUY HIỂM (${pct}%)</div>`;
         } else if (tier === 'warning') {
           resultEl.className = 'warning';
-          resultEl.textContent = `🟡 CẢNH BÁO (${pct}%)`;
+          resultEl.innerHTML = `<div class="icon">🟡</div><div>CẢNH BÁO (${pct}%)</div>`;
         } else {
           resultEl.className = 'safe';
-          resultEl.textContent = `🟢 AN TOÀN (${pct}%)`;
+          resultEl.innerHTML = `<div class="icon">🟢</div><div>AN TOÀN (${pct}%)</div>`;
         }
       }
 
       // ── Hiển thị lý do ──
       if (reasonsEl && reason) {
-        reasonsEl.innerHTML = `<div class="reason-badge">• ${reason}</div>`;
+        reasonsEl.innerHTML = `<div class="reason-badge">${reason}</div>`;
       }
 
     } catch (e) {

@@ -46,25 +46,38 @@ chrome.tabs.onActivated.addListener((activeInfo) => {
 // ============================================================
 // EVENT: Lắng nghe message từ content script
 // ============================================================
-// Content script gửi message khi hoàn tất phân tích URL
-// Format: { type: 'updateIcon', tier: 'safe'|'warning'|'block' }
-// ============================================================
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  // Kiểm tra type của message
+  // 1. Cập nhật Icon
   if (message.type === 'updateIcon') {
-    // Lấy tabId từ sender (tab đang gửi message)
     const tabId = sender.tab ? sender.tab.id : null;
-
-    // Gọi hàm updateExtensionIcon với tier nhận được
-    // tier: 'safe' (xanh), 'warning' (vàng), 'block' (đỏ), 'default' (xám)
     updateExtensionIcon(message.tier, tabId)
-      // Trả về kết quả thành công cho content script
       .then(() => sendResponse({ success: true }))
-      // Trả về lỗi nếu có vấn đề
       .catch((e) => sendResponse({ success: false, error: e.message }));
+    return true;
+  }
 
-    // return true giữ channel mở cho async response
-    // Nếu không có dòng này, sendResponse sẽ bị ignore
+  // 2. Fetch Domain Age (Vượt rào cản CORS/CSP của trang web)
+  if (message.type === 'fetchDomainAge') {
+    const { rdapUrl } = message;
+    
+    // Thêm timeout 10 giây để tránh treo service worker
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000);
+
+    fetch(rdapUrl, { 
+      headers: { 'Accept': 'application/rdap+json, application/json' },
+      signal: controller.signal
+    })
+      .then(r => {
+        clearTimeout(timeoutId);
+        return r.ok ? r.json() : Promise.reject(`HTTP ${r.status}`);
+      })
+      .then(data => sendResponse({ success: true, data }))
+      .catch(e => {
+        clearTimeout(timeoutId);
+        const errorMsg = e.name === 'AbortError' ? 'Timeout (10s)' : e.toString();
+        sendResponse({ success: false, error: errorMsg });
+      });
     return true;
   }
 });

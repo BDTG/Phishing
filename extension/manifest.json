@@ -31,7 +31,9 @@
     // scripting: Inject content scripts vào trang web
     "scripting",
     // tabs: Quản lý tabs (lắng nghe sự kiện tab updated, activated)
-    "tabs"
+    "tabs",
+    // storage: Lưu trữ cài đặt người dùng (Sensitivity, Blocklist, Whitelist)
+    "storage"
   ],
 
   // ──────────────────────────────────────────────────────────
@@ -64,6 +66,14 @@
   },
 
   // ──────────────────────────────────────────────────────────
+  // OPTIONS UI — Trang cài đặt extension
+  // ──────────────────────────────────────────────────────────
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+
+  // ──────────────────────────────────────────────────────────
   // CONTENT SCRIPTS — Scripts inject vào trang web
   // ──────────────────────────────────────────────────────────
   "content_scripts": [
@@ -76,11 +86,13 @@
       "js": [
         // 1. Feature extractor — trích xuất 38 đặc trưng từ URL
         "feature_extractor.js",
-        // 2. XGBoost predictor — dự đoán phishing probability
+        // 2. Domain age checker — kiểm tra tuổi đời tên miền
+        "domain_age_checker.js",
+        // 3. XGBoost predictor — dự đoán phishing probability
         "xgboost_predictor.js",
-        // 3. Content analyzer — phân tích DOM (forms, iframes...)
+        // 4. Content analyzer — phân tích DOM (forms, iframes...)
         "content_analyzer.js",
-        // 4. Content script chính — hiển thị banner cảnh báo
+        // 5. Content script chính — hiển thị banner cảnh báo
         "content.js"
       ],
 

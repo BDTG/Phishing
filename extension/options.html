@@ -1,193 +1,314 @@
 <!DOCTYPE html>
-<!-- ============================================================
-     options.html — Trang cài đặt extension
-     ============================================================
-     File này hiển thị giao diện cài đặt khi user vào
-     chrome://extensions/ → Phishing Detector → Details → Extension options
-     ============================================================ -->
 <html lang="vi">
 <head>
-  <!-- Meta charset: Hỗ trợ tiếng Việt -->
   <meta charset="utf-8">
-  <!-- Title: Hiển thị trên tab -->
   <title>Phishing Detector — Cài đặt</title>
   <style>
-    /* Reset CSS */
+    :root {
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --danger: #ef4444;
+      --success: #22c55e;
+    }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    /* Body: Font, màu nền, padding */
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      padding: 20px;
-      max-width: 600px;
-      margin: 0 auto;
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+      background: var(--bg); 
+      color: var(--text-main); 
+      padding: 30px; 
+      line-height: 1.5; 
     }
-
-    /* Tiêu đề chính */
-    h1 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      color: #333;
+    .container { max-width: 800px; margin: 0 auto; }
+    header { 
+      display: flex; 
+      align-items: center; 
+      gap: 12px; 
+      margin-bottom: 30px; 
+      padding-bottom: 20px;
+      border-bottom: 2px solid var(--border);
     }
-
-    /* Mỗi section cài đặt */
-    .section {
-      background: #fff;
-      border-radius: 8px;
-      padding: 16px;
-      margin-bottom: 16px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    header h1 { font-size: 24px; font-weight: 700; }
+    
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .section { 
+      background: var(--surface); 
+      border: 1px solid var(--border); 
+      border-radius: 12px; 
+      padding: 24px; 
+      margin-bottom: 20px; 
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05); 
     }
-
-    /* Tiêu đề section */
-    .section h2 {
-      font-size: 18px;
-      margin-bottom: 12px;
-      color: #444;
+    .full-width { grid-column: span 2; }
+    .section h2 { 
+      font-size: 16px; 
+      margin-bottom: 20px; 
+      color: var(--text-main); 
+      font-weight: 600; 
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
-
-    /* Mỗi option */
-    .option {
+    
+    .option { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      padding: 14px 0; 
+      border-bottom: 1px solid var(--border); 
+    }
+    .option:last-child { border-bottom: none; padding-bottom: 0; }
+    .option label { font-size: 14px; font-weight: 500; cursor: pointer; }
+    .option .desc { 
+      font-size: 12px; 
+      color: var(--text-muted); 
+      margin-top: 4px; 
+      display: block; 
+      font-weight: normal; 
+    }
+    
+    /* Toggle switch */
+    .toggle { position: relative; width: 44px; height: 24px; flex-shrink: 0; }
+    .toggle input { opacity: 0; width: 0; height: 0; }
+    .toggle .slider { 
+      position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; 
+      background: #cbd5e1; border-radius: 24px; transition: .3s; 
+    }
+    .toggle .slider:before { 
+      content: ""; position: absolute; height: 18px; width: 18px; left: 3px; bottom: 3px; 
+      background: white; border-radius: 50%; transition: .3s; 
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1); 
+    }
+    .toggle input:checked + .slider { background: var(--primary); }
+    .toggle input:checked + .slider:before { transform: translateX(20px); }
+    
+    /* Sensitivity UI */
+    .sensitivity-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .range-labels {
       display: flex;
       justify-content: space-between;
+      padding: 0 4px;
+    }
+    .range-labels span { font-size: 11px; color: var(--text-muted); font-weight: 600; }
+    input[type=range] { 
+      width: 100%; 
+      height: 6px; 
+      background: var(--border); 
+      border-radius: 5px; 
+      outline: none; 
+      accent-color: var(--primary);
+    }
+    #sensitivity-label { 
+      font-size: 14px; 
+      color: var(--primary); 
+      font-weight: 700; 
+      margin-top: 8px;
+      text-align: center;
+      background: #eff6ff;
+      padding: 8px;
+      border-radius: 6px;
+    }
+
+    /* List Management */
+    .list-manager { display: flex; flex-direction: column; gap: 12px; }
+    .input-group { display: flex; gap: 8px; }
+    input[type=text] { 
+      flex: 1; 
+      padding: 10px 14px; 
+      border: 1px solid var(--border); 
+      border-radius: 8px; 
+      font-size: 14px; 
+      outline: none; 
+      transition: .2s;
+    }
+    input[type=text]:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
+    
+    button { 
+      padding: 10px 20px; 
+      border: none; 
+      border-radius: 8px; 
+      font-size: 14px; 
+      font-weight: 600; 
+      cursor: pointer; 
+      transition: .2s; 
+      display: flex;
       align-items: center;
-      padding: 8px 0;
-      border-bottom: 1px solid #eee;
+      gap: 6px;
+      justify-content: center;
     }
-
-    .option:last-child {
-      border-bottom: none;
+    .btn-primary { background: var(--primary); color: white; }
+    .btn-primary:hover { background: var(--primary-hover); transform: translateY(-1px); }
+    .btn-danger { background: #fef2f2; color: var(--danger); border: 1px solid #fee2e2; }
+    .btn-danger:hover { background: #fee2e2; }
+    
+    .actions {
+      margin-top: 10px;
+      display: flex;
+      gap: 12px;
     }
-
-    /* Label của option */
-    .option label {
-      font-size: 14px;
-      color: #555;
+    .btn-save { 
+      background: var(--success); 
+      color: white; 
+      font-size: 16px; 
+      padding: 14px 28px; 
+      flex: 2;
+      box-shadow: 0 4px 6px rgba(34,197,94,0.2);
     }
-
-    /* Toggle switch */
-    .toggle {
-      position: relative;
-      width: 48px;
-      height: 24px;
+    .btn-save:hover { background: #16a34a; transform: translateY(-2px); box-shadow: 0 6px 12px rgba(34,197,94,0.3); }
+    
+    textarea { 
+      width: 100%; 
+      height: 120px; 
+      padding: 12px; 
+      border: 1px solid var(--border); 
+      border-radius: 8px; 
+      font-size: 13px; 
+      font-family: 'Cascadia Code', 'Fira Code', monospace; 
+      resize: none; 
+      background: #f1f5f9; 
+      color: var(--text-muted); 
+      outline: none; 
     }
-
-    .toggle input {
-      opacity: 0;
-      width: 0;
-      height: 0;
+    
+    #toast { 
+      position: fixed; 
+      bottom: 30px; 
+      right: 30px; 
+      padding: 14px 24px; 
+      border-radius: 10px; 
+      color: white; 
+      font-size: 14px; 
+      font-weight: 600; 
+      z-index: 9999; 
+      display: none; 
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); 
+      animation: slideIn 0.3s ease-out; 
     }
-
-    .toggle .slider {
-      position: absolute;
-      cursor: pointer;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: #ccc;
-      border-radius: 24px;
-      transition: 0.3s;
-    }
-
-    .toggle .slider:before {
-      content: "";
-      position: absolute;
-      height: 18px;
-      width: 18px;
-      left: 3px;
-      bottom: 3px;
-      background: white;
-      border-radius: 50%;
-      transition: 0.3s;
-    }
-
-    .toggle input:checked + .slider {
-      background: #4CAF50;
-    }
-
-    .toggle input:checked + .slider:before {
-      transform: translateX(24px);
-    }
-
-    /* Nút lưu */
-    .save-btn {
-      background: #4CAF50;
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 16px;
-      margin-top: 16px;
-    }
-
-    .save-btn:hover {
-      background: #45a049;
-    }
-
-    /* Thông báo đã lưu */
-    .saved-msg {
-      color: #4CAF50;
-      margin-left: 12px;
-      display: none;
-    }
+    @keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
   </style>
 </head>
 <body>
-  <!-- Tiêu đề trang -->
-  <h1>🔍 Phishing Detector — Cài đặt</h1>
+  <div class="container">
+    <header>
+      <span style="font-size:32px">🛡️</span>
+      <h1>Phishing Detector — Cài đặt hệ thống</h1>
+    </header>
 
-  <!-- Section: Cảnh báo -->
-  <div class="section">
-    <h2>⚠️ Cảnh báo</h2>
-    <!-- Option: Hiện banner cảnh báo -->
-    <div class="option">
-      <label for="show-banner">Hiện banner cảnh báo trên trang web</label>
-      <label class="toggle">
-        <input type="checkbox" id="show-banner" checked>
-        <span class="slider"></span>
-      </label>
+    <div class="grid">
+      <!-- Cài đặt độ nhạy -->
+      <div class="section full-width">
+        <h2>📊 Mức độ nhạy của AI (Sensitivity)</h2>
+        <div class="sensitivity-container">
+          <div class="range-labels">
+            <span>THẤP</span>
+            <span>TRUNG BÌNH</span>
+            <span>CAO</span>
+          </div>
+          <input type="range" id="sensitivity" min="0" max="2" step="1" value="1">
+          <div id="sensitivity-label">Đang tải...</div>
+          <p class="desc" style="margin-top:8px; text-align:center;">
+            Mức độ nhạy cao sẽ bắt được nhiều web lừa đảo hơn nhưng có thể báo nhầm web sạch.
+          </p>
+        </div>
+      </div>
+
+      <!-- Các lớp bảo vệ -->
+      <div class="section">
+        <h2>🛡️ Các lớp bảo vệ (Layers)</h2>
+        <div class="option">
+          <div>
+            <label for="toggle-brand">Mạo danh thương hiệu</label>
+            <span class="desc">Phát hiện Faceb00k, Paypa1...</span>
+          </div>
+          <label class="toggle"><input type="checkbox" id="toggle-brand"><span class="slider"></span></label>
+        </div>
+        <div class="option">
+          <div>
+            <label for="toggle-tld">Tên miền đáng ngờ (TLD)</label>
+            <span class="desc">Cảnh báo .xyz, .tk, .pw...</span>
+          </div>
+          <label class="toggle"><input type="checkbox" id="toggle-tld"><span class="slider"></span></label>
+        </div>
+        <div class="option">
+          <div>
+            <label for="toggle-rdap">Tuổi tên miền (RDAP)</label>
+            <span class="desc">Phát hiện web mới tạo</span>
+          </div>
+          <label class="toggle"><input type="checkbox" id="toggle-rdap"><span class="slider"></span></label>
+        </div>
+        <div class="option">
+          <div>
+            <label for="toggle-dom">Phân tích nội dung (DOM)</label>
+            <span class="desc">Kiểm tra form, iframe ẩn</span>
+          </div>
+          <label class="toggle"><input type="checkbox" id="toggle-dom"><span class="slider"></span></label>
+        </div>
+      </div>
+
+      <!-- Hiển thị & Debug -->
+      <div class="section">
+        <h2>🛠️ Hiển thị & Gỡ lỗi</h2>
+        <div class="option">
+          <div>
+            <label for="toggle-banner">Hiện Banner cảnh báo</label>
+            <span class="desc">Thanh thông báo trên đầu web</span>
+          </div>
+          <label class="toggle"><input type="checkbox" id="toggle-banner"><span class="slider"></span></label>
+        </div>
+        <div class="option">
+          <div>
+            <label for="toggle-log">Ghi log Console</label>
+            <span class="desc">Chế độ Debug cho Dev</span>
+          </div>
+          <label class="toggle"><input type="checkbox" id="toggle-log"><span class="slider"></span></label>
+        </div>
+        <div class="option" style="border:none;">
+          <div>
+            <label>Dữ liệu báo cáo</label>
+            <span class="desc">Xóa các đánh dấu nhầm (FP)</span>
+          </div>
+          <button id="clear-reports" class="btn-danger">🗑️ Xóa báo cáo</button>
+        </div>
+      </div>
+
+      <!-- Whitelist & Blocklist -->
+      <div class="section">
+        <h2>🚫 Danh sách Chặn (Blocklist)</h2>
+        <div class="list-manager">
+          <div class="input-group">
+            <input type="text" id="blocklist-input" placeholder="nhập domain cần chặn...">
+            <button id="add-blocklist" class="btn-primary">Thêm</button>
+          </div>
+          <textarea id="blocklist-items" readonly></textarea>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>✅ Danh sách Bỏ qua (Whitelist)</h2>
+        <div class="list-manager">
+          <div class="input-group">
+            <input type="text" id="whitelist-input" placeholder="nhập domain tin tưởng...">
+            <button id="add-whitelist" class="btn-primary">Thêm</button>
+          </div>
+          <textarea id="whitelist-items" readonly></textarea>
+        </div>
+      </div>
     </div>
-    <!-- Option: Tự động chặn trang nguy hiểm -->
-    <div class="option">
-      <label for="auto-block">Tự động chặn trang nguy hiểm (Block tier)</label>
-      <label class="toggle">
-        <input type="checkbox" id="auto-block">
-        <span class="slider"></span>
-      </label>
+
+    <div class="actions">
+      <button class="btn-save" id="save-settings">💾 LƯU CÀI ĐẶT</button>
     </div>
   </div>
 
-  <!-- Section: Icon -->
-  <div class="section">
-    <h2>🎨 Icon</h2>
-    <!-- Option: Đổi icon theo trạng thái -->
-    <div class="option">
-      <label for="dynamic-icon">Đổi icon theo trạng thái an toàn</label>
-      <label class="toggle">
-        <input type="checkbox" id="dynamic-icon" checked>
-        <span class="slider"></span>
-      </label>
-    </div>
-  </div>
-
-  <!-- Section: Domain Age -->
-  <div class="section">
-    <h2>📅 Tuổi Domain</h2>
-    <!-- Option: Kiểm tra tuổi domain -->
-    <div class="option">
-      <label for="check-domain-age">Kiểm tra tuổi domain qua RDAP</label>
-      <label class="toggle">
-        <input type="checkbox" id="check-domain-age" checked>
-        <span class="slider"></span>
-      </label>
-    </div>
-  </div>
-
-  <!-- Nút lưu cài đặt -->
-  <button class="save-btn" id="save-btn">💾 Lưu cài đặt</button>
-  <span class="saved-msg" id="saved-msg">✓ Đã lưu!</span>
-
-  <!-- Script xử lý logic -->
+  <div id="toast"></div>
   <script src="options.js"></script>
 </body>
 </html>

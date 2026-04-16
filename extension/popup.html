@@ -1,142 +1,171 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <!-- Meta charset: Hỗ trợ tiếng Việt và ký tự đặc biệt -->
   <meta charset="utf-8">
-  <!-- Viewport: Responsive design cho popup -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Title: Hiển thị trên tab popup -->
   <title>Phishing URL Detector</title>
   <style>
-    /* Reset CSS: Loại bỏ margin/padding mặc định */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    /* Body: Kích thước popup, font, màu nền */
-    body {
-      width: 320px;           /* Chiều rộng popup */
-      padding: 16px;          /* Padding xung quanh */
-      font-family: Arial, sans-serif; /* Font Arial */
-      font-size: 13px;        /* Cỡ chữ 13px */
-      background: #fafafa;    /* Màu nền xám nhạt */
-      color: #333;            /* Màu chữ xám đậm */
+    :root {
+      --bg: #ffffff;
+      --surface-light: #f8fafc;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --safe: #22c55e;
+      --safe-bg: #f0fdf4;
+      --warning: #f59e0b;
+      --warning-bg: #fffbeb;
+      --danger: #ef4444;
+      --danger-bg: #fef2f2;
+      --primary: #2563eb;
     }
-
-    /* Header: Logo + tiêu đề */
-    .header {
-      display: flex;          /* Flexbox layout */
-      align-items: center;    /* Căn giữa theo chiều dọc */
-      gap: 8px;              /* Khoảng cách giữa các phần tử */
-      margin-bottom: 12px;    /* Khoảng cách dưới */
-      border-bottom: 1px solid #e0e0e0; /* Viền dưới */
-      padding-bottom: 10px;   /* Padding dưới */
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    body { width: 340px; padding: 0; background: var(--bg); color: var(--text-main); }
+    
+    /* Header */
+    .header { 
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between; 
+      padding: 14px 16px; 
+      background: var(--surface-light); 
+      border-bottom: 1px solid var(--border); 
     }
-
-    /* Tiêu đề H3 trong header */
-    .header h3 {
-      font-size: 15px;        /* Cỡ chữ 15px */
-      font-weight: bold;      /* In đậm */
+    .header-left { display: flex; align-items: center; gap: 8px; }
+    .header h3 { font-size: 15px; font-weight: 700; color: var(--text-main); }
+    
+    .settings-btn { 
+      background: none; 
+      border: none; 
+      cursor: pointer; 
+      font-size: 18px; 
+      color: var(--text-muted); 
+      transition: .2s; 
+      border-radius: 6px; 
+      padding: 4px; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
     }
-
-    /* Hiển thị URL: Font nhỏ, màu xám, background nhạt */
-    #url-display {
-      font-size: 11px;        /* Cỡ chữ nhỏ */
-      color: #666;            /* Màu xám */
-      word-break: break-all;  /* Xuống dòng nếu URL dài */
-      background: #f0f0f0;    /* Background xám nhạt */
-      border-radius: 4px;     /* Bo góc 4px */
-      padding: 6px 8px;       /* Padding */
-      margin-bottom: 12px;    /* Khoảng cách dưới */
-      max-height: 52px;       /* Chiều cao tối đa */
-      overflow: hidden;       /* Ẩn phần tràn */
+    .settings-btn:hover { background: #e2e8f0; color: var(--text-main); transform: rotate(30deg); }
+    
+    /* Main Content */
+    .content { padding: 16px; }
+    
+    #url-display { 
+      font-size: 11px; 
+      color: var(--text-muted); 
+      word-break: break-all; 
+      background: var(--surface-light); 
+      border: 1px solid var(--border); 
+      border-radius: 8px; 
+      padding: 10px; 
+      margin-bottom: 16px; 
+      max-height: 52px; 
+      overflow: hidden; 
+      display: -webkit-box; 
+      -webkit-line-clamp: 2; 
+      -webkit-box-orient: vertical; 
+      line-height: 1.4;
     }
-
-    /* Kết quả: Padding, bo góc, căn giữa, in đậm */
-    #result {
-      padding: 14px;          /* Padding */
-      border-radius: 8px;     /* Bo góc 8px */
-      text-align: center;     /* Căn giữa text */
-      font-weight: bold;      /* In đậm */
-      font-size: 15px;        /* Cỡ chữ 15px */
-      letter-spacing: 0.3px;  /* Khoảng cách chữ */
+    
+    #result { 
+      padding: 20px 16px; 
+      border-radius: 12px; 
+      text-align: center; 
+      font-weight: 800; 
+      font-size: 16px; 
+      letter-spacing: 0.5px; 
+      border: 2px solid transparent; 
+      margin-bottom: 16px; 
+      display: flex; 
+      flex-direction: column; 
+      gap: 6px; 
+      align-items: center; 
+      transition: .3s;
     }
-
-    /* Loading state: Xám nhạt */
-    #result.loading  { background: #f5f5f5; color: #888; }
-    /* Safe state: Xanh lá nhạt, text xanh đậm, viền xanh */
-    #result.safe     { background: #e8f5e9; color: #2e7d32; border: 1px solid #a5d6a7; }
-    /* Danger state: Đỏ nhạt, text đỏ đậm, viền đỏ */
-    #result.danger   { background: #ffebee; color: #c62828; border: 1px solid #ef9a9a; }
-    /* Error state: Vàng nhạt, text vàng đậm, viền vàng */
-    #result.error    { background: #fff8e1; color: #f57f17; border: 1px solid #ffe082; }
-
-    /* Wrapper thanh progress: Ẩn mặc định */
-    #prob-bar-wrap {
-      margin-top: 10px;       /* Khoảng cách trên */
-      display: none;          /* Ẩn mặc định */
+    #result .icon { font-size: 28px; }
+    
+    #result.loading  { background: var(--surface-light); color: var(--text-muted); border-color: var(--border); }
+    #result.safe     { background: var(--safe-bg); color: var(--safe); border-color: #bbf7d0; box-shadow: 0 4px 6px -1px rgba(34,197,94,0.1); }
+    #result.warning  { background: var(--warning-bg); color: var(--warning); border-color: #fde68a; box-shadow: 0 4px 6px -1px rgba(245,158,11,0.1); }
+    #result.danger   { background: var(--danger-bg); color: var(--danger); border-color: #fecaca; box-shadow: 0 4px 6px -1px rgba(239,68,68,0.1); }
+    #result.error    { background: var(--surface-light); color: var(--danger); border-color: var(--danger); }
+    
+    #prob-bar-wrap { margin-bottom: 20px; display: none; }
+    #prob-bar-wrap label { 
+      font-size: 12px; 
+      font-weight: 700; 
+      color: var(--text-main); 
+      display: flex; 
+      justify-content: space-between; 
+      margin-bottom: 8px; 
     }
-
-    /* Label thanh progress: Font nhỏ, màu xám */
-    #prob-bar-wrap label {
-      font-size: 11px;        /* Cỡ chữ nhỏ */
-      color: #666;            /* Màu xám */
-      display: block;         /* Block element */
-      margin-bottom: 4px;     /* Khoảng cách dưới */
+    #prob-bar-bg { background: var(--border); border-radius: 10px; height: 10px; overflow: hidden; }
+    #prob-bar { height: 10px; border-radius: 10px; transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); }
+    
+    #reasons { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+    .reason-badge { 
+      font-size: 12px; 
+      background: #f1f5f9; 
+      border: 1px solid var(--border); 
+      padding: 8px 12px; 
+      border-radius: 8px; 
+      color: var(--text-main); 
+      display: flex; 
+      align-items: flex-start; 
+      gap: 8px; 
+      line-height: 1.5; 
+      font-weight: 500;
     }
-
-    /* Background thanh progress: Xám, bo góc */
-    #prob-bar-bg {
-      background: #e0e0e0;    /* Màu xám */
-      border-radius: 4px;     /* Bo góc */
-      height: 8px;            /* Chiều cao 8px */
-      overflow: hidden;       /* Ẩn phần tràn */
-    }
-
-    /* Thanh progress: Bo góc, transition mượt */
-    #prob-bar {
-      height: 8px;            /* Chiều cao 8px */
-      border-radius: 4px;     /* Bo góc */
-      transition: width 0.4s ease; /* Animation mượt 0.4s */
-    }
-
-    /* Footer: Font nhỏ, màu xám nhạt, căn giữa */
-    .footer {
-      margin-top: 12px;       /* Khoảng cách trên */
-      font-size: 10px;        /* Cỡ chữ nhỏ */
-      color: #bbb;            /* Màu xám nhạt */
-      text-align: center;     /* Căn giữa */
+    .reason-badge::before { content: "•"; color: var(--primary); font-weight: 900; }
+    
+    .footer { 
+      padding: 12px; 
+      font-size: 10px; 
+      color: #94a3b8; 
+      text-align: center; 
+      background: var(--surface-light); 
+      border-top: 1px solid var(--border); 
+      font-weight: 600;
     }
   </style>
 </head>
 <body>
-  <!-- Header: Icon + tiêu đề -->
   <div class="header">
-    <span style="font-size:20px">🔍</span>
-    <h3>Phishing URL Detector</h3>
-  </div>
-
-  <!-- Hiển thị URL đang phân tích -->
-  <div id="url-display">Đang lấy URL...</div>
-
-  <!-- Hiển thị kết quả (loading → safe/danger/error) -->
-  <div id="result" class="loading">Đang phân tích...</div>
-
-  <!-- Thanh progress bar hiển thị xác suất phishing -->
-  <div id="prob-bar-wrap">
-    <label id="prob-label">Xác suất phishing: 0%</label>
-    <div id="prob-bar-bg">
-      <div id="prob-bar" style="width:0%;background:#4caf50"></div>
+    <div class="header-left">
+      <span style="font-size:20px">🛡️</span>
+      <h3>Phishing Detector</h3>
     </div>
+    <button id="settings-btn" class="settings-btn" title="Cài đặt hệ thống">⚙️</button>
   </div>
 
-  <!-- Footer: Thông tin model -->
-  <div class="footer">Mô hình XGBoost · F1 = 98.95% · Offline</div>
+  <div class="content">
+    <div id="url-display">Đang lấy dữ liệu tab...</div>
+    
+    <div id="result" class="loading">
+      <div class="icon">⏳</div>
+      <div>Đang phân tích URL...</div>
+    </div>
+    
+    <div id="prob-bar-wrap">
+      <label>
+        <span>Xác suất nguy hiểm:</span>
+        <span id="prob-label">0%</span>
+      </label>
+      <div id="prob-bar-bg">
+        <div id="prob-bar" style="width:0%; background:var(--safe)"></div>
+      </div>
+    </div>
+    
+    <div id="reasons"></div>
+  </div>
 
-  <!-- Scripts: Thứ tự quan trọng! -->
-  <!-- 1. feature_extractor.js: Hàm extractFeatures() -->
+  <div class="footer">XGBoost Engine · Real-time Analysis</div>
+
+  <!-- Nạp scripts theo thứ tự -->
   <script src="feature_extractor.js"></script>
-  <!-- 2. xgboost_predictor.js: Hàm predictPhishing() -->
   <script src="xgboost_predictor.js"></script>
-  <!-- 3. popup.js: Logic chính của popup -->
   <script src="popup.js"></script>
 </body>
 </html>

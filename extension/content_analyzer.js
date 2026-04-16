@@ -144,7 +144,7 @@ function hasBrandImpersonation() {
 function hasHiddenIframe() {
   // Danh sách domain tin cậy — iframe của họ không phải phishing
   const trustedIframeDomains = [
-    'google.com', 'youtube.com', 'ytimg.com', 'gstatic.com', 'ggpht.com',
+    'google.com', 'google.com.vn', 'youtube.com', 'ytimg.com', 'gstatic.com', 'ggpht.com',
     'facebook.com', 'fbcdn.net',
     'twitter.com', 'twimg.com', 'x.com',
     'instagram.com',
@@ -265,6 +265,15 @@ function hasCreditCardRequest() {
 function analyzeContent() {
   const warnings = [];
   let score = 0;
+
+  const currentHost = location.hostname.toLowerCase().replace(/^www\./, '');
+  const isOfficialAnyBrand = Object.values(BRAND_OFFICIAL_DOMAINS).some(list =>
+    list.some(od => currentHost === od.toLowerCase() || currentHost.endsWith('.' + od.toLowerCase()))
+  );
+
+  if (isOfficialAnyBrand) {
+    return { score: 0, warnings: [] };
+  }
 
   try {
     // Kiểm tra form mật khẩu
