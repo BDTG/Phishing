@@ -58,34 +58,22 @@
 // ──────────────────────────────────────────────────────────
 // Chỉ chạy khi ML probability > 0.1
 // → Domain whitelist (0.01) sẽ bỏ qua → tránh false positive
-// analyzeContent() trả về: { score: 0.6, warnings: ['Có form mật khẩu'], isHarmless: false }
+// analyzeContent() trả về: { score: 0.6, warnings: ['Có form mật khẩu'] }
 const contentResult = (typeof analyzeContent === 'function' && mlProb > 0.1)
   ? analyzeContent()
-  : { score: 0, warnings: [], isHarmless: false };
+  : { score: 0, warnings: [] };
 
 // ──────────────────────────────────────────────────────────
 // FUSION — Kết hợp ML + Content
 // ──────────────────────────────────────────────────────────
-// Lấy giá trị cao hơn giữa ML (đã bao gồm Domain Age logic) và Content
+// Lấy giá trị cao hơn giữa ML (đã bao gồm Domain Age + Harmless logic) và Content
 let finalProb = Math.max(mlProb, contentResult.score);
 let finalTier = tier;
 let finalReason = reason;
 
-// HỆ THỐNG PHỦ ĐỊNH (Override): Nếu nội dung trang hoàn toàn "Vô hại" (không có form/input)
-if (contentResult.isHarmless && finalTier !== 'safe') {
-  // Giảm 70% xác suất rủi ro từ ML nếu không có chức năng thu thập dữ liệu
-  finalProb *= 0.3;
-
-  if (finalProb < 0.75) {
-    finalTier = 'safe';
-    finalReason = 'An toàn: Nội dung trang không có chức năng thu thập dữ liệu (Vô hại)';
-  }
-}
-
 // Nếu Content Analysis phát hiện rủi ro cực cao → ép lên Block
 if (contentResult.score >= 0.85 && finalTier !== 'block') {
-...
-      finalTier = 'block';
+...      finalTier = 'block';
       finalReason = contentResult.warnings[0] || 'Phát hiện dấu hiệu lừa đảo trực tiếp trên trang';
     } else if (contentResult.score >= 0.60 && finalTier === 'safe') {
       // Nếu Content có rủi ro trung bình mà ML báo safe → nâng lên Warning

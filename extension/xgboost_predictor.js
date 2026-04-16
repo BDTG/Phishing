@@ -412,11 +412,33 @@ const PHISHING_KW_LIST = [
 // ============================================================
 
 /**
+ * Kiểm tra xem trang web có hoàn toàn "vô hại" không?
+ * Một trang không có ô nhập liệu (input) và không có form thì không thể thu thập dữ liệu.
+ */
+function isPageHarmless() {
+  try {
+    const inputs = document.querySelectorAll('input, select, textarea');
+    const forms = document.querySelectorAll('form');
+    const interactableInputs = Array.from(inputs).filter(input => {
+      if (input.type === 'hidden') return false;
+      const style = window.getComputedStyle(input);
+      if (style.display === 'none' || style.visibility === 'hidden') return false;
+      const rect = input.getBoundingClientRect();
+      return rect.width > 0 && rect.height > 0;
+    });
+    return interactableInputs.length === 0 && forms.length === 0;
+  } catch (e) {
+    return false;
+  }
+}
+
+/**
  * Dự đoán xác suất phishing của URL
  * @param {string} urlStr - URL cần phân tích
  * @returns {Promise<Object>} { probability: number, tier: string, reason: string, isPhishing: boolean }
  */
 async function predictPhishing(urlStr) {
+  // ... (giữ nguyên phần đầu cho đến khi tính xong biến prob)
   // Decode URL — chống double/triple encoding
   const decodedUrl = safeDecodeURL(urlStr);
 
@@ -521,7 +543,7 @@ async function predictPhishing(urlStr) {
   let prob = sigmoid(margin);
 
   // ── POST-PROCESS: Intelligence Layers (IP & Domain Age) ──
-  
+
   // 1. Kiểm tra tuổi domain để giảm nhẹ xác suất (Penalty Reduction)
   let domainAgeInfo = null;
   let hasReputationBonus = false;
@@ -540,10 +562,22 @@ async function predictPhishing(urlStr) {
     }
   }
 
+  // 2. Kiểm tra nội dung trang có "vô hại" không (Negative Signal)
+  // Chỉ áp dụng khi ML rủi ro cao nhưng trang hoàn toàn không có form/input
+  const isHarmless = isPageHarmless();
+  let hasHarmlessBonus = false;
+
+  if (isHarmless && prob > 0.70) {
+    // Giảm 70% xác suất rủi ro (Hệ số 0.3)
+    prob *= 0.3;
+    hasHarmlessBonus = true;
+  }
+
   const isPublicIP = isIPAddress(hostname) && !isPrivateOrLocalIP(hostname);
   let reason, tier, isPhishing;
 
   if (isPublicIP) {
+    // ... (rest of IP logic)
     if (prob >= 0.85) {
       prob = 0.75; tier = 'warning'; isPhishing = true;
       reason = 'Địa chỉ IP công cộng có dấu hiệu bất thường (đã hạ bậc)';
@@ -561,7 +595,7 @@ async function predictPhishing(urlStr) {
     } else if (prob >= 0.75) {
       tier = 'warning'; isPhishing = true;
       if (domainAgeInfo && domainAgeInfo.ageDays > 365) {
-        reason = `Cấu trúc lạ nhưng domain đã tồn tại ${domainAgeInfo.ageDays} ngày (Uy tín trung bình)`;
+        reason = `Cấu trúc lạ nhưng domain đã tồn tại ${domainAgeInfo.ageDays} ngày (Uy tín trung bình)`;      
       } else if (hasReputationBonus) {
         reason = `ML model báo rủi ro, nhưng TLD (${tld}) có độ tin cậy cơ bản (đã hạ bậc)`;
       } else {
@@ -569,8 +603,10 @@ async function predictPhishing(urlStr) {
       }
     } else {
       tier = 'safe'; isPhishing = false;
-      if (domainAgeInfo && domainAgeInfo.ageDays > 365 && margin > 1.0) {
-        reason = `An toàn: Domain lâu năm (${domainAgeInfo.ageDays} ngày) bù trừ cho các dấu hiệu nghi ngờ`;
+      if (hasHarmlessBonus) {
+        reason = 'An toàn: Trang không có chức năng thu thập dữ liệu (Vô hại)';
+      } else if (domainAgeInfo && domainAgeInfo.ageDays > 365 && margin > 1.0) {
+        reason = `An toàn: Domain lâu năm (${domainAgeInfo.ageDays} ngày) bù trừ cho các dấu hiệu nghi ngờ`;   
       } else if (hasReputationBonus) {
         reason = `An toàn: TLD (${tld}) uy tín giúp giảm thiểu nghi ngờ từ mô hình AI`;
       } else {
@@ -580,4 +616,4 @@ async function predictPhishing(urlStr) {
   }
 
   return { probability: prob, tier, reason, isPhishing };
-}
+  }

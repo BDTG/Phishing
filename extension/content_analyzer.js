@@ -258,47 +258,13 @@ function hasCreditCardRequest() {
 }
 
 /**
- * Kiểm tra xem trang web có hoàn toàn "vô hại" không?
- * Một trang không có ô nhập liệu (input) và không có form thì không thể thu thập dữ liệu.
- * @returns {boolean} True nếu trang không có bất kỳ input hoặc form nào
- */
-function isPageHarmless() {
-  // Lấy tất cả input, select, textarea
-  const inputs = document.querySelectorAll('input, select, textarea');
-  const forms = document.querySelectorAll('form');
-  
-  // Lọc bỏ các input ẩn (hidden) thường dùng cho tracking/analytics
-  // Chỉ quan tâm đến các input mà người dùng có thể tương tác (điền thông tin)
-  const interactableInputs = Array.from(inputs).filter(input => {
-    // Nếu là input type="hidden" -> bỏ qua
-    if (input.type === 'hidden') return false;
-    
-    // Kiểm tra style hiển thị
-    const style = window.getComputedStyle(input);
-    if (style.display === 'none' || style.visibility === 'hidden') return false;
-    
-    // Kiểm tra kích thước (tránh input tàng hình)
-    const rect = input.getBoundingClientRect();
-    if (rect.width === 0 || rect.height === 0) return false;
-    
-    return true;
-  });
-
-  // Nếu không có bất kỳ ô nhập liệu tương tác nào VÀ không có form -> Vô hại
-  return interactableInputs.length === 0 && forms.length === 0;
-}
-
-/**
  * Tổng hợp tất cả tín hiệu từ DOM
- * → Trả về điểm bổ sung [0, 1], danh sách cảnh báo và tín hiệu vô hại
- * @returns {{score: number, warnings: string[], isHarmless: boolean}}
+ * → Trả về điểm bổ sung [0, 1] và danh sách cảnh báo cụ thể
+ * @returns {{score: number, warnings: string[]}}
  */
 function analyzeContent() {
   const warnings = [];
   let score = 0;
-  
-  // Kiểm tra dấu hiệu vô hại ngay từ đầu
-  const harmless = isPageHarmless();
 
   const currentHost = location.hostname.toLowerCase().replace(/^www\./, '');
   const isOfficialAnyBrand = Object.values(BRAND_OFFICIAL_DOMAINS).some(list =>
@@ -306,7 +272,7 @@ function analyzeContent() {
   );
 
   if (isOfficialAnyBrand) {
-    return { score: 0, warnings: [], isHarmless: true };
+    return { score: 0, warnings: [] };
   }
 
   try {
@@ -352,10 +318,9 @@ function analyzeContent() {
     console.debug('[ContentAnalyzer] Error:', e);
   }
 
-  // Return kết quả (cap ở 1.0) và tín hiệu vô hại
+  // Return kết quả (cap ở 1.0)
   return {
     score: Math.min(score, 1.0),
     warnings,
-    isHarmless: harmless
   };
 }
