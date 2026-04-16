@@ -71,9 +71,9 @@ let finalProb = Math.max(mlProb, contentResult.score);
 let finalTier = tier;
 let finalReason = reason;
 
-// Nếu Content Analysis phát hiện rủi ro cực cao → ép lên Block
-if (contentResult.score >= 0.85 && finalTier !== 'block') {
-...      finalTier = 'block';
+    // Nếu Content Analysis phát hiện rủi ro cực cao → ép lên Block
+    if (contentResult.score >= 0.85 && finalTier !== 'block') {
+      finalTier = 'block';
       finalReason = contentResult.warnings[0] || 'Phát hiện dấu hiệu lừa đảo trực tiếp trên trang';
     } else if (contentResult.score >= 0.60 && finalTier === 'safe') {
       // Nếu Content có rủi ro trung bình mà ML báo safe → nâng lên Warning

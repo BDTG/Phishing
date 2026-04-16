@@ -276,13 +276,11 @@ function analyzeContent() {
   }
 
   try {
-    // ... (rest of the checks)
     // Kiểm tra form mật khẩu
     if (hasPasswordForm()) {
       warnings.push('Có form mật khẩu');
       score += 0.2;
     }
-    // ...
 
     // Kiểm tra form action external
     if (hasExternalFormAction()) {

@@ -438,7 +438,6 @@ function isPageHarmless() {
  * @returns {Promise<Object>} { probability: number, tier: string, reason: string, isPhishing: boolean }
  */
 async function predictPhishing(urlStr) {
-  // ... (giữ nguyên phần đầu cho đến khi tính xong biến prob)
   // Decode URL — chống double/triple encoding
   const decodedUrl = safeDecodeURL(urlStr);
 
@@ -577,7 +576,6 @@ async function predictPhishing(urlStr) {
   let reason, tier, isPhishing;
 
   if (isPublicIP) {
-    // ... (rest of IP logic)
     if (prob >= 0.85) {
       prob = 0.75; tier = 'warning'; isPhishing = true;
       reason = 'Địa chỉ IP công cộng có dấu hiệu bất thường (đã hạ bậc)';
