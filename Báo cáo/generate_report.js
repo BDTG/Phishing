@@ -565,13 +565,13 @@ const children = [
   subHeading("2.7.1. Kiến trúc phòng thủ nhiều lớp"),
   body("Tiện ích mở rộng Chrome theo chuẩn Manifest V3 được thiết kế theo mô hình phòng thủ nhiều lớp, kết hợp danh sách đen, danh sách trắng, quy tắc heuristic, học máy và phân tích DOM để bổ sung điểm mạnh của từng phương pháp cho nhau. Hệ thống gồm tám lớp xử lý tuần tự, mỗi lớp có thể kết thúc sớm nếu đủ căn cứ:"),
   listItem("Lớp 0.", "Tiền xử lý URL: Giải mã URL (decode) tối đa 3 vòng lặp để chống kỹ thuật né tránh bằng double encoding. Phát hiện địa chỉ IP riêng tư (RFC 1918) và localhost để tránh flag nhầm môi trường nội bộ. Nhận diện địa chỉ IP công cộng và hạ bậc cảnh báo để giảm false positive. Phát hiện homograph và tên miền IDN chứa ký tự không thuộc bảng Latin cơ bản (ví dụ: Cyrillic giả mạo), nếu kết hợp từ khóa thương hiệu thì block ngay với xác suất 95%."),
-  listItem("Lớp 1.", "Danh sách tin cậy (Whitelist): Kiểm tra whitelist 50+ tên miền phổ biến được hardcode, kiểm tra subdomain của các nền tảng hosting uy tín như GitHub Pages và Vercel, và tra cứu danh sách Tranco Top 30.000 tên miền phổ biến nhất toàn cầu (442 KB). Tên miền giáo dục .edu.vn được tin tưởng do nhóm tên miền này được cấp phát và quản lý chặt chẽ bởi cơ quan nhà nước."),
+  listItem("Lớp 1.", "Danh sách tin cậy (Whitelist): Kiểm tra whitelist 50+ tên miền phổ biến được hardcode, kiểm tra subdomain của các nền tảng hosting uy tín như GitHub Pages và Vercel, và tra cứu danh sách Tranco Top 30.000 tên miền phổ biến nhất toàn cầu (442 KB). Bổ sung cơ chế whitelist thủ công (như kwindu.eu, cs.rin.ru) để xử lý nhanh các báo động nhầm. Tên miền giáo dục .edu.vn được tin tưởng tuyệt đối."),
   listItem("Lớp 2.", "Danh sách đen (Blacklist): Kiểm tra hostname với cơ sở dữ liệu 120+ URL nguy hiểm đã xác nhận, được lưu trữ trong file dangerous_urls.json. Hỗ trợ khớp chính xác (exact match) và khớp mẫu ký tự đại diện (wildcard matching). Nếu trùng khớp, chặn ngay lập tức với xác suất 98%."),
   listItem("Lớp 3.", "Phát hiện giả mạo thương hiệu: So sánh hostname với 7 thương hiệu lớn được cấu hình sẵn bao gồm PayPal, Google, Microsoft, Apple, Facebook, Amazon và FitGirl. Sử dụng thuật toán khoảng cách Levenshtein với ngưỡng 3 để phát hiện typosquatting như paypa1.com hay goggle.com. Kiểm tra cả exact keyword match và fuzzy domain matching."),
-  listItem("Lớp 4.", "Heuristic dựa trên quy tắc: Kiểm tra 13 TLD đáng ngờ (.xyz, .tk, .pw, .cc, .top, .club, v.v.). Kết hợp TLD đáng ngờ với từ khóa phishing cho xác suất 97%; kết hợp với giả mạo thương hiệu cho 95%; TLD đáng ngờ đơn thuần cho 82%."),
-  listItem("Lớp 5.", "Mô hình XGBoost ML: Suy luận bằng 300 cây quyết định trên 38 đặc trưng ngữ vựng. Áp dụng ngưỡng 3 bậc: An toàn (< 0,78), Cảnh báo (0,78-0,84) và Nguy hiểm (≥ 0,85). Địa chỉ IP công cộng được hạ một bậc để tránh false positive."),
-  listItem("Lớp 6.", "Phân tích nội dung DOM: Kiểm tra sáu tín hiệu gồm form mật khẩu (+0,2), form action trỏ sang domain khác (+0,5), giả mạo thương hiệu trong tiêu đề trang kết hợp form đăng nhập (+0,4), iframe ẩn không thuộc domain tin cậy (+0,3), yêu cầu thông tin thẻ tín dụng trong form (+0,3), và phát hiện brand impersonation trực tiếp từ hostname không cần form (+0,6). Điểm tổng hợp từ lớp này bổ sung cho điểm ML."),
-  listItem("Lớp 7.", "Kiểm tra tuổi tên miền RDAP: Truy vấn giao thức RDAP miễn phí để lấy ngày đăng ký tên miền. Tên miền dưới 7 ngày bị đánh dấu nguy hiểm nghiêm trọng; dưới 30 ngày là rủi ro cao. Thông tin được hiển thị trong banner cảnh báo để giúp người dùng đánh giá."),
+  listItem("Lớp 4.", "Heuristic dựa trên quy tắc: Kiểm tra 13 TLD đáng ngờ (.xyz, .tk, .pw, .cc, .top, .club, v.v.). Thay vì chặn cứng, hệ thống áp dụng cơ chế phạt nhẹ (soft penalty) kết hợp với độ đồng thuận từ mô hình AI để giảm báo động nhầm. Nếu kết hợp từ khóa phishing, xác suất đạt 97%."),
+  listItem("Lớp 5.", "Mô hình XGBoost ML: Suy luận bằng 300 cây quyết định trên 38 đặc trưng ngữ vựng. Áp dụng ngưỡng 3 bậc: An toàn (< 0,75), Cảnh báo (0,75-0,84) và Nguy hiểm (≥ 0,85)."),
+  listItem("Lớp 6.", "Phân tích nội dung DOM: Kiểm tra các tín hiệu gồm form mật khẩu, form action ngoại lai, giả mạo thương hiệu. Đặc biệt bổ sung hệ thống phủ định (Negative Signal) qua hàm isPageHarmless(): nếu trang hoàn toàn không có form hoặc ô nhập liệu (như trang đọc truyện), xác suất rủi ro từ AI sẽ bị giảm trừ 70%."),
+  listItem("Lớp 7.", "Kiểm tra tuổi tên miền RDAP & Điểm uy tín: Truy vấn ngày đăng ký tên miền. Kết hợp cơ chế Reputation Bonus: giảm 35% rủi ro cho domain trên 1 năm. Đối với TLD uy tín (.vn, .eu, .ru) bị lỗi mạng khi check RDAP, hệ thống vẫn tự động giảm 25% rủi ro để đảm bảo trải nghiệm người dùng."),
 
   subHeading("2.7.2. Quy trình xử lý và triển khai mô hình"),
   body("Quy trình hoạt động của hệ thống diễn ra hoàn toàn tự động. Khi người dùng bắt đầu truy cập một trang web mới, Background Service Worker đánh chặn sự kiện điều hướng và inject tuần tự sáu file JavaScript: dangerous_url_checker.js (danh sách đen), feature_extractor.js (trích xuất đặc trưng), xgboost_predictor.js (suy luận ML), domain_age_checker.js (kiểm tra tuổi domain RDAP), content_analyzer.js (phân tích DOM) và content.js (điều phối tổng hợp và hiển thị banner). Mỗi lớp có thể kết thúc sớm và trả về kết quả ngay lập tức nếu đủ căn cứ, giúp tối ưu thời gian xử lý."),
@@ -696,6 +696,7 @@ const children = [
   body("Giai đoạn 3 chuyển feature extraction sang Full URL (có path, query) thay vì bare domain, tăng accuracy từ 81,9% lên 98,1% trên 105 URL kiểm thử toàn diện. Giai đoạn 4 xử lý ba edge case quan trọng: IP riêng tư không bị cảnh báo, tấn công homograph phát hiện qua regex kiểm tra ký tự Latin, URL bị mã hóa được giải mã tối đa 3 vòng."),
   body("Giai đoạn 5 triển khai hệ thống 3 bậc cảnh báo và danh sách Tranco Top 30.000. Giai đoạn 6 thêm tính năng Explainable AI, mỗi cảnh báo hiển thị lý do cụ thể thay vì chỉ hiển thị xác suất. Giai đoạn 7 mở rộng hỗ trợ tin cậy tự động: subdomain chính thức của brand, các nền tảng hosting uy tín như GitHub Pages và Vercel, và tên miền giáo dục .edu.vn do đây là nhóm tên miền được quản lý chặt chẽ bởi Bộ Thông tin và Truyền thông, ít có khả năng bị lạm dụng cho mục đích lừa đảo. Giai đoạn 8 tích hợp kiểm tra tuổi tên miền qua RDAP."),
   body("Giai đoạn 9 hoàn thiện trải nghiệm người dùng và bổ sung lớp danh sách đen. Tích hợp dangerous_url_checker.js với cơ sở dữ liệu 120+ URL nguy hiểm đã xác nhận, hỗ trợ khớp chính xác và khớp mẫu wildcard. Xây dựng giao diện popup chuyên nghiệp với dark theme gradient theo trạng thái, hiển thị URL, thanh xác suất phishing và lý do phát hiện. Triển khai icon động trên thanh công cụ bằng file PNG tĩnh (nhanh hơn Canvas API 10-20 lần) với bốn trạng thái: mặc định, an toàn, cảnh báo và nguy hiểm. Bổ sung hàm hasBrandImpersonation() trong content_analyzer.js để phát hiện giả mạo thương hiệu trực tiếp từ hostname mà không cần form mật khẩu, với điểm +0,6 là tín hiệu mạnh nhất trong phân tích DOM."),
+  body("Giai đoạn 10 tối ưu hóa cảnh báo nhầm (False Positive) bằng cách tích hợp kiểm tra trang vô hại (Harmless Page Detection) vào phân tích DOM, kết hợp cơ chế Điểm uy tín (Reputation Bonus) từ tuổi tên miền và TLD, đồng thời cải thiện độ ổn định của API RDAP với cơ chế xử lý lỗi mạng và thời gian chờ (timeout) 10 giây."),
 
   subHeading("3.6.2. Kết quả kiểm thử toàn diện (105 URL)"),
   body("Bộ kiểm thử toàn diện gồm 105 URL thuộc sáu nhóm đại diện, được thiết kế để bao phủ cả true positive và false positive. Kết quả được thể hiện trong Bảng 3.3."),
@@ -758,7 +759,7 @@ const children = [
 
   sectionHeading("4.2. Hạn chế"),
   body("BRANDS_CONFIG cần bổ sung thủ công khi có thương hiệu mới. Hiện tại cấu hình 15 thương hiệu, trong khi thực tế có hàng nghìn thương hiệu bị giả mạo. Tự động hóa khám phá thương hiệu từ Tranco và phản hồi người dùng là hướng cải tiến tiếp theo."),
-  body("RDAP domain age checking có độ trễ tối đa 5 giây và không hỗ trợ toàn bộ TLD. Kết quả chỉ được hiển thị như thông tin bổ sung trên banner mà không ảnh hưởng đến quyết định block hay safe, hạn chế giá trị thực tiễn của tính năng này."),
+  body("RDAP domain age checking có độ trễ tối đa 10 giây và không hỗ trợ toàn bộ TLD. Tuy nhiên, hệ thống đã tối ưu hóa bằng cách kết hợp cơ chế Reputation Bonus, cho phép kết quả tuổi domain ảnh hưởng trực tiếp đến việc giảm trừ rủi ro cho các tên miền lâu năm, giúp tăng tính thực tiễn của tính năng này."),
   body("Danh sách đen hiện tại chỉ chứa 120+ URL được cập nhật thủ công. Với các trang phishing mới xuất hiện nhưng chưa có trong danh sách, hệ thống chỉ có thể phát hiện qua phân tích DOM khi trang đã tải xong. Cần xây dựng cơ chế cập nhật danh sách đen tự động từ các nguồn cộng đồng."),
   body("Tập dữ liệu huấn luyện lấy từ thời điểm cụ thể năm 2024. Chiến thuật phishing thay đổi liên tục và mô hình có thể giảm độ chính xác theo thời gian nếu không được cập nhật định kỳ."),
 
@@ -849,7 +850,31 @@ const doc = new Document({
   }],
 });
 
+// ============================================================
+// SAVE FILE WITH DYNAMIC VERSIONING
+// ============================================================
 Packer.toBuffer(doc).then(buffer => {
-  fs.writeFileSync("C:/Users/BDTG/Desktop/Đồ Án Cơ Sở/Báo cáo/BaoCao_DACS_TranDuyThai_v9.docx", buffer);
-  console.log("Done! v9 saved.");
+  const dir = "C:/Users/BDTG/Desktop/Đồ Án Cơ Sở/Báo cáo";
+  const baseName = "BaoCao_DACS_TranDuyThai";
+  
+  // Quét thư mục để tìm version cao nhất
+  const files = fs.readdirSync(dir);
+  let maxVer = 0;
+  files.forEach(f => {
+    const m = f.match(/v(\d+)\.docx$/);
+    if (m) {
+      const v = parseInt(m[1]);
+      if (v > maxVer) maxVer = v;
+    }
+  });
+
+  const nextVer = maxVer + 1;
+  const fileName = `${baseName}_v${nextVer}.docx`;
+  const filePath = `${dir}/${fileName}`;
+
+  fs.writeFileSync(filePath, buffer);
+  console.log(`\n============================================================`);
+  console.log(`✅ THÀNH CÔNG: Đã tạo báo cáo phiên bản v${nextVer}`);
+  console.log(`📂 Đường dẫn: ${filePath}`);
+  console.log(`============================================================\n`);
 });
