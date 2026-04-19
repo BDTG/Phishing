@@ -63,22 +63,12 @@ const doc = new Document({
       listItem("Đồng bộ nhân dự đoán (Prediction Engine) giữa Popup và Banner cảnh báo, đảm bảo kết quả hiển thị nhất quán trên toàn hệ thống."),
       listItem("Hiện đại hóa giao diện trang Cài đặt (Options) và Popup theo phong cách tối giản, chuyên nghiệp hơn."),
 
-      new Paragraph({ children: [new TextRun({ text: "d. Chuẩn hóa mã nguồn và báo cáo:", font: TNR, size: BODY_SIZE, bold: true, italics: true })] }),
-      listItem("Cập nhật script tạo báo cáo tự động (generate_report.js) với cơ chế tăng số phiên bản (versioning) tự động và cập nhật nội dung kỹ thuật mới nhất vào chương 2 và chương 3 của đồ án."),
-
       new Paragraph({
         children: [new TextRun({ text: "2. Kế hoạch tuần tới (Tuần 7)", font: TNR, size: 28, bold: true })],
         spacing: { before: 240, after: 120 },
       }),
       listItem("Hoàn thiện toàn bộ nội dung quyển báo cáo đồ án (file Word)."),
-      listItem("Thiết kế bài thuyết trình (Slide) phục vụ buổi bảo vệ."),
       listItem("Thực hiện kiểm thử cuối cùng trên tập dữ liệu phishing thực tế mới nhất để đánh giá độ bền vững của mô hình."),
-
-      new Paragraph({
-        children: [new TextRun({ text: "TP. Hồ Chí Minh, ngày 15 tháng 4 năm 2026", font: TNR, size: BODY_SIZE, italics: true })],
-        alignment: AlignmentType.RIGHT,
-        spacing: { before: 400 },
-      }),
     ],
   }],
 });
