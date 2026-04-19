@@ -30,7 +30,7 @@ const doc = new Document({
     children: [
       new Paragraph({
         heading: HeadingLevel.HEADING_1,
-        children: [new TextRun({ text: "BÁO CÁO TIẾN ĐỘ THỰC HIỆN ĐỒ ÁN - TUẦN 6", font: TNR, size: 32, bold: true })],
+        children: [new TextRun({ text: "BÁO CÁO TIẾN ĐỘ THỰC HIỆN ĐỒ ÁN - TUẦN 6", font: TNR, size: 32, bold: true, color: "000000" })],
         alignment: AlignmentType.CENTER,
         spacing: { after: 300 },
       }),
