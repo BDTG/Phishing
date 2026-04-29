@@ -5,6 +5,8 @@
 // Kiến trúc: 3-Layer + 3-Tier Threshold
 // ============================================================
 
+const DEBUG_MODE = true; // BẬT DEBUG MODE ĐỂ XEM CHI TIẾT CÁC BƯỚC QUÉT
+
 // Biến toàn cục lưu model XGBoost đã load
 // null = chưa load, object = đã load
 let xgbModel = null;
@@ -445,6 +447,13 @@ function isPageHarmless() {
  * @returns {Promise<Object>} { probability: number, tier: string, reason: string, isPhishing: boolean }
  */
 async function predictPhishing(urlStr) {
+  const logDebug = (layer, result, details = '') => {
+    if (typeof DEBUG_MODE !== 'undefined' && DEBUG_MODE) {
+      console.log(`%c[Phishing Detector] [${layer}]`, 'color: #007bff; font-weight: bold;', result, details);
+    }
+  };
+  logDebug('START', 'Đang phân tích URL', urlStr);
+
   // Decode URL — chống double/triple encoding
   const decodedUrl = safeDecodeURL(urlStr);
 
@@ -456,15 +465,18 @@ async function predictPhishing(urlStr) {
     const parts = hostname.split('.');
     tld = parts.length ? '.' + parts[parts.length - 1] : '';
   } catch (e) {
+    logDebug('PARSE ERROR', 'URL không hợp lệ', '=> SAFE');
     return { probability: 0, tier: 'safe', reason: 'URL không hợp lệ', isPhishing: false };
   }
 
   // ── LAYER 0: Localhost + IP Address Detection ──
   if (hostname === 'localhost') {
-    return { probability: 0.01, tier: 'safe', reason: 'Mạng nội bộ / Localhost', isPhishing: false };
+    logDebug('LAYER 0', 'Phát hiện Mạng nội bộ / Localhost', '=> SAFE');
+      return { probability: 0.01, tier: 'safe', reason: 'Mạng nội bộ / Localhost', isPhishing: false };
   }
   if (isIPAddress(hostname)) {
     if (isPrivateOrLocalIP(hostname)) {
+      logDebug('LAYER 0', 'Phát hiện Mạng nội bộ / Localhost', '=> SAFE');
       return { probability: 0.01, tier: 'safe', reason: 'Mạng nội bộ / Localhost', isPhishing: false };
     }
   }
@@ -476,8 +488,10 @@ async function predictPhishing(urlStr) {
     const hasBrandKw = allBrandKws.some(kw => hostname.includes(kw.toLowerCase()));
 
     if (hasBrandKw) {
+      logDebug('LAYER 0b', 'Phát hiện Homograph + Brand', '=> BLOCK');
       return { probability: 0.95, tier: 'block', reason: 'Ký tự không phải Latin nghi ngờ giả mạo (Homograph)', isPhishing: true };
     }
+    logDebug('LAYER 0b', 'Phát hiện Non-Latin Domain', '=> WARNING');
     return { probability: 0.70, tier: 'warning', reason: 'Domain chứa ký tự đặc biệt không thuộc Latin', isPhishing: true };
   }
 
@@ -487,6 +501,7 @@ async function predictPhishing(urlStr) {
   );
 
   if (isSafeDomain) {
+    logDebug('LAYER 1', 'Phát hiện trong SAFE_DOMAINS', hostname + ' => SAFE');
     return { probability: 0.01, tier: 'safe', reason: 'Domain an toàn (whitelist)', isPhishing: false };
   }
 
@@ -497,11 +512,13 @@ async function predictPhishing(urlStr) {
   });
 
   if (isSafeBaseDomain) {
+    logDebug('LAYER 1_base', 'Phát hiện trong SAFE_BASE_NAMES', hostname + ' => SAFE');
     return { probability: 0.02, tier: 'safe', reason: 'Tên miền gốc an toàn (Flexible Whitelist)', isPhishing: false };
   }
 
   // ── LAYER 1a: Subdomain của platforms uy tín ──
   if (isSubdomainOfSafe(hostname)) {
+    logDebug('LAYER 1a', 'Subdomain của platform uy tín', hostname + ' => SAFE');
     return { probability: 0.03, tier: 'safe', reason: 'Subdomain của platform uy tín', isPhishing: false };
   }
 
@@ -510,6 +527,7 @@ async function predictPhishing(urlStr) {
     await loadDangerousUrls();
     const dangerCheck = isDangerousUrl(hostname);
     if (dangerCheck.isDangerous) {
+      logDebug('LAYER 1b', 'Nằm trong Blacklist', dangerCheck.reason + ' => BLOCK');
       return { probability: 0.98, tier: 'block', reason: dangerCheck.reason, isPhishing: true };
     }
   }
@@ -517,12 +535,14 @@ async function predictPhishing(urlStr) {
   // ── LAYER 1c: Tranco Top 30K ──
   const top30k = await loadTrancoTop30k();
   if (top30k.size > 0 && top30k.has(hostname)) {
+    logDebug('LAYER 1c', 'Nằm trong Tranco Top 30K', hostname + ' => SAFE');
     return { probability: 0.05, tier: 'safe', reason: 'Domain phổ biến (Tranco Top 30K)', isPhishing: false };
   }
 
   // ── LAYER 2: Brand Impersonation ──
   const brandCheck = checkBrandImpersonation(decodedUrl);
   if (brandCheck.isImpersonation && brandCheck.reason === 'Official domain') {
+    logDebug('LAYER 2', 'Domain Brand chính chủ', decodedUrl + ' => SAFE');
     return { probability: brandCheck.probability, tier: 'safe', reason: 'Domain chính chủ', isPhishing: false };
   }
 
@@ -532,9 +552,11 @@ async function predictPhishing(urlStr) {
   if (SUSP_TLDS_SET.has(tld)) {
     const hasPhishKw = PHISHING_KW_LIST.some(kw => fullLower.includes(kw));
     if (hasPhishKw) {
+      logDebug('LAYER 3a', 'TLD đáng ngờ + Từ khóa phishing', tld + ' => BLOCK');
       return { probability: 0.97, tier: 'block', reason: 'TLD đáng ngờ + từ khóa phishing', isPhishing: true };
     }
     if (brandCheck.isImpersonation) {
+      logDebug('LAYER 3a', 'Giả mạo thương hiệu + TLD đáng ngờ', brandCheck.reason + ' => BLOCK');
       return { probability: 0.95, tier: 'block', reason: `Giả mạo thương hiệu + TLD đáng ngờ (${brandCheck.reason})`, isPhishing: true };
     }
     // Không chặn ngay, chỉ đánh dấu để xử lý sau ML model
@@ -543,12 +565,31 @@ async function predictPhishing(urlStr) {
 
   // ── LAYER 3b: Brand impersonation với TLD phổ thông ──
   if (brandCheck.isImpersonation) {
+    logDebug('LAYER 3b', 'Giả mạo thương hiệu (Typosquatting)', brandCheck.reason + ' => BLOCK');
     return { probability: brandCheck.probability, tier: 'block', reason: brandCheck.reason, isPhishing: true };
   }
 
   // ── LAYER 3c: XGBoost ML Model ──
+    logDebug('LAYER 5', 'Bắt đầu chạy Mô hình XGBoost', 'Đang trích xuất 39 đặc trưng...');
   await loadModel();
   const features = extractFeatures(decodedUrl);
+  if (typeof DEBUG_MODE !== 'undefined' && DEBUG_MODE) {
+    console.groupCollapsed('%c[Phishing Detector] [LAYER 5] RAW FEATURES (Click để xem 39 con số)', 'color: #28a745; font-weight: bold;');
+    console.table([
+      { name: 'url_length', value: features[0] },
+      { name: 'num_dots', value: features[1] },
+      { name: 'num_hyphens', value: features[2] },
+      { name: 'entropy', value: features[9].toFixed(3) },
+      { name: 'is_susp_tld', value: features[15] },
+      { name: 'has_phishing_kw', value: features[25] },
+      { name: 'min_levenshtein', value: features[33] },
+      { name: 'is_typosquatting', value: features[34] },
+      { name: 'combined_suspicious_score', value: features[37] },
+      { name: '(Hiển thị 9/39 đặc trưng cốt lõi)', value: '...' }
+    ]);
+    console.log("Mảng 39 features đầy đủ:", features);
+    console.groupEnd();
+  }
   const trees = xgbModel.learner.gradient_booster.model.trees;
 
   let margin = 0;
@@ -556,7 +597,9 @@ async function predictPhishing(urlStr) {
     margin += traverseTree(tree, features);
   }
 
-  let prob = sigmoid(margin);
+    let prob = sigmoid(margin);
+  logDebug('LAYER 5', 'Kết quả XGBoost (Chưa hiệu chỉnh)', `Xác suất: ${(prob*100).toFixed(2)}% (Margin: ${margin.toFixed(3)})`);
+
 
   // ── POST-PROCESS: Intelligence Layers (IP & Domain Age) ──
 
@@ -568,13 +611,15 @@ async function predictPhishing(urlStr) {
     domainAgeInfo = await getDomainAge(hostname);
     if (domainAgeInfo && domainAgeInfo.ageDays > 365 && prob > 0.75) {
       // Giảm 35% xác suất rủi ro cho domain > 1 năm
-      prob *= 0.65; 
+      prob *= 0.65;
+      logDebug('LAYER 7', 'Áp dụng Domain Age Bonus', `Domain > 1 năm, giảm xác suất còn ${(prob*100).toFixed(2)}%`); 
     } 
     // Nếu gặp lỗi Timeout/Network nhưng TLD uy tín (.eu, .vn, .gov...)
     else if (domainAgeInfo && domainAgeInfo.error && REPUTABLE_TLDS.has(tld) && prob > 0.75) {
       // TLD uy tín xứng đáng được giảm mạnh hơn để tránh False Positive (Giảm 25%)
       prob *= 0.75; 
       hasReputationBonus = true;
+      logDebug('LAYER 7', 'Áp dụng Reputation Bonus', `TLD uy tín ${tld}, giảm xác suất còn ${(prob*100).toFixed(2)}%`);
     }
   }
 
@@ -587,6 +632,7 @@ async function predictPhishing(urlStr) {
     // Giảm 70% xác suất rủi ro (Hệ số 0.3)
     prob *= 0.3;
     hasHarmlessBonus = true;
+    logDebug('LAYER 6', 'Áp dụng Harmless Page Check', `Không có form/input, giảm xác suất còn ${(prob*100).toFixed(2)}%`);
   }
 
   const isPublicIP = isIPAddress(hostname) && !isPrivateOrLocalIP(hostname);
@@ -630,5 +676,6 @@ async function predictPhishing(urlStr) {
     }
   }
 
+  logDebug('FINAL DECISION', tier.toUpperCase(), `${reason} (Xác suất chốt: ${(prob*100).toFixed(2)}%)`);
   return { probability: prob, tier, reason, isPhishing };
   }
