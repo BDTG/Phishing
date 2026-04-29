@@ -241,8 +241,18 @@ function hasHiddenIframe() {
  * @returns {boolean} True nếu phát hiện yêu cầu thẻ tín dụng
  */
 function hasCreditCardRequest() {
-  // Không có form → không phải trang thu thập dữ liệu
-  if (document.querySelectorAll('form').length === 0) return false;
+  // Phải có form chứa input nhập liệu (text/password/number/tel) thì mới có rủi ro thu thập thẻ
+  const forms = document.querySelectorAll('form');
+  if (forms.length === 0) return false;
+  
+  let hasTextInput = false;
+  for (const form of forms) {
+    if (form.querySelector('input[type="text"], input[type="password"], input[type="number"], input[type="tel"]')) {
+      hasTextInput = true;
+      break;
+    }
+  }
+  if (!hasTextInput) return false;
 
   // Lấy text content của body
   const text = document.body ? document.body.innerText.toLowerCase() : '';

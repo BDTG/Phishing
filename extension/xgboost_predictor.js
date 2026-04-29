@@ -609,20 +609,26 @@ async function predictPhishing(urlStr) {
 
   if (typeof getDomainAge === 'function') {
     domainAgeInfo = await getDomainAge(hostname);
-    if (domainAgeInfo && domainAgeInfo.ageDays > 365 && prob > 0.75) {
-      // Giảm 35% xác suất rủi ro cho domain > 1 năm
-      prob *= 0.65;
-      logDebug('LAYER 7', 'Áp dụng Domain Age Bonus', `Domain > 1 năm, giảm xác suất còn ${(prob*100).toFixed(2)}%`); 
+    if (domainAgeInfo && prob > 0.75) {
+      if (domainAgeInfo.ageDays > 365) {
+        prob *= 0.65; // Giảm 35%
+        logDebug('LAYER 7', 'Áp dụng Domain Age Bonus (Tier 1)', `Domain > 1 năm (${domainAgeInfo.ageDays} ngày), giảm xác suất còn ${(prob*100).toFixed(2)}%`);
+      } else if (domainAgeInfo.ageDays > 180) {
+        prob *= 0.80; // Giảm 20%
+        logDebug('LAYER 7', 'Áp dụng Domain Age Bonus (Tier 2)', `Domain > 6 tháng (${domainAgeInfo.ageDays} ngày), giảm xác suất còn ${(prob*100).toFixed(2)}%`);
+      } else if (domainAgeInfo.ageDays > 90) {
+        prob *= 0.90; // Giảm 10%
+        logDebug('LAYER 7', 'Áp dụng Domain Age Bonus (Tier 3)', `Domain > 3 tháng (${domainAgeInfo.ageDays} ngày), giảm xác suất còn ${(prob*100).toFixed(2)}%`);
+      }
     } 
     // Nếu gặp lỗi Timeout/Network nhưng TLD uy tín (.eu, .vn, .gov...)
-    else if (domainAgeInfo && domainAgeInfo.error && REPUTABLE_TLDS.has(tld) && prob > 0.75) {
+    if (domainAgeInfo && domainAgeInfo.error && REPUTABLE_TLDS.has(tld) && prob > 0.75) {
       // TLD uy tín xứng đáng được giảm mạnh hơn để tránh False Positive (Giảm 25%)
       prob *= 0.75; 
       hasReputationBonus = true;
       logDebug('LAYER 7', 'Áp dụng Reputation Bonus', `TLD uy tín ${tld}, giảm xác suất còn ${(prob*100).toFixed(2)}%`);
     }
   }
-
   // 2. Kiểm tra nội dung trang có "vô hại" không (Negative Signal)
   // Chỉ áp dụng khi ML rủi ro cao nhưng trang hoàn toàn không có form/input
   const isHarmless = isPageHarmless();
@@ -666,8 +672,8 @@ async function predictPhishing(urlStr) {
       tier = 'safe'; isPhishing = false;
       if (hasHarmlessBonus) {
         reason = 'An toàn: Trang không có chức năng thu thập dữ liệu (Vô hại)';
-      } else if (domainAgeInfo && domainAgeInfo.ageDays > 365 && margin > 1.0) {
-        reason = `An toàn: Domain lâu năm (${domainAgeInfo.ageDays} ngày) bù trừ cho các dấu hiệu nghi ngờ`;   
+      } else if (domainAgeInfo && domainAgeInfo.ageDays > 90 && margin > 1.0) {
+        reason = `An toàn: Domain đã tồn tại ${domainAgeInfo.ageDays} ngày, đủ uy tín bù trừ cho các dấu hiệu nghi ngờ`;   
       } else if (hasReputationBonus) {
         reason = `An toàn: TLD (${tld}) uy tín giúp giảm thiểu nghi ngờ từ mô hình AI`;
       } else {
