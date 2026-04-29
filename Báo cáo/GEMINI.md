@@ -1,44 +1,50 @@
 # Phishing URL Detector - Reporting Module
 
-This directory contains the automated reporting and presentation generation tools for the "Phishing URL Detector" project. It uses Node.js scripts to programmatically generate the thesis report and presentation slides.
+This directory contains the automated reporting, presentation generation, and defense preparation tools for the "Phishing URL Detector" project. It uses Node.js scripts to programmatically generate the thesis deliverables in `.docx` format.
 
 ## Project Overview
-The goal of this module is to ensure consistency and professional formatting across the final project deliverables. By using code to generate documents, updates to project data or architecture can be reflected in the documentation with minimal manual effort.
+The goal of this module is to ensure consistency and professional formatting across all final project deliverables. By using code to generate documents, updates to project data, architecture, or false-positive fixes can be reflected in the documentation with minimal manual effort.
 
 ### Main Technologies
 - **Node.js:** Execution environment for generation scripts.
 - **docx (npm):** Library used for creating Word documents (`.docx`).
-- **pptxgenjs (npm):** Library used for creating PowerPoint presentations (`.pptx`).
+- **File System (fs):** Used for dynamic file versioning and reading local assets (like images).
 
 ## Building and Running
 
 ### Prerequisites
 - Node.js installed.
-- Dependencies installed via `npm install` (primarily `pptxgenjs`).
-- **Note on `docx`:** The `generate_report.js` script currently references `docx` via an absolute path to a global installation (`C:/Users/BDTG/AppData/Roaming/npm/node_modules/docx`). If running on a different machine, this path may need to be updated or replaced with a local `require('docx')`.
+- Dependencies installed via `npm install` (primarily the `docx` package).
+- The scripts reference the `docx` library. Make sure the local or global path in the `require()` statement matches your environment.
 
-### Generate Report
-To generate the latest version of the thesis report:
+### Generate Documents
+All generated documents implement **Dynamic Versioning**. The scripts scan the directory for the highest existing version (e.g., `v9`) and automatically save the new file as the next version (e.g., `v10`), keeping your history clean.
+
+To generate the **Thesis Report**:
 ```powershell
 node generate_report.js
 ```
-The output file is typically named `BaoCao_DACS_TranDuyThai_v9.docx` (or similar versioned names).
+*(Output: `BaoCao_DACS_TranDuyThai_vX.docx`)*
 
-### Generate Slides
-To generate the presentation slides:
+To generate the **Presentation Script** (with professional layout, technical boxes, and Mermaid diagrams):
 ```powershell
-node generate_slides.js
+node gen_thuyet_trinh.js
 ```
-The output file is named `Slide_DACS_TranDuyThai.pptx`.
+*(Output: `BAO_CAO_TIEN_DO_PRES_2304.docx`)*
+
+To generate the **Q&A Defense Script** (Anticipated questions from the committee and answers):
+```powershell
+node gen_qna_defense.js
+```
+*(Output: `KICH_BAN_BAO_VE_DO_AN.docx`)*
 
 ## Key Files
-- `generate_report.js`: The core logic for report generation, including styles, structure (chapters, sections), and content injection.
-- `generate_slides.js`: The script for creating a modern, ocean-themed presentation with technical diagrams and project highlights.
-- `BaoCao_DACS_TranDuyThai_v*.docx`: Various versions of the generated report.
-- `Slide_DACS_TranDuyThai.pptx`: The generated presentation file.
-- `package.json`: Contains the `pptxgenjs` dependency.
+- `generate_report.js`: The core logic for the massive thesis report, including styles, chapters, metrics, and tables.
+- `gen_thuyet_trinh.js`: Generates the step-by-step presentation outline, combining technical explanations, 5-group feature categorization, and automated image injection (Mermaid diagrams).
+- `gen_qna_defense.js`: Generates the "Armor" document—a list of the 10 most critical committee questions (Data sources, Zero-day defense, F1-Score, SMOTE, JSON deployment) with well-crafted, academic answers.
+- `gen_week6.js`: Generates weekly progress reports.
 
 ## Development Conventions
-- **Naming:** Reports are versioned (e.g., `v7`, `v9`) to track progress and feedback.
-- **Formatting:** `generate_report.js` defines standard styles for "Times New Roman" at specific sizes (13pt for body, 16pt for chapters, etc.) to meet university thesis requirements.
-- **Layout:** `generate_slides.js` uses a `LAYOUT_WIDE` (16:9) aspect ratio with a custom color palette (`bgDark`, `accent`, etc.) for a modern technical look.
+- **Naming & Versioning:** Output files automatically increment their version numbers (`_v10.docx`).
+- **Formatting:** Scripts define standard styles for "Times New Roman". `gen_thuyet_trinh.js` utilizes advanced formatting like `technicalBox()` and `imagePlaceholder()` to highlight technical details and guide the user on where to paste screenshots.
+- **Structure:** The content strictly mirrors the actual Python and JS implementations, detailing concepts like the "Harmless Page Check" and "Reputation Bonus" directly in the defense scripts.

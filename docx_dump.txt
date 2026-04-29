@@ -1,0 +1,134 @@
+P[0]: Indent=0, Text='BÁO CÁO TIẾN ĐỘ THỰC HIỆN ĐỒ ÁN'
+     Runs=[('BÁO CÁO TIẾN ĐỘ THỰC HIỆN ĐỒ ÁN', True, None, 'None')]
+P[1]: Indent=0, Text='BUỔI TRÌNH BÀY 23/04'
+     Runs=[('BUỔI TRÌNH BÀY 23/04', True, None, 'None')]
+P[3]: Indent=0, Text='1. Mục tiêu tổng quát và các mục tiêu cụ thể'
+     Runs=[('1. Mục tiêu tổng quát và các mục tiêu cụ thể', True, None, 'None')]
+P[4]: Indent=0, Text='Mục tiêu tổng quát: Xây dựng một hệ thống bảo vệ người dùng trước các cuộc tấn công lừa đảo (phishing) thông qua URL bằng cách kết hợp học máy và phân tích nội dung thời gian thực.'
+     Runs=[('Mục tiêu tổng quát: Xây dựng một hệ thống bảo vệ người dùng trước các cuộc tấn công lừa đảo (phishing) thông qua URL bằng cách kết hợp học máy và phân tích nội dung thời gian thực.', None, None, 'None')]
+P[5]: Indent=0.25, Text='• Phát hiện URL lừa đảo với độ chính xác trên 99% bằng mô hình XGBoost.'
+     Runs=[('• ', True, None, 'None'), ('Phát hiện URL lừa đảo với độ chính xác trên 99% bằng mô hình XGBoost.', None, None, 'None')]
+P[6]: Indent=0.25, Text='• Triển khai dưới dạng Chrome Extension hoạt động hoàn toàn offline để bảo vệ quyền riêng tư.'
+     Runs=[('• ', True, None, 'None'), ('Triển khai dưới dạng Chrome Extension hoạt động hoàn toàn offline để bảo vệ quyền riêng tư.', None, None, 'None')]
+P[7]: Indent=0.25, Text='• Xây dựng kiến trúc phòng thủ đa tầng để giảm thiểu tối đa tỉ lệ báo động giả (False Positive).'
+     Runs=[('• ', True, None, 'None'), ('Xây dựng kiến trúc phòng thủ đa tầng để giảm thiểu tối đa tỉ lệ báo động giả (False Positive).', None, None, 'None')]
+P[8]: Indent=0, Text='2. Phạm vi triển khai'
+     Runs=[('2. Phạm vi triển khai', True, None, 'None')]
+P[9]: Indent=0, Text='Hệ thống triển khai dưới dạng tiện ích mở rộng (Extension) trên trình duyệt Google Chrome theo chuẩn Manifest V3. Phạm vi nghiên cứu tập trung vào phân tích ngữ vựng URL (39 đặc trưng) và phân tích cấu trúc DOM trang web. Việc triển khai trên trình duyệt giúp can thiệp và cảnh báo người dùng ngay tại thời điểm truy cập (Real-time).'
+     Runs=[('Hệ thống triển khai dưới dạng tiện ích mở rộng (Extension) trên trình duyệt Google Chrome theo chuẩn Manifest V3. Phạm vi nghiên cứu tập trung vào phân tích ngữ vựng URL (39 đặc trưng) và phân tích cấu trúc DOM trang web. Việc triển khai trên trình duyệt giúp can thiệp và cảnh báo người dùng ngay tại thời điểm truy cập (Real-time).', None, None, 'None')]
+P[10]: Indent=0, Text='Lý do lựa chọn phạm vi này:'
+     Runs=[('Lý do lựa chọn phạm vi này:', True, None, 'None')]
+P[11]: Indent=0.25, Text='• Manifest V3 đảm bảo hiệu suất cao và bảo mật tốt hơn so với V2.'
+     Runs=[('• ', True, None, 'None'), ('Manifest V3 đảm bảo hiệu suất cao và bảo mật tốt hơn so với V2.', None, None, 'None')]
+P[12]: Indent=0.25, Text='• Phân tích URL + DOM đủ nhẹ để chạy offline trên trình duyệt mà vẫn đảm bảo độ chính xác.'
+     Runs=[('• ', True, None, 'None'), ('Phân tích URL + DOM đủ nhẹ để chạy offline trên trình duyệt mà vẫn đảm bảo độ chính xác.', None, None, 'None')]
+P[13]: Indent=0.25, Text='• Tiếp cận Real-time giúp chặn đứng tấn công ngay khi người dùng vừa truy cập.'
+     Runs=[('• ', True, None, 'None'), ('Tiếp cận Real-time giúp chặn đứng tấn công ngay khi người dùng vừa truy cập.', None, None, 'None')]
+P[14]: Indent=0, Text='3. Đối tượng phục vụ và giá trị ứng dụng'
+     Runs=[('3. Đối tượng phục vụ và giá trị ứng dụng', True, None, 'None')]
+P[15]: Indent=0, Text='Đối tượng:'
+     Runs=[('Đối tượng:', True, None, 'None')]
+P[16]: Indent=0.25, Text='• Người dùng internet phổ thông, đặc biệt là nhóm người dùng không có kiến thức chuyên sâu về ATTT.'
+     Runs=[('• ', True, None, 'None'), ('Người dùng internet phổ thông, đặc biệt là nhóm người dùng không có kiến thức chuyên sâu về ATTT.', None, None, 'None')]
+P[17]: Indent=0, Text='Bối cảnh:'
+     Runs=[('Bối cảnh:', True, None, 'None')]
+P[18]: Indent=0.25, Text='• Sự bùng nổ của các trang web giả mạo ngân hàng, ví điện tử, và mạng xã hội.'
+     Runs=[('• ', True, None, 'None'), ('Sự bùng nổ của các trang web giả mạo ngân hàng, ví điện tử, và mạng xã hội.', None, None, 'None')]
+P[19]: Indent=0, Text='Giá trị ứng dụng:'
+     Runs=[('Giá trị ứng dụng:', True, None, 'None')]
+P[20]: Indent=0.25, Text='• Cảnh báo tức thì bằng trực quan (Banner/Icon/Popup), hoạt động nhẹ nhàng.'
+     Runs=[('• ', True, None, 'None'), ('Cảnh báo tức thì bằng trực quan (Banner/Icon/Popup), hoạt động nhẹ nhàng.', None, None, 'None')]
+P[21]: Indent=0.25, Text='• Bảo vệ quyền riêng tư tuyệt đối nhờ hoạt động hoàn toàn offline.'
+     Runs=[('• ', True, None, 'None'), ('Bảo vệ quyền riêng tư tuyệt đối nhờ hoạt động hoàn toàn offline.', None, None, 'None')]
+P[22]: Indent=0, Text='4. Mô hình thực nghiệm chính (Pipeline hệ thống)'
+     Runs=[('4. Mô hình thực nghiệm chính (Pipeline hệ thống)', True, None, 'None')]
+P[23]: Indent=0, Text='Hệ thống được thiết kế theo kiến trúc phòng thủ 8 lớp (Defense in Depth), kết hợp giữa danh sách tin cậy, quy tắc chuyên gia và học máy.'
+     Runs=[('Hệ thống được thiết kế theo kiến trúc phòng thủ 8 lớp (Defense in Depth), kết hợp giữa danh sách tin cậy, quy tắc chuyên gia và ', None, None, 'None'), ('học máy', None, None, 'None'), ('.', None, None, 'None')]
+P[25]: Indent=0, Text='Hình 1: Quy trình xử lý URL qua Pipeline 8 lớp phòng thủ'
+     Runs=[('Hình 1: Quy trình xử lý URL qua Pipeline 8 lớp phòng thủ', None, None, 'None')]
+P[27]: Indent=0, Text='Chi tiết kỹ thuật các lớp phòng thủ:'
+     Runs=[('Chi tiết kỹ thuật các lớp phòng thủ:', True, None, 'None')]
+P[28]: Indent=0.25, Text='• Lớp 0-2 (Lọc nhanh): Giải mã URL đa vòng, nhận diện IP nội bộ và tra cứu Whitelist (Tranco 30K) / Blacklist.'
+     Runs=[('• ', True, None, 'None'), ('Lớp 0-2 (Lọc nhanh): Giải mã URL đa vòng, nhận diện IP nội bộ và tra cứu Whitelist (Tranco 30K) / Blacklist.', None, None, 'None')]
+P[29]: Indent=0.25, Text='• Lớp 3-4 (Heuristic): Sử dụng thuật toán Levenshtein phát hiện Typosquatting và Soft Penalty cho TLD đáng ngờ (.xyz, .tk).'
+     Runs=[('• ', True, None, 'None'), ('Lớp 3-4 (Heuristic): Sử dụng thuật toán Levenshtein phát hiện Typosquatting và Soft Penalty cho TLD đáng ngờ (.xyz, .tk).', None, None, 'None')]
+P[30]: Indent=0, Text='TLD: viết tắt của top-level domain, là phần đuôi url. kẻ tấn công thường dùng tld giá rẻ (.xyz, .tk) để ẩn danh.'
+     Runs=[('TLD: ', True, None, 'None'), ('viết tắt của top-level domain, là phần đuôi url. kẻ tấn công thường dùng tld giá rẻ (.xyz, .tk) để ẩn danh.', None, None, 'None')]
+P[31]: Indent=0.25, Text='• Lớp 5 (Core Engine): Mô hình XGBoost phân tích 39 đặc trưng ngữ vựng để tính toán xác suất lừa đảo.'
+     Runs=[('• ', True, None, 'None'), ('Lớp 5 (Core Engine): Mô hình XGBoost phân tích 39 đặc trưng ngữ vựng để tính toán xác suất lừa đảo.', None, None, 'None')]
+P[32]: Indent=0.25, Text='• Lớp 6-7 (Hậu xử lý): Phân tích DOM (Harmless Check) và tuổi domain (RDAP) để hiệu chỉnh điểm số AI.'
+     Runs=[('• ', True, None, 'None'), ('Lớp 6-7 (Hậu xử lý): Phân tích DOM (Harmless Check) và tuổi domain (RDAP) để hiệu chỉnh điểm số AI.', None, None, 'None')]
+P[33]: Indent=0, Text='5. Các bước triển khai đã thực hiện'
+     Runs=[('5. Các bước triển khai đã thực hiện', True, None, 'None')]
+P[34]: Indent=0, Text='Bước 1: Thu thập dữ liệu (Chạy script 01_collect_data.py)'
+     Runs=[('Bước 1: Thu thập dữ liệu (Chạy script 01_collect_data.py)', True, None, 'None')]
+P[35]: Indent=0, Text='sử dụng thư viện requests để tải phishtank_raw.csv (url báo cáo) và tranco_raw.csv (url uy tín có rank). gộp thành combined_dataset.csv bằng pandas.'
+     Runs=[('sử dụng thư viện requests để tải phishtank_raw.csv (url báo cáo) và tranco_raw.csv (url uy tín có rank). gộp thành combined_dataset.csv bằng pandas.', None, None, 'None')]
+P[36]: Indent=0, Text='Tăng cường dữ liệu (Data Augmentation)'
+     Runs=[('Tăng cường dữ liệu (Data Augmentation)', True, None, 'None')]
+P[37]: Indent=0, Text='chạy script 01a_augment_brand_data.py để trộn thương hiệu, keyword và tld rác. giúp model nhận diện các trang lừa đảo mới (zero-day) dựa trên quy luật cấu trúc.'
+     Runs=[('chạy script 01a_augment_brand_data.py để trộn thương hiệu, keyword và tld rác. giúp ', None, None, 'None'), ('model', None, None, 'None'), (' nhận diện các trang lừa đảo mới (zero-day) dựa trên quy luật cấu trúc.', None, None, 'None')]
+P[38]: Indent=0, Text='Chuẩn hóa Dataset (Quy trình 4 bước)'
+     Runs=[('Chuẩn hóa Dataset (Quy trình 4 bước)', True, None, 'None')]
+P[39]: Indent=0.25, Text='• Làm sạch & Chuẩn hóa: Loại bỏ trùng lặp, hạ chữ thường, xóa fragment.'
+     Runs=[('• ', True, None, 'None'), ('Làm sạch & Chuẩn hóa: Loại bỏ trùng lặp, hạ chữ thường, xóa fragment.', None, None, 'None')]
+P[40]: Indent=0.25, Text='• Xử lý mất cân bằng: Dùng SMOTE (tạo mẫu giả) và Undersampling (cắt bớt mẫu thực) để đưa tỷ lệ về 1:1.'
+     Runs=[('• ', True, None, 'None'), ('Xử lý mất cân bằng: Dùng SMOTE (tạo mẫu giả) và Undersampling (cắt bớt mẫu thực) để đưa tỷ lệ về 1:1.', None, None, 'None')]
+P[41]: Indent=0, Text='smote giúp model thấy nhiều biến thể lừa đảo hơn, tránh học thuộc lòng. undersampling giúp tập dữ liệu gọn nhẹ, học nhanh hơn.'
+     Runs=[('smote giúp ', None, None, 'None'), ('model', None, None, 'None'), (' thấy nhiều biến thể lừa đảo hơn, tránh học thuộc lòng. undersampling giúp tập dữ liệu gọn nhẹ, học nhanh hơn.', None, None, 'None')]
+P[42]: Indent=0.25, Text='• Scaling: Đồng bộ thang đo đặc trưng bằng StandardScaler.'
+     Runs=[('• ', True, None, 'None'), ('Scaling: Đồng bộ thang đo đặc trưng bằng StandardScaler.', None, None, 'None')]
+P[43]: Indent=0, Text='Bước 2: Trích xuất đặc trưng (Chạy script 02_feature_extraction_v3.py)'
+     Runs=[('Bước 2: Trích xuất đặc trưng (Chạy script 02_feature_extraction_v3.py)', True, None, 'None')]
+P[44]: Indent=0, Text='biến url thành 39 con số đặc trưng (độ dài, ký tự đặc biệt, entropy, levenshtein). kết quả là file features_v4.csv.\nentrophy là độ nhiễu URL ví dụ: vietcombank.com.vn/ngan-hang-so và login-update.b2x9z.xyz/token=%A3%F9%8B...'
+     Runs=[('biến url thành 39 con số đặc trưng (độ dài, ký tự đặc biệt, entropy, levenshtein). kết quả là file features_v4.csv.', None, None, 'None'), ('\nentrophy là độ nhiễu URL ', None, None, 'None'), ('ví dụ: vietcombank.com.vn/ngan-hang-so', None, None, 'None'), (' và ', None, None, 'None'), ('login-update.b2x9z.xyz/token=%A3%F9%8B...', None, None, 'None')]
+P[45]: Indent=0, Text='Bước 3: Huấn luyện model (Chạy script 03_train_model_v4.py)'
+     Runs=[('Bước 3: Huấn luyện ', True, None, 'None'), ('model', True, None, 'None'), (' (Chạy script 03_train_model_v4.py)', True, None, 'None')]
+P[46]: Indent=0, Text='huấn luyện mô hình xgboost và tối ưu siêu tham số. xuất ra file xgboost_model_v4.json để triển khai nhẹ trên trình duyệt.'
+     Runs=[('huấn luyện mô hình xgboost và tối ưu siêu tham số. xuất ra file xgboost_model_v4.json để triển khai nhẹ trên trình duyệt.', None, None, 'None')]
+P[47]: Indent=0, Text='Bước 4: Danh sách trắng (Chạy script 04_prepare_tranco_top30k.py)'
+     Runs=[('Bước 4: Danh sách trắng (Chạy script 04_prepare_tranco_top30k.py)', True, None, 'None')]
+P[48]: Indent=0, Text='nén 30.000 tên miền uy tín vào tranco_top30k.json giúp extension phản hồi tức thì mà không cần hỏi model.'
+     Runs=[('nén 30.000 tên miền uy tín vào tranco_top30k.json giúp extension phản hồi tức thì mà không cần hỏi ', None, None, 'None'), ('model', None, None, 'None'), ('.', None, None, 'None')]
+P[49]: Indent=0, Text='Bước 5: Phát triển Extension (Javascript)'
+     Runs=[('Bước 5: Phát triển Extension (Javascript)', True, None, 'None')]
+P[50]: Indent=0, Text='chi tiết kỹ thuật: xgboost_predictor.js thực hiện suy luận. content_analyzer.js check harmless page (giảm 70% rủi ro nếu trang không có form).'
+     Runs=[(' chi tiết kỹ thuật: ', True, None, 'None'), ('xgboost_predictor.js thực hiện suy luận. content_analyzer.js check harmless page (giảm 70% rủi ro nếu trang không có form).', None, None, 'None')]
+P[53]: Indent=0, Text='6. Kết quả thực nghiệm hiện tại'
+     Runs=[('6. Kết quả thực nghiệm hiện tại', True, None, 'None')]
+P[54]: Indent=0, Text='Mô hình XGBoost đạt F1-Score 0.9952 trên tập kiểm thử.'
+     Runs=[('Mô hình XGBoost đạt F1-Score 0.9952 trên tập kiểm thử.', True, None, 'None')]
+P[55]: Indent=0, Text='F1-Score là trung bình điều hòa giữa Precision và Recall. Đây là chỉ số khắt khe buộc mô hình phải tối ưu cả việc bắt đúng và không bỏ lọt nghi phạm.'
+     Runs=[('F1-Score là trung bình điều hòa giữa Precision và Recall. Đây là chỉ số khắt khe buộc mô hình phải tối ưu cả việc bắt đúng và không bỏ lọt ', None, None, 'None'), ('nghi phạm', None, None, 'None'), ('.', None, None, 'None')]
+P[56]: Indent=0, Text='Extension đã vượt qua bài kiểm thử 105 URL thực tế với tỷ lệ chính xác 100%, độ trễ < 5ms.'
+     Runs=[('Extension đã vượt qua bài kiểm thử 105 URL thực tế với tỷ lệ chính xác 100%, độ trễ < 5ms.', None, None, 'None')]
+P[58]: Indent=0, Text='7. Khó khăn đã gặp và cách xử lý'
+     Runs=[('7. Khó khăn đã gặp và cách xử lý', True, None, 'None')]
+P[59]: Indent=0, Text='Khó khăn 1:'
+     Runs=[('Khó khăn 1:', True, None, 'None')]
+P[60]: Indent=0.25, Text='• Báo động nhầm cao trên một số trang giải trí trung quốc do URL chứa ký tự nằm trong blacklist.'
+     Runs=[('• ', True, None, 'None'), ('Báo động nhầm cao trên', None, None, 'None'), (' một số', None, None, 'None'), (' trang giải trí', None, None, 'None'), (' trung quốc', None, None, 'None'), (' do URL chứa ký tự ', None, None, 'None'), ('nằm trong blacklist', None, None, 'None'), ('.', None, None, 'None')]
+P[61]: Indent=0.25, Text='• Xử lý: Triển khai Layer 6 (Harmless Page Check) - Trang không có form/input thì giảm 70% rủi ro.'
+     Runs=[('• ', True, None, 'None'), ('Xử lý: Triển khai Layer 6 (Harmless Page Check) - Trang không có form/input thì giảm 70% rủi ro.', None, None, 'None')]
+P[62]: Indent=0, Text='Kể cả thương hiệu như google.com đôi khi cũng bị flag là mất an toàn.'
+     Runs=[('Kể cả thương hiệu như google.com đôi khi cũng bị flag là mất an toàn.', None, None, 'None')]
+P[63]: Indent=0, Text='Khó khăn 2:'
+     Runs=[('Khó khăn 2:', True, None, 'None')]
+P[64]: Indent=0.25, Text='• Lỗi kết nối RDAP khi check tuổi domain quốc tế.'
+     Runs=[('• ', True, None, 'None'), ('Lỗi kết nối RDAP khi check tuổi domain quốc tế.', None, None, 'None')]
+P[65]: Indent=0.25, Text='• Xử lý: Sửa API RDAP, thêm Timeout 10s và Reputation Bonus (cộng điểm cho TLD .vn, .eu, .ru……..).'
+     Runs=[('• ', True, None, 'None'), ('Xử lý: Sửa API RDAP, thêm Timeout 10s và Reputation Bonus (cộng điểm cho TLD .vn, .eu, .ru', None, None, 'None'), ('……..', None, None, 'None'), (').', None, None, 'None')]
+P[66]: Indent=0, Text='8. Phần đã hoàn thành và kế hoạch'
+     Runs=[('8. Phần đã hoàn thành và kế hoạch', True, None, 'None')]
+P[67]: Indent=0, Text='Đã hoàn thành:'
+     Runs=[('Đã hoàn thành:', True, None, 'None')]
+P[68]: Indent=0.25, Text='• Nhân dự đoán ML (39 features), 8 lớp phòng thủ, Giao diện và Hệ thống báo cáo.'
+     Runs=[('• ', True, None, 'None'), ('Nhân dự đoán ML (39 features), 8 lớp phòng thủ, Giao diện và Hệ thống báo cáo.', None, None, 'None')]
+P[69]: Indent=0, Text='Đang thực hiện:'
+     Runs=[('Đang thực hiện:', True, None, 'None')]
+P[70]: Indent=0.25, Text='• Hoàn thiện bản thảo quyển báo cáo đồ án.'
+     Runs=[('• ', True, None, 'None'), ('Hoàn thiện bản thảo quyển báo cáo đồ án.', None, None, 'None')]
+P[71]: Indent=0, Text='Kế hoạch tiếp theo:'
+     Runs=[('Kế hoạch tiếp theo:', True, None, 'None')]
+P[72]: Indent=0.25, Text='• Chuẩn bị demo và sửa bài báo cáo'
+     Runs=[('• ', True, None, 'None'), ('Chuẩn bị demo ', None, None, 'None'), ('và sửa bài báo cáo', None, None, 'None')]

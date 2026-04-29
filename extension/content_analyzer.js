@@ -258,6 +258,43 @@ function hasCreditCardRequest() {
 }
 
 /**
+ * Phân tích nội dung văn bản (Content-based Analysis)
+ * Quét toàn bộ text hiển thị trên trang để tìm các thủ đoạn thao túng tâm lý (Social Engineering)
+ * → Chạy cực nhanh (0ms network latency) vì text đã được trình duyệt tải sẵn.
+ * @returns {boolean} True nếu văn bản chứa nhiều cụm từ lừa đảo
+ */
+function hasSuspiciousTextContent() {
+  const text = document.body ? document.body.innerText.toLowerCase() : '';
+  
+  if (text.length < 50) return false; // Bỏ qua trang quá ngắn
+
+  // Các cụm từ lừa đảo kinh điển (Tiếng Việt & Tiếng Anh)
+  const suspiciousPhrases = [
+    'tài khoản của bạn đã bị khóa', 'account has been suspended', 'account locked',
+    'xác minh danh tính', 'verify your identity', 'verify your account',
+    'đăng nhập để tiếp tục', 'login to continue', 'sign in to continue',
+    'cập nhật thông tin', 'update your information', 'update your billing',
+    'bạn đã trúng thưởng', 'you have won', 'congratulations user',
+    'nhận quà ngay', 'claim your prize', 'claim your reward',
+    'bảo mật tài khoản', 'secure your account',
+    'đổi mật khẩu ngay', 'change your password immediately',
+    'hoạt động bất thường', 'unusual activity detected',
+    'vui lòng xác nhận', 'please confirm your details',
+    'phiên đăng nhập hết hạn', 'session expired'
+  ];
+
+  let matchCount = 0;
+  for (const phrase of suspiciousPhrases) {
+    if (text.includes(phrase)) {
+      matchCount++;
+    }
+  }
+
+  // Nếu chứa từ 2 cụm từ lừa đảo trở lên -> Báo động
+  return matchCount >= 2;
+}
+
+/**
  * Tổng hợp tất cả tín hiệu từ DOM
  * → Trả về điểm bổ sung [0, 1] và danh sách cảnh báo cụ thể
  * @returns {{score: number, warnings: string[]}}
@@ -304,6 +341,12 @@ function analyzeContent() {
     if (hasCreditCardRequest()) {
       warnings.push('Yêu cầu thông tin thẻ tín dụng');
       score += 0.3;
+    }
+    
+    // Kiểm tra văn bản lừa đảo (Content-based)
+    if (hasSuspiciousTextContent()) {
+      warnings.push('Nội dung trang chứa văn bản thao túng tâm lý (Lừa đảo)');
+      score += 0.4;
     }
 
     // Brand impersonation detection — tín hiệu mạnh, không cần form

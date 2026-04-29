@@ -359,9 +359,16 @@ const SAFE_DOMAINS = new Set([
   'fitgirl-repacks.site','www.fitgirl-repacks.site',
   'kwindu.eu', 'linux-gaming.kwindu.eu',
   'rin.ru', 'cs.rin.ru',
+  'animevietsub.bz', 'www.animevietsub.bz',
   // Đại học HUTECH
   'hutech.edu.vn','www.hutech.edu.vn','e-graduate.hutech.edu.vn',
   'portal.hutech.edu.vn','tuyensinh.hutech.edu.vn',
+]);
+
+// Danh sách các "Tên gốc" (Base Names) an toàn. Dành cho các trang web giải trí
+// thường xuyên thay đổi đuôi TLD (như .net, .cc, .bz) để né kiểm duyệt nhà mạng.
+const SAFE_BASE_NAMES = new Set([
+  'animevietsub', 'nettruyen', 'phimmoi'
 ]);
 
 /**
@@ -481,6 +488,16 @@ async function predictPhishing(urlStr) {
 
   if (isSafeDomain) {
     return { probability: 0.01, tier: 'safe', reason: 'Domain an toàn (whitelist)', isPhishing: false };
+  }
+
+  // ── LAYER 1_base: Flexible Whitelist (Chống chặn nhầm trang đổi TLD) ──
+  const isSafeBaseDomain = Array.from(SAFE_BASE_NAMES).some(baseName => {
+    // Chỉ khớp khi hostname chính xác là [basename].[tld] hoặc [sub].[basename].[tld]
+    return hostname === baseName + tld || hostname.endsWith('.' + baseName + tld);
+  });
+
+  if (isSafeBaseDomain) {
+    return { probability: 0.02, tier: 'safe', reason: 'Tên miền gốc an toàn (Flexible Whitelist)', isPhishing: false };
   }
 
   // ── LAYER 1a: Subdomain của platforms uy tín ──
