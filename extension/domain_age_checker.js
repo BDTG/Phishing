@@ -6,38 +6,25 @@
 // ============================================================
 
 /**
- * Fetch domain age từ RDAP API
- * @param {string} domain - Domain cần kiểm tra (vd: "google.com")
- * @returns {Promise<{ageDays: number, createdDate: string|null, error: string|null}>}
- *   ageDays: Số ngày tuổi của domain
- *   createdDate: Ngày tạo domain (ISO format)
- *   error: Lỗi nếu có (null nếu thành công)
+ * Fetch domain age từ RDAP API sử dụng chiến thuật Waterfall (Dự phòng động)
+ * @param {string} domain - Domain cần kiểm tra
  */
 async function getDomainAge(domain) {
-  // Kiểm tra domain hợp lệ
-  // Bỏ qua localhost và IP addresses
   if (!domain || domain.includes('localhost') || /^\d/.test(domain)) {
     return { ageDays: -1, createdDate: null, error: 'Not applicable' };
   }
 
-  // ── BƯỚC 1: Lấy base domain (bỏ subdomain) ──
-  // Ví dụ: "mail.google.com" → "google.com"
-  //        "www.google.com" → "google.com"
   const parts = domain.split('.');
   let baseDomain = domain;
 
   if (parts.length > 2) {
-    // Xử lý các trường hợp đặc biệt: .com.vn, .co.uk, .github.io...
-    // Nếu phần thứ 2 từ cuối dài ≤ 3 ký tự → có thể là country code TLD
     if (parts.length >= 3 && parts[parts.length - 2].length <= 3) {
-      baseDomain = parts.slice(-3).join('.'); // Lấy 3 phần cuối
+      baseDomain = parts.slice(-3).join('.');
     } else {
-      baseDomain = parts.slice(-2).join('.'); // Lấy 2 phần cuối
+      baseDomain = parts.slice(-2).join('.');
     }
   }
 
-  // Xử lý đặc biệt: github.io, vercel.app, netlify.app...
-  // Đây là các platform hosting, không cần check age
   const specialPlatforms = ['github.io', 'vercel.app', 'netlify.app', 'pages.dev', 'surge.sh'];
   for (const platform of specialPlatforms) {
     if (domain.endsWith('.' + platform)) {
@@ -46,8 +33,6 @@ async function getDomainAge(domain) {
     }
   }
 
-  // ── BƯỚC 2: Chọn RDAP server theo TLD ──
-  // Mỗi TLD có RDAP server khác nhau
   const rdapServers = {
     'com': 'https://rdap.verisign.com/com/v1/domain/',
     'net': 'https://rdap.verisign.com/net/v1/domain/',
@@ -60,69 +45,62 @@ async function getDomainAge(domain) {
     'site': 'https://rdap.centralnic.com/site/domain/',
     'vn': 'https://rdap.vnnic.vn/v1/domain/',
     'com.vn': 'https://rdap.vnnic.vn/v1/domain/',
-    // Fallback: rdap.org tự động redirect đến server đúng
-    'default': 'https://rdap.org/domain/',
   };
 
-  // Lấy TLD của domain
   const tld = baseDomain.split('.').pop();
+  
+  // CHIẾN THUẬT WATERFALL: Danh sách các API sẽ thử tuần tự
+  const fallbackApis = [
+    ...(rdapServers[tld] ? [rdapServers[tld] + baseDomain] : []), // Ưu tiên server chính hãng nếu có
+    `https://rdap.org/domain/${baseDomain}`,                      // Dự phòng 1: rdap.org
+    `https://www.rdap.net/domain/${baseDomain}`                   // Dự phòng 2: rdap.net
+  ];
 
-  // Chọn RDAP server: ưu tiên theo TLD, fallback về default
-  const rdapUrl = (rdapServers[tld] || rdapServers['default']) + baseDomain;
+  let lastError = 'No API worked';
 
-  // ── BƯỚC 3: Fetch RDAP API qua Background Script (để tránh CORS) ──
-  try {
-    const response = await new Promise((resolve) => {
-      chrome.runtime.sendMessage({ type: 'fetchDomainAge', rdapUrl }, (res) => {
-        resolve(res || { success: false, error: 'Background disconnect' });
+  for (const rdapUrl of fallbackApis) {
+    try {
+      const response = await new Promise((resolve) => {
+        chrome.runtime.sendMessage({ type: 'fetchDomainAge', rdapUrl }, (res) => {
+          resolve(res || { success: false, error: 'Background disconnect' });
+        });
       });
-    });
 
-    if (!response.success) {
-      return { ageDays: -1, createdDate: null, error: response.error };
-    }
-
-    const data = response.data;
-
-    // ── BƯỚC 4: Tìm event "registration" hoặc "creation" ──
-    // RDAP response có dạng:
-    // {
-    //   "events": [
-    //     { "eventAction": "registration", "eventDate": "2000-01-01T00:00:00Z" },
-    //     { "eventAction": "last changed", "eventDate": "2024-01-01T00:00:00Z" }
-    //   ]
-    // }
-    const events = data.events || [];
-    let createdDate = null;
-
-    for (const event of events) {
-      if (event.eventAction === 'registration' ||
-          event.eventAction === 'creation') {
-        createdDate = event.eventDate;
-        break;
+      if (!response.success) {
+        lastError = response.error;
+        continue; // Nếu lỗi (VD: 404), thử API tiếp theo trong danh sách Waterfall
       }
+
+      const data = response.data;
+      const events = data.events || [];
+      let createdDate = null;
+
+      for (const event of events) {
+        if (event.eventAction === 'registration' || event.eventAction === 'creation') {
+          createdDate = event.eventDate;
+          break;
+        }
+      }
+
+      if (!createdDate) {
+        lastError = 'No creation date found';
+        continue; // Thử API tiếp theo
+      }
+
+      const createdTime = new Date(createdDate).getTime();
+      const nowTime = Date.now();
+      const ageDays = Math.floor((nowTime - createdTime) / (1000 * 60 * 60 * 24));
+
+      return { ageDays, createdDate, error: null };
+
+    } catch (e) {
+      if (e.name === 'AbortError') return { ageDays: -1, createdDate: null, error: 'Timeout' };
+      lastError = e.message;
     }
-
-    // Nếu không tìm thấy ngày tạo → return error
-    if (!createdDate) {
-      return { ageDays: -1, createdDate: null, error: 'No creation date found' };
-    }
-
-    // ── BƯỚC 5: Tính tuổi domain ──
-    const createdTime = new Date(createdDate).getTime();
-    const nowTime = Date.now();
-    const ageDays = Math.floor((nowTime - createdTime) / (1000 * 60 * 60 * 24));
-
-    return { ageDays, createdDate, error: null };
-
-  } catch (e) {
-    // Xử lý lỗi timeout
-    if (e.name === 'AbortError') {
-      return { ageDays: -1, createdDate: null, error: 'Timeout' };
-    }
-    // Các lỗi khác (network, parse...)
-    return { ageDays: -1, createdDate: null, error: e.message };
   }
+
+  // Nếu thử qua tất cả các API mà vẫn thất bại
+  return { ageDays: -1, createdDate: null, error: lastError };
 }
 
 /**
