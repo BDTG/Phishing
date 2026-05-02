@@ -71,6 +71,11 @@ const children = [
   bulletPoint("Giải pháp: Xây dựng cơ chế DEBUG_MODE ghi log chi tiết luồng thực thi qua 8 lớp, trích xuất trực quan ma trận 39 đặc trưng thô (Raw Features) và minh bạch hóa sự biến thiên của xác suất rủi ro."),
   technicalBox("Case Study thực tế", "Kiểm thử URL 'linkneverdie.net/all-software/?p=1'. Mô hình XGBoost (Lớp 5) đánh giá rủi ro lên tới 88.45% do cấu trúc URL phức tạp. Tuy nhiên, Lớp 7 (Domain Age) ghi nhận tên miền đã tồn tại 2682 ngày. Hệ thống lập tức kích hoạt Trust Scoring Tier 1 (giảm 35%), tự động kéo xác suất xuống còn 57.49% (Mức An toàn). Điều này chứng minh hệ thống có khả năng tự sửa sai cho thiên kiến (bias) của AI một cách hoàn toàn tự động."),
 
+  bodyText("d. Nhận diện Hạn chế Hardcode và Giải pháp Cấu hình động", { bold: true }),
+  bulletPoint("Vấn đề: Dù đã loại bỏ Whitelist thủ công, các lớp Heuristic (Quy tắc) hiện tại vẫn phụ thuộc vào việc cấu hình cứng (Hardcode) 7 thương hiệu, 12 từ khóa, và 13 đuôi TLD. Nếu hacker giả mạo một thương hiệu mới (như Shopee, Momo) hoặc dùng từ lóng tiếng Việt, hệ thống sẽ thiếu linh hoạt để bắt lỗi ở Lớp 3 và Lớp 4."),
+  bulletPoint("Giải pháp hướng tới (Future Work): Tách toàn bộ cấu hình (Brands, Keywords, TLDs, Trusted Iframes) ra khỏi mã nguồn Extension và chuyển sang cơ chế Cập nhật cấu hình động (Dynamic Configuration Update)."),
+  technicalBox("Chi tiết kiến trúc", "Chuyển các danh sách này thành một file config.json lưu trữ trên Cloud. Background Service Worker sẽ tự động tải file này về Local Storage của Chrome mỗi 24 giờ. Cách này cho phép hệ thống mở rộng hàng ngàn dấu hiệu nhận diện mới ngay lập tức mà không yêu cầu người dùng phải cài lại bản cập nhật Extension, đồng thời vẫn đảm bảo tốc độ tra cứu siêu tốc O(1) do dữ liệu nằm sẵn trên RAM máy tính."),
+
   sectionHeading("2. Kế hoạch tuần tới (Tuần 9)"),
   bulletPoint("Đóng gói mã nguồn Extension hoàn chỉnh để nộp lên hệ thống nhà trường."),
   bulletPoint("In ấn quyển báo cáo đồ án (bản cứng)."),
