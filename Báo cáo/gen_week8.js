@@ -66,6 +66,11 @@ const children = [
   bulletPoint("Giải pháp: Cải tiến hàm hasCreditCardRequest() để quét sâu hơn vào cấu trúc thẻ HTML."),
   technicalBox("Chi tiết kỹ thuật", "Thuật toán không chỉ tìm kiếm từ khóa nhạy cảm, mà bắt buộc trang web phải chứa các thẻ <form> có chứa trường nhập liệu đặc thù (như <input type='password'>, <input type='number'>, <input type='text'>). Việc này giúp triệt tiêu hoàn toàn báo động giả trên các trang thông tin hoặc trang có thanh tìm kiếm."),
 
+  bodyText("c. Tích hợp tính năng Gỡ lỗi chuyên sâu (Explainable AI & Debug Mode)", { bold: true }),
+  bulletPoint("Vấn đề: Mô hình học máy thường bị xem là 'Hộp đen' (Black box), khó giải thích được lý do đằng sau một quyết định phân loại."),
+  bulletPoint("Giải pháp: Xây dựng cơ chế DEBUG_MODE ghi log chi tiết luồng thực thi qua 8 lớp, trích xuất trực quan ma trận 39 đặc trưng thô (Raw Features) và minh bạch hóa sự biến thiên của xác suất rủi ro."),
+  technicalBox("Case Study thực tế", "Kiểm thử URL 'linkneverdie.net/all-software/?p=1'. Mô hình XGBoost (Lớp 5) đánh giá rủi ro lên tới 88.45% do cấu trúc URL phức tạp. Tuy nhiên, Lớp 7 (Domain Age) ghi nhận tên miền đã tồn tại 2682 ngày. Hệ thống lập tức kích hoạt Trust Scoring Tier 1 (giảm 35%), tự động kéo xác suất xuống còn 57.49% (Mức An toàn). Điều này chứng minh hệ thống có khả năng tự sửa sai cho thiên kiến (bias) của AI một cách hoàn toàn tự động."),
+
   sectionHeading("2. Kế hoạch tuần tới (Tuần 9)"),
   bulletPoint("Đóng gói mã nguồn Extension hoàn chỉnh để nộp lên hệ thống nhà trường."),
   bulletPoint("In ấn quyển báo cáo đồ án (bản cứng)."),
