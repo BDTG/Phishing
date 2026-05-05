@@ -54,9 +54,15 @@ const children = [
   mainTitle("BÁO CÁO TIẾN ĐỘ THỰC HIỆN ĐỒ ÁN - TUẦN 8 & 9"),
   new Paragraph({ spacing: { after: 240 } }),
 
-  sectionHeading("1. Tình hình phát triển và Tối ưu hóa hệ thống (Cập nhật Tuần 8)"),
-  bodyText("Hệ thống đã loại bỏ hoàn toàn sự phụ thuộc vào cấu hình thủ công (Manual Whitelisting) để đảm bảo tính công bằng và học thuật."),
-  bodyText("a. Xây dựng Thuật toán chấm điểm uy tín (Algorithmic Trust Scoring)", { bold: true }),
+  sectionHeading("1. Tình hình phát triển và Tối ưu hóa hệ thống (Cập nhật Tuần 8 & 9)"),
+  bodyText("Hệ thống đã loại bỏ hoàn toàn sự phụ thuộc vào cấu hình thủ công (Manual Whitelisting) và nâng cấp danh sách đen thành tự động để đảm bảo tính công bằng và tính thực tiễn cao nhất."),
+  
+  bodyText("a. Nâng cấp Danh sách đen Động (Dynamic Blacklist) qua Phishing.army", { bold: true }),
+  bulletPoint("Vấn đề cũ: Lớp 2 (Blacklist) chỉ dựa vào một file tĩnh dangerous_urls.json gồm hơn 100 URL, khiến hệ thống không thể bắt kịp các chiến dịch lừa đảo mới phát sinh hàng giờ."),
+  bulletPoint("Giải pháp: Tích hợp nguồn dữ liệu thời gian thực từ Phishing.army - dự án mã nguồn mở chuyên tổng hợp danh sách đen từ các tổ chức bảo mật lớn trên thế giới (Cert.pl, Urlscan.io)."),
+  technicalBox("Chi tiết kỹ thuật", "Background Service Worker của Extension sẽ tự động fetch danh sách hàng ngàn domain lừa đảo mới nhất từ Phishing.army và lưu vào bộ nhớ tạm chrome.storage.local. Để tối ưu tốc độ và băng thông, danh sách này được cache (lưu trữ) trong 6 giờ. Lớp 2 giờ đây sẽ gộp cả danh sách tĩnh và danh sách động trên bộ nhớ RAM, giúp hệ thống luôn cập nhật mà vẫn giữ được tốc độ tra cứu chớp nhoáng O(1)."),
+
+  bodyText("b. Xây dựng Thuật toán chấm điểm uy tín (Algorithmic Trust Scoring)", { bold: true }),
   technicalBox("Chi tiết", "Nâng cấp Lớp 7 (Domain Age Check) thành cơ chế Chấm điểm uy tín bậc thang: Domain > 365 ngày (giảm 35%), > 180 ngày (giảm 20%), > 90 ngày (giảm 10%)."),
   bodyText("b. Tinh chỉnh thuật toán Phân tích Nội dung (DOM Analysis)", { bold: true }),
   technicalBox("Chi tiết", "Cải tiến hàm quét thẻ tín dụng, yêu cầu bắt buộc trang web phải chứa thẻ <form> và <input> nhạy cảm, giúp triệt tiêu báo động giả trên các trang SaaS có chữ 'billing'."),
