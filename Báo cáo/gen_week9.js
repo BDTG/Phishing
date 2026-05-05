@@ -81,7 +81,10 @@ const children = [
   sectionHeading("4. Giải thích chuyên sâu về Đặc trưng Ngữ vựng (XAI)"),
   bodyText("Trong số 39 đặc trưng, hai thuật toán cốt lõi nhất được sử dụng là:"),
   bulletPoint("Độ nhiễu (Shannon Entropy):"),
-  technicalBox("Bản chất Toán học", "Đo lường sự phân bố tần suất ký tự. URL do con người đặt có phân bố ngôn ngữ tự nhiên (ví dụ: vietcombank.com) nên điểm Entropy thấp. Ngược lại, URL do mã độc tự sinh (DGA) bốc ngẫu nhiên ký tự khiến xác suất xuất hiện ngang bằng nhau (ví dụ: x8f9q2z.xyz), tạo ra điểm Entropy cực kỳ cao."),
+  technicalBox("Bản chất Toán học", "Không dùng từ điển, máy tính sử dụng công thức Shannon Entropy: Tổng của [-P * log2(P)] để đo lường sự phân bố xác suất (P) của các ký tự. Nếu sự phân bố mất cân bằng (ngôn ngữ loài người), điểm sẽ thấp. Nếu phân bố đồng đều hoàn toàn (máy tính random), điểm sẽ cao."),
+  bodyText("Ví dụ 1 (Dự đoán được 100%): URL 'aaaaa' có chữ 'a' xuất hiện 100% (P=1). Entropy = -1*log2(1) = 0. Máy tính hiểu chuỗi này có quy luật hoàn toàn.", { italics: true, color: "555555", size: 24 }),
+  bodyText("Ví dụ 2 (Ngôn ngữ tự nhiên): URL 'google.com' có các nguyên âm (o, e) và phụ âm lặp lại không đều. Khi tính toán, Entropy thường ở mức trung bình (khoảng 2.5 đến 3.5).", { italics: true, color: "555555", size: 24 }),
+  bodyText("Ví dụ 3 (Mã độc tự sinh - DGA): URL 'x8f9q2z' có các ký tự và chữ số bốc ngẫu nhiên, xác suất xuất hiện của mỗi chữ là ngang bằng nhau (Uniform Distribution). Sự phân bố ngẫu nhiên tuyệt đối này tạo ra điểm Entropy cực kỳ CAO (khoảng 3.8 đến > 4.0), là dấu hiệu rõ ràng nhất của lừa đảo.", { italics: true, color: "555555", size: 24 }),
   bulletPoint("Khoảng cách Levenshtein (Levenshtein Distance):"),
   technicalBox("Bản chất Toán học", "Đo lường số bước tối thiểu (thêm, bớt, sửa) để biến chuỗi này thành chuỗi kia. Thuật toán này chuyên dùng để bắt kỹ thuật Typosquatting (kẻ xấu cố tình viết sai chính tả tên thương hiệu, ví dụ biến 'paypal' thành 'paypa1' với khoảng cách = 1)."),
 
