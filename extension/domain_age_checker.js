@@ -25,11 +25,19 @@ async function getDomainAge(domain) {
     }
   }
 
-  const specialPlatforms = ['github.io', 'vercel.app', 'netlify.app', 'pages.dev', 'surge.sh'];
+  // Xử lý đặc biệt: Cấu hình các Cloud Hosting/Free platforms
+  // Kẻ tấn công thường dùng các nền tảng này (Cloud Abuse) để host web lừa đảo.
+  // Nếu check tuổi domain của các platform này (vd: windows.net, firebaseapp.com),
+  // ta sẽ nhận được tuổi của Microsoft/Google (hàng chục năm) -> Gây ra False Negative nghiêm trọng.
+  // Do đó, ta PHẢI TỪ CHỐI check tuổi cho các nền tảng này.
+  const specialPlatforms = [
+    'github.io', 'vercel.app', 'netlify.app', 'pages.dev', 'surge.sh',
+    'blob.core.windows.net', 'firebaseapp.com', 'web.app', 'herokuapp.com',
+    '000webhostapp.com', 'weebly.com', 'wixsite.com', 'wordpress.com', 'blogspot.com', 's3.amazonaws.com'
+  ];
   for (const platform of specialPlatforms) {
-    if (domain.endsWith('.' + platform)) {
-      baseDomain = platform;
-      break;
+    if (domain.endsWith('.' + platform) || domain === platform) {
+      return { ageDays: -1, createdDate: null, error: `Cloud/Free Hosting (${platform}) - Bỏ qua check tuổi` };
     }
   }
 
