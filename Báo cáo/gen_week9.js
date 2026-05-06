@@ -73,6 +73,10 @@ const children = [
   bulletPoint("Vấn đề: Thuật toán Harmless Page trước đây chỉ kiểm tra form mật khẩu. Nếu trang lừa đảo phát tán mã độc (Malware Dropper) yêu cầu tải file .exe hoặc .apk, trang web sẽ bị đánh giá nhầm là vô hại và bị giảm rủi ro."),
   technicalBox("Chi tiết", "Cải tiến Lớp 6 (DOM Analysis) để quét toàn bộ các thẻ liên kết (HREF). Nếu phát hiện URL trỏ trực tiếp đến các tệp thực thi nguy hiểm (.exe, .apk, .bat, .msi, .cmd, .dmg), hệ thống lập tức tước bỏ quyền 'Trang vô hại' và cộng thêm 0.5 điểm rủi ro, kết hợp với điểm ML để chặn đứng trang web."),
 
+  bodyText("e. Khắc phục Lỗ hổng Ký sinh Đám mây (Cloud Hosting Abuse)", { bold: true }),
+  bulletPoint("Vấn đề: Kẻ tấn công lợi dụng các nền tảng đám mây miễn phí (Azure, Firebase, Github Pages) để host trang phishing. Do tên miền gốc (ví dụ windows.net) có tuổi đời hàng chục năm, Lớp 7 (Domain Age) đã bị đánh lừa và áp dụng giảm trừ rủi ro (Reputation Bonus) cực lớn, gây ra lỗi bỏ lọt (False Negative)."),
+  technicalBox("Case Study thực tế", "Phát hiện trang lừa đảo 'arubawebmailsession82.blob.core.windows.net' được AI chấm rủi ro cao, nhưng bị Lớp 7 hạ xuống mức An toàn vì nhận diện nhầm tuổi domain là 11227 ngày (tuổi của Microsoft). Hệ thống đã được vá lỗi bằng cách lập danh sách đen các nền tảng 'Shared Hosting'. Mọi URL nằm trên các nền tảng này sẽ bị từ chối đặc quyền tra cứu tuổi domain, buộc phải chịu mức đánh giá rủi ro nguyên bản từ AI."),
+
   sectionHeading("2. Nghiên cứu đối sánh với các Open-source Extension (Tuần 9)"),
   bodyText("Tiến hành phân tích kiến trúc của các dự án mã nguồn mở phổ biến trên GitHub (như cprite/phishing-detection-ext, PhishShield) để so sánh và tìm ra các điểm hạn chế."),
   bulletPoint("Ưu điểm của Đồ án so với Mã nguồn mở:"),
