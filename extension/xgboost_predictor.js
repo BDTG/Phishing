@@ -359,18 +359,9 @@ const SAFE_DOMAINS = new Set([
   'reddit.com','www.reddit.com',
   'claude.ai','chat.openai.com',
   'fitgirl-repacks.site','www.fitgirl-repacks.site',
-  'kwindu.eu', 'linux-gaming.kwindu.eu',
-  'rin.ru', 'cs.rin.ru',
-  'animevietsub.bz', 'www.animevietsub.bz',
   // Đại học HUTECH
   'hutech.edu.vn','www.hutech.edu.vn','e-graduate.hutech.edu.vn',
   'portal.hutech.edu.vn','tuyensinh.hutech.edu.vn',
-]);
-
-// Danh sách các "Tên gốc" (Base Names) an toàn. Dành cho các trang web giải trí
-// thường xuyên thay đổi đuôi TLD (như .net, .cc, .bz) để né kiểm duyệt nhà mạng.
-const SAFE_BASE_NAMES = new Set([
-  'animevietsub', 'nettruyen', 'phimmoi'
 ]);
 
 /**
@@ -421,21 +412,26 @@ const PHISHING_KW_LIST = [
 // ============================================================
 
 /**
- * Kiểm tra xem trang web có hoàn toàn "vô hại" không?
- * Một trang không có ô nhập liệu (input) và không có form thì không thể thu thập dữ liệu.
+ * Kiểm tra xem trang web có "vô hại" (Rủi ro đánh cắp tài khoản thấp) không?
+ * Nâng cấp: Cho phép trang có form tìm kiếm (text), nhưng KHÔNG được có form mật khẩu hoặc iframe ẩn.
  */
 function isPageHarmless() {
   try {
-    const inputs = document.querySelectorAll('input, select, textarea');
-    const forms = document.querySelectorAll('form');
-    const interactableInputs = Array.from(inputs).filter(input => {
-      if (input.type === 'hidden') return false;
-      const style = window.getComputedStyle(input);
-      if (style.display === 'none' || style.visibility === 'hidden') return false;
-      const rect = input.getBoundingClientRect();
-      return rect.width > 0 && rect.height > 0;
-    });
-    return interactableInputs.length === 0 && forms.length === 0;
+    // 1. Nếu có ô nhập mật khẩu -> Chắc chắn có rủi ro phishing (Không vô hại)
+    const pwdInputs = document.querySelectorAll('input[type="password"]');
+    if (pwdInputs.length > 0) return false;
+
+    // 2. Nếu có Iframe ẩn (thường dùng để nhúng trang lừa đảo ngầm) -> Không vô hại
+    const iframes = document.querySelectorAll('iframe');
+    for (const iframe of iframes) {
+      const style = window.getComputedStyle(iframe);
+      if (style.display === 'none' || style.visibility === 'hidden' || iframe.width === '0' || iframe.height === '0') {
+         return false;
+      }
+    }
+
+    // Nếu không có form mật khẩu và không có iframe ẩn -> Rủi ro đánh cắp tài khoản cực thấp
+    return true;
   } catch (e) {
     return false;
   }
@@ -503,17 +499,6 @@ async function predictPhishing(urlStr) {
   if (isSafeDomain) {
     logDebug('LAYER 1', 'Phát hiện trong SAFE_DOMAINS', hostname + ' => SAFE');
     return { probability: 0.01, tier: 'safe', reason: 'Domain an toàn (whitelist)', isPhishing: false };
-  }
-
-  // ── LAYER 1_base: Flexible Whitelist (Chống chặn nhầm trang đổi TLD) ──
-  const isSafeBaseDomain = Array.from(SAFE_BASE_NAMES).some(baseName => {
-    // Chỉ khớp khi hostname chính xác là [basename].[tld] hoặc [sub].[basename].[tld]
-    return hostname === baseName + tld || hostname.endsWith('.' + baseName + tld);
-  });
-
-  if (isSafeBaseDomain) {
-    logDebug('LAYER 1_base', 'Phát hiện trong SAFE_BASE_NAMES', hostname + ' => SAFE');
-    return { probability: 0.02, tier: 'safe', reason: 'Tên miền gốc an toàn (Flexible Whitelist)', isPhishing: false };
   }
 
   // ── LAYER 1a: Subdomain của platforms uy tín ──
@@ -633,12 +618,22 @@ async function predictPhishing(urlStr) {
   // Chỉ áp dụng khi ML rủi ro cao nhưng trang hoàn toàn không có form/input
   const isHarmless = isPageHarmless();
   let hasHarmlessBonus = false;
+  let isHarmlessNerfed = false;
 
   if (isHarmless && prob > 0.70) {
-    // Giảm 70% xác suất rủi ro (Hệ số 0.3)
-    prob *= 0.3;
-    hasHarmlessBonus = true;
-    logDebug('LAYER 6', 'Áp dụng Harmless Page Check', `Không có form/input, giảm xác suất còn ${(prob*100).toFixed(2)}%`);
+    // Nếu điểm ML ban đầu quá cao (>= 90%), chứng tỏ cấu trúc URL cực kỳ giống lừa đảo (DGA, nhồi nhét từ khóa).
+    // Việc không thấy form mật khẩu có thể do trang đang bị Sleep (như Replit) hoặc dùng React/Vue load chậm.
+    if (prob >= 0.90) {
+      prob = 0.75; // Ép về mức CẢNH BÁO (Warning) thay vì hạ hẳn xuống An Toàn
+      hasHarmlessBonus = true;
+      isHarmlessNerfed = true;
+      logDebug('LAYER 6', 'Harmless Page Check (Giảm nhẹ)', `URL quá đáng ngờ, ép về mức Warning 75%`);
+    } else {
+      // Giảm 70% xác suất rủi ro (Hệ số 0.3)
+      prob *= 0.3;
+      hasHarmlessBonus = true;
+      logDebug('LAYER 6', 'Áp dụng Harmless Page Check', `Không có form/input, giảm xác suất còn ${(prob*100).toFixed(2)}%`);
+    }
   }
 
   const isPublicIP = isIPAddress(hostname) && !isPrivateOrLocalIP(hostname);
@@ -663,6 +658,8 @@ async function predictPhishing(urlStr) {
       tier = 'warning'; isPhishing = true;
       if (domainAgeInfo && domainAgeInfo.ageDays > 365) {
         reason = `Cấu trúc lạ nhưng domain đã tồn tại ${domainAgeInfo.ageDays} ngày (Uy tín trung bình)`;      
+      } else if (isHarmlessNerfed) {
+        reason = 'URL có dấu hiệu lừa đảo rất cao, dù hiện tại trang chưa hiển thị ô nhập liệu';
       } else if (hasReputationBonus) {
         reason = `ML model báo rủi ro, nhưng TLD (${tld}) có độ tin cậy cơ bản (đã hạ bậc)`;
       } else {
