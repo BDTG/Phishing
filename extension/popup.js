@@ -110,10 +110,21 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
     } catch (e) {
-      // Lỗi thường gặp: tab đã đóng, trang không cho inject script
+      // Lỗi thường gặp: tab đã đóng, trang không cho inject script (trang lỗi DNS, trang cài đặt Chrome...)
       if (resultEl) {
         resultEl.className = 'error';
-        resultEl.textContent = '⚠️ Lỗi: ' + e.message;
+        
+        // Xử lý lỗi đặc thù khi trang web bị sập (Hiển thị trang lỗi nội bộ của Chrome)
+        if (e.message.includes('Frame with ID 0 is showing error page') || e.message.includes('Cannot access')) {
+          resultEl.innerHTML = '<div class="icon">⚠️</div><div>Trang web đã bị sập hoặc không thể truy cập (Lỗi mạng/DNS).</div>';
+          
+          // Thêm một đoạn giải thích nhỏ cho người dùng
+          if (reasonsEl) {
+            reasonsEl.innerHTML = `<div class="reason-badge" style="background:#404040">Không thể phân tích mã nguồn vì trang web không tồn tại.</div>`;
+          }
+        } else {
+          resultEl.textContent = '⚠️ Lỗi: ' + e.message;
+        }
       }
     }
   });
