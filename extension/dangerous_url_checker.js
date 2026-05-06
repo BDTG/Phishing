@@ -51,6 +51,23 @@ async function loadDangerousUrls() {
     // Lưu wildcard patterns
     dangerousUrlWildcards = data.wildcards || [];
 
+    // ── TÍCH HỢP DYNAMIC BLACKLIST TỪ PHISHING.ARMY ──
+    try {
+      const dynamicResp = await new Promise((resolve) => {
+        chrome.runtime.sendMessage({ type: 'fetchDynamicBlacklist' }, resolve);
+      });
+      
+      if (dynamicResp && dynamicResp.success && Array.isArray(dynamicResp.data)) {
+        // Gộp hàng nghìn domain từ Cloud vào Set hiện tại
+        dynamicResp.data.forEach(domain => dangerousUrlList.add(domain));
+        console.log(`[DangerousURL] Đã tải thành công Danh sách đen Động từ ${dynamicResp.source} (${dynamicResp.data.length} tên miền)`);
+      } else if (dynamicResp && dynamicResp.error) {
+        console.warn('[DangerousURL] Lỗi tải Danh sách đen Động:', dynamicResp.error);
+      }
+    } catch (e) {
+      console.warn('[DangerousURL] Mất kết nối tới Background Script khi tải Danh sách đen Động', e);
+    }
+
     // Đánh dấu đã load thành công
     dangerousUrlsLoaded = true;
     return true;

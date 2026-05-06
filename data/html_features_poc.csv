@@ -1,0 +1,6 @@
+num_password_inputs,num_hidden_iframes,num_external_forms,script_to_html_ratio,num_malware_links,num_suspicious_words,url,label
+0,0,0,0.7339677088550237,0,0,https://www.google.com,0
+0,0,0,0.23234854920666748,0,0,https://github.com,0
+0,0,1,0.4062287104622871,0,0,https://vnexpress.net,0
+0,0,0,0.0,0,0,http://example.com,0
+1,0,0,0.11984209249498269,0,2,https://github.com/login,1
