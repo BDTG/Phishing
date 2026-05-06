@@ -268,40 +268,40 @@ function hasCreditCardRequest() {
 }
 
 /**
- * Phân tích nội dung văn bản (Content-based Analysis)
+ * Phân tích nội dung văn bản (Content-based Analysis) - Nâng cấp Regex & Co-occurrence
  * Quét toàn bộ text hiển thị trên trang để tìm các thủ đoạn thao túng tâm lý (Social Engineering)
- * → Chạy cực nhanh (0ms network latency) vì text đã được trình duyệt tải sẵn.
- * @returns {boolean} True nếu văn bản chứa nhiều cụm từ lừa đảo
+ * @returns {boolean} True nếu văn bản chứa cấu trúc ngữ nghĩa đe dọa/yêu cầu
  */
 function hasSuspiciousTextContent() {
   const text = document.body ? document.body.innerText.toLowerCase() : '';
   
   if (text.length < 50) return false; // Bỏ qua trang quá ngắn
 
-  // Các cụm từ lừa đảo kinh điển (Tiếng Việt & Tiếng Anh)
-  const suspiciousPhrases = [
-    'tài khoản của bạn đã bị khóa', 'account has been suspended', 'account locked',
-    'xác minh danh tính', 'verify your identity', 'verify your account',
-    'đăng nhập để tiếp tục', 'login to continue', 'sign in to continue',
-    'cập nhật thông tin', 'update your information', 'update your billing',
-    'bạn đã trúng thưởng', 'you have won', 'congratulations user',
-    'nhận quà ngay', 'claim your prize', 'claim your reward',
-    'bảo mật tài khoản', 'secure your account',
-    'đổi mật khẩu ngay', 'change your password immediately',
-    'hoạt động bất thường', 'unusual activity detected',
-    'vui lòng xác nhận', 'please confirm your details',
-    'phiên đăng nhập hết hạn', 'session expired'
-  ];
+  // Hacker có thể thay đổi cách hành văn (Ví dụ: "Tài khoản bị khóa", "Khóa tài khoản tạm thời")
+  // Nhưng chúng BẮT BUỘC phải dùng kết hợp 2 nhóm từ: Danh từ (Tài sản) + Động từ (Đe dọa/Yêu cầu)
+  
+  // Nhóm 1: Các danh từ mục tiêu (Subjects) - Dùng \b để bắt đúng từ, không bắt chữ lồng nhau
+  const regexSubjects = /\b(tài khoản|account|mật khẩu|password|ví|wallet|thẻ tín dụng|credit card|ngân hàng|bank|thông tin|information)\b/g;
+  
+  // Nhóm 2: Các động từ đe dọa, hối thúc (Threats/Urgency)
+  const regexThreats = /\b(khóa|locked|suspended|xác minh|verify|cập nhật|update|đăng nhập|login|sign in|hết hạn|expired|bất thường|unusual|ngay lập tức|immediately)\b/g;
 
-  let matchCount = 0;
-  for (const phrase of suspiciousPhrases) {
-    if (text.includes(phrase)) {
-      matchCount++;
-    }
+  // Tìm tất cả các từ khóa xuất hiện trong văn bản
+  const subjectMatches = text.match(regexSubjects) || [];
+  const threatMatches = text.match(regexThreats) || [];
+
+  // Lọc trùng lặp (Set) để tránh trường hợp 1 từ "login" lặp lại 10 lần làm sai lệch kết quả
+  const uniqueSubjects = new Set(subjectMatches).size;
+  const uniqueThreats = new Set(threatMatches).size;
+
+  // LOGIC ĐÁNH GIÁ (Co-occurrence): 
+  // Bài viết phải nhắc đến TÀI SẢN (>=1 từ) VÀ có hàm ý HỐI THÚC/ĐE DỌA (>=2 từ khác nhau)
+  // Hoặc nhắc đến nhiều TÀI SẢN (>=2) và HỐI THÚC (>=1)
+  if ((uniqueSubjects >= 1 && uniqueThreats >= 2) || (uniqueSubjects >= 2 && uniqueThreats >= 1)) {
+     return true;
   }
 
-  // Nếu chứa từ 2 cụm từ lừa đảo trở lên -> Báo động
-  return matchCount >= 2;
+  return false;
 }
 
 /**
