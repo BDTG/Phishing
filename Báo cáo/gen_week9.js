@@ -69,6 +69,10 @@ const children = [
   bodyText("c. Tích hợp tính năng Gỡ lỗi chuyên sâu (Explainable AI & Debug Mode)", { bold: true }),
   technicalBox("Chi tiết", "Xây dựng cơ chế DEBUG_MODE ghi log chi tiết luồng thực thi 8 lớp, trích xuất ma trận 39 đặc trưng thô, chứng minh hệ thống có khả năng tự sửa sai thiên kiến (bias) của AI hoàn toàn tự động."),
 
+  bodyText("d. Tích hợp Nhận diện Mã độc chủ động (Proactive Malware Dropper Detection)", { bold: true }),
+  bulletPoint("Vấn đề: Thuật toán Harmless Page trước đây chỉ kiểm tra form mật khẩu. Nếu trang lừa đảo phát tán mã độc (Malware Dropper) yêu cầu tải file .exe hoặc .apk, trang web sẽ bị đánh giá nhầm là vô hại và bị giảm rủi ro."),
+  technicalBox("Chi tiết", "Cải tiến Lớp 6 (DOM Analysis) để quét toàn bộ các thẻ liên kết (HREF). Nếu phát hiện URL trỏ trực tiếp đến các tệp thực thi nguy hiểm (.exe, .apk, .bat, .msi, .cmd, .dmg), hệ thống lập tức tước bỏ quyền 'Trang vô hại' và cộng thêm 0.5 điểm rủi ro, kết hợp với điểm ML để chặn đứng trang web."),
+
   sectionHeading("2. Nghiên cứu đối sánh với các Open-source Extension (Tuần 9)"),
   bodyText("Tiến hành phân tích kiến trúc của các dự án mã nguồn mở phổ biến trên GitHub (như cprite/phishing-detection-ext, PhishShield) để so sánh và tìm ra các điểm hạn chế."),
   bulletPoint("Ưu điểm của Đồ án so với Mã nguồn mở:"),
