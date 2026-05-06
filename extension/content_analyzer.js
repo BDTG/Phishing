@@ -305,6 +305,26 @@ function hasSuspiciousTextContent() {
 }
 
 /**
+ * Kiểm tra trang web có chứa liên kết tải xuống mã độc không (Malware Dropper)
+ * @returns {boolean} True nếu phát hiện link tải file thực thi nguy hiểm
+ */
+function hasMaliciousDownloadLinks() {
+  const links = document.querySelectorAll('a');
+  const dangerousExts = ['.exe', '.apk', '.bat', '.msi', '.cmd', '.scr', '.dmg', '.pkg'];
+  
+  for (const link of links) {
+    if (!link.href) continue;
+    const href = link.href.toLowerCase();
+    for (const ext of dangerousExts) {
+      if (href.endsWith(ext) || href.includes(ext + '?') || href.includes(ext + '&')) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+/**
  * Tổng hợp tất cả tín hiệu từ DOM
  * → Trả về điểm bổ sung [0, 1] và danh sách cảnh báo cụ thể
  * @returns {{score: number, warnings: string[]}}
@@ -357,6 +377,12 @@ function analyzeContent() {
     if (hasSuspiciousTextContent()) {
       warnings.push('Nội dung trang chứa văn bản thao túng tâm lý (Lừa đảo)');
       score += 0.4;
+    }
+
+    // Kiểm tra phát tán mã độc (Malware Dropper)
+    if (hasMaliciousDownloadLinks()) {
+      warnings.push('Trang web chứa liên kết tải xuống tệp thực thi nguy hiểm (.exe, .apk...)');
+      score += 0.5; // Tín hiệu rất mạnh
     }
 
     // Brand impersonation detection — tín hiệu mạnh, không cần form

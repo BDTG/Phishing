@@ -430,7 +430,22 @@ function isPageHarmless() {
       }
     }
 
-    // Nếu không có form mật khẩu và không có iframe ẩn -> Rủi ro đánh cắp tài khoản cực thấp
+    // 3. Tấn công phát tán Mã độc (Malware Dropper) -> Không vô hại
+    // Hacker không lừa pass mà lừa tải file .exe, .apk
+    const links = document.querySelectorAll('a');
+    const dangerousExts = ['.exe', '.apk', '.bat', '.msi', '.cmd', '.scr', '.dmg', '.pkg'];
+    for (const link of links) {
+      if (!link.href) continue;
+      const href = link.href.toLowerCase();
+      // Nếu link trỏ trực tiếp đến file thực thi
+      for (const ext of dangerousExts) {
+        if (href.endsWith(ext) || href.includes(ext + '?') || href.includes(ext + '&')) {
+          return false; // Chứa link tải app lạ -> Không an toàn để giảm án
+        }
+      }
+    }
+
+    // Nếu không có form mật khẩu, không iframe ẩn, không link tải malware -> Rủi ro cực thấp
     return true;
   } catch (e) {
     return false;
