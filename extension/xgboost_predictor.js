@@ -10,34 +10,66 @@ const DEBUG_MODE = true; // BẬT DEBUG MODE ĐỂ XEM CHI TIẾT CÁC BƯỚC Q
 // Biến toàn cục lưu model XGBoost đã load
 // null = chưa load, object = đã load
 let xgbModel = null;
+let contentXgbModel = null; // Model AI thứ 2 cho phân tích cấu trúc HTML
 
 // Biến toàn cục lưu danh sách Tranco Top 30K
 // null = chưa load, Set = đã load
 let trancoTop30k = null;
 
 /**
- * Load model XGBoost từ file JSON
- * Ưu tiên model v2 (38 features), fallback về v1 nếu không có
+ * Load cả 2 model XGBoost từ file JSON (Kiến trúc Đa mô hình - Multi-Model)
  * @async
  * @returns {Promise<void>}
  */
 async function loadModel() {
-  // Nếu model đã load rồi → không load lại (cache)
-  if (xgbModel) return;
+  const promises = [];
 
-  try {
-    // Load model v4 (39 features, xử lý URL full path + IP logic mới)
-    const url = chrome.runtime.getURL('models/xgboost_model_v4.json');
-    const resp = await fetch(url);
-    xgbModel = await resp.json();
-    xgbModel.version = 'v4';
-  } catch (e) {
-    // Fallback về model v1 (30 features, original)
-    const url = chrome.runtime.getURL('models/xgboost_model_tuned.json');
-    const resp = await fetch(url);
-    xgbModel = await resp.json();
-    xgbModel.version = 'v1';
+  // Load Model 1 (URL Lexical)
+  if (!xgbModel) {
+    promises.push(
+      fetch(chrome.runtime.getURL('models/xgboost_model_v4.json'))
+        .then(res => res.json())
+        .then(data => { xgbModel = data; xgbModel.version = 'v4'; })
+        .catch(async () => {
+          // Fallback về model v1 nếu không có v4
+          const res = await fetch(chrome.runtime.getURL('models/xgboost_model_tuned.json'));
+          xgbModel = await res.json();
+          xgbModel.version = 'v1';
+        })
+    );
   }
+
+  // Load Model 2 (HTML Content Structural)
+  if (!contentXgbModel) {
+    promises.push(
+      fetch(chrome.runtime.getURL('models/content_xgboost_model.json'))
+        .then(res => res.json())
+        .then(data => { contentXgbModel = data; })
+        .catch(e => console.warn('[PhishingDetector] Không tìm thấy content model:', e))
+    );
+  }
+
+  if (promises.length > 0) {
+    await Promise.all(promises);
+  }
+}
+
+/**
+ * Suy luận bằng Model 2 (Content AI)
+ * @param {number[]} features - Mảng 6 đặc trưng cấu trúc HTML
+ * @returns {number} Xác suất phishing từ Content (0 -> 1)
+ */
+function predictContentPhishing(features) {
+  if (!contentXgbModel || !contentXgbModel.learner) return 0;
+  
+  const trees = contentXgbModel.learner.gradient_booster.model.trees;
+  let margin = 0;
+  for (const tree of trees) {
+    margin += traverseTree(tree, features);
+  }
+  
+  // XGBClassifier mặc định base_score = 0.5 (logit = 0)
+  return sigmoid(margin);
 }
 
 /**

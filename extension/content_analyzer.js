@@ -325,7 +325,7 @@ function hasMaliciousDownloadLinks() {
 }
 
 /**
- * Tổng hợp tất cả tín hiệu từ DOM
+ * Tổng hợp tất cả tín hiệu từ DOM và chạy Submodel 2 (Content AI)
  * → Trả về điểm bổ sung [0, 1] và danh sách cảnh báo cụ thể
  * @returns {{score: number, warnings: string[]}}
  */
@@ -343,49 +343,115 @@ function analyzeContent() {
   }
 
   try {
-    // Kiểm tra form mật khẩu
+    // === CHẠY SUBMODEL 2 (MÔ HÌNH AI PHÂN TÍCH CẤU TRÚC HTML) ===
+    if (typeof predictContentPhishing === 'function') {
+      // 1. Số lượng ô nhập mật khẩu
+      const num_password_inputs = document.querySelectorAll('input[type="password"]').length;
+      
+      // 2. Số lượng iframe ẩn
+      let num_hidden_iframes = 0;
+      document.querySelectorAll('iframe').forEach(f => {
+        const style = window.getComputedStyle(f);
+        if (style.display === 'none' || style.visibility === 'hidden' || f.width === '0') {
+          num_hidden_iframes++;
+        }
+      });
+
+      // 3. Số lượng form gửi dữ liệu ra ngoài
+      let num_external_forms = 0;
+      document.querySelectorAll('form[action]').forEach(form => {
+        try {
+          const actionHost = new URL(form.action, location.href).hostname.replace(/^www\./, '');
+          if (actionHost && actionHost !== currentHost) num_external_forms++;
+        } catch(e) {}
+      });
+
+      // 4. Tỷ lệ thẻ Script so với tổng HTML
+      let script_len = 0;
+      document.querySelectorAll('script').forEach(s => script_len += (s.innerText || '').length);
+      const html_len = document.documentElement.innerHTML.length;
+      const script_to_html_ratio = html_len > 0 ? script_len / html_len : 0;
+
+      // 5. Link tải mã độc
+      let num_malware_links = 0;
+      const dangerousExts = ['.exe', '.apk', '.bat', '.msi', '.cmd', '.scr', '.dmg', '.pkg'];
+      document.querySelectorAll('a').forEach(link => {
+        if (!link.href) return;
+        const href = link.href.toLowerCase();
+        for (const ext of dangerousExts) {
+          if (href.endsWith(ext) || href.includes(ext + '?') || href.includes(ext + '&')) {
+            num_malware_links++;
+            break;
+          }
+        }
+      });
+
+      // 6. Từ khóa thao túng tâm lý
+      const text = document.body ? document.body.innerText.toLowerCase() : '';
+      const suspicious_regex = /\b(tài khoản|mật khẩu|bị khóa|xác minh|đăng nhập|login|password)\b/g;
+      const num_suspicious_words = (text.match(suspicious_regex) || []).length;
+
+      // Đưa 6 đặc trưng vào Model 2
+      const features = [
+        num_password_inputs,
+        num_hidden_iframes,
+        num_external_forms,
+        script_to_html_ratio,
+        num_malware_links,
+        num_suspicious_words
+      ];
+      
+      const contentAiProb = predictContentPhishing(features);
+      if (contentAiProb > 0.6) {
+        warnings.push(`Mô hình AI Content đánh giá mã nguồn HTML có rủi ro ${(contentAiProb*100).toFixed(1)}%`);
+        score += contentAiProb; // Cộng dồn điểm AI
+      }
+    }
+    // =========================================================
+
+    // Kiểm tra form mật khẩu (Rule-based)
     if (hasPasswordForm()) {
       warnings.push('Có form mật khẩu');
       score += 0.2;
     }
 
-    // Kiểm tra form action external
+    // Kiểm tra form action external (Rule-based)
     if (hasExternalFormAction()) {
       warnings.push('Form gửi dữ liệu sang domain khác');
       score += 0.5;   // Tín hiệu rất mạnh
     }
 
-    // Kiểm tra brand mismatch
+    // Kiểm tra brand mismatch (Rule-based)
     if (hasBrandMismatch()) {
       warnings.push('Giả mạo thương hiệu');
       score += 0.4;
     }
 
-    // Kiểm tra iframe ẩn
+    // Kiểm tra iframe ẩn (Rule-based)
     if (hasHiddenIframe()) {
       warnings.push('Có iframe ẩn');
       score += 0.3;
     }
 
-    // Kiểm tra credit card request
+    // Kiểm tra credit card request (Rule-based)
     if (hasCreditCardRequest()) {
       warnings.push('Yêu cầu thông tin thẻ tín dụng');
       score += 0.3;
     }
     
-    // Kiểm tra văn bản lừa đảo (Content-based)
+    // Kiểm tra văn bản lừa đảo (Rule-based)
     if (hasSuspiciousTextContent()) {
       warnings.push('Nội dung trang chứa văn bản thao túng tâm lý (Lừa đảo)');
       score += 0.4;
     }
 
-    // Kiểm tra phát tán mã độc (Malware Dropper)
+    // Kiểm tra phát tán mã độc (Rule-based)
     if (hasMaliciousDownloadLinks()) {
       warnings.push('Trang web chứa liên kết tải xuống tệp thực thi nguy hiểm (.exe, .apk...)');
       score += 0.5; // Tín hiệu rất mạnh
     }
 
-    // Brand impersonation detection — tín hiệu mạnh, không cần form
+    // Brand impersonation detection (Rule-based)
     if (hasBrandImpersonation()) {
       warnings.push('Domain giả mạo thương hiệu');
       score += 0.6;   // Score cao vì đây là tín hiệu rất mạnh
