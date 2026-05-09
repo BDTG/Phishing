@@ -500,8 +500,13 @@ const children = [
   listItem("5.", "Từ khóa lừa đảo và giả mạo thương hiệu: Các URL độc hại thường chứa các từ khóa nhạy cảm như login, secure, verify, update, account hoặc chứa tên của các thương hiệu lớn nhằm tạo sự tin tưởng."),
   listItem("6.", "Tỷ lệ chữ số và chỉ số entropy: Các tên miền được tạo tự động bằng thuật toán thường chứa chuỗi ký tự ngẫu nhiên hoặc có tỷ lệ chữ số cao bất thường. Tính toán chỉ số entropy giúp mô hình nhận diện các chuỗi không có cấu trúc ngôn ngữ tự nhiên."),
 
-  subHeading("2.3.2. Kỹ thuật giảm chiều dữ liệu"),
-  body("Khi thu thập đặc trưng từ các nguồn dữ liệu lớn, số lượng cột đặc trưng có thể tăng lên rất cao. Việc giữ lại các đặc trưng dư thừa hoặc nhiễu có thể gây ra hiện tượng học vẹt và làm tăng độ phức tạp tính toán. Đề tài sử dụng hai kỹ thuật giảm chiều chính."),
+  subHeading("2.3.2. Lựa chọn đặc trưng bằng Tương quan Thông tin (Mutual Information)"),
+  body("Để tối ưu hóa số lượng đặc trưng từ các tập dữ liệu thô (có thể lên tới 87 đặc trưng), đồ án tham chiếu kỹ thuật Tương quan Thông tin (Mutual Information - MI) được đề xuất bởi Zhao et al. (2020) và M. Nagaraju et al. (2026). MI đo lường mức độ phụ thuộc giữa đặc trưng X và nhãn mục tiêu Y dựa trên phân phối xác suất đồng thời:"),
+  formula("MI(X, Y) = sum[P(x,y) * log(P(x,y) / (P(x)*P(y)))]"),
+  body("Việc giữ lại các đặc trưng có điểm MI cao nhất giúp loại bỏ nhiễu và giảm chiều dữ liệu hiệu quả, đảm bảo mô hình vẫn đạt độ chính xác cao trong khi giảm đáng kể chi phí tính toán cho môi trường trình duyệt."),
+
+  subHeading("2.3.3. Kỹ thuật giảm chiều dữ liệu"),
+  body("Bên cạnh MI, đồ án sử dụng hai kỹ thuật giảm chiều bổ sung."),
   body("Ma trận tương quan đánh giá mối quan hệ tuyến tính giữa các cặp đặc trưng. Nếu hai đặc trưng có hệ số tương quan quá cao, chúng mang nội dung thông tin gần như giống hệt nhau và ta có thể an toàn loại bỏ một trong hai, giúp giảm thiểu độ nhiễu và độ phức tạp."),
   body("Phân tích thành phần chính (PCA) biến đổi tập hợp các đặc trưng ban đầu thành một tập hợp các thành phần chính hoàn toàn không tương quan với nhau, đồng thời giữ lại được phương sai lớn nhất từ tập dữ liệu gốc. Trong thực tế, PCA có thể nén hiệu quả một tập dữ liệu từ 50 thuộc tính xuống chỉ còn 18 thuộc tính cốt lõi mà không làm suy giảm đáng kể độ chính xác. Việc kết hợp hai kỹ thuật này giúp giảm lượng bộ nhớ sử dụng, tăng tốc độ hội tụ khi huấn luyện và giảm độ trễ khi dự đoán, đảm bảo hệ thống đủ nhẹ để tích hợp vào tiện ích mở rộng Chrome."),
 
@@ -532,11 +537,11 @@ const children = [
   body("Cấu trúc: Mô hình xây dựng một rừng gồm nhiều cây quyết định hoàn toàn độc lập và song song. Tại mỗi nút phân chia, Random Forest chỉ chọn ngẫu nhiên một tập con đặc trưng để tìm điểm chia cắt tối ưu. Kết quả dự đoán cuối cùng được tổng hợp bằng bỏ phiếu đa số từ tất cả các cây. Ưu điểm nổi bật là khả năng chống học vẹt rất tốt, ít nhạy cảm với nhiễu và cung cấp mức độ quan trọng của từng đặc trưng một cách trực quan. Trong bài toán phân loại phishing URL, Random Forest đạt độ chính xác từ 89,7% đến 97,6% với F1-Score từ 96,2% đến 97,2%."),
 
   subHeading("2.5.3. XGBoost"),
-  body("XGBoost (eXtreme Gradient Boosting) là thuật toán cốt lõi được lựa chọn cho đồ án này nhờ sự cân bằng hoàn hảo giữa tốc độ và độ chính xác. Khác với các mô hình Deep Learning (CNN/LSTM) tiêu tốn nhiều tài nguyên, XGBoost được thiết kế tối ưu cho dữ liệu dạng bảng và có khả năng triển khai nhẹ tại biên."),
-  body("Cơ sở toán học: Sức mạnh của XGBoost nằm ở việc tối ưu hóa hàm mục tiêu tích hợp thành phần điều hòa (Regularization) để kiểm soát hiện tượng quá khớp (overfitting):"),
+  body("XGBoost (eXtreme Gradient Boosting) là thuật toán cốt lõi được lựa chọn nhờ sự cân bằng giữa tốc độ và độ chính xác. Theo nghiên cứu của M. Nagaraju et al. (SNIST), XGBoost vượt trội hơn các kiến trúc học sâu (CNN/LSTM) trong bài toán này nhờ cơ chế điều hòa và hiệu quả tài nguyên."),
+  body("Cơ sở toán học: Mô hình tối ưu hóa hàm mục tiêu tích hợp thành phần điều hòa (Regularization) để kiểm soát độ phức tạp:"),
   formula("L(phi) = sum[l(y_pred, y)] + sum[Omega(f)]"),
-  body("Trong đó Omega đại diện cho độ phức tạp của cây, được tính bằng số lượng lá (T) và trọng số lá (w). Cơ chế này giúp mô hình duy trì khả năng tổng quát hóa cực tốt trên các tập dữ liệu phishing vốn có độ nhiễu cao."),
-  body("Lợi thế triển khai: Các thực nghiệm so sánh cho thấy XGBoost huấn luyện nhanh gấp 12,6 lần và sử dụng bộ nhớ ít hơn 3,6 lần so với các mạng nơ-ron học sâu, trong khi độ chính xác cao hơn khoảng 2,1%. Điều này cho phép đồ án chuyển cấu trúc 300 cây quyết định sang file JSON chỉ ~400KB, chạy mượt mà ngay cả trên các máy tính cấu hình yếu."),
+  body("Trong đó Omega(f) = gamma*T + 0.5*lambda*||w||^2 giúp ngăn chặn hiện tượng quá khớp (overfitting) bằng cách phạt các cây có quá nhiều lá (T) hoặc trọng số (w) quá lớn."),
+  body("Lợi thế triển khai: Thực nghiệm đối chuẩn trong tài liệu tham chiếu cho thấy XGBoost chỉ mất 15 giây để huấn luyện, nhanh gấp 12 lần so với LSTM (180 giây), đồng thời đạt độ chính xác cao hơn ~2,1% trên các tập dữ liệu bảng. Điều này cho phép đồ án triển khai mô hình dưới dạng file JSON siêu nhẹ (~400KB) chạy trực tiếp trên trình duyệt."),
 
   subHeading("2.5.4. LightGBM"),
   body("LightGBM là thuật toán Gradient Boosting được Microsoft phát triển với hai cải tiến kiến trúc cốt lõi so với XGBoost. Thứ nhất, học dựa trên histogram: thay vì duyệt toàn bộ dữ liệu, LightGBM phân nhóm các giá trị đặc trưng vào các bin histogram, giảm đáng kể bộ nhớ RAM và tăng tốc huấn luyện. Thứ hai, phát triển cây theo chiều lá: chọn lá có khả năng giảm sai số lớn nhất thay vì phát triển theo chiều sâu, giúp đạt độ chính xác cao hơn hoặc tương đương XGBoost trên cùng số lượng lá."),
@@ -675,9 +680,10 @@ const children = [
   // ---- 3.5 Tối ưu hóa siêu tham số ----
   sectionHeading("3.5. Tối ưu hóa siêu tham số XGBoost"),
 
-  subHeading("3.5.1. Thiết lập tìm kiếm"),
-  body("Quá trình tối ưu hóa mô hình sử dụng kỹ thuật tìm kiếm Bayesian Optimization kết hợp với kiểm định chéo 5 lần. Khác với Grid Search truyền thống thử nghiệm mọi tổ hợp một cách mù quáng, Bayesian Optimization xây dựng một mô hình xác suất của hàm mục tiêu để chọn ra các điểm thử nghiệm hứa hẹn nhất, giúp tiết kiệm thời gian huấn luyện và đạt được bộ tham số tinh vi hơn."),
-  body("Dựa trên tham chiếu từ nghiên cứu 'Optimizing Phishing URL Detection with Xgboost' (03/2026), hệ thống tập trung tinh chỉnh các tham số điều hòa (Regularization) gồm Gamma và Lambda để cân bằng giữa Bias và Variance."),
+  subHeading("3.5.1. Thiết lập tối ưu hóa Bayesian"),
+  body("Quá trình tinh chỉnh siêu tham số áp dụng kỹ thuật Bayesian Optimization thay vì Grid Search. Phương pháp này sử dụng hàm thu nạp (Acquisition Function) để tìm kiếm bộ tham số theta* tối ưu bằng cách cực đại hóa giá trị cải thiện kỳ vọng (Expected Improvement):"),
+  formula("theta* = arg max E[f(theta)]"),
+  body("Kết quả thu được bộ tham số tối ưu (Max depth = 6, Learning rate = 0.1, Subsample = 0.8) giúp mô hình đạt độ chính xác thực nghiệm ~99.5%, vượt qua mức 96.5% của nghiên cứu tham chiếu."),
 
   subHeading("3.5.2. Bộ siêu tham số tối ưu"),
   body("Bộ tham số tốt nhất tìm được: subsample = 0,7; reg_lambda = 1; reg_alpha = 1; n_estimators = 300; min_child_weight = 1; max_depth = 5; learning_rate = 0,01; gamma = 0,3; colsample_bytree = 0,6. F1-Score trung bình trên kiểm định chéo 5 lần đạt 0,9936."),
@@ -816,7 +822,7 @@ const children = [
     "[7] PhishTank. (2024). PhishTank – Join the fight against phishing. Truy cập tại: https://www.phishtank.com",
     "[8] Verma, R., et al. (2024). Phishing URL Detection Using Machine Learning: A Survey. IEEE Access.",
     "[9] Joshi, A., Lloyd, L., Westin, P., & Seethapathy, S. (2019). Using Lexical Features for Malicious URL Detection - A Machine Learning Approach. FireEye Inc. Truy cập tại: https://arxiv.org/pdf/1910.06277",
-    "[10] Nagaraju, M., et al. (2026). Optimizing Phishing URL Detection with Xgboost: A High-Performance Approach for Cyber Threat Mitigation. Truy cập tại: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrBeyErWNC73sbSMyqqD5YvnyJYxe2K9dG78iQ-ckbPNIzQZQ6mw9RXNTvf59p7WIzjj5LKsbowIcTpN_6ItztRpr1r9oBye1jQTErEt2J7vUn9zTFej8R0mVSscVcsdDv6XIT0Zz-MjgJN6gHQKHkgV3gtiJR-U4SxoDwObw00eHdO2VpgUKrfpFr",
+    "[10] Nagaraju, M., et al. (2026). Optimizing Phishing URL Detection with Xgboost: A High-Performance Approach for Cyber Threat Mitigation. Sreenidhi Institute of Science and Technology (SNIST).",
   ].map(ref => new Paragraph({
     children: [new TextRun({ text: ref, font: TNR, size: BODY_SIZE })],
     alignment: AlignmentType.JUSTIFIED,
