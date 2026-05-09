@@ -96,10 +96,11 @@ const children = [
   bodyText("Thay vì thử nghiệm ngẫu nhiên, nghiên cứu đề xuất sử dụng hàm thu nạp (Acquisition Function) để tìm bộ tham số theta* tối ưu."),
   technicalBox("Công thức tối ưu", "theta* = arg max E[f(theta)]. Phương pháp này giúp mô hình đạt độ chính xác 96.5% với chi phí tính toán thấp nhất, chứng minh tính hiệu quả của bộ tham số em đã chọn (Max depth=5, Learning rate=0.01)."),
 
-  bodyText("c. Biện luận về hiệu năng thực tế (ML vs. Deep Learning)", { bold: true }),
+  bodyText("c. Biện luận về hiệu năng thực tế (XGBoost vs. Deep Learning vs. Random Forest)", { bold: true }),
   bodyText("Tài liệu cung cấp số liệu thực nghiệm đắt giá để bảo vệ kiến trúc Offline của đồ án:"),
-  bulletPoint("Thời gian huấn luyện: XGBoost chỉ mất 15 giây, trong khi LSTM (Deep Learning) mất tới 180 giây (gấp 12 lần)."),
-  bulletPoint("Độ phức tạp: XGBoost duy trì ở mức Medium, phù hợp để đóng gói thành file JSON siêu nhẹ (402 KB) chạy trên trình duyệt, trong khi Deep Learning yêu cầu phần cứng chuyên dụng và thời gian tải mô hình rất lâu."),
+  bulletPoint("So với Deep Learning: XGBoost huấn luyện chỉ mất 15 giây (so với 180 giây của LSTM), tiết kiệm tài nguyên đáng kể cho thiết bị người dùng."),
+  bulletPoint("So với Random Forest: Tuy RF huấn luyện nhanh hơn, nhưng XGBoost có tốc độ dự đoán (Inference) nhanh hơn ~14% nhờ thuật toán nhận biết độ thưa (Sparsity-Aware)."),
+  technicalBox("Bản chất toán học", "Random Forest dựa trên chỉ số Gini Impurity để chia nút song song. XGBoost sử dụng khai triển Taylor bậc hai để tối ưu hàm mục tiêu theo chuỗi, giúp bắt được các đặc trưng phishing tinh vi ('hard examples') mà RF thường bỏ lọt."),
 
   sectionHeading("4. Kế hoạch tuần tới (Tuần 10)"),
   bulletPoint("Đóng gói mã nguồn Extension hoàn chỉnh để nộp lên hệ thống nhà trường."),
