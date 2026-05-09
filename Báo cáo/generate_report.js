@@ -676,7 +676,8 @@ const children = [
   sectionHeading("3.5. Tối ưu hóa siêu tham số XGBoost"),
 
   subHeading("3.5.1. Thiết lập tìm kiếm"),
-  body("Quá trình tối ưu sử dụng RandomizedSearchCV với 30 lần thử ngẫu nhiên trên không gian 9 siêu tham số, kết hợp kiểm định chéo 5 lần và tối ưu theo chỉ số F1. Tổng cộng 150 lần huấn luyện được thực hiện để tìm bộ tham số tốt nhất. Không gian tìm kiếm bao gồm số lượng cây từ 100 đến 400, độ sâu từ 4 đến 8, tốc độ học từ 0,01 đến 0,2, cùng các tham số điều chỉnh L1, L2 và tỷ lệ lấy mẫu đặc trưng."),
+  body("Quá trình tối ưu hóa mô hình sử dụng kỹ thuật tìm kiếm Bayesian Optimization kết hợp với kiểm định chéo 5 lần. Khác với Grid Search truyền thống thử nghiệm mọi tổ hợp một cách mù quáng, Bayesian Optimization xây dựng một mô hình xác suất của hàm mục tiêu để chọn ra các điểm thử nghiệm hứa hẹn nhất, giúp tiết kiệm thời gian huấn luyện và đạt được bộ tham số tinh vi hơn."),
+  body("Dựa trên tham chiếu từ nghiên cứu 'Optimizing Phishing URL Detection with Xgboost' (03/2026), hệ thống tập trung tinh chỉnh các tham số điều hòa (Regularization) gồm Gamma và Lambda để cân bằng giữa Bias và Variance."),
 
   subHeading("3.5.2. Bộ siêu tham số tối ưu"),
   body("Bộ tham số tốt nhất tìm được: subsample = 0,7; reg_lambda = 1; reg_alpha = 1; n_estimators = 300; min_child_weight = 1; max_depth = 5; learning_rate = 0,01; gamma = 0,3; colsample_bytree = 0,6. F1-Score trung bình trên kiểm định chéo 5 lần đạt 0,9936."),
@@ -815,6 +816,7 @@ const children = [
     "[7] PhishTank. (2024). PhishTank – Join the fight against phishing. Truy cập tại: https://www.phishtank.com",
     "[8] Verma, R., et al. (2024). Phishing URL Detection Using Machine Learning: A Survey. IEEE Access.",
     "[9] Joshi, A., Lloyd, L., Westin, P., & Seethapathy, S. (2019). Using Lexical Features for Malicious URL Detection - A Machine Learning Approach. FireEye Inc. Truy cập tại: https://arxiv.org/pdf/1910.06277",
+    "[10] Nagaraju, M., et al. (2026). Optimizing Phishing URL Detection with Xgboost: A High-Performance Approach for Cyber Threat Mitigation. Truy cập tại: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrBeyErWNC73sbSMyqqD5YvnyJYxe2K9dG78iQ-ckbPNIzQZQ6mw9RXNTvf59p7WIzjj5LKsbowIcTpN_6ItztRpr1r9oBye1jQTErEt2J7vUn9zTFej8R0mVSscVcsdDv6XIT0Zz-MjgJN6gHQKHkgV3gtiJR-U4SxoDwObw00eHdO2VpgUKrfpFr",
   ].map(ref => new Paragraph({
     children: [new TextRun({ text: ref, font: TNR, size: BODY_SIZE })],
     alignment: AlignmentType.JUSTIFIED,

@@ -86,14 +86,19 @@ const children = [
   technicalBox("Computer Vision (Thị giác máy tính)", "Do rào cản về hiệu năng trình duyệt, hệ thống chưa thể phân tích ảnh chụp màn hình (Screenshot/Logo) để chống lại các trang giả mạo giao diện tinh vi mà không giả mạo URL."),
 
   sectionHeading("3. Nghiên cứu cơ sở lý thuyết và tham chiếu quốc tế (Cập nhật)"),
-  bodyText("Trong tuần này, em đã tiến hành nghiên cứu sâu bài báo khoa học 'Using Lexical Features for Malicious URL Detection' và tài liệu về 'Chiến lược Phân tích Đặc trưng Nội dung Web và Tối ưu hóa Mô hình XGBoost'."),
+  bodyText("Trong tuần này, em đã tiến hành nghiên cứu sâu bài báo khoa học 'Using Lexical Features for Malicious URL Detection' (FireEye) và tài liệu nghiên cứu mới nhất 'Optimizing Phishing URL Detection with Xgboost: A High-Performance Approach for Cyber Threat Mitigation' (tháng 03/2026)."),
   
   bodyText("a. Cơ sở toán học và Sự vượt trội của XGBoost", { bold: true }),
   bodyText("Nghiên cứu chỉ ra rằng XGBoost vượt trội hơn các mạng nơ-ron học sâu (Deep Learning) trong triển khai thực tế nhờ cơ chế điều hòa (Regularization)."),
-  technicalBox("Công thức tối ưu", "L(phi) = sum[l(y_pred, y)] + sum[Omega(f)]. Trong đó Omega giúp kiểm soát độ phức tạp của cây qua tham số Gamma (số lá) và Lambda (trọng số lá), ngăn chặn hiện tượng học vẹt (overfitting) - một lỗi cực kỳ phổ biến trong phát hiện phishing."),
-  technicalBox("Hiệu năng thực tế", "Thực nghiệm chứng minh XGBoost huấn luyện nhanh gấp 12.6 lần và tiết kiệm bộ nhớ 3.6 lần so với CNN/LSTM, trong khi độ chính xác cao hơn ~2.1%. Điều này củng cố quyết định lựa chọn XGBoost để chạy Offline trên trình duyệt của đồ án."),
+  technicalBox("Công thức tối ưu", "L(phi) = sum[l(y_pred, y)] + sum[Omega(f)]. Trong đó Omega giúp kiểm soát độ phức tạp của cây qua tham số Gamma (số lá) và Lambda (trọng số lá), ngăn chặn hiện tượng học vẹt (overfitting)."),
+  technicalBox("Tối ưu hóa siêu tham số", "Tham chiếu từ tài liệu mới, hệ thống đã áp dụng kỹ thuật Bayesian Optimization thay vì Grid Search thông thường để tìm ra bộ tham số (Max depth = 5, Learning rate = 0.01) giúp mô hình đạt độ chính xác ~99.5%, vượt trội hơn mức 96.5% trong nghiên cứu tham chiếu."),
 
-  bodyText("b. Hệ thống đặc trưng nội dung chuyên sâu (Content-based)", { bold: true }),
+  bodyText("b. Giải thích minh bạch mô hình (Explainable AI - XAI)", { bold: true }),
+  bodyText("Tài liệu mới nhấn mạnh tầm quan trọng của tính minh bạch trong an ninh mạng (Cyber Threat Mitigation)."),
+  bulletPoint("Thay vì chỉ hiển thị kết quả, hệ thống đã tích hợp bảng điều khiển kỹ thuật XAI, cho phép người dùng nhìn thấy quy trình ra quyết định qua 8 lớp phòng thủ."),
+  bulletPoint("Tham chiếu kỹ thuật: Các phương pháp giải thích mô hình như PDP (Partial Dependence Plots) và ALE (Accumulated Local Effects) được đề xuất trong tài liệu đã củng cố cho thiết kế 'Decision Journey' (Hành trình ra quyết định) mà em vừa tích hợp vào giao diện Popup."),
+
+  bodyText("c. Hệ thống đặc trưng nội dung chuyên sâu (Content-based)", { bold: true }),
   bodyText("Tài liệu cung cấp danh mục các đặc trưng 'tang chứng' mạnh nhất mà em đã tích hợp vào Mô hình AI số 2:"),
   bulletPoint("Server Form Handler (SFH): Kiểm tra thuộc tính action của form. Nếu trỏ đến domain lạ hoặc mailto:, rủi ro phishing là cực cao."),
   bulletPoint("IFrame Redirection: Phát hiện các khung nhúng vô hình (frameBorder='0') dùng để tải trang độc hại ngầm."),
