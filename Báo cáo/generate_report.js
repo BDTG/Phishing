@@ -65,6 +65,19 @@ function formula(text) {
   });
 }
 
+// Hộp kỹ thuật (dùng để làm nổi bật các thuật ngữ/công thức)
+function technicalBox(title, content) {
+  return new Paragraph({
+    children: [
+      new TextRun({ text: `→ ${title}: `, font: TNR, size: BODY_SIZE, bold: true, italics: true, color: "20208B" }),
+      new TextRun({ text: content, font: TNR, size: BODY_SIZE, italics: true, color: "404040" }),
+    ],
+    alignment: AlignmentType.JUSTIFIED,
+    indent: { left: 720 },
+    spacing: makeSpacing(80, 80),
+  });
+}
+
 // Tiêu đề chương: Heading 1 — Word sẽ nhận diện cho TOC tự động
 function chapterHeading(text) {
   return new Paragraph({
@@ -519,8 +532,11 @@ const children = [
   body("Cấu trúc: Mô hình xây dựng một rừng gồm nhiều cây quyết định hoàn toàn độc lập và song song. Tại mỗi nút phân chia, Random Forest chỉ chọn ngẫu nhiên một tập con đặc trưng để tìm điểm chia cắt tối ưu. Kết quả dự đoán cuối cùng được tổng hợp bằng bỏ phiếu đa số từ tất cả các cây. Ưu điểm nổi bật là khả năng chống học vẹt rất tốt, ít nhạy cảm với nhiễu và cung cấp mức độ quan trọng của từng đặc trưng một cách trực quan. Trong bài toán phân loại phishing URL, Random Forest đạt độ chính xác từ 89,7% đến 97,6% với F1-Score từ 96,2% đến 97,2%."),
 
   subHeading("2.5.3. XGBoost"),
-  body("XGBoost hoạt động dựa trên cơ chế Boosting, xây dựng các cây quyết định tuần tự trong đó mỗi cây tối ưu hóa hàm mất mát bằng Gradient Descent để sửa chữa lỗi của các cây trước. XGBoost vượt trội nhờ tích hợp sẵn điều chỉnh L1 và L2 ngăn học vẹt, thuật toán xử lý dữ liệu thiếu và hỗ trợ tính toán song song. Thuật toán đạt độ chính xác từ 94,2% đến 99,8% với tỷ lệ báo động giả thấp nhất là 2,3%."),
-  body("Triển khai trong đề tài: Sau khi huấn luyện offline bằng Python, toàn bộ cấu trúc cây quyết định được xuất sang file JSON. Tiện ích mở rộng Chrome dùng JavaScript thuần đọc JSON và suy luận bằng logic IF-ELSE phía client, không cần thư viện học máy nặng và đảm bảo độ trễ dưới 200ms."),
+  body("XGBoost (eXtreme Gradient Boosting) là thuật toán cốt lõi được lựa chọn cho đồ án này nhờ sự cân bằng hoàn hảo giữa tốc độ và độ chính xác. Khác với các mô hình Deep Learning (CNN/LSTM) tiêu tốn nhiều tài nguyên, XGBoost được thiết kế tối ưu cho dữ liệu dạng bảng và có khả năng triển khai nhẹ tại biên."),
+  body("Cơ sở toán học: Sức mạnh của XGBoost nằm ở việc tối ưu hóa hàm mục tiêu tích hợp thành phần điều hòa (Regularization) để kiểm soát hiện tượng quá khớp (overfitting):"),
+  formula("L(phi) = sum[l(y_pred, y)] + sum[Omega(f)]"),
+  body("Trong đó Omega đại diện cho độ phức tạp của cây, được tính bằng số lượng lá (T) và trọng số lá (w). Cơ chế này giúp mô hình duy trì khả năng tổng quát hóa cực tốt trên các tập dữ liệu phishing vốn có độ nhiễu cao."),
+  body("Lợi thế triển khai: Các thực nghiệm so sánh cho thấy XGBoost huấn luyện nhanh gấp 12,6 lần và sử dụng bộ nhớ ít hơn 3,6 lần so với các mạng nơ-ron học sâu, trong khi độ chính xác cao hơn khoảng 2,1%. Điều này cho phép đồ án chuyển cấu trúc 300 cây quyết định sang file JSON chỉ ~400KB, chạy mượt mà ngay cả trên các máy tính cấu hình yếu."),
 
   subHeading("2.5.4. LightGBM"),
   body("LightGBM là thuật toán Gradient Boosting được Microsoft phát triển với hai cải tiến kiến trúc cốt lõi so với XGBoost. Thứ nhất, học dựa trên histogram: thay vì duyệt toàn bộ dữ liệu, LightGBM phân nhóm các giá trị đặc trưng vào các bin histogram, giảm đáng kể bộ nhớ RAM và tăng tốc huấn luyện. Thứ hai, phát triển cây theo chiều lá: chọn lá có khả năng giảm sai số lớn nhất thay vì phát triển theo chiều sâu, giúp đạt độ chính xác cao hơn hoặc tương đương XGBoost trên cùng số lượng lá."),
@@ -570,7 +586,12 @@ const children = [
   listItem("Lớp 3.", "Phát hiện giả mạo thương hiệu: So sánh hostname với 7 thương hiệu lớn được cấu hình sẵn bao gồm PayPal, Google, Microsoft, Apple, Facebook, Amazon và FitGirl. Sử dụng thuật toán khoảng cách Levenshtein với ngưỡng 3 để phát hiện typosquatting như paypa1.com hay goggle.com. Kiểm tra cả exact keyword match và fuzzy domain matching."),
   listItem("Lớp 4.", "Heuristic dựa trên quy tắc: Kiểm tra 13 TLD đáng ngờ (.xyz, .tk, .pw, .cc, .top, .club, v.v.). Thay vì chặn cứng, hệ thống áp dụng cơ chế phạt nhẹ (soft penalty) kết hợp với độ đồng thuận từ mô hình AI để giảm báo động nhầm. Nếu kết hợp từ khóa phishing, xác suất đạt 97%."),
   listItem("Lớp 5.", "Mô hình XGBoost ML: Suy luận bằng 300 cây quyết định trên 38 đặc trưng ngữ vựng. Áp dụng ngưỡng 3 bậc: An toàn (< 0,75), Cảnh báo (0,75-0,84) và Nguy hiểm (≥ 0,85)."),
-  listItem("Lớp 6.", "Phân tích nội dung DOM: Kiểm tra các tín hiệu gồm form mật khẩu, form action ngoại lai, giả mạo thương hiệu. Đặc biệt bổ sung hệ thống phủ định (Negative Signal) qua hàm isPageHarmless(): nếu trang hoàn toàn không có form hoặc ô nhập liệu (như trang đọc truyện), xác suất rủi ro từ AI sẽ bị giảm trừ 70%."),
+  listItem("Lớp 6.", "Phân tích nội dung DOM: Kiểm tra các đặc trưng nội dung (Content-based) chuyên sâu để phát hiện các trang giả mạo giao diện tinh vi. Các chỉ số then chốt bao gồm:"),
+  technicalBox("Server Form Handler (SFH)", "Kiểm tra thuộc tính action của thẻ <form>. Nếu dữ liệu được gửi đến một domain lạ hoặc địa chỉ email (mailto:), đây là bằng chứng trực tiếp của hành vi đánh cắp thông tin."),
+  technicalBox("IFrame Redirection", "Phát hiện các khung nhúng vô hình (frameBorder='0') dùng để tải trang độc hại mà không làm thay đổi thanh địa chỉ."),
+  technicalBox("Request URL", "Tính toán tỷ lệ tài nguyên (ảnh, CSS, JS) được tải từ domain gốc so với domain ngoại lai, giúp phát hiện kỹ thuật ký sinh giao diện."),
+  body("Ngoài ra, hệ thống áp dụng cơ chế phủ định (Negative Signal) qua hàm isPageHarmless(): nếu trang hoàn toàn không có form mật khẩu hay link mã độc, AI sẽ giảm trừ 70% rủi ro để tránh báo động nhầm."),
+
   listItem("Lớp 7.", "Kiểm tra tuổi tên miền RDAP & Điểm uy tín: Truy vấn ngày đăng ký tên miền. Kết hợp cơ chế Reputation Bonus: giảm 35% rủi ro cho domain trên 1 năm. Đối với TLD uy tín (.vn, .eu, .ru) bị lỗi mạng khi check RDAP, hệ thống vẫn tự động giảm 25% rủi ro để đảm bảo trải nghiệm người dùng."),
 
   subHeading("2.7.3. Tham chiếu kiến trúc FAUDE (FireEye)"),

@@ -85,12 +85,19 @@ const children = [
   technicalBox("Crowdsourcing (Báo cáo cộng đồng)", "Hệ thống chưa có cơ chế cho phép người dùng ấn nút 'Report' để tự động cập nhật danh sách đen (Blacklist) dùng chung trên Cloud."),
   technicalBox("Computer Vision (Thị giác máy tính)", "Do rào cản về hiệu năng trình duyệt, hệ thống chưa thể phân tích ảnh chụp màn hình (Screenshot/Logo) để chống lại các trang giả mạo giao diện tinh vi mà không giả mạo URL."),
 
-  sectionHeading("3. Nghiên cứu cơ sở lý thuyết và tham chiếu quốc tế"),
-  bodyText("Trong tuần này, em đã tiến hành nghiên cứu sâu bài báo khoa học 'Using Lexical Features for Malicious URL Detection - A Machine Learning Approach' của các chuyên gia từ FireEye Inc (https://arxiv.org/pdf/1910.06277)."),
-  bulletPoint("Tham chiếu kiến trúc: Hệ thống đã được chuẩn hóa theo mô hình FAUDE (Advanced URL Detection Engine). Trong đó, phân tách lộ trình xử lý thành:"),
-  technicalBox("Fastpath", "Các lớp 0 đến 5 (Phân tích đặc trưng tĩnh của URL bằng XGBoost), cho kết quả tức thời < 5ms."),
-  technicalBox("Slowpath", "Các lớp 6 và 7 (Phân tích DOM động và kiểm tra lịch sử tên miền qua RDAP), xử lý sâu hơn khi URL có dấu hiệu nghi vấn."),
-  bulletPoint("Đối sánh đặc trưng: Bài báo sử dụng 23 đặc trưng ngữ vựng. Đồ án hiện tại đã mở rộng lên 39 đặc trưng (bổ sung Entropy, Levenshtein Distance, và Structural DOM features), giúp tăng khả năng nhận diện các cuộc tấn công Zero-day tinh vi."),
+  sectionHeading("3. Nghiên cứu cơ sở lý thuyết và tham chiếu quốc tế (Cập nhật)"),
+  bodyText("Trong tuần này, em đã tiến hành nghiên cứu sâu bài báo khoa học 'Using Lexical Features for Malicious URL Detection' và tài liệu về 'Chiến lược Phân tích Đặc trưng Nội dung Web và Tối ưu hóa Mô hình XGBoost'."),
+  
+  bodyText("a. Cơ sở toán học và Sự vượt trội của XGBoost", { bold: true }),
+  bodyText("Nghiên cứu chỉ ra rằng XGBoost vượt trội hơn các mạng nơ-ron học sâu (Deep Learning) trong triển khai thực tế nhờ cơ chế điều hòa (Regularization)."),
+  technicalBox("Công thức tối ưu", "L(phi) = sum[l(y_pred, y)] + sum[Omega(f)]. Trong đó Omega giúp kiểm soát độ phức tạp của cây qua tham số Gamma (số lá) và Lambda (trọng số lá), ngăn chặn hiện tượng học vẹt (overfitting) - một lỗi cực kỳ phổ biến trong phát hiện phishing."),
+  technicalBox("Hiệu năng thực tế", "Thực nghiệm chứng minh XGBoost huấn luyện nhanh gấp 12.6 lần và tiết kiệm bộ nhớ 3.6 lần so với CNN/LSTM, trong khi độ chính xác cao hơn ~2.1%. Điều này củng cố quyết định lựa chọn XGBoost để chạy Offline trên trình duyệt của đồ án."),
+
+  bodyText("b. Hệ thống đặc trưng nội dung chuyên sâu (Content-based)", { bold: true }),
+  bodyText("Tài liệu cung cấp danh mục các đặc trưng 'tang chứng' mạnh nhất mà em đã tích hợp vào Mô hình AI số 2:"),
+  bulletPoint("Server Form Handler (SFH): Kiểm tra thuộc tính action của form. Nếu trỏ đến domain lạ hoặc mailto:, rủi ro phishing là cực cao."),
+  bulletPoint("IFrame Redirection: Phát hiện các khung nhúng vô hình (frameBorder='0') dùng để tải trang độc hại ngầm."),
+  bulletPoint("External Links Ratio: Tỷ lệ liên kết ngoại bộ cao bất thường so với nội dung chính thống."),
 
   sectionHeading("4. Kế hoạch tuần tới (Tuần 10)"),
   bulletPoint("Đóng gói mã nguồn Extension hoàn chỉnh để nộp lên hệ thống nhà trường."),
