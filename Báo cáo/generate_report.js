@@ -573,6 +573,11 @@ const children = [
   listItem("Lớp 6.", "Phân tích nội dung DOM: Kiểm tra các tín hiệu gồm form mật khẩu, form action ngoại lai, giả mạo thương hiệu. Đặc biệt bổ sung hệ thống phủ định (Negative Signal) qua hàm isPageHarmless(): nếu trang hoàn toàn không có form hoặc ô nhập liệu (như trang đọc truyện), xác suất rủi ro từ AI sẽ bị giảm trừ 70%."),
   listItem("Lớp 7.", "Kiểm tra tuổi tên miền RDAP & Điểm uy tín: Truy vấn ngày đăng ký tên miền. Kết hợp cơ chế Reputation Bonus: giảm 35% rủi ro cho domain trên 1 năm. Đối với TLD uy tín (.vn, .eu, .ru) bị lỗi mạng khi check RDAP, hệ thống vẫn tự động giảm 25% rủi ro để đảm bảo trải nghiệm người dùng."),
 
+  subHeading("2.7.3. Tham chiếu kiến trúc FAUDE (FireEye)"),
+  body("Kiến trúc tám lớp của hệ thống được xây dựng dựa trên sự tham chiếu từ mô hình FAUDE (Advanced URL Detection Engine) của tập đoàn bảo mật FireEye. Điểm cốt lõi của kiến trúc này là sự phân tách lộ trình xử lý thành hai nhánh riêng biệt nhằm tối ưu hóa giữa tốc độ và độ chính xác."),
+  listItem("1.", "Nhánh Fastpath (Lớp 0 - 5): Tập trung vào việc trích xuất và phân loại các đặc trưng ngữ vựng tĩnh của URL. Nhánh này hoạt động với độ trễ cực thấp (< 5ms), cho phép đưa ra kết luận ngay lập tức đối với đa số các URL lừa đảo thông thường."),
+  listItem("2.", "Nhánh Slowpath (Lớp 6 - 7): Chỉ được kích hoạt khi URL vượt qua Fastpath nhưng vẫn mang các dấu hiệu nghi ngờ. Nhánh này thực hiện các tác vụ nặng hơn như phân tích cấu trúc HTML DOM và truy vấn tuổi đời tên miền qua RDAP. Việc tách biệt hai lộ trình này giúp hệ thống duy trì trải nghiệm lướt web mượt mà cho người dùng trong khi vẫn đảm bảo khả năng bảo vệ sâu trước các cuộc tấn công Zero-day tinh vi."),
+
   subHeading("2.7.2. Quy trình xử lý và triển khai mô hình"),
   body("Quy trình hoạt động của hệ thống diễn ra hoàn toàn tự động. Khi người dùng bắt đầu truy cập một trang web mới, Background Service Worker đánh chặn sự kiện điều hướng và inject tuần tự sáu file JavaScript: dangerous_url_checker.js (danh sách đen), feature_extractor.js (trích xuất đặc trưng), xgboost_predictor.js (suy luận ML), domain_age_checker.js (kiểm tra tuổi domain RDAP), content_analyzer.js (phân tích DOM) và content.js (điều phối tổng hợp và hiển thị banner). Mỗi lớp có thể kết thúc sớm và trả về kết quả ngay lập tức nếu đủ căn cứ, giúp tối ưu thời gian xử lý."),
   body("Về triển khai mô hình: Mô hình XGBoost được huấn luyện offline bằng Python trên 20.500 URL (20.000 gốc và 500 URL giả mạo thương hiệu bổ sung) với 38 đặc trưng. Toàn bộ cấu trúc 300 cây quyết định được xuất sang file JSON 402 KB và đóng gói bên trong tiện ích mở rộng. Tại phía client, JavaScript thuần duyệt cây IF-ELSE mà không cần thư viện học máy."),
@@ -788,6 +793,7 @@ const children = [
     "[6] OpenPhish. (2024). OpenPhish – Phishing Intelligence. Truy cập tại: https://openphish.com",
     "[7] PhishTank. (2024). PhishTank – Join the fight against phishing. Truy cập tại: https://www.phishtank.com",
     "[8] Verma, R., et al. (2024). Phishing URL Detection Using Machine Learning: A Survey. IEEE Access.",
+    "[9] Joshi, A., Lloyd, L., Westin, P., & Seethapathy, S. (2019). Using Lexical Features for Malicious URL Detection - A Machine Learning Approach. FireEye Inc. Truy cập tại: https://arxiv.org/pdf/1910.06277",
   ].map(ref => new Paragraph({
     children: [new TextRun({ text: ref, font: TNR, size: BODY_SIZE })],
     alignment: AlignmentType.JUSTIFIED,
