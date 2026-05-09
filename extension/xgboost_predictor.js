@@ -550,17 +550,15 @@ async function predictPhishing(urlStr) {
   const fullLower = decodedUrl.toLowerCase();
   let tldPenalty = 0;
   if (SUSP_TLDS_SET.has(tld)) {
-    const hasPhishKw = PHISHING_KW_LIST.some(kw => fullLower.includes(kw));
-    if (hasPhishKw) {
-      logDebug('LAYER 3a', 'TLD đáng ngờ + Từ khóa phishing', tld + ' => BLOCK');
-      return { probability: 0.97, tier: 'block', reason: 'TLD đáng ngờ + từ khóa phishing', isPhishing: true };
-    }
     if (brandCheck.isImpersonation) {
       logDebug('LAYER 3a', 'Giả mạo thương hiệu + TLD đáng ngờ', brandCheck.reason + ' => BLOCK');
       return { probability: 0.95, tier: 'block', reason: `Giả mạo thương hiệu + TLD đáng ngờ (${brandCheck.reason})`, isPhishing: true };
     }
-    // Không chặn ngay, chỉ đánh dấu để xử lý sau ML model
-    tldPenalty = 0.15; 
+    
+    const hasPhishKw = PHISHING_KW_LIST.some(kw => fullLower.includes(kw));
+    // Nếu có từ khóa phishing -> Penalty nặng hơn (25%), ngược lại penalty nhẹ (10%)
+    // Không hard block để tránh bắt nhầm (False Positive) các web thật dùng TLD rẻ tiền có trang /login
+    tldPenalty = hasPhishKw ? 0.25 : 0.10; 
   }
 
   // ── LAYER 3b: Brand impersonation với TLD phổ thông ──
@@ -597,7 +595,14 @@ async function predictPhishing(urlStr) {
     margin += traverseTree(tree, features);
   }
 
-    let prob = sigmoid(margin);
+  let prob = sigmoid(margin);
+  
+  // Áp dụng TLD Penalty nếu có (Cộng điểm phạt trước khi xử lý Logic các bước sau)
+  if (tldPenalty > 0) {
+    prob = Math.min(0.99, prob + tldPenalty);
+    logDebug('LAYER 3a Penalty', `Cộng điểm phạt TLD (+${tldPenalty})`, `Xác suất tăng thành ${(prob*100).toFixed(2)}%`);
+  }
+  
   logDebug('LAYER 5', 'Kết quả XGBoost (Chưa hiệu chỉnh)', `Xác suất: ${(prob*100).toFixed(2)}% (Margin: ${margin.toFixed(3)})`);
 
 
@@ -694,6 +699,42 @@ async function predictPhishing(urlStr) {
     }
   }
 
-  logDebug('FINAL DECISION', tier.toUpperCase(), `${reason} (Xác suất chốt: ${(prob*100).toFixed(2)}%)`);
-  return { probability: prob, tier, reason, isPhishing };
+  // ── FUSION LAYER: Tích hợp Content Analysis trực tiếp vào Predictor ──
+  // Chạy quét DOM để xem có bắt được tang chứng vật chứng không
+  let finalProb = prob;
+  let finalTier = tier;
+  let finalReason = reason;
+
+  if (typeof analyzeContent === 'function' && prob > 0.1) {
+    const contentResult = analyzeContent();
+    
+    // Nếu điểm Content cao hơn điểm ML, lấy điểm Content làm chuẩn
+    if (contentResult.score > finalProb) {
+      finalProb = contentResult.score;
+    }
+
+    // Logic ép Tier dựa trên Content
+    if (contentResult.score >= 0.70) {
+      if (finalProb >= 0.85) {
+        finalTier = 'block';
+        finalReason = contentResult.warnings[0] || 'Phát hiện dấu hiệu lừa đảo trực tiếp trên trang';
+      } else {
+        finalTier = 'warning';
+        finalReason = contentResult.warnings[0] || 'Phát hiện dấu hiệu bất thường từ nội dung trang';
+      }
+    } else if (contentResult.score >= 0.50 && finalTier === 'safe') {
+      finalProb = Math.max(finalProb, 0.70); // Ép lên tiệm cận cảnh báo
+      finalTier = 'warning';
+      finalReason = contentResult.warnings[0] || 'Phát hiện dấu hiệu bất thường từ nội dung trang';
+    }
+
+    // Gộp tất cả warning của Content vào reason nếu có
+    if (contentResult.warnings.length > 0 && finalTier !== 'safe') {
+       // Thêm dấu ngắt để UI dễ tách dòng
+       finalReason = finalReason + " | " + contentResult.warnings.join(" | ");
+    }
   }
+
+  logDebug('FINAL DECISION', finalTier.toUpperCase(), `${finalReason} (Xác suất chốt: ${(finalProb*100).toFixed(2)}%)`);
+  return { probability: finalProb, tier: finalTier, reason: finalReason, isPhishing: finalTier !== 'safe' };
+}
