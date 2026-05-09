@@ -155,8 +155,7 @@ function hasHiddenIframe() {
     'github.com', 'githubusercontent.com',
     'stackoverflow.com', 'cdn.sstatic.net',
     'reddit.com', 'redd.it',
-    'tiktok.com',
-    'netflix.com', 'nflxext.com',
+    'tiktok.com', 'netflix.com', 'nflxext.com',
     'wikipedia.org', 'wikimedia.org', 'wiktionary.org',
     'goo.gl', 't.co', 'bit.ly',
     'anthropic.com', 'claude.ai', 'claudeusercontent.com',
@@ -171,15 +170,11 @@ function hasHiddenIframe() {
     'vimeo.com', 'player.vimeo.com',
     'dailymotion.com',
     'yahoo.com', 'yimg.com',
-    'snapchat.com',
-    'whatsapp.com',
-    'telegram.org',
-    'zoom.us', 'zoomgov.com',
-    'slack.com',
-    'dropbox.com',
+    'snapchat.com', 'whatsapp.com',
+    'telegram.org', 'zoom.us', 'zoomgov.com',
+    'slack.com', 'dropbox.com',
     'notion.so', 'notion.new',
-    'figma.com',
-    'canva.com',
+    'figma.com', 'canva.com',
     'paypal.com', 'paypalobjects.com',
     'stripe.com', 'js.stripe.com',
     'shopee.vn', 'lazada.vn', 'tiki.vn',
@@ -327,11 +322,13 @@ function hasMaliciousDownloadLinks() {
 /**
  * Tổng hợp tất cả tín hiệu từ DOM và chạy Submodel 2 (Content AI)
  * → Trả về điểm bổ sung [0, 1] và danh sách cảnh báo cụ thể
- * @returns {{score: number, warnings: string[]}}
+ * @returns {{score: number, warnings: string[], debugFeatures: number[], aiProb: number}}
  */
 function analyzeContent() {
   const warnings = [];
   let score = 0;
+  let debugFeatures = [];
+  let aiProb = 0;
 
   const currentHost = location.hostname.toLowerCase().replace(/^www\./, '');
   const isOfficialAnyBrand = Object.values(BRAND_OFFICIAL_DOMAINS).some(list =>
@@ -339,7 +336,7 @@ function analyzeContent() {
   );
 
   if (isOfficialAnyBrand) {
-    return { score: 0, warnings: [] };
+    return { score: 0, warnings: [], debugFeatures: [], aiProb: 0 };
   }
 
   try {
@@ -392,7 +389,7 @@ function analyzeContent() {
       const num_suspicious_words = (text.match(suspicious_regex) || []).length;
 
       // Đưa 6 đặc trưng vào Model 2
-      const features = [
+      debugFeatures = [
         num_password_inputs,
         num_hidden_iframes,
         num_external_forms,
@@ -401,10 +398,10 @@ function analyzeContent() {
         num_suspicious_words
       ];
       
-      const contentAiProb = predictContentPhishing(features);
-      if (contentAiProb > 0.6) {
-        warnings.push(`Mô hình AI Content đánh giá mã nguồn HTML có rủi ro ${(contentAiProb*100).toFixed(1)}%`);
-        score += contentAiProb; // Cộng dồn điểm AI
+      aiProb = predictContentPhishing(debugFeatures);
+      if (aiProb > 0.6) {
+        warnings.push(`Mô hình AI Content đánh giá mã nguồn HTML có rủi ro ${(aiProb*100).toFixed(1)}%`);
+        score += aiProb; // Cộng dồn điểm AI
       }
     }
     // =========================================================
@@ -465,5 +462,7 @@ function analyzeContent() {
   return {
     score: Math.min(score, 1.0),
     warnings,
+    debugFeatures,
+    aiProb
   };
 }
