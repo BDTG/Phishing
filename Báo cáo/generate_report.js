@@ -681,9 +681,9 @@ const children = [
   sectionHeading("3.5. Tối ưu hóa siêu tham số XGBoost"),
 
   subHeading("3.5.1. Thiết lập tối ưu hóa Bayesian"),
-  body("Quá trình tinh chỉnh siêu tham số áp dụng kỹ thuật Bayesian Optimization thay vì Grid Search. Phương pháp này sử dụng hàm thu nạp (Acquisition Function) để tìm kiếm bộ tham số theta* tối ưu bằng cách cực đại hóa giá trị cải thiện kỳ vọng (Expected Improvement):"),
+  body("Quá trình tinh chỉnh siêu tham số áp dụng kỹ thuật Bayesian Optimization kết hợp với kiểm định chéo 5 lần. Thay vì thử nghiệm cạn kiệt và mù quáng như Grid Search, phương pháp này hoạt động dựa trên nguyên lý 'học từ các kết quả trong quá khứ'. Cụ thể, nó xây dựng một Mô hình thay thế (Surrogate Model - thường là Gaussian Process) để dự đoán hiệu năng của hệ thống. Sau đó, nó sử dụng hàm thu nạp (Acquisition Function) để quyết định bộ tham số theta* nào nên được thử nghiệm tiếp theo bằng cách cực đại hóa giá trị cải thiện kỳ vọng (Expected Improvement):"),
   formula("theta* = arg max E[f(theta)]"),
-  body("Kết quả thu được bộ tham số tối ưu (Max depth = 6, Learning rate = 0.1, Subsample = 0.8) giúp mô hình đạt độ chính xác thực nghiệm ~99.5%, vượt qua mức 96.5% của nghiên cứu tham chiếu."),
+  body("Cách tiếp cận này giúp mô hình đạt độ chính xác thực nghiệm ~99.5% chỉ sau 150 vòng lặp, tiết kiệm đáng kể tài nguyên tính toán và vượt qua mức 96.5% của nghiên cứu tham chiếu."),
 
   subHeading("3.5.2. Bộ siêu tham số tối ưu"),
   body("Bộ tham số tốt nhất tìm được: subsample = 0,7; reg_lambda = 1; reg_alpha = 1; n_estimators = 300; min_child_weight = 1; max_depth = 5; learning_rate = 0,01; gamma = 0,3; colsample_bytree = 0,6. F1-Score trung bình trên kiểm định chéo 5 lần đạt 0,9936."),
@@ -891,7 +891,7 @@ const doc = new Document({
 // SAVE FILE WITH DYNAMIC VERSIONING
 // ============================================================
 Packer.toBuffer(doc).then(buffer => {
-  const dir = "C:/Users/BDTG/Desktop/Đồ Án Cơ Sở/Báo cáo";
+  const dir = "C:/Users/BDTG/Desktop/Đồ Án Cơ Sở/Báo cáo/output";
   const baseName = "BaoCao_DACS_TranDuyThai";
   
   // Quét thư mục để tìm version cao nhất
