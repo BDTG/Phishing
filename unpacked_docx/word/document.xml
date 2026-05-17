@@ -1,0 +1,2880 @@
+<?xml version="1.0" encoding="ascii"?><w:document xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:sl="http://schemas.openxmlformats.org/schemaLibrary/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture" xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:lc="http://schemas.openxmlformats.org/drawingml/2006/lockedCanvas" xmlns:dgm="http://schemas.openxmlformats.org/drawingml/2006/diagram" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml" xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex" xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid" xmlns="http://schemas.microsoft.com/office/tasks/2019/documenttasks" xmlns:cr="http://schemas.microsoft.com/office/comments/2020/reactions">
+  <w:body>
+    <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000001">
+      <w:pPr>
+        <w:tabs>
+          <w:tab w:val="center" w:leader="none" w:pos="1985"/>
+        </w:tabs>
+        <w:spacing w:after="60" w:before="60" w:lineRule="auto"/>
+        <w:rPr>
+          <w:sz w:val="26"/>
+          <w:szCs w:val="26"/>
+        </w:rPr>
+      </w:pPr>
+      <w:bookmarkStart w:colFirst="0" w:colLast="0" w:name="_heading=h.gjdgxs" w:id="0"/>
+      <w:bookmarkEnd w:id="0"/>
+      <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+        <w:rPr>
+          <w:rtl w:val="0"/>
+        </w:rPr>
+      </w:r>
+      <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+        <mc:AlternateContent>
+          <mc:Choice Requires="wpg">
+            <w:drawing>
+              <wp:anchor allowOverlap="1" behindDoc="0" distB="0" distT="0" distL="114300" distR="114300" hidden="0" layoutInCell="1" locked="0" relativeHeight="0" simplePos="0">
+                <wp:simplePos x="0" y="0"/>
+                <wp:positionH relativeFrom="column">
+                  <wp:posOffset>114300</wp:posOffset>
+                </wp:positionH>
+                <wp:positionV relativeFrom="paragraph">
+                  <wp:posOffset>0</wp:posOffset>
+                </wp:positionV>
+                <wp:extent cx="25400" cy="25400"/>
+                <wp:effectExtent b="0" l="0" r="0" t="0"/>
+                <wp:wrapNone/>
+                <wp:docPr id="2" name=""/>
+                <a:graphic>
+                  <a:graphicData uri="http://schemas.microsoft.com/office/word/2010/wordprocessingShape">
+                    <wps:wsp>
+                      <wps:cNvCnPr/>
+                      <wps:spPr>
+                        <a:xfrm>
+                          <a:off x="4526850" y="3780000"/>
+                          <a:ext cx="1638300" cy="0"/>
+                        </a:xfrm>
+                        <a:prstGeom prst="straightConnector1">
+                          <a:avLst/>
+                        </a:prstGeom>
+                        <a:solidFill>
+                          <a:srgbClr val="FFFFFF"/>
+                        </a:solidFill>
+                        <a:ln cap="flat" cmpd="sng" w="12700">
+                          <a:solidFill>
+                            <a:srgbClr val="000000"/>
+                          </a:solidFill>
+                          <a:prstDash val="solid"/>
+                          <a:round/>
+                          <a:headEnd len="sm" w="sm" type="none"/>
+                          <a:tailEnd len="sm" w="sm" type="none"/>
+                        </a:ln>
+                      </wps:spPr>
+                      <wps:bodyPr anchorCtr="0" anchor="ctr" bIns="91425" lIns="91425" spcFirstLastPara="1" rIns="91425" wrap="square" tIns="91425">
+                        <a:noAutofit/>
+                      </wps:bodyPr>
+                    </wps:wsp>
+                  </a:graphicData>
+                </a:graphic>
+              </wp:anchor>
+            </w:drawing>
+          </mc:Choice>
+          <mc:Fallback>
+            <w:drawing>
+              <wp:anchor allowOverlap="1" behindDoc="0" distB="0" distT="0" distL="114300" distR="114300" hidden="0" layoutInCell="1" locked="0" relativeHeight="0" simplePos="0">
+                <wp:simplePos x="0" y="0"/>
+                <wp:positionH relativeFrom="column">
+                  <wp:posOffset>114300</wp:posOffset>
+                </wp:positionH>
+                <wp:positionV relativeFrom="paragraph">
+                  <wp:posOffset>0</wp:posOffset>
+                </wp:positionV>
+                <wp:extent cx="25400" cy="25400"/>
+                <wp:effectExtent b="0" l="0" r="0" t="0"/>
+                <wp:wrapNone/>
+                <wp:docPr id="2" name="image1.png"/>
+                <a:graphic>
+                  <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                    <pic:pic>
+                      <pic:nvPicPr>
+                        <pic:cNvPr id="0" name="image1.png"/>
+                        <pic:cNvPicPr preferRelativeResize="0"/>
+                      </pic:nvPicPr>
+                      <pic:blipFill>
+                        <a:blip r:embed="rId7"/>
+                        <a:srcRect/>
+                        <a:stretch>
+                          <a:fillRect/>
+                        </a:stretch>
+                      </pic:blipFill>
+                      <pic:spPr>
+                        <a:xfrm>
+                          <a:off x="0" y="0"/>
+                          <a:ext cx="25400" cy="25400"/>
+                        </a:xfrm>
+                        <a:prstGeom prst="rect"/>
+                        <a:ln/>
+                      </pic:spPr>
+                    </pic:pic>
+                  </a:graphicData>
+                </a:graphic>
+              </wp:anchor>
+            </w:drawing>
+          </mc:Fallback>
+        </mc:AlternateContent>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000002">
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+        <w:rPr>
+          <w:sz w:val="26"/>
+          <w:szCs w:val="26"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+        <w:rPr>
+          <w:sz w:val="32"/>
+          <w:szCs w:val="32"/>
+          <w:rtl w:val="0"/>
+        </w:rPr>
+        <w:t xml:space="preserve">&#272;&#7872; C&#431;&#416;NG &#272;&#258;NG K&#221; &#272;&#7872; T&#192;I &#272;&#7890; &#193;N CS/CN</w:t>
+      </w:r>
+      <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+        <w:rPr>
+          <w:rtl w:val="0"/>
+        </w:rPr>
+      </w:r>
+    </w:p>
+    <w:tbl>
+      <w:tblPr>
+        <w:tblStyle w:val="Table1"/>
+        <w:tblW w:w="9998.0" w:type="dxa"/>
+        <w:jc w:val="center"/>
+        <w:tblLayout w:type="fixed"/>
+        <w:tblLook w:val="0400"/>
+      </w:tblPr>
+      <w:tblGrid>
+        <w:gridCol w:w="4755"/>
+        <w:gridCol w:w="5243"/>
+        <w:tblGridChange w:id="0">
+          <w:tblGrid>
+            <w:gridCol w:w="4755"/>
+            <w:gridCol w:w="5243"/>
+          </w:tblGrid>
+        </w:tblGridChange>
+      </w:tblGrid>
+      <w:tr>
+        <w:trPr>
+          <w:cantSplit w:val="0"/>
+          <w:tblHeader w:val="0"/>
+        </w:trPr>
+        <w:tc>
+          <w:tcPr>
+            <w:gridSpan w:val="2"/>
+          </w:tcPr>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000003">
+            <w:pPr>
+              <w:numPr>
+                <w:ilvl w:val="0"/>
+                <w:numId w:val="5"/>
+              </w:numPr>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:spacing w:before="120" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="720" w:hanging="360"/>
+              <w:rPr>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:b w:val="1"/>
+                <w:bCs w:val="1"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">T&#234;n &#273;&#7873; t&#224;i (</w:t>
+            </w:r>
+            <w:r w:rsidR="DAC5C1E9"><w:rPr><w:b/><w:bCs/><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>M&#212; PH&#7886;NG L&#194;Y LAN M&#195; &#272;&#7896;C TR&#202;N M&#7840;NG N&#7896;I B&#7896; DOANH NGHI&#7878;P B&#7856;NG M&#212; H&#204;NH SIR K&#7870;T H&#7906;P HYBRID AI &amp; SYMBOLIC COMPUTATION</w:t></w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:b w:val="1"/>
+                <w:bCs w:val="1"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">:</w:t>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000004">
+            <w:pPr>
+              <w:numPr>
+                <w:ilvl w:val="0"/>
+                <w:numId w:val="6"/>
+              </w:numPr>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:spacing w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="1080" w:hanging="360"/>
+              <w:rPr>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Thu&#7897;c ch&#7911; &#273;&#7873;</w:t>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">: </w:t>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr>
+        <w:trPr>
+          <w:cantSplit w:val="0"/>
+          <w:tblHeader w:val="0"/>
+        </w:trPr>
+        <w:tc>
+          <w:tcPr>
+            <w:gridSpan w:val="2"/>
+          </w:tcPr>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000006">
+            <w:pPr>
+              <w:numPr>
+                <w:ilvl w:val="0"/>
+                <w:numId w:val="5"/>
+              </w:numPr>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:spacing w:before="120" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="720" w:hanging="360"/>
+              <w:rPr>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:b w:val="1"/>
+                <w:bCs w:val="1"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Ng&#224;nh h&#7885;c : </w:t>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000007">
+            <w:pPr>
+              <w:numPr>
+                <w:ilvl w:val="0"/>
+                <w:numId w:val="7"/>
+              </w:numPr>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:spacing w:after="120" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="1080" w:hanging="360"/>
+              <w:rPr>
+                <w:b w:val="1"/>
+                <w:bCs w:val="1"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">C&#244;ng ngh&#7879; Th&#244;ng tin: </w:t>
+              <w:tab/>
+              <w:tab/>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">&#43064;</w:t>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000008">
+            <w:pPr>
+              <w:numPr>
+                <w:ilvl w:val="0"/>
+                <w:numId w:val="7"/>
+              </w:numPr>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:spacing w:after="120" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="1080" w:hanging="360"/>
+              <w:rPr>
+                <w:b w:val="1"/>
+                <w:bCs w:val="1"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">An to&#224;n th&#244;ng tin:          </w:t>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:b w:val="1"/>
+                <w:bCs w:val="1"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:tab/>
+              <w:t xml:space="preserve">&#128505;</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr>
+        <w:trPr>
+          <w:cantSplit w:val="0"/>
+          <w:tblHeader w:val="0"/>
+        </w:trPr>
+        <w:tc>
+          <w:tcPr>
+            <w:gridSpan w:val="2"/>
+          </w:tcPr>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="0000000A">
+            <w:pPr>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:spacing w:line="360" w:lineRule="auto"/>
+              <w:rPr>
+                <w:b w:val="1"/>
+                <w:bCs w:val="1"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr>
+        <w:trPr>
+          <w:cantSplit w:val="0"/>
+          <w:tblHeader w:val="0"/>
+        </w:trPr>
+        <w:tc>
+          <w:tcPr>
+            <w:gridSpan w:val="2"/>
+          </w:tcPr>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="0000000C">
+            <w:pPr>
+              <w:numPr>
+                <w:ilvl w:val="0"/>
+                <w:numId w:val="5"/>
+              </w:numPr>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:spacing w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="720" w:hanging="360"/>
+              <w:rPr>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:b w:val="1"/>
+                <w:bCs w:val="1"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Th&#7901;i gian th&#7921;c hi&#7879;n: </w:t>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:b w:val="1"/>
+                <w:bCs w:val="1"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">10</w:t>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:b w:val="1"/>
+                <w:bCs w:val="1"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve"> tu&#7847;n</w:t>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:b w:val="1"/>
+                <w:bCs w:val="1"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">. </w:t>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">T&#7915; </w:t>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">th&#225;ng  3</w:t>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">/20</w:t>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">26</w:t>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr>
+        <w:trPr>
+          <w:cantSplit w:val="0"/>
+          <w:trHeight w:val="1280" w:hRule="atLeast"/>
+          <w:tblHeader w:val="0"/>
+        </w:trPr>
+        <w:tc>
+          <w:tcPr>
+            <w:gridSpan w:val="2"/>
+          </w:tcPr>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="0000000E">
+            <w:pPr>
+              <w:numPr>
+                <w:ilvl w:val="0"/>
+                <w:numId w:val="5"/>
+              </w:numPr>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:spacing w:before="120" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="720" w:hanging="360"/>
+              <w:rPr>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:b w:val="1"/>
+                <w:bCs w:val="1"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Sinh vi&#234;n th&#7921;c hi&#7879;n:</w:t>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="0000000F">
+            <w:pPr>
+              <w:numPr>
+                <w:ilvl w:val="0"/>
+                <w:numId w:val="3"/>
+              </w:numPr>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:tabs>
+                <w:tab w:val="left" w:leader="none" w:pos="4645"/>
+              </w:tabs>
+              <w:spacing w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="720" w:hanging="360"/>
+              <w:rPr>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">H&#7885; t&#234;n : </w:t>
+            </w:r><w:r w:rsidR="442671D8"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>Tr&#7847;n Duy Th&#225;i</w:t></w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000010">
+            <w:pPr>
+              <w:numPr>
+                <w:ilvl w:val="0"/>
+                <w:numId w:val="3"/>
+              </w:numPr>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:tabs>
+                <w:tab w:val="left" w:leader="none" w:pos="4645"/>
+              </w:tabs>
+              <w:spacing w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="720" w:hanging="360"/>
+              <w:rPr>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">MSSV: </w:t>
+            </w:r><w:r w:rsidR="442671D8"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>2387700060</w:t></w:r>
+            
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000011">
+            <w:pPr>
+              <w:numPr>
+                <w:ilvl w:val="0"/>
+                <w:numId w:val="3"/>
+              </w:numPr>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:tabs>
+                <w:tab w:val="left" w:leader="none" w:pos="4645"/>
+              </w:tabs>
+              <w:spacing w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="720" w:hanging="360"/>
+              <w:rPr>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Email:</w:t>
+              <w:tab/>
+              <w:t xml:space="preserve">&#272;i&#7879;n tho&#7841;i: </w:t>
+            </w:r><w:r w:rsidR="442671D8"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t xml:space="preserve"> normalprojectmain@gmail.com</w:t></w:r><w:r w:rsidR="7830E1AC"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t xml:space="preserve"> normalprojectmain@gmail.com</w:t></w:r><w:r w:rsidR="DAC5C1E9"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t xml:space="preserve"> normalprojectmain@gmail.com</w:t></w:r>
+          </w:p>
+          
+          
+          
+          
+        </w:tc>
+      </w:tr>
+      <w:tr>
+        <w:trPr>
+          <w:cantSplit w:val="0"/>
+          <w:tblHeader w:val="0"/>
+        </w:trPr>
+        <w:tc>
+          <w:tcPr/>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000017">
+            <w:pPr>
+              <w:spacing w:after="120" w:before="120" w:lineRule="auto"/>
+              <w:rPr>
+                <w:b w:val="1"/>
+                <w:bCs w:val="1"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr/>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000018">
+            <w:pPr>
+              <w:tabs>
+                <w:tab w:val="center" w:leader="none" w:pos="1439"/>
+              </w:tabs>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:b w:val="1"/>
+                <w:bCs w:val="1"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000019">
+            <w:pPr>
+              <w:tabs>
+                <w:tab w:val="center" w:leader="none" w:pos="1439"/>
+              </w:tabs>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:b w:val="1"/>
+                <w:bCs w:val="1"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="0000001A">
+            <w:pPr>
+              <w:tabs>
+                <w:tab w:val="center" w:leader="none" w:pos="1439"/>
+              </w:tabs>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:b w:val="1"/>
+                <w:bCs w:val="1"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+    </w:tbl>
+    <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="0000001B">
+      <w:pPr>
+        <w:rPr/>
+      </w:pPr>
+      <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+        <w:br w:type="page"/>
+      </w:r>
+      <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+        <w:rPr>
+          <w:rtl w:val="0"/>
+        </w:rPr>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="0000001C">
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+        <w:rPr>
+          <w:sz w:val="32"/>
+          <w:szCs w:val="32"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+        <w:rPr>
+          <w:sz w:val="32"/>
+          <w:szCs w:val="32"/>
+          <w:rtl w:val="0"/>
+        </w:rPr>
+        <w:t xml:space="preserve">M&#212; T&#7842; CHI TI&#7870;T &#272;&#7872; T&#192;I </w:t>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="0000001D">
+      <w:pPr>
+        <w:rPr/>
+      </w:pPr>
+      <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+        <w:rPr>
+          <w:rtl w:val="0"/>
+        </w:rPr>
+      </w:r>
+    </w:p>
+    <w:tbl>
+      <w:tblPr>
+        <w:tblStyle w:val="Table2"/>
+        <w:tblW w:w="9360.0" w:type="dxa"/>
+        <w:jc w:val="left"/>
+        <w:tblBorders>
+          <w:top w:color="000000" w:space="0" w:sz="8" w:val="single"/>
+          <w:left w:color="000000" w:space="0" w:sz="8" w:val="single"/>
+          <w:bottom w:color="000000" w:space="0" w:sz="8" w:val="single"/>
+          <w:right w:color="000000" w:space="0" w:sz="8" w:val="single"/>
+          <w:insideH w:color="000000" w:space="0" w:sz="8" w:val="single"/>
+          <w:insideV w:color="000000" w:space="0" w:sz="8" w:val="single"/>
+        </w:tblBorders>
+        <w:tblLayout w:type="fixed"/>
+        <w:tblLook w:val="0600"/>
+      </w:tblPr>
+      <w:tblGrid>
+        <w:gridCol w:w="9360"/>
+        <w:tblGridChange w:id="0">
+          <w:tblGrid>
+            <w:gridCol w:w="9360"/>
+          </w:tblGrid>
+        </w:tblGridChange>
+      </w:tblGrid>
+      <w:tr>
+        <w:trPr>
+          <w:cantSplit w:val="0"/>
+          <w:trHeight w:val="9803" w:hRule="atLeast"/>
+          <w:tblHeader w:val="0"/>
+        </w:trPr>
+        <w:tc>
+          <w:tcPr>
+            <w:shd w:fill="auto" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:w="100.0" w:type="dxa"/>
+              <w:left w:w="100.0" w:type="dxa"/>
+              <w:bottom w:w="100.0" w:type="dxa"/>
+              <w:right w:w="100.0" w:type="dxa"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="0000001E">
+            <w:pPr>
+              <w:spacing w:before="120" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="720" w:firstLine="0"/>
+              <w:rPr>
+                <w:i w:val="1"/>
+                <w:iCs w:val="1"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:i w:val="1"/>
+                <w:iCs w:val="1"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">&#272;&#7873; c&#432;&#417;ng g&#7891;m 2 ph&#7847;n ch&#237;nh: N&#7897;i dung v&#224; K&#7871; ho&#7841;ch theo g&#7907;i &#253; &#7903; b&#234;n d&#432;&#7899;i. L&#432;u &#253; c&#7847;n vi&#7871;t ng&#7855;n g&#7885;n. N&#7897;i dung &#273;&#7873; c&#432;&#417;ng t&#7889;i &#273;a 2 trang A4 font ch&#7919; Time new roman, 13pt (tr&#225;nh tuy&#7879;t &#273;&#7889;i d&#249;ng font v&#224; l&#7873; nh&#7887; h&#417;n). </w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="0000001F">
+            <w:pPr>
+              <w:numPr>
+                <w:ilvl w:val="0"/>
+                <w:numId w:val="4"/>
+              </w:numPr>
+              <w:spacing w:before="120" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="720" w:hanging="357"/>
+              <w:rPr>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:b w:val="1"/>
+                <w:bCs w:val="1"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">N&#7897;i dung</w:t>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000020">
+            <w:pPr>
+              <w:keepNext w:val="0"/>
+              <w:keepLines w:val="0"/>
+              <w:pageBreakBefore w:val="0"/>
+              <w:widowControl w:val="1"/>
+              <w:numPr>
+                <w:ilvl w:val="1"/>
+                <w:numId w:val="8"/>
+              </w:numPr>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:shd w:fill="auto" w:val="clear"/>
+              <w:spacing w:after="0" w:before="120" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="741" w:right="0" w:hanging="284"/>
+              <w:jc w:val="both"/>
+              <w:rPr>
+                <w:b w:val="1"/>
+                <w:bCs w:val="1"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:b w:val="1"/>
+                <w:bCs w:val="1"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Gi&#7899;i thi&#7879;u &#273;&#7873; t&#224;i</w:t>
+            </w:r>
+          </w:p><w:p w:rsidR="7830E1AC" w:rsidRDefault="7830E1AC" w:rsidP="7830E1AC" w14:paraId="45A0A447" w14:textId="004223DA"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="7830E1AC"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- B&#224;i to&#225;n/v&#7845;n &#273;&#7873; c&#7847;n gi&#7843;i quy&#7871;t: Trong m&#244;i tr&#432;&#7901;ng m&#7841;ng n&#7897;i b&#7897; doanh nghi&#7879;p hi&#7879;n &#273;&#7841;i, c&#225;c d&#7841;ng m&#227; &#273;&#7897;c l&#226;y lan nhanh nh&#432; Ransomware (WannaCry), Worms (Conficker), ho&#7863;c Trojan l&#226;y qua l&#7895; h&#7893;ng h&#7879; th&#7889;ng th&#432;&#7901;ng t&#224;n ph&#225; h&#7879; th&#7889;ng tr&#432;&#7899;c khi c&#225;c gi&#7843;i ph&#225;p t&#297;nh (signature-based) k&#7883;p ph&#7843;n &#7913;ng. &#272;&#7873; t&#224;i n&#224;y gi&#7843;i quy&#7871;t b&#224;i to&#225;n d&#7921; b&#225;o ph&#242;ng th&#7911; ch&#7911; &#273;&#7897;ng b&#7857;ng c&#225;ch x&#226;y d&#7921;ng m&#7897;t tr&#236;nh m&#244; ph&#7887;ng t&#432;&#417;ng t&#225;c d&#7921;a tr&#234;n m&#244; h&#236;nh to&#225;n h&#7885;c d&#7883;ch t&#7877; SIR.</w:t></w:r></w:p><w:p w:rsidR="7830E1AC" w:rsidRDefault="7830E1AC" w:rsidP="7830E1AC" w14:paraId="0F8ED562" w14:textId="1050FFD6"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="7830E1AC"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t xml:space="preserve">- M&#244; t&#7843; input v&#224; output: </w:t></w:r></w:p><w:p w:rsidR="7830E1AC" w:rsidRDefault="7830E1AC" w:rsidP="7830E1AC" w14:paraId="60A69270" w14:textId="33F4803B"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="7830E1AC"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t xml:space="preserve">  + Input: C&#7845;u tr&#250;c m&#7841;ng (Graph), lo&#7841;i m&#227; &#273;&#7897;c (Ransomware, Worms, Trojan), node kh&#7903;i ph&#225;t.</w:t></w:r></w:p><w:p w:rsidR="7830E1AC" w:rsidRDefault="7830E1AC" w:rsidP="7830E1AC" w14:paraId="25AE01BC" w14:textId="2F0521EA"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="7830E1AC"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t xml:space="preserve">  + Output: Dashboard m&#244; ph&#7887;ng t&#7915;ng b&#432;&#7899;c l&#226;y lan, &#273;&#432;&#7901;ng cong SIR, ch&#7881; s&#7889; R&#8320;, v&#224; top 3 node c&#7847;n c&#244; l&#7853;p.</w:t></w:r></w:p><w:p w:rsidR="7830E1AC" w:rsidRDefault="7830E1AC" w:rsidP="7830E1AC" w14:paraId="6B06AAE9" w14:textId="2D99AFDC"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="7830E1AC"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- L&#253; do ch&#7885;n &#273;&#7873; t&#224;i: K&#7871;t h&#7907;p Hybrid AI (LLM gi&#7843;i th&#237;ch) v&#224; Symbolic Computation (gi&#7843;i ch&#237;nh x&#225;c ph&#432;&#417;ng tr&#236;nh) gi&#250;p lo&#7841;i b&#7887; &#7843;o gi&#225;c c&#7911;a AI.</w:t></w:r></w:p><w:p w:rsidR="7830E1AC" w:rsidRDefault="7830E1AC" w:rsidP="7830E1AC" w14:paraId="319401FC" w14:textId="25FC0623"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="7830E1AC"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- Kh&#7843; n&#259;ng &#7913;ng d&#7909;ng th&#7921;c t&#7871;: Cung c&#7845;p cho trung t&#226;m SOC gi&#250;p qu&#7843;n tr&#7883; vi&#234;n c&#243; chi&#7871;n l&#432;&#7907;c ph&#242;ng th&#7911; tr&#7921;c quan.</w:t></w:r></w:p><w:p w:rsidR="7830E1AC" w:rsidRDefault="7830E1AC" w:rsidP="7830E1AC" w14:paraId="674E3EC8" w14:textId="163590BF"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="7830E1AC"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- T&#237;nh th&#7901;i s&#7921;: &#7912;ng d&#7909;ng Hybrid AI &amp; Symbolic Computation l&#224; xu h&#432;&#7899;ng h&#224;ng &#273;&#7847;u n&#259;m 2026.</w:t></w:r></w:p><w:p w:rsidR="DAC5C1E9" w:rsidRDefault="DAC5C1E9" w:rsidP="DAC5C1E9" w14:paraId="6827F6F8" w14:textId="5B53838E"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="DAC5C1E9"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- B&#224;i to&#225;n/v&#7845;n &#273;&#7873; c&#7847;n gi&#7843;i quy&#7871;t: Trong m&#244;i tr&#432;&#7901;ng m&#7841;ng n&#7897;i b&#7897; doanh nghi&#7879;p hi&#7879;n &#273;&#7841;i, c&#225;c d&#7841;ng m&#227; &#273;&#7897;c l&#226;y lan nhanh nh&#432; Ransomware (WannaCry), Worms (Conficker), ho&#7863;c Trojan l&#226;y qua l&#7895; h&#7893;ng h&#7879; th&#7889;ng th&#432;&#7901;ng t&#224;n ph&#225; h&#7879; th&#7889;ng tr&#432;&#7899;c khi c&#225;c gi&#7843;i ph&#225;p t&#297;nh (signature-based) k&#7883;p ph&#7843;n &#7913;ng. &#272;&#7873; t&#224;i n&#224;y gi&#7843;i quy&#7871;t b&#224;i to&#225;n d&#7921; b&#225;o ph&#242;ng th&#7911; ch&#7911; &#273;&#7897;ng b&#7857;ng c&#225;ch x&#226;y d&#7921;ng m&#7897;t tr&#236;nh m&#244; ph&#7887;ng t&#432;&#417;ng t&#225;c d&#7921;a tr&#234;n m&#244; h&#236;nh to&#225;n h&#7885;c d&#7883;ch t&#7877; SIR.</w:t></w:r></w:p><w:p w:rsidR="DAC5C1E9" w:rsidRDefault="DAC5C1E9" w:rsidP="DAC5C1E9" w14:paraId="3524A952" w14:textId="7C67DE0A"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="DAC5C1E9"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t xml:space="preserve">- M&#244; t&#7843; input v&#224; output: </w:t></w:r></w:p><w:p w:rsidR="DAC5C1E9" w:rsidRDefault="DAC5C1E9" w:rsidP="DAC5C1E9" w14:paraId="5469368F" w14:textId="594B24F2"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="DAC5C1E9"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t xml:space="preserve">  + Input: C&#7845;u tr&#250;c m&#7841;ng (Graph), lo&#7841;i m&#227; &#273;&#7897;c (Ransomware, Worms, Trojan), node kh&#7903;i ph&#225;t.</w:t></w:r></w:p><w:p w:rsidR="DAC5C1E9" w:rsidRDefault="DAC5C1E9" w:rsidP="DAC5C1E9" w14:paraId="649F7195" w14:textId="641E8FCB"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="DAC5C1E9"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t xml:space="preserve">  + Output: Dashboard m&#244; ph&#7887;ng t&#7915;ng b&#432;&#7899;c l&#226;y lan, &#273;&#432;&#7901;ng cong SIR, ch&#7881; s&#7889; R&#8320;, v&#224; top 3 node c&#7847;n c&#244; l&#7853;p.</w:t></w:r></w:p><w:p w:rsidR="DAC5C1E9" w:rsidRDefault="DAC5C1E9" w:rsidP="DAC5C1E9" w14:paraId="6172EAD8" w14:textId="0E73A74C"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="DAC5C1E9"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- L&#253; do ch&#7885;n &#273;&#7873; t&#224;i: K&#7871;t h&#7907;p Hybrid AI (LLM gi&#7843;i th&#237;ch) v&#224; Symbolic Computation (gi&#7843;i ch&#237;nh x&#225;c ph&#432;&#417;ng tr&#236;nh) gi&#250;p lo&#7841;i b&#7887; &#7843;o gi&#225;c c&#7911;a AI.</w:t></w:r></w:p><w:p w:rsidR="DAC5C1E9" w:rsidRDefault="DAC5C1E9" w:rsidP="DAC5C1E9" w14:paraId="10186483" w14:textId="57F9E2CA"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="DAC5C1E9"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- Kh&#7843; n&#259;ng &#7913;ng d&#7909;ng th&#7921;c t&#7871;: Cung c&#7845;p cho trung t&#226;m SOC gi&#250;p qu&#7843;n tr&#7883; vi&#234;n c&#243; chi&#7871;n l&#432;&#7907;c ph&#242;ng th&#7911; tr&#7921;c quan.</w:t></w:r></w:p><w:p w:rsidR="DAC5C1E9" w:rsidRDefault="DAC5C1E9" w:rsidP="DAC5C1E9" w14:paraId="0508684C" w14:textId="1C54040D"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="DAC5C1E9"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- T&#237;nh th&#7901;i s&#7921;: &#7912;ng d&#7909;ng Hybrid AI &amp; Symbolic Computation l&#224; xu h&#432;&#7899;ng h&#224;ng &#273;&#7847;u n&#259;m 2026.</w:t></w:r></w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000021">
+            <w:pPr>
+              <w:keepNext w:val="0"/>
+              <w:keepLines w:val="0"/>
+              <w:pageBreakBefore w:val="0"/>
+              <w:widowControl w:val="1"/>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:shd w:fill="auto" w:val="clear"/>
+              <w:spacing w:after="0" w:before="0" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="1451" w:right="0" w:firstLine="0"/>
+              <w:jc w:val="both"/>
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Gi&#7899;i thi&#7879;u v&#7873; &#273;&#7873; t&#224;i: vi&#7871;t ng&#7855;n g&#7885;n c&#225;c &#253; bao g&#7891;m b&#224;i to&#225;n/v&#7845;n &#273;&#7873; m&#224; &#273;&#7873; t&#224;i mu&#7889;n gi&#7843;i quy&#7871;t, m&#244; t&#7843; input v&#224; output, l&#237; do ch&#7885;n &#273;&#7873; t&#224;i, kh&#7843; n&#259;ng &#7913;ng d&#7909;ng th&#7921;c t&#7871;, t&#237;nh th&#7901;i s&#7921;</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000022">
+            <w:pPr>
+              <w:keepNext w:val="0"/>
+              <w:keepLines w:val="0"/>
+              <w:pageBreakBefore w:val="0"/>
+              <w:widowControl w:val="1"/>
+              <w:numPr>
+                <w:ilvl w:val="0"/>
+                <w:numId w:val="2"/>
+              </w:numPr>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:shd w:fill="auto" w:val="clear"/>
+              <w:spacing w:after="0" w:before="0" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="1417.3228346456694" w:right="0" w:hanging="360"/>
+              <w:jc w:val="both"/>
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">B&#224;i to&#225;n/v&#7845;n &#273;&#7873; c&#7847;n gi&#7843;i quy&#7871;t: N&#234;u r&#245; v&#7845;n &#273;&#7873; m&#224; &#273;&#7873; t&#224;i h&#432;&#7899;ng &#273;&#7871;n, l&#253; do t&#7841;i sao &#273;&#226;y l&#224; m&#7897;t v&#7845;n &#273;&#7873; quan tr&#7885;ng, c&#243; t&#237;nh th&#7921;c ti&#7877;n cao. C&#243; th&#7875; &#273;&#7873; c&#7853;p &#273;&#7871;n nh&#7919;ng kh&#243; kh&#259;n hi&#7879;n c&#243; trong l&#297;nh v&#7921;c nghi&#234;n c&#7913;u.</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000023">
+            <w:pPr>
+              <w:keepNext w:val="0"/>
+              <w:keepLines w:val="0"/>
+              <w:pageBreakBefore w:val="0"/>
+              <w:widowControl w:val="1"/>
+              <w:numPr>
+                <w:ilvl w:val="0"/>
+                <w:numId w:val="2"/>
+              </w:numPr>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:shd w:fill="auto" w:val="clear"/>
+              <w:spacing w:after="0" w:before="0" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="1417.3228346456694" w:right="0" w:hanging="360"/>
+              <w:jc w:val="both"/>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">M&#244;</w:t>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve"> t&#7843; input v&#224; output: N&#7871;u &#273;&#7873; t&#224;i c&#243; m&#244; h&#236;nh, thu&#7853;t to&#225;n ho&#7863;c h&#7879; th&#7889;ng th&#236; c&#7847;n m&#244; t&#7843; &#273;&#7847;u v&#224;o (input) v&#224; &#273;&#7847;u ra (output) &#273;&#7875; l&#224;m r&#245; ph&#7841;m vi nghi&#234;n c&#7913;u.</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000024">
+            <w:pPr>
+              <w:keepNext w:val="0"/>
+              <w:keepLines w:val="0"/>
+              <w:pageBreakBefore w:val="0"/>
+              <w:widowControl w:val="1"/>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:shd w:fill="auto" w:val="clear"/>
+              <w:spacing w:after="0" w:before="0" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="1451" w:right="0" w:firstLine="0"/>
+              <w:jc w:val="both"/>
+              <w:rPr>
+                <w:i w:val="1"/>
+                <w:iCs w:val="1"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:i w:val="1"/>
+                <w:iCs w:val="1"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">V&#237; d&#7909;: Input l&#224; file log &#273;&#7883;nh d&#7841;ng .csv t&#7915; b&#7897; d&#7919; li&#7879;u NSL-KDD; Output l&#224; nh&#227;n ph&#226;n lo&#7841;i (Normal/Attack) v&#224; &#273;&#7897; ch&#237;nh x&#225;c (Accuracy) c&#7911;a m&#244; h&#236;nh</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000025">
+            <w:pPr>
+              <w:keepNext w:val="0"/>
+              <w:keepLines w:val="0"/>
+              <w:pageBreakBefore w:val="0"/>
+              <w:widowControl w:val="1"/>
+              <w:numPr>
+                <w:ilvl w:val="0"/>
+                <w:numId w:val="2"/>
+              </w:numPr>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:shd w:fill="auto" w:val="clear"/>
+              <w:spacing w:after="0" w:before="0" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="1417.3228346456694" w:right="0" w:hanging="360"/>
+              <w:jc w:val="both"/>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">L&#253;</w:t>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve"> do ch&#7885;n &#273;&#7873; t&#224;i: Gi&#7843;i th&#237;ch t&#7841;i sao h&#7885;c vi&#234;n ch&#7885;n nghi&#234;n c&#7913;u v&#7845;n &#273;&#7873; n&#224;y, c&#243; th&#7875; d&#7921;a tr&#234;n nhu c&#7847;u th&#7921;c ti&#7877;n, xu h&#432;&#7899;ng c&#244;ng ngh&#7879; ho&#7863;c &#273;&#243;ng g&#243;p khoa h&#7885;c.</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000026">
+            <w:pPr>
+              <w:keepNext w:val="0"/>
+              <w:keepLines w:val="0"/>
+              <w:pageBreakBefore w:val="0"/>
+              <w:widowControl w:val="1"/>
+              <w:numPr>
+                <w:ilvl w:val="0"/>
+                <w:numId w:val="2"/>
+              </w:numPr>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:shd w:fill="auto" w:val="clear"/>
+              <w:spacing w:after="0" w:before="0" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="1417.3228346456694" w:right="0" w:hanging="360"/>
+              <w:jc w:val="both"/>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Kh&#7843;</w:t>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve"> n&#259;ng &#7913;ng d&#7909;ng th&#7921;c t&#7871;: Tr&#236;nh b&#224;y ng&#7855;n g&#7885;n v&#7873; c&#225;c l&#297;nh v&#7921;c c&#243; th&#7875; &#7913;ng d&#7909;ng k&#7871;t qu&#7843; nghi&#234;n c&#7913;u, c&#243; th&#7875; l&#224; doanh nghi&#7879;p, gi&#225;o d&#7909;c, c&#244;ng ngh&#7879;, an ninh m&#7841;ng...</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000027">
+            <w:pPr>
+              <w:keepNext w:val="0"/>
+              <w:keepLines w:val="0"/>
+              <w:pageBreakBefore w:val="0"/>
+              <w:widowControl w:val="1"/>
+              <w:numPr>
+                <w:ilvl w:val="0"/>
+                <w:numId w:val="2"/>
+              </w:numPr>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:shd w:fill="auto" w:val="clear"/>
+              <w:spacing w:after="0" w:before="0" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="1417.3228346456694" w:right="0" w:hanging="360"/>
+              <w:jc w:val="both"/>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">T&#237;nh</w:t>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve"> th&#7901;i s&#7921;: Nh&#7845;n m&#7841;nh s&#7921; ph&#249; h&#7907;p c&#7911;a &#273;&#7873; t&#224;i v&#7899;i c&#225;c xu h&#432;&#7899;ng hi&#7879;n nay, nh&#432; &#7913;ng d&#7909;ng AI, b&#7843;o m&#7853;t th&#244;ng tin, blockchain, d&#7919; li&#7879;u l&#7899;n&#8230;</w:t>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000028">
+            <w:pPr>
+              <w:keepNext w:val="0"/>
+              <w:keepLines w:val="0"/>
+              <w:pageBreakBefore w:val="0"/>
+              <w:widowControl w:val="1"/>
+              <w:numPr>
+                <w:ilvl w:val="1"/>
+                <w:numId w:val="8"/>
+              </w:numPr>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:shd w:fill="auto" w:val="clear"/>
+              <w:spacing w:after="0" w:before="0" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="741" w:right="0" w:hanging="284"/>
+              <w:jc w:val="both"/>
+              <w:rPr>
+                <w:b w:val="1"/>
+                <w:bCs w:val="1"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:b w:val="1"/>
+                <w:bCs w:val="1"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">M&#7909;c ti&#234;u &#273;&#7873; t&#224;i</w:t>
+            </w:r>
+          </w:p><w:p w:rsidR="7830E1AC" w:rsidRDefault="7830E1AC" w:rsidP="7830E1AC" w14:paraId="0D615BEF" w14:textId="7BA91544"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="7830E1AC"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- X&#226;y d&#7921;ng m&#244; h&#236;nh to&#225;n h&#7885;c SIR bi&#7875;u di&#7877;n l&#226;y nhi&#7877;m m&#227; &#273;&#7897;c tr&#234;n &#273;&#7891; th&#7883; m&#7841;ng.</w:t></w:r></w:p><w:p w:rsidR="7830E1AC" w:rsidRDefault="7830E1AC" w:rsidP="7830E1AC" w14:paraId="758DD6A5" w14:textId="6029901F"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="7830E1AC"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- T&#7921; &#273;&#7897;ng h&#243;a gi&#7843;i ph&#432;&#417;ng tr&#236;nh vi ph&#226;n b&#7857;ng Wolfram Alpha API / SymPy.</w:t></w:r></w:p><w:p w:rsidR="7830E1AC" w:rsidRDefault="7830E1AC" w:rsidP="7830E1AC" w14:paraId="56C9A348" w14:textId="7DA3754C"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="7830E1AC"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- Ph&#225;t tri&#7875;n Dashboard Streamlit m&#244; ph&#7887;ng t&#432;&#417;ng t&#225;c ki&#7875;u Plague Inc.</w:t></w:r></w:p><w:p w:rsidR="7830E1AC" w:rsidRDefault="7830E1AC" w:rsidP="7830E1AC" w14:paraId="414AE0A4" w14:textId="1509D394"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="7830E1AC"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- Hi&#7875;n th&#7883; khuy&#7871;n ngh&#7883; ph&#242;ng th&#7911; (Betweenness Centrality) k&#232;m gi&#7843;i th&#237;ch t&#7915; LLM.</w:t></w:r></w:p><w:p w:rsidR="DAC5C1E9" w:rsidRDefault="DAC5C1E9" w:rsidP="DAC5C1E9" w14:paraId="172B2E7A" w14:textId="63E6602E"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="DAC5C1E9"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- X&#226;y d&#7921;ng m&#244; h&#236;nh to&#225;n h&#7885;c SIR bi&#7875;u di&#7877;n l&#226;y nhi&#7877;m m&#227; &#273;&#7897;c tr&#234;n &#273;&#7891; th&#7883; m&#7841;ng.</w:t></w:r></w:p><w:p w:rsidR="DAC5C1E9" w:rsidRDefault="DAC5C1E9" w:rsidP="DAC5C1E9" w14:paraId="730B4E7E" w14:textId="4DE65A68"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="DAC5C1E9"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- T&#7921; &#273;&#7897;ng h&#243;a gi&#7843;i ph&#432;&#417;ng tr&#236;nh vi ph&#226;n b&#7857;ng Wolfram Alpha API / SymPy.</w:t></w:r></w:p><w:p w:rsidR="DAC5C1E9" w:rsidRDefault="DAC5C1E9" w:rsidP="DAC5C1E9" w14:paraId="10E56CF6" w14:textId="51481BFC"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="DAC5C1E9"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- Ph&#225;t tri&#7875;n Dashboard Streamlit m&#244; ph&#7887;ng t&#432;&#417;ng t&#225;c ki&#7875;u Plague Inc.</w:t></w:r></w:p><w:p w:rsidR="DAC5C1E9" w:rsidRDefault="DAC5C1E9" w:rsidP="DAC5C1E9" w14:paraId="4CDAE8DF" w14:textId="78DA3E2F"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="DAC5C1E9"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- Hi&#7875;n th&#7883; khuy&#7871;n ngh&#7883; ph&#242;ng th&#7911; (Betweenness Centrality) k&#232;m gi&#7843;i th&#237;ch t&#7915; LLM.</w:t></w:r></w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000029">
+            <w:pPr>
+              <w:keepNext w:val="0"/>
+              <w:keepLines w:val="0"/>
+              <w:pageBreakBefore w:val="0"/>
+              <w:widowControl w:val="1"/>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:shd w:fill="auto" w:val="clear"/>
+              <w:spacing w:after="0" w:before="0" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="1451" w:right="0" w:firstLine="0"/>
+              <w:jc w:val="both"/>
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">M&#7909;c ti&#234;u c&#7911;a &#273;&#7873; t&#224;i: C&#7847;n li&#7879;t k&#234; ng&#7855;n g&#7885;n </w:t>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">C&#193;C </w:t>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">m&#7909;c ti&#234;u ch&#237;nh, tr&#225;nh di&#7877;n gi&#7843;i d&#224;i d&#242;ng. M&#7895;i m&#7909;c ti&#234;u ph&#7843;i c&#243; t&#237;nh &#273;o l&#432;&#7901;ng &#273;&#432;&#7907;c, c&#243; th&#7875; ki&#7875;m ch&#7913;ng v&#224; &#273;&#7843;m b&#7843;o t&#237;nh kh&#7843; thi trong th&#7901;i gian </w:t>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">10</w:t>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve"> tu&#7847;n.</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="0000002A">
+            <w:pPr>
+              <w:keepNext w:val="0"/>
+              <w:keepLines w:val="0"/>
+              <w:pageBreakBefore w:val="0"/>
+              <w:widowControl w:val="1"/>
+              <w:numPr>
+                <w:ilvl w:val="1"/>
+                <w:numId w:val="8"/>
+              </w:numPr>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:shd w:fill="auto" w:val="clear"/>
+              <w:spacing w:after="0" w:before="0" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="741" w:right="0" w:hanging="284"/>
+              <w:jc w:val="both"/>
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:b w:val="1"/>
+                <w:bCs w:val="1"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">N&#7897;i dung nghi&#234;n c&#7913;u c&#7911;a &#273;&#7873; t&#224;i:</w:t>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve"> </w:t>
+            </w:r>
+          </w:p><w:p w:rsidR="7830E1AC" w:rsidRDefault="7830E1AC" w:rsidP="7830E1AC" w14:paraId="2AF8B320" w14:textId="091983B3"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="7830E1AC"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- Nghi&#234;n c&#7913;u l&#253; thuy&#7871;t: M&#244; h&#236;nh d&#7883;ch t&#7877; SIR v&#224; Symbolic Computation.</w:t></w:r></w:p><w:p w:rsidR="7830E1AC" w:rsidRDefault="7830E1AC" w:rsidP="7830E1AC" w14:paraId="43D061AA" w14:textId="3F554F05"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="7830E1AC"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- Thi&#7871;t k&#7871; h&#7879; th&#7889;ng: M&#244;i tr&#432;&#7901;ng &#273;&#7891; th&#7883; NetworkX v&#224; b&#7897; h&#7891; s&#417; virus (&#946;, &#947;).</w:t></w:r></w:p><w:p w:rsidR="7830E1AC" w:rsidRDefault="7830E1AC" w:rsidP="7830E1AC" w14:paraId="53656D2A" w14:textId="3B0BB271"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="7830E1AC"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- Tri&#7875;n khai th&#7921;c nghi&#7879;m: L&#7853;p tr&#236;nh Python + Streamlit + Wolfram API + Gemini Flash.</w:t></w:r></w:p><w:p w:rsidR="7830E1AC" w:rsidRDefault="7830E1AC" w:rsidP="7830E1AC" w14:paraId="40830C88" w14:textId="6BB1888C"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="7830E1AC"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- &#272;&#225;nh gi&#225; k&#7871;t qu&#7843;: So s&#225;nh t&#7889;c &#273;&#7897; l&#226;y lan v&#224; hi&#7879;u qu&#7843; c&#244; l&#7853;p node.</w:t></w:r></w:p><w:p w:rsidR="DAC5C1E9" w:rsidRDefault="DAC5C1E9" w:rsidP="DAC5C1E9" w14:paraId="64D0F6DF" w14:textId="4255D214"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="DAC5C1E9"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- Nghi&#234;n c&#7913;u l&#253; thuy&#7871;t: M&#244; h&#236;nh d&#7883;ch t&#7877; SIR v&#224; Symbolic Computation.</w:t></w:r></w:p><w:p w:rsidR="DAC5C1E9" w:rsidRDefault="DAC5C1E9" w:rsidP="DAC5C1E9" w14:paraId="21B85B32" w14:textId="0926E62A"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="DAC5C1E9"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- Thi&#7871;t k&#7871; h&#7879; th&#7889;ng: M&#244;i tr&#432;&#7901;ng &#273;&#7891; th&#7883; NetworkX v&#224; b&#7897; h&#7891; s&#417; virus (&#946;, &#947;).</w:t></w:r></w:p><w:p w:rsidR="DAC5C1E9" w:rsidRDefault="DAC5C1E9" w:rsidP="DAC5C1E9" w14:paraId="61B556A0" w14:textId="1F67B3A0"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="DAC5C1E9"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- Tri&#7875;n khai th&#7921;c nghi&#7879;m: L&#7853;p tr&#236;nh Python + Streamlit + Wolfram API + Gemini Flash.</w:t></w:r></w:p><w:p w:rsidR="DAC5C1E9" w:rsidRDefault="DAC5C1E9" w:rsidP="DAC5C1E9" w14:paraId="04E96155" w14:textId="57C05C2D"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="DAC5C1E9"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- &#272;&#225;nh gi&#225; k&#7871;t qu&#7843;: So s&#225;nh t&#7889;c &#273;&#7897; l&#226;y lan v&#224; hi&#7879;u qu&#7843; c&#244; l&#7853;p node.</w:t></w:r></w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="0000002B">
+            <w:pPr>
+              <w:keepNext w:val="0"/>
+              <w:keepLines w:val="0"/>
+              <w:pageBreakBefore w:val="0"/>
+              <w:widowControl w:val="1"/>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:shd w:fill="auto" w:val="clear"/>
+              <w:spacing w:after="0" w:before="0" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="1451" w:right="0" w:firstLine="0"/>
+              <w:jc w:val="both"/>
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="1"/>
+                <w:iCs w:val="1"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">N&#7897;i dung nghi&#234;n c&#7913;u c&#7911;a &#273;&#7873; t&#224;i: vi&#7871;t ng&#7855;n g&#7885;n, </w:t>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">c&#7909; th&#7875; ph&#432;&#417;ng ph&#225;p/k&#7929; thu&#7853;t l&#224; g&#236; </w:t>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">, m&#7895;i n&#7897;i dung c&#7847;n &#273;&#7843;m b&#7843;o t&#237;nh nh&#7845;t qu&#225;n &#273;&#7875; &#273;&#7841;t &#273;&#432;&#7907;c m&#7909;c ti&#234;u t&#432;&#417;ng &#7913;ng &#273;&#7873; ra. </w:t>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="1"/>
+                <w:iCs w:val="1"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">L&#432;u &#253; c&#225;c m&#7909;c ti&#234;u v&#224; n&#7897;i dung ph&#7843;i h&#7907;p l&#237; &#273;&#7875; &#273;&#7843;m b&#7843;o t&#237;nh kh&#7843; thi c&#7911;a &#273;&#7873; t&#224;i.</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="0000002C">
+            <w:pPr>
+              <w:keepNext w:val="0"/>
+              <w:keepLines w:val="0"/>
+              <w:pageBreakBefore w:val="0"/>
+              <w:widowControl w:val="1"/>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:shd w:fill="auto" w:val="clear"/>
+              <w:spacing w:after="0" w:before="0" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="1451" w:right="0" w:firstLine="0"/>
+              <w:jc w:val="both"/>
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">C&#7845;u tr&#250;c n&#7897;i dung nghi&#234;n c&#7913;u c&#243; th&#7875; bao g&#7891;m:</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="0000002D">
+            <w:pPr>
+              <w:keepNext w:val="0"/>
+              <w:keepLines w:val="0"/>
+              <w:pageBreakBefore w:val="0"/>
+              <w:widowControl w:val="1"/>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:shd w:fill="auto" w:val="clear"/>
+              <w:spacing w:after="0" w:before="0" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="1734" w:right="0" w:firstLine="0"/>
+              <w:jc w:val="both"/>
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">M&#244; t&#7843; ph&#432;&#417;ng ph&#225;p/ k&#7929; thu&#7853;t nh&#243;m l&#7921;a ch&#7885;n s&#7917; d&#7909;ng trong</w:t>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve"> &#273;&#7873; t&#224;i.</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="0000002E">
+            <w:pPr>
+              <w:keepNext w:val="0"/>
+              <w:keepLines w:val="0"/>
+              <w:pageBreakBefore w:val="0"/>
+              <w:widowControl w:val="1"/>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:shd w:fill="auto" w:val="clear"/>
+              <w:spacing w:after="0" w:before="0" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="1734" w:right="0" w:firstLine="0"/>
+              <w:jc w:val="both"/>
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Kh&#7843;o s&#225;t c&#225;c nghi&#234;n c&#7913;u v&#224; c&#244;ng ngh&#7879; hi&#7879;n c&#243;.</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="0000002F">
+            <w:pPr>
+              <w:keepNext w:val="0"/>
+              <w:keepLines w:val="0"/>
+              <w:pageBreakBefore w:val="0"/>
+              <w:widowControl w:val="1"/>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:shd w:fill="auto" w:val="clear"/>
+              <w:spacing w:after="0" w:before="0" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="1734" w:right="0" w:firstLine="0"/>
+              <w:jc w:val="both"/>
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">X&#226;y d&#7921;ng ho&#7863;c thi&#7871;t k&#7871; m&#244; h&#236;nh th&#7917; nghi&#7879;m.</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000030">
+            <w:pPr>
+              <w:keepNext w:val="0"/>
+              <w:keepLines w:val="0"/>
+              <w:pageBreakBefore w:val="0"/>
+              <w:widowControl w:val="1"/>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:shd w:fill="auto" w:val="clear"/>
+              <w:spacing w:after="0" w:before="0" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="1734" w:right="0" w:firstLine="0"/>
+              <w:jc w:val="both"/>
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Tri&#7875;n khai th&#7921;c nghi&#7879;m v&#224; &#273;&#225;nh gi&#225; k&#7871;t qu&#7843;.</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000031">
+            <w:pPr>
+              <w:keepNext w:val="0"/>
+              <w:keepLines w:val="0"/>
+              <w:pageBreakBefore w:val="0"/>
+              <w:widowControl w:val="1"/>
+              <w:numPr>
+                <w:ilvl w:val="1"/>
+                <w:numId w:val="8"/>
+              </w:numPr>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:shd w:fill="auto" w:val="clear"/>
+              <w:spacing w:after="0" w:before="0" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="741" w:right="0" w:hanging="284"/>
+              <w:jc w:val="both"/>
+              <w:rPr>
+                <w:b w:val="1"/>
+                <w:bCs w:val="1"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:b w:val="1"/>
+                <w:bCs w:val="1"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Ph&#432;&#417;ng ph&#225;p th&#7921;c hi&#7879;n:</w:t>
+            </w:r>
+          </w:p><w:p w:rsidR="7830E1AC" w:rsidRDefault="7830E1AC" w:rsidP="7830E1AC" w14:paraId="38A6AA92" w14:textId="4F3F8214"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="7830E1AC"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- Ph&#226;n t&#237;ch l&#253; thuy&#7871;t, nghi&#234;n c&#7913;u t&#224;i li&#7879;u IEEE/ACM.</w:t></w:r></w:p><w:p w:rsidR="7830E1AC" w:rsidRDefault="7830E1AC" w:rsidP="7830E1AC" w14:paraId="2E48EC62" w14:textId="4567758B"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="7830E1AC"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- X&#226;y d&#7921;ng m&#244; h&#236;nh b&#7857;ng NetworkX v&#224; scipy.</w:t></w:r></w:p><w:p w:rsidR="7830E1AC" w:rsidRDefault="7830E1AC" w:rsidP="7830E1AC" w14:paraId="3836D9F6" w14:textId="504AC5C6"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="7830E1AC"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- Thu th&#7853;p d&#7919; li&#7879;u: Sinh topology m&#7841;ng v&#224; b&#7897; tham s&#7889; virus.</w:t></w:r></w:p><w:p w:rsidR="7830E1AC" w:rsidRDefault="7830E1AC" w:rsidP="7830E1AC" w14:paraId="2701677D" w14:textId="6D6E5B88"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="7830E1AC"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- &#272;&#225;nh gi&#225; v&#224; t&#7889;i &#432;u h&#243;a: So s&#225;nh Wolfram Alpha v&#224; SymPy.</w:t></w:r></w:p><w:p w:rsidR="DAC5C1E9" w:rsidRDefault="DAC5C1E9" w:rsidP="DAC5C1E9" w14:paraId="72250BA5" w14:textId="4DFB77E0"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="DAC5C1E9"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- Ph&#226;n t&#237;ch l&#253; thuy&#7871;t, nghi&#234;n c&#7913;u t&#224;i li&#7879;u IEEE/ACM.</w:t></w:r></w:p><w:p w:rsidR="DAC5C1E9" w:rsidRDefault="DAC5C1E9" w:rsidP="DAC5C1E9" w14:paraId="35C793FC" w14:textId="073E1B94"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="DAC5C1E9"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- X&#226;y d&#7921;ng m&#244; h&#236;nh b&#7857;ng NetworkX v&#224; scipy.</w:t></w:r></w:p><w:p w:rsidR="DAC5C1E9" w:rsidRDefault="DAC5C1E9" w:rsidP="DAC5C1E9" w14:paraId="2341DE2D" w14:textId="3AA0067C"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="DAC5C1E9"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- Thu th&#7853;p d&#7919; li&#7879;u: Sinh topology m&#7841;ng v&#224; b&#7897; tham s&#7889; virus.</w:t></w:r></w:p><w:p w:rsidR="DAC5C1E9" w:rsidRDefault="DAC5C1E9" w:rsidP="DAC5C1E9" w14:paraId="3E464C97" w14:textId="7FE83BFA"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="DAC5C1E9"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- &#272;&#225;nh gi&#225; v&#224; t&#7889;i &#432;u h&#243;a: So s&#225;nh Wolfram Alpha v&#224; SymPy.</w:t></w:r></w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000032">
+            <w:pPr>
+              <w:keepNext w:val="0"/>
+              <w:keepLines w:val="0"/>
+              <w:pageBreakBefore w:val="0"/>
+              <w:widowControl w:val="1"/>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:shd w:fill="auto" w:val="clear"/>
+              <w:spacing w:after="0" w:before="0" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="1080" w:right="0" w:firstLine="0"/>
+              <w:jc w:val="both"/>
+              <w:rPr>
+                <w:i w:val="1"/>
+                <w:iCs w:val="1"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:i w:val="1"/>
+                <w:iCs w:val="1"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">"Khuy&#7871;n kh&#237;ch m&#244; t&#7843; m&#244;i tr&#432;&#7901;ng tri&#7875;n khai th&#7921;c nghi&#7879;m d&#432;&#7899;i d&#7841;ng Container (Docker) &#273;&#7875; &#273;&#7843;m b&#7843;o t&#237;nh &#273;&#243;ng g&#243;i v&#224; t&#225;i l&#7853;p k&#7871;t qu&#7843;."</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000033">
+            <w:pPr>
+              <w:keepNext w:val="0"/>
+              <w:keepLines w:val="0"/>
+              <w:pageBreakBefore w:val="0"/>
+              <w:widowControl w:val="1"/>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:shd w:fill="auto" w:val="clear"/>
+              <w:spacing w:after="0" w:before="0" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="1451" w:right="0" w:firstLine="0"/>
+              <w:jc w:val="both"/>
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">N&#234;u c&#225;c ph&#432;&#417;ng ph&#225;p nghi&#234;n c&#7913;u ch&#237;nh s&#7869; &#225;p d&#7909;ng:</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000034">
+            <w:pPr>
+              <w:keepNext w:val="0"/>
+              <w:keepLines w:val="0"/>
+              <w:pageBreakBefore w:val="0"/>
+              <w:widowControl w:val="1"/>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:shd w:fill="auto" w:val="clear"/>
+              <w:spacing w:after="0" w:before="0" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="1734" w:right="0" w:firstLine="0"/>
+              <w:jc w:val="both"/>
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Ph&#226;n t&#237;ch l&#253; thuy&#7871;t, nghi&#234;n c&#7913;u t&#224;i li&#7879;u.</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000035">
+            <w:pPr>
+              <w:keepNext w:val="0"/>
+              <w:keepLines w:val="0"/>
+              <w:pageBreakBefore w:val="0"/>
+              <w:widowControl w:val="1"/>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:shd w:fill="auto" w:val="clear"/>
+              <w:spacing w:after="0" w:before="0" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="1734" w:right="0" w:firstLine="0"/>
+              <w:jc w:val="both"/>
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">X&#226;y d&#7921;ng m&#244; h&#236;nh ho&#7863;c h&#7879; th&#7889;ng th&#7917; nghi&#7879;m.</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000036">
+            <w:pPr>
+              <w:keepNext w:val="0"/>
+              <w:keepLines w:val="0"/>
+              <w:pageBreakBefore w:val="0"/>
+              <w:widowControl w:val="1"/>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:shd w:fill="auto" w:val="clear"/>
+              <w:spacing w:after="0" w:before="0" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="1734" w:right="0" w:firstLine="0"/>
+              <w:jc w:val="both"/>
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Thu th&#7853;p d&#7919; li&#7879;u, ti&#7871;n h&#224;nh th&#7921;c nghi&#7879;m.</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000037">
+            <w:pPr>
+              <w:keepNext w:val="0"/>
+              <w:keepLines w:val="0"/>
+              <w:pageBreakBefore w:val="0"/>
+              <w:widowControl w:val="1"/>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:shd w:fill="auto" w:val="clear"/>
+              <w:spacing w:after="0" w:before="0" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="1734" w:right="0" w:firstLine="0"/>
+              <w:jc w:val="both"/>
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">&#272;&#225;nh gi&#225; k&#7871;t qu&#7843; v&#224; t&#7889;i &#432;u h&#243;a.</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000038">
+            <w:pPr>
+              <w:keepNext w:val="0"/>
+              <w:keepLines w:val="0"/>
+              <w:pageBreakBefore w:val="0"/>
+              <w:widowControl w:val="1"/>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:shd w:fill="auto" w:val="clear"/>
+              <w:spacing w:after="0" w:before="0" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="1451" w:right="0" w:firstLine="0"/>
+              <w:jc w:val="both"/>
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">N&#7871;u c&#243; s&#7917; d&#7909;ng c&#225;c c&#244;ng c&#7909; c&#7909; th&#7875; (nh&#432; TensorFlow, MATLAB, Splunk, Wireshark, OpenVAS...), c&#7847;n &#273;&#7873; c&#7853;p &#273;&#7875; l&#224;m r&#245; h&#432;&#7899;ng th&#7921;c hi&#7879;n.</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000039">
+            <w:pPr>
+              <w:keepNext w:val="0"/>
+              <w:keepLines w:val="0"/>
+              <w:pageBreakBefore w:val="0"/>
+              <w:widowControl w:val="1"/>
+              <w:numPr>
+                <w:ilvl w:val="1"/>
+                <w:numId w:val="8"/>
+              </w:numPr>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:shd w:fill="auto" w:val="clear"/>
+              <w:spacing w:after="0" w:before="0" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="741" w:right="0" w:hanging="284"/>
+              <w:jc w:val="both"/>
+              <w:rPr>
+                <w:b w:val="1"/>
+                <w:bCs w:val="1"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:b w:val="1"/>
+                <w:bCs w:val="1"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">K&#7871;t qu&#7843;, s&#7843;n ph&#7849;m d&#7921; ki&#7871;n:</w:t>
+            </w:r>
+          </w:p><w:p w:rsidR="7830E1AC" w:rsidRDefault="7830E1AC" w:rsidP="7830E1AC" w14:paraId="1DE34B85" w14:textId="027311CE"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="7830E1AC"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- M&#227; ngu&#7891;n GitHub.</w:t></w:r></w:p><w:p w:rsidR="7830E1AC" w:rsidRDefault="7830E1AC" w:rsidP="7830E1AC" w14:paraId="45740413" w14:textId="36889C40"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="7830E1AC"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- Web App Streamlit m&#244; ph&#7887;ng l&#226;y lan m&#227; &#273;&#7897;c.</w:t></w:r></w:p><w:p w:rsidR="7830E1AC" w:rsidRDefault="7830E1AC" w:rsidP="7830E1AC" w14:paraId="0C497EE8" w14:textId="34CDD020"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="7830E1AC"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- Docker Image &#7913;ng d&#7909;ng.</w:t></w:r></w:p><w:p w:rsidR="7830E1AC" w:rsidRDefault="7830E1AC" w:rsidP="7830E1AC" w14:paraId="4D7007BD" w14:textId="21BE1F23"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="7830E1AC"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- B&#225;o c&#225;o so s&#225;nh hi&#7879;u qu&#7843; ph&#242;ng th&#7911;.</w:t></w:r></w:p><w:p w:rsidR="DAC5C1E9" w:rsidRDefault="DAC5C1E9" w:rsidP="DAC5C1E9" w14:paraId="722BA35C" w14:textId="7841A4A3"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="DAC5C1E9"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- M&#227; ngu&#7891;n GitHub.</w:t></w:r></w:p><w:p w:rsidR="DAC5C1E9" w:rsidRDefault="DAC5C1E9" w:rsidP="DAC5C1E9" w14:paraId="00F16107" w14:textId="65C20E61"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="DAC5C1E9"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- Web App Streamlit m&#244; ph&#7887;ng l&#226;y lan m&#227; &#273;&#7897;c.</w:t></w:r></w:p><w:p w:rsidR="DAC5C1E9" w:rsidRDefault="DAC5C1E9" w:rsidP="DAC5C1E9" w14:paraId="27A4EBD8" w14:textId="0206E89C"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="DAC5C1E9"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- Docker Image &#7913;ng d&#7909;ng.</w:t></w:r></w:p><w:p w:rsidR="DAC5C1E9" w:rsidRDefault="DAC5C1E9" w:rsidP="DAC5C1E9" w14:paraId="318AE36E" w14:textId="2406EECE"><w:pPr><w:spacing w:after="120"/><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="DAC5C1E9"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>- B&#225;o c&#225;o so s&#225;nh hi&#7879;u qu&#7843; ph&#242;ng th&#7911;.</w:t></w:r></w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="0000003A">
+            <w:pPr>
+              <w:keepNext w:val="0"/>
+              <w:keepLines w:val="0"/>
+              <w:pageBreakBefore w:val="0"/>
+              <w:widowControl w:val="1"/>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:shd w:fill="auto" w:val="clear"/>
+              <w:spacing w:after="0" w:before="0" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="1451" w:right="0" w:firstLine="0"/>
+              <w:jc w:val="both"/>
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">N&#234;u nh&#7919;ng k&#7871;t qu&#7843; </w:t>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">ph&#249; h&#7907;p 2 lo&#7841;i s&#7843;n ph&#7849;m y&#234;u c&#7847;u sau</w:t>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">:</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="0000003B">
+            <w:pPr>
+              <w:keepNext w:val="0"/>
+              <w:keepLines w:val="0"/>
+              <w:pageBreakBefore w:val="0"/>
+              <w:widowControl w:val="1"/>
+              <w:numPr>
+                <w:ilvl w:val="0"/>
+                <w:numId w:val="1"/>
+              </w:numPr>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:shd w:fill="auto" w:val="clear"/>
+              <w:spacing w:after="0" w:before="0" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="2160" w:right="0" w:hanging="360"/>
+              <w:jc w:val="both"/>
+              <w:rPr>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">S&#7843;n ph&#7849;m c&#7913;ng: M&#227; ngu&#7891;n (GitHub), M&#244; h&#236;nh &#273;&#227; &#273;&#243;ng g&#243;i (Docker Image), Dataset &#273;&#227; ti&#7873;n x&#7917; l&#253;, m&#244; h&#236;nh hu&#7845;n luy&#7879;n, &#8230;</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="0000003C">
+            <w:pPr>
+              <w:keepNext w:val="0"/>
+              <w:keepLines w:val="0"/>
+              <w:pageBreakBefore w:val="0"/>
+              <w:widowControl w:val="1"/>
+              <w:numPr>
+                <w:ilvl w:val="0"/>
+                <w:numId w:val="1"/>
+              </w:numPr>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:shd w:fill="auto" w:val="clear"/>
+              <w:spacing w:after="0" w:before="0" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="2160" w:right="0" w:hanging="360"/>
+              <w:jc w:val="both"/>
+              <w:rPr>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">S&#7843;n ph&#7849;m m&#7873;m: B&#225;o c&#225;o ph&#226;n t&#237;ch, B&#7843;ng so s&#225;nh hi&#7879;u su&#7845;t.</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="0000003D">
+            <w:pPr>
+              <w:keepNext w:val="0"/>
+              <w:keepLines w:val="0"/>
+              <w:pageBreakBefore w:val="0"/>
+              <w:widowControl w:val="1"/>
+              <w:numPr>
+                <w:ilvl w:val="1"/>
+                <w:numId w:val="8"/>
+              </w:numPr>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:shd w:fill="auto" w:val="clear"/>
+              <w:spacing w:after="0" w:before="0" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="741" w:right="0" w:hanging="284"/>
+              <w:jc w:val="both"/>
+              <w:rPr>
+                <w:b w:val="1"/>
+                <w:bCs w:val="1"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:b w:val="1"/>
+                <w:bCs w:val="1"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">T&#224;i li&#7879;u tham kh&#7843;o (T&#7889;i &#273;a </w:t>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:b w:val="1"/>
+                <w:bCs w:val="1"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">10</w:t>
+            </w:r>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:b w:val="1"/>
+                <w:bCs w:val="1"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve"> t&#224;i li&#7879;u):</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="0000003E">
+            <w:pPr>
+              <w:keepNext w:val="0"/>
+              <w:keepLines w:val="0"/>
+              <w:pageBreakBefore w:val="0"/>
+              <w:widowControl w:val="1"/>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:shd w:fill="auto" w:val="clear"/>
+              <w:spacing w:after="0" w:before="0" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="741" w:right="0" w:firstLine="0"/>
+              <w:jc w:val="both"/>
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">L&#7921;a ch&#7885;n c&#225;c t&#224;i li&#7879;u c&#243; &#273;&#7897; tin c&#7853;y cao: s&#225;ch chuy&#234;n ng&#224;nh, b&#224;i b&#225;o khoa h&#7885;c, ti&#234;u chu&#7849;n c&#244;ng ngh&#7879;.</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="0000003F">
+            <w:pPr>
+              <w:keepNext w:val="0"/>
+              <w:keepLines w:val="0"/>
+              <w:pageBreakBefore w:val="0"/>
+              <w:widowControl w:val="1"/>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:shd w:fill="auto" w:val="clear"/>
+              <w:spacing w:after="0" w:before="0" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="741" w:right="0" w:firstLine="0"/>
+              <w:jc w:val="both"/>
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">N&#234;n s&#7917; d&#7909;ng t&#224;i li&#7879;u g&#7847;n &#273;&#226;y (trong 5 n&#259;m tr&#7903; l&#7841;i) &#273;&#7875; &#273;&#7843;m b&#7843;o t&#237;nh c&#7853;p nh&#7853;t.</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000040">
+            <w:pPr>
+              <w:keepNext w:val="0"/>
+              <w:keepLines w:val="0"/>
+              <w:pageBreakBefore w:val="0"/>
+              <w:widowControl w:val="1"/>
+              <w:pBdr>
+                <w:top w:space="0" w:sz="0" w:val="nil"/>
+                <w:left w:space="0" w:sz="0" w:val="nil"/>
+                <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+                <w:right w:space="0" w:sz="0" w:val="nil"/>
+                <w:between w:space="0" w:sz="0" w:val="nil"/>
+              </w:pBdr>
+              <w:shd w:fill="auto" w:val="clear"/>
+              <w:spacing w:after="0" w:before="0" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="741" w:right="0" w:firstLine="0"/>
+              <w:jc w:val="both"/>
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+                <w:b w:val="0"/>
+                <w:bCs w:val="0"/>
+                <w:i w:val="0"/>
+                <w:iCs w:val="0"/>
+                <w:smallCaps w:val="0"/>
+                <w:strike w:val="0"/>
+                <w:color w:val="000000"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+                <w:u w:val="none"/>
+                <w:shd w:fill="auto" w:val="clear"/>
+                <w:vertAlign w:val="baseline"/>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+              <w:t xml:space="preserve">N&#7871;u c&#243; th&#7875;, tr&#237;ch d&#7851;n t&#224;i li&#7879;u t&#7915; IEEE, Springer, Elsevier, ACM&#8230;</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="DAC5C1E9" w:rsidRDefault="DAC5C1E9" w:rsidP="DAC5C1E9" w14:paraId="1A39D421" w14:textId="04756C6D"><w:pPr><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="DAC5C1E9"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>[1]. Kephart, J. O., &amp; White, S. R. (1991). "Directed-graph epidemiological models of computer viruses". IEEE Symposium on Research in Security and Privacy.</w:t></w:r></w:p>
+          <w:p w:rsidR="DAC5C1E9" w:rsidRDefault="DAC5C1E9" w:rsidP="DAC5C1E9" w14:paraId="742A5C0D" w14:textId="3E843303"><w:pPr><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="DAC5C1E9"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>[2]. Pastor-Satorras, R., &amp; Vespignani, A. (2001). "Epidemic Spreading in Scale-Free Networks". Physical Review Letters.</w:t></w:r></w:p>
+          <w:p w:rsidR="DAC5C1E9" w:rsidRDefault="DAC5C1E9" w:rsidP="DAC5C1E9" w14:paraId="79DD86E4" w14:textId="28C3EFD1"><w:pPr><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="DAC5C1E9"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>[3]. Van Mieghem, P. et al. (2009). "Virus Spread in Networks". IEEE/ACM Transactions on Networking.</w:t></w:r></w:p><w:p w:rsidR="DAC5C1E9" w:rsidRDefault="DAC5C1E9" w:rsidP="DAC5C1E9" w14:paraId="74939AA8" w14:textId="036D5937"><w:pPr><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="DAC5C1E9"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>[4]. Kermack, W. O., &amp; McKendrick, A. G. (1927). "A contribution to the mathematical theory of epidemics". Proceedings of the Royal Society A.</w:t></w:r></w:p><w:p w:rsidR="DAC5C1E9" w:rsidRDefault="DAC5C1E9" w:rsidP="DAC5C1E9" w14:paraId="088558B6" w14:textId="3FE47BC1"><w:pPr><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r w:rsidR="DAC5C1E9"><w:rPr><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>[5]. Wolfram, S. (2023). "ChatGPT Gets Its 'Wolfram Superpowers'". Stephen Wolfram Writings.</w:t></w:r></w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr>
+        <w:trPr>
+          <w:cantSplit w:val="0"/>
+          <w:tblHeader w:val="0"/>
+        </w:trPr>
+        <w:tc>
+          <w:tcPr>
+            <w:shd w:fill="auto" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:w="100.0" w:type="dxa"/>
+              <w:left w:w="100.0" w:type="dxa"/>
+              <w:bottom w:w="100.0" w:type="dxa"/>
+              <w:right w:w="100.0" w:type="dxa"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000044">
+            <w:pPr>
+              <w:spacing w:before="120" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="720" w:firstLine="0"/>
+              <w:rPr>
+                <w:i w:val="1"/>
+                <w:iCs w:val="1"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000045">
+            <w:pPr>
+              <w:spacing w:before="120" w:line="360" w:lineRule="auto"/>
+              <w:ind w:left="720" w:firstLine="0"/>
+              <w:rPr>
+                <w:i w:val="1"/>
+                <w:iCs w:val="1"/>
+                <w:sz w:val="26"/>
+                <w:szCs w:val="26"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+              <w:rPr>
+                <w:rtl w:val="0"/>
+              </w:rPr>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+    </w:tbl>
+    <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000046">
+      <w:pPr>
+        <w:rPr/>
+      </w:pPr>
+      <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+        <w:rPr>
+          <w:rtl w:val="0"/>
+        </w:rPr>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000047">
+      <w:pPr>
+        <w:pBdr>
+          <w:top w:space="0" w:sz="0" w:val="nil"/>
+          <w:left w:space="0" w:sz="0" w:val="nil"/>
+          <w:bottom w:space="0" w:sz="0" w:val="nil"/>
+          <w:right w:space="0" w:sz="0" w:val="nil"/>
+          <w:between w:space="0" w:sz="0" w:val="nil"/>
+        </w:pBdr>
+        <w:spacing w:before="120" w:line="360" w:lineRule="auto"/>
+        <w:ind w:left="720" w:firstLine="0"/>
+        <w:rPr>
+          <w:sz w:val="26"/>
+          <w:szCs w:val="26"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+        <w:rPr>
+          <w:rtl w:val="0"/>
+        </w:rPr>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000048">
+      <w:pPr>
+        <w:rPr/>
+      </w:pPr>
+      <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+        <w:rPr>
+          <w:rtl w:val="0"/>
+        </w:rPr>
+      </w:r>
+    </w:p>
+    <w:sectPr>
+      <w:headerReference r:id="rId8" w:type="default"/>
+      <w:headerReference r:id="rId9" w:type="first"/>
+      <w:headerReference r:id="rId10" w:type="even"/>
+      <w:footerReference r:id="rId11" w:type="default"/>
+      <w:footerReference r:id="rId12" w:type="first"/>
+      <w:footerReference r:id="rId13" w:type="even"/>
+      <w:pgSz w:h="15840" w:w="12240" w:orient="portrait"/>
+      <w:pgMar w:bottom="284" w:top="1276" w:left="1440" w:right="1440" w:header="720" w:footer="720"/>
+      <w:pgNumType w:start="1"/>
+    </w:sectPr>
+  </w:body>
+</w:document>

@@ -1,0 +1,207 @@
+[
+    {
+        "url": "https://qrco.de/bgbvEq",
+        "domain": "qrco.de",
+        "timestamp": "2026-05-17 08:53:16",
+        "is_live": true,
+        "status_code": 200,
+        "final_url": "https://qrco.de/bgbvEq",
+        "html_file": "C:\\Users\\BDTG\\Desktop\\Đồ Án Cơ Sở\\scripts\\..\\data\\live_analysis\\responses\\qrco_de_1778982796.html",
+        "headers": {
+            "Content-Type": "text/html; charset=UTF-8",
+            "Transfer-Encoding": "chunked",
+            "Connection": "keep-alive",
+            "Date": "Sun, 17 May 2026 08:53:16 GMT",
+            "Cache-Control": "no-store, no-cache, must-revalidate",
+            "Pragma": "no-cache",
+            "Server": "nginx",
+            "Expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+            "X-Cache": "Miss from cloudfront",
+            "Via": "1.1 e9ba5ae04c0f47a4b6d1a64b6791f48e.cloudfront.net (CloudFront)",
+            "X-Amz-Cf-Pop": "SGN50-P2",
+            "X-Amz-Cf-Id": "PM847uBT3dHU2jt4K8_F2wqQpBT2fYTJsZCGkvvoe3isHoA3BbhqAw=="
+        },
+        "content_analysis": {},
+        "ip": "3.162.58.129",
+        "ip_info": {
+            "status": "success",
+            "country": "Vietnam",
+            "countryCode": "VN",
+            "regionName": "Ho Chi Minh City (HCMC)",
+            "city": "Ho Chi Minh City",
+            "zip": "",
+            "lat": 10.8231,
+            "lon": 106.63,
+            "timezone": "Asia/Ho_Chi_Minh",
+            "isp": "Amazon.com, Inc.",
+            "org": "AWS CloudFront (GLOBAL)",
+            "as": "AS16509 Amazon.com, Inc.",
+            "query": "3.162.58.129"
+        },
+        "ssl": {
+            "issuer": "Amazon",
+            "common_name": "qrco.de",
+            "notBefore": "Jul 20 00:00:00 2025 GMT",
+            "notAfter": "Aug 18 23:59:59 2026 GMT",
+            "version": 3
+        },
+        "whois": {
+            "registrar": null,
+            "creation_date": "None",
+            "expiration_date": "None",
+            "updated_date": "2025-10-07 16:27:20",
+            "name_servers": [
+                "ns-1422.awsdns-49.org",
+                "ns-1888.awsdns-44.co.uk",
+                "ns-341.awsdns-42.com",
+                "ns-678.awsdns-20.net"
+            ],
+            "emails": null,
+            "org": null
+        },
+        "third_party": {
+            "PhishTank": "Verified Phishing (from source)",
+            "ScamAdviser": "Likely Suspicious",
+            "ChongLuaDao": "Reported"
+        }
+    },
+    {
+        "url": "https://bhd-benefici0.webcindario.com/",
+        "domain": "bhd-benefici0.webcindario.com",
+        "timestamp": "2026-05-17 08:53:17",
+        "is_live": true,
+        "status_code": 200,
+        "final_url": "https://bhd-benefici0.webcindario.com/",
+        "html_file": "C:\\Users\\BDTG\\Desktop\\Đồ Án Cơ Sở\\scripts\\..\\data\\live_analysis\\responses\\bhd-benefici0_webcindario_com_1778982798.html",
+        "headers": {
+            "Server": "nginx",
+            "Date": "Sun, 17 May 2026 08:53:18 GMT",
+            "Content-Type": "text/html",
+            "Transfer-Encoding": "chunked",
+            "Connection": "keep-alive",
+            "Vary": "Accept-Encoding",
+            "X-Powered-By": "Webcindario Hosting Service",
+            "Content-Encoding": "gzip"
+        },
+        "content_analysis": {
+            "total_links": 0,
+            "external_links": 0,
+            "internal_links": 0,
+            "ip_links": 0,
+            "link_density": 0.0,
+            "external_ratio": 0
+        },
+        "ip": "5.57.226.202",
+        "ip_info": {
+            "status": "success",
+            "country": "Spain",
+            "countryCode": "ES",
+            "regionName": "Madrid",
+            "city": "Madrid",
+            "zip": "28037",
+            "lat": 40.4327,
+            "lon": -3.621,
+            "timezone": "Europe/Madrid",
+            "isp": "Aire Networks Del Mediterraneo SL Unipersonal",
+            "org": "Miarroba Networks",
+            "as": "AS29119 AIRE NETWORKS DEL MEDITERRANEO SL UNIPERSONAL",
+            "query": "5.57.226.202"
+        },
+        "ssl": {
+            "issuer": "Let's Encrypt",
+            "common_name": "*.webcindario.com",
+            "notBefore": "Feb 19 15:33:50 2026 GMT",
+            "notAfter": "May 20 15:33:49 2026 GMT",
+            "version": 3
+        },
+        "whois": {
+            "registrar": "TUCOWS.COM, CO.",
+            "creation_date": "2001-02-28 12:45:04",
+            "expiration_date": "2030-02-28 12:45:04",
+            "updated_date": "2024-11-05 11:12:27",
+            "name_servers": [
+                "NS-CLOUD-D1.GOOGLEDOMAINS.COM",
+                "NS-CLOUD-D2.GOOGLEDOMAINS.COM",
+                "NS-CLOUD-D3.GOOGLEDOMAINS.COM",
+                "NS-CLOUD-D4.GOOGLEDOMAINS.COM"
+            ],
+            "emails": [
+                "domainabuse@tucows.com",
+                "miarroba@gmail.com"
+            ],
+            "org": "REDACTED FOR PRIVACY"
+        },
+        "third_party": {
+            "PhishTank": "Verified Phishing (from source)",
+            "ScamAdviser": "Likely Suspicious",
+            "ChongLuaDao": "Reported"
+        }
+    },
+    {
+        "url": "https://app-ledgerrliv-app.webflow.io/",
+        "domain": "app-ledgerrliv-app.webflow.io",
+        "timestamp": "2026-05-17 08:53:39",
+        "is_live": true,
+        "status_code": 200,
+        "final_url": "https://app-ledgerrliv-app.webflow.io/",
+        "html_file": "C:\\Users\\BDTG\\Desktop\\Đồ Án Cơ Sở\\scripts\\..\\data\\live_analysis\\responses\\app-ledgerrliv-app_webflow_io_1778982820.html",
+        "headers": {
+            "Date": "Sun, 17 May 2026 08:53:39 GMT",
+            "Content-Type": "text/html; charset=utf-8",
+            "Transfer-Encoding": "chunked",
+            "Connection": "keep-alive",
+            "set-cookie": "_cfuvid=Y1HLKII1MIIt1daHKMyT.QUVk0rlisg5XEQ5XHpE5Ys-1779008019.617042-1.0.1.1-cgur2zj_HHVNj3huWzlu5W.FYT6Md55Tae833uLjIyI; HttpOnly; SameSite=None; Secure; Path=/; Domain=webflow.io",
+            "CF-Ray": "9fd1649a982b250b-HKG",
+            "CF-Cache-Status": "HIT",
+            "Age": "839780",
+            "Content-Encoding": "gzip",
+            "Last-Modified": "Sun, 17 May 2026 08:53:39 GMT",
+            "Server": "cloudflare",
+            "Vary": "accept-encoding",
+            "content-security-policy": "frame-ancestors 'self' https://*.webflow.com http://*.webflow.com http://*.webflow.io http://webflow.com https://webflow.com",
+            "surrogate-control": "max-age=2147483647",
+            "surrogate-key": "app-ledgerrliv-app.webflow.io 66863d29825197e1f9f43682 pageId:66863d29825197e1f9f4369c",
+            "x-lambda-id": "8e726e66-7033-4468-b39e-64a4ee927735",
+            "x-wf-region": "us-east-1",
+            "alt-svc": "h3=\":443\"; ma=86400"
+        },
+        "content_analysis": {},
+        "ip": "104.18.36.248",
+        "ip_info": {
+            "status": "success",
+            "country": "Canada",
+            "countryCode": "CA",
+            "regionName": "Ontario",
+            "city": "Toronto",
+            "zip": "M5A",
+            "lat": 43.6532,
+            "lon": -79.3832,
+            "timezone": "America/Toronto",
+            "isp": "Cloudflare, Inc.",
+            "org": "Cloudflare, Inc.",
+            "as": "AS13335 Cloudflare, Inc.",
+            "query": "104.18.36.248"
+        },
+        "ssl": {
+            "issuer": "Google Trust Services",
+            "common_name": "webflow.io",
+            "notBefore": "Mar 29 01:38:03 2026 GMT",
+            "notAfter": "Jun 27 02:38:00 2026 GMT",
+            "version": 3
+        },
+        "whois": {
+            "registrar": null,
+            "creation_date": "None",
+            "expiration_date": "None",
+            "updated_date": "None",
+            "name_servers": null,
+            "emails": null,
+            "org": null
+        },
+        "third_party": {
+            "PhishTank": "Verified Phishing (from source)",
+            "ScamAdviser": "Likely Suspicious",
+            "ChongLuaDao": "Reported"
+        }
+    }
+]

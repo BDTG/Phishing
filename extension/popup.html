@@ -194,6 +194,35 @@
     
     <div id="reasons"></div>
 
+    <!-- Deep Analysis Section (ChongLuaDao Style) -->
+    <div id="deep-analysis-section" style="display:none; margin-top: 10px;">
+      <div style="font-size: 13px; font-weight: 700; margin-bottom: 8px; color: var(--text-main); display: flex; align-items: center; gap: 6px;">
+        <span style="font-size: 16px;">📊</span> Thông tin chi tiết (Live)
+      </div>
+      <div id="deep-info-container" style="background: var(--surface-light); border: 1px solid var(--border); border-radius: 10px; padding: 12px; font-size: 11px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        <div>
+          <div style="color: var(--text-muted); margin-bottom: 2px;">ĐỊA CHỈ IP</div>
+          <div id="deep-ip" style="font-weight: 700;">--</div>
+        </div>
+        <div>
+          <div style="color: var(--text-muted); margin-bottom: 2px;">VỊ TRÍ</div>
+          <div id="deep-geo" style="font-weight: 700;">--</div>
+        </div>
+        <div style="grid-column: span 2;">
+          <div style="color: var(--text-muted); margin-bottom: 2px;">NHÀ CUNG CẤP (ISP)</div>
+          <div id="deep-isp" style="font-weight: 700;">--</div>
+        </div>
+        <div style="grid-column: span 2;">
+          <div style="color: var(--text-muted); margin-bottom: 2px;">NHÀ ĐĂNG KÝ (WHOIS)</div>
+          <div id="deep-whois" style="font-weight: 700;">--</div>
+        </div>
+        <div style="grid-column: span 2;">
+          <div style="color: var(--text-muted); margin-bottom: 2px;">NGÀY ĐĂNG KÝ</div>
+          <div id="deep-created" style="font-weight: 700;">--</div>
+        </div>
+      </div>
+    </div>
+
     <button id="xai-toggle-btn" class="xai-toggle">🔍 Xem chi tiết kỹ thuật (AI Inside)</button>
     <div id="technical-details"></div>
   </div>

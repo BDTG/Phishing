@@ -1,0 +1,70 @@
+[
+    {
+        "url": "https://google.com",
+        "domain": "google.com",
+        "timestamp": "2026-05-17 08:20:39",
+        "is_live": true,
+        "status_code": 200,
+        "final_url": "https://www.google.com/",
+        "html_file": "C:\\Users\\BDTG\\Desktop\\Đồ Án Cơ Sở\\scripts\\..\\data\\live_analysis\\responses\\google_com_1778980840.html",
+        "headers": {
+            "Content-Type": "text/html; charset=UTF-8",
+            "Date": "Sun, 17 May 2026 08:20:39 GMT",
+            "Expires": "-1",
+            "Cache-Control": "private, max-age=0",
+            "Strict-Transport-Security": "max-age=31536000",
+            "Content-Security-Policy-Report-Only": "object-src 'none';base-uri 'self';script-src 'nonce-Ejm5Zzbul3W-CN5eRiZJpQ' 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https: http:;report-uri https://csp.withgoogle.com/csp/gws/other-hp",
+            "Cross-Origin-Opener-Policy": "same-origin-allow-popups; report-to=\"gws\"",
+            "Report-To": "{\"group\":\"gws\",\"max_age\":2592000,\"endpoints\":[{\"url\":\"https://csp.withgoogle.com/csp/report-to/gws/other\"}]}",
+            "Accept-CH": "Sec-CH-Prefers-Color-Scheme, Downlink, RTT, Sec-CH-UA-Form-Factors, Sec-CH-UA-Platform, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version, Sec-CH-UA-Arch, Sec-CH-UA-Model, Sec-CH-UA-Bitness, Sec-CH-UA-Full-Version-List, Sec-CH-UA-WoW64",
+            "Permissions-Policy": "unload=()",
+            "P3P": "CP=\"This is not a P3P policy! See g.co/p3phelp for more info.\"",
+            "Content-Encoding": "gzip",
+            "Server": "gws",
+            "X-XSS-Protection": "0",
+            "X-Frame-Options": "SAMEORIGIN",
+            "Set-Cookie": "__Secure-STRP=AEEP7gJp_U4d3SaTmXkT6zRRDl1-XF5JayidaPSlMQJyrV4jACpuI2IDTP95XUMRUwQaLUnjI6-t8WOJd0LDKuy2FDAIZfIUuzSa; expires=Sun, 17-May-2026 08:25:39 GMT; path=/; domain=.google.com; Secure; SameSite=strict, AEC=AaJma5s7Cgs2sTDB1o0wAPozNUlVx7tzcluy1VDFLkIR8zIc0i7ZF-9uSyE; expires=Fri, 13-Nov-2026 08:20:39 GMT; path=/; domain=.google.com; Secure; HttpOnly; SameSite=lax, NID=531=i7A8iHrY3IU7Iv1Ag75uXDc3VgU4iA8C5j6EMkJUxlq1Zi96W4QUifMctzK06dohwdFUo-xi1zuLwBjMMfmPfyEdyinpD_i7QERtvkcuo5Y_6fJWGzeRQbSWfh32g6eYxVrLKWmEbCGHwKk2hEqrtslBDakPBm5HyPyGWFCYn4QvvdMWqtAGhu35bS8H5HqFKnvxgkzbgP4uLE6C9gUX8LY; expires=Mon, 16-Nov-2026 08:20:39 GMT; path=/; domain=.google.com; Secure; HttpOnly; SameSite=none",
+            "Alt-Svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+            "Transfer-Encoding": "chunked"
+        },
+        "ip": "172.253.118.101",
+        "ip_info": {
+            "status": "success",
+            "country": "United States",
+            "countryCode": "US",
+            "regionName": "California",
+            "city": "Mountain View",
+            "zip": "94043",
+            "lat": 37.4225,
+            "lon": -122.085,
+            "timezone": "America/Los_Angeles",
+            "isp": "Google LLC",
+            "org": "Google LLC",
+            "as": "AS15169 Google LLC",
+            "query": "172.253.118.101"
+        },
+        "whois": {
+            "registrar": "MarkMonitor, Inc.",
+            "creation_date": "1997-09-15 04:00:00",
+            "expiration_date": "2028-09-14 04:00:00",
+            "updated_date": "2019-09-09 15:39:04",
+            "name_servers": [
+                "NS1.GOOGLE.COM",
+                "NS2.GOOGLE.COM",
+                "NS3.GOOGLE.COM",
+                "NS4.GOOGLE.COM"
+            ],
+            "emails": [
+                "abusecomplaints@markmonitor.com",
+                "whoisrequest@markmonitor.com"
+            ],
+            "org": "Google LLC"
+        },
+        "third_party": {
+            "PhishTank": "Verified Phishing (from source)",
+            "ScamAdviser": "Likely Suspicious",
+            "GoogleSafeBrowsing": "Check required",
+            "ChongLuaDao": "Reported"
+        }
+    }
+]

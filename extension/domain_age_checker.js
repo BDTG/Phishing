@@ -90,6 +90,19 @@ async function getDomainAge(domain) {
         }
       }
 
+      // Extract Registrar from entities
+      let registrar = 'Unknown';
+      const entities = data.entities || [];
+      for (const entity of entities) {
+        if (entity.roles && entity.roles.includes('registrar')) {
+          const vcard = entity.vcardArray;
+          if (vcard && vcard[1]) {
+            const fn = vcard[1].find(item => item[0] === 'fn');
+            if (fn) registrar = fn[3];
+          }
+        }
+      }
+
       if (!createdDate) {
         lastError = 'No creation date found';
         continue; // Thử API tiếp theo
@@ -99,7 +112,7 @@ async function getDomainAge(domain) {
       const nowTime = Date.now();
       const ageDays = Math.floor((nowTime - createdTime) / (1000 * 60 * 60 * 24));
 
-      return { ageDays, createdDate, error: null };
+      return { ageDays, createdDate, registrar, error: null };
 
     } catch (e) {
       if (e.name === 'AbortError') return { ageDays: -1, createdDate: null, error: 'Timeout' };

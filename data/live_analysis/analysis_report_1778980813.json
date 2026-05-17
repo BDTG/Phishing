@@ -1,0 +1,119 @@
+[
+    {
+        "url": "https://qrco.de/bgbvEq",
+        "domain": "qrco.de",
+        "timestamp": "2026-05-17 08:20:03",
+        "is_live": true,
+        "status_code": 200,
+        "final_url": "https://qrco.de/bgbvEq",
+        "html_file": "C:\\Users\\BDTG\\Desktop\\Đồ Án Cơ Sở\\scripts\\..\\data\\live_analysis\\responses\\qrco_de_1778980804.html",
+        "headers": {
+            "Content-Type": "text/html; charset=UTF-8",
+            "Transfer-Encoding": "chunked",
+            "Connection": "keep-alive",
+            "Date": "Sun, 17 May 2026 08:20:04 GMT",
+            "Cache-Control": "no-store, no-cache, must-revalidate",
+            "Pragma": "no-cache",
+            "Server": "nginx",
+            "Expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+            "X-Cache": "Miss from cloudfront",
+            "Via": "1.1 0e5c0d81a05bbf64725a8cd48174c418.cloudfront.net (CloudFront)",
+            "X-Amz-Cf-Pop": "SGN50-P2",
+            "X-Amz-Cf-Id": "CefW8Xg3hud_AFih_n0kIwV-cr-fiF2xI6Vjuk5a-gEww1o9D4ykvA=="
+        },
+        "ip": "3.162.58.129",
+        "ip_info": {
+            "status": "success",
+            "country": "Vietnam",
+            "countryCode": "VN",
+            "regionName": "Ho Chi Minh City (HCMC)",
+            "city": "Ho Chi Minh City",
+            "zip": "",
+            "lat": 10.8231,
+            "lon": 106.63,
+            "timezone": "Asia/Ho_Chi_Minh",
+            "isp": "Amazon.com, Inc.",
+            "org": "AWS CloudFront (GLOBAL)",
+            "as": "AS16509 Amazon.com, Inc.",
+            "query": "3.162.58.129"
+        },
+        "whois": {
+            "registrar": null,
+            "creation_date": "None",
+            "expiration_date": "None",
+            "updated_date": "2025-10-07 16:27:20",
+            "name_servers": [
+                "ns-1422.awsdns-49.org",
+                "ns-1888.awsdns-44.co.uk",
+                "ns-341.awsdns-42.com",
+                "ns-678.awsdns-20.net"
+            ],
+            "emails": null,
+            "org": null
+        },
+        "third_party": {
+            "PhishTank": "Verified Phishing (from source)",
+            "ScamAdviser": "Likely Suspicious",
+            "GoogleSafeBrowsing": "Check required",
+            "ChongLuaDao": "Reported"
+        }
+    },
+    {
+        "url": "https://bhd-benefici0.webcindario.com/",
+        "domain": "bhd-benefici0.webcindario.com",
+        "timestamp": "2026-05-17 08:20:05",
+        "is_live": true,
+        "status_code": 200,
+        "final_url": "https://bhd-benefici0.webcindario.com/",
+        "html_file": "C:\\Users\\BDTG\\Desktop\\Đồ Án Cơ Sở\\scripts\\..\\data\\live_analysis\\responses\\bhd-benefici0_webcindario_com_1778980806.html",
+        "headers": {
+            "Server": "nginx",
+            "Date": "Sun, 17 May 2026 08:20:05 GMT",
+            "Content-Type": "text/html",
+            "Transfer-Encoding": "chunked",
+            "Connection": "keep-alive",
+            "Vary": "Accept-Encoding",
+            "X-Powered-By": "Webcindario Hosting Service",
+            "Content-Encoding": "gzip"
+        },
+        "ip": "5.57.226.202",
+        "ip_info": {
+            "status": "success",
+            "country": "Spain",
+            "countryCode": "ES",
+            "regionName": "Madrid",
+            "city": "Madrid",
+            "zip": "28037",
+            "lat": 40.4327,
+            "lon": -3.621,
+            "timezone": "Europe/Madrid",
+            "isp": "Aire Networks Del Mediterraneo SL Unipersonal",
+            "org": "Miarroba Networks",
+            "as": "AS29119 AIRE NETWORKS DEL MEDITERRANEO SL UNIPERSONAL",
+            "query": "5.57.226.202"
+        },
+        "whois": {
+            "registrar": "TUCOWS.COM, CO.",
+            "creation_date": "2001-02-28 12:45:04",
+            "expiration_date": "2030-02-28 12:45:04",
+            "updated_date": "2024-11-05 11:12:27",
+            "name_servers": [
+                "NS-CLOUD-D1.GOOGLEDOMAINS.COM",
+                "NS-CLOUD-D2.GOOGLEDOMAINS.COM",
+                "NS-CLOUD-D3.GOOGLEDOMAINS.COM",
+                "NS-CLOUD-D4.GOOGLEDOMAINS.COM"
+            ],
+            "emails": [
+                "domainabuse@tucows.com",
+                "miarroba@gmail.com"
+            ],
+            "org": "REDACTED FOR PRIVACY"
+        },
+        "third_party": {
+            "PhishTank": "Verified Phishing (from source)",
+            "ScamAdviser": "Likely Suspicious",
+            "GoogleSafeBrowsing": "Check required",
+            "ChongLuaDao": "Reported"
+        }
+    }
+]

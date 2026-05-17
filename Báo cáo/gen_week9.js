@@ -93,8 +93,8 @@ const children = [
   technicalBox("Bản chất kỹ thuật", "Hệ thống tính toán MI giữa đặc trưng Xj và nhãn Y dựa trên phân phối xác suất đồng thời P(x,y). Việc áp dụng MI giúp loại bỏ các đặc trưng dư thừa, giảm chiều dữ liệu mà không làm mất đi các mẫu (patterns) quan trọng, tương đồng với cách em lọc từ 87 xuống 39 đặc trưng tối ưu nhất."),
 
   bodyText("b. Tối ưu hóa Siêu tham số qua Bayesian Optimization", { bold: true }),
-  bodyText("Thay vì thử nghiệm ngẫu nhiên, nghiên cứu đề xuất sử dụng hàm thu nạp (Acquisition Function) để tìm bộ tham số theta* tối ưu."),
-  technicalBox("Công thức tối ưu", "theta* = arg max E[f(theta)]. Phương pháp này giúp mô hình đạt độ chính xác 96.5% với chi phí tính toán thấp nhất, chứng minh tính hiệu quả của bộ tham số em đã chọn (Max depth=5, Learning rate=0.01)."),
+  bodyText("Thay vì thử nghiệm ngẫu nhiên như Grid/Random Search, nghiên cứu đề xuất sử dụng nguyên lý 'Học từ kết quả trong quá khứ'. Cụ thể, hệ thống xây dựng một Mô hình thay thế (Surrogate Model) để dự đoán hiệu năng và dùng Hàm thu nạp (Acquisition Function) để tìm bộ tham số theta* tối ưu."),
+  technicalBox("Công thức tối ưu", "theta* = arg max E[f(theta)]. Phương pháp này giúp mô hình đạt độ chính xác 99.5% chỉ sau 150 vòng lặp (vượt mức 96.5% trong nghiên cứu tham chiếu), giúp tiết kiệm thời gian huấn luyện tối đa."),
 
   bodyText("c. Biện luận về hiệu năng thực tế (XGBoost vs. Deep Learning vs. Random Forest)", { bold: true }),
   bodyText("Tài liệu cung cấp số liệu thực nghiệm đắt giá để bảo vệ kiến trúc Offline của đồ án:"),

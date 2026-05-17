@@ -1,0 +1,56 @@
+[
+    {
+        "name": "Full 39 Features",
+        "num_features": 39,
+        "accuracy": 0.996,
+        "f1": 0.9960918417195896,
+        "precision": 1.0,
+        "recall": 0.9922141119221412,
+        "model": null
+    },
+    {
+        "name": "Top 30 Features",
+        "num_features": 30,
+        "accuracy": 0.996,
+        "f1": 0.9960918417195896,
+        "precision": 1.0,
+        "recall": 0.9922141119221412,
+        "model": null
+    },
+    {
+        "name": "Top 20 Features",
+        "num_features": 20,
+        "accuracy": 0.996,
+        "f1": 0.9960918417195896,
+        "precision": 1.0,
+        "recall": 0.9922141119221412,
+        "model": null
+    },
+    {
+        "name": "Top 15 Features",
+        "num_features": 15,
+        "accuracy": 0.996,
+        "f1": 0.9960918417195896,
+        "precision": 1.0,
+        "recall": 0.9922141119221412,
+        "model": null
+    },
+    {
+        "name": "Top 10 Features",
+        "num_features": 10,
+        "accuracy": 0.996,
+        "f1": 0.9960918417195896,
+        "precision": 1.0,
+        "recall": 0.9922141119221412,
+        "model": null
+    },
+    {
+        "name": "Top 5 Features",
+        "num_features": 5,
+        "accuracy": 0.99525,
+        "f1": 0.9953601953601954,
+        "precision": 0.9990196078431373,
+        "recall": 0.991727493917275,
+        "model": null
+    }
+]

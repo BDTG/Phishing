@@ -383,22 +383,43 @@ function analyzeContent() {
         }
       });
 
-      // 6. Từ khóa thao túng tâm lý
-      const text = document.body ? document.body.innerText.toLowerCase() : '';
-      const suspicious_regex = /\b(tài khoản|mật khẩu|bị khóa|xác minh|đăng nhập|login|password)\b/g;
-      const num_suspicious_words = (text.match(suspicious_regex) || []).length;
+      // 7. Link Density (Mật độ liên kết) - Mới
+      const links = document.querySelectorAll('a');
+      const textLen = text.length;
+      const link_density = textLen > 0 ? links.length / textLen : 0;
 
-      // Đưa 6 đặc trưng vào Model 2
+      // 8. Tỷ lệ Link ngoại lai (External Link Ratio) - Mới
+      let external_links = 0;
+      links.forEach(l => {
+        try {
+          const lHost = new URL(l.href, location.href).hostname.replace(/^www\./, '');
+          if (lHost && lHost !== currentHost) external_links++;
+        } catch(e) {}
+      });
+      const external_link_ratio = links.length > 0 ? external_links / links.length : 0;
+
+      // Đưa đặc trưng vào Model 2 (Mở rộng từ 6 lên 8)
       debugFeatures = [
         num_password_inputs,
         num_hidden_iframes,
         num_external_forms,
         script_to_html_ratio,
         num_malware_links,
-        num_suspicious_words
+        num_suspicious_words,
+        link_density,
+        external_link_ratio
       ];
       
       aiProb = predictContentPhishing(debugFeatures);
+      
+      // Cảnh báo dựa trên các chỉ số mới
+      if (link_density > 0.05) { // Ngưỡng ví dụ: > 5 link trên 100 ký tự
+        warnings.push('Mật độ liên kết cao bất thường');
+      }
+      if (external_link_ratio > 0.8 && links.length > 5) {
+        warnings.push('Hầu hết các liên kết trỏ ra ngoài trang web');
+      }
+
       if (aiProb > 0.6) {
         warnings.push(`Mô hình AI Content đánh giá mã nguồn HTML có rủi ro ${(aiProb*100).toFixed(1)}%`);
         score += aiProb; // Cộng dồn điểm AI

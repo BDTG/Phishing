@@ -35,8 +35,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (resultEl) resultEl.innerHTML = '<div class="icon">⏳</div><div>Đang phân tích…</div>';
 
+    // ── DEEP ANALYSIS (Chạy song song, không đợi) ──
     try {
-      // ── Gọi predictPhishing() từ xgboost_predictor.js ──
+      const u = new URL(url);
+      const domain = u.hostname;
+      const deepSection = document.getElementById('deep-analysis-section');
+      if (deepSection) deepSection.style.display = 'block';
+
+      // 1. Fetch IP & ISP
+      chrome.runtime.sendMessage({ type: 'fetchDeepAnalysis', domain }, (response) => {
+        if (response && response.success && response.data) {
+          const d = response.data;
+          document.getElementById('deep-ip').textContent = d.query || '--';
+          document.getElementById('deep-geo').textContent = `${d.city || ''}, ${d.country || ''}`.trim() || '--';
+          document.getElementById('deep-isp').textContent = d.isp || d.org || '--';
+        }
+      });
+
+      // 2. Fetch WHOIS độc lập ngay từ đầu
+      if (typeof getDomainAge === 'function') {
+        getDomainAge(domain).then(info => {
+          if (info && !info.error) {
+            document.getElementById('deep-whois').textContent = info.registrar || 'Unknown';
+            document.getElementById('deep-created').textContent = info.createdDate ? info.createdDate.split('T')[0] : '--';
+          } else {
+            document.getElementById('deep-whois').textContent = 'N/A (Whitelisted/Platform)';
+            document.getElementById('deep-created').textContent = '--';
+          }
+        }).catch(() => {});
+      }
+    } catch (err) {
+      console.error("Deep Analysis early init error:", err);
+    }
+
+    try {
+      // ── Gọi predictPhishing() chính ──
       const [{ result: mlResult }] = await chrome.scripting.executeScript({
         target: { tabId: tab.id },
         func: async (tabUrl) => {
@@ -91,37 +124,37 @@ document.addEventListener('DOMContentLoaded', () => {
         
         let html = '<div style="margin-bottom:12px; color:#facc15; font-weight:bold;">--- HÀNH TRÌNH RA QUYẾT ĐỊNH ---</div>';
         
-        // 1. Duyệt qua các lớp
-        for (const [layer, info] of Object.entries(debugData.layers)) {
+        // 1. Duyệt qua các lớp (Đã là Array nên giữ đúng thứ tự 0->15)
+        debugData.layers.forEach(info => {
           html += `<div class="xai-layer">
-            <span class="xai-label">[${layer}]</span> <span class="xai-val">${info.result}</span><br/>
+            <span class="xai-label">[${info.layer}]</span> <span class="xai-val">${info.result}</span><br/>
             <small style="color:#94a3b8">${info.details}</small>
           </div>`;
-        }
+        });
 
-        // 2. Đặc trưng URL
+        // 2. Đặc trưng URL (Việt hóa)
         if (debugData.features.url && debugData.features.url.length > 0) {
           html += '<div style="margin:12px 0 6px; color:#facc15; font-weight:bold;">--- 39 ĐẶC TRƯNG URL (MODEL 1) ---</div>';
           const f = debugData.features.url;
           html += `<div class="xai-group">
-            • URL Length: ${f[0]} | Dots: ${f[1]} | Hyphens: ${f[2]}<br/>
-            • Entropy: ${f[9].toFixed(3)} | Digits: ${f[5]}<br/>
-            • Suspicious TLD: ${f[15]} | Phish Keyword: ${f[25]}<br/>
-            • Min Levenshtein: ${f[33]} | Brand Dist: ${f[34]}
+            • Độ dài URL: ${f[0]} | Dấu chấm: ${f[1]} | Gạch ngang: ${f[2]}<br/>
+            • Độ nhiễu (Entropy): ${f[9].toFixed(3)} | Chữ số: ${f[5]}<br/>
+            • Đuôi TLD lạ: ${f[15]} | Từ khóa nhạy cảm: ${f[25]}<br/>
+            • Khoảng cách Levenshtein: ${f[33]} | Độ nhái thương hiệu: ${f[34]}
           </div>`;
         }
 
-        // 3. Đặc trưng HTML
+        // 3. Đặc trưng HTML (Việt hóa)
         if (debugData.features.html && debugData.features.html.length > 0) {
           html += '<div style="margin:12px 0 6px; color:#facc15; font-weight:bold;">--- 6 ĐẶC TRƯNG HTML (MODEL 2) ---</div>';
           const h = debugData.features.html;
           html += `<div class="xai-group">
-            • Password Inputs: ${h[0]}<br/>
-            • Hidden IFrames: ${h[1]}<br/>
-            • External Forms: ${h[2]}<br/>
-            • Script Ratio: ${(h[3]*100).toFixed(2)}%<br/>
-            • Malware Links: ${h[4]}<br/>
-            • Social Eng Words: ${h[5]}
+            • Ô nhập mật khẩu: ${h[0]}<br/>
+            • IFrame ẩn: ${h[1]}<br/>
+            • Form gửi ra ngoài: ${h[2]}<br/>
+            • Tỷ lệ mã Script: ${(h[3]*100).toFixed(2)}%<br/>
+            • Link tải mã độc: ${h[4]}<br/>
+            • Từ khóa thao túng: ${h[5]}
           </div>`;
         }
 
